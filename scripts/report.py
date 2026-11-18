@@ -74,7 +74,29 @@ def pct(v, d=1):
 
 
 def load():
-    return C.rows('summary.csv'), C.rows('solves.csv'), C.rows('proof.csv'), C.rows('generator.csv')
+    th = C.rows('theory.csv') if (C.DATA / 'theory.csv').exists() else []
+    e01 = C.rows('theory_e01.csv') if (C.DATA / 'theory_e01.csv').exists() else []
+    return (C.rows('summary.csv'), C.rows('solves.csv'), C.rows('proof.csv'), C.rows('generator.csv'), th,
+            e01[0] if e01 else None)
+
+
+def theory(th, b):
+    r = [x for x in th if x['board'] == b]
+    return r[0] if r else None
+
+
+def bracket(t):
+    return f"{num(t['L_hf_nH'], 1)} to {num(t['L_dc_nH'], 1)}"
+
+
+def against_l(v, t):
+    """Where a rotor-away L TX sits against the hand values: inside them, over the DC value (the most it can be) or
+    under the high-frequency limit."""
+    if v > t['L_dc_nH']:
+        return f"{num(100 * (v / t['L_dc_nH'] - 1), 1)} % over the DC value, the most it can be"
+    if v < t['L_hf_nH']:
+        return f"{num(100 * (1 - v / t['L_hf_nH']), 1)} % under the high-frequency limit"
+    return 'inside the hand values'
 
 
 def row(summ, s, b, g):
@@ -129,11 +151,12 @@ def gap_label(g):
 
 # ---------------------------------------------------------------------------------------------------------------- pages
 
-def board_page(b, summ, gen, notes, h, up):
+def board_page(b, summ, gen, notes, h, up, th=()):
     """One board's comparison: h is the heading level of its top heading, up the path from the page to the branch's
-    root (charts/ and data/ are there)."""
+    root (charts/ and data/ are there), th the hand values (data/theory.csv)."""
     H = '#' * h
     H2 = '#' * (h + 1)
+    T = theory(th, b)
     have = [s for s in C.SOLVERS if any(done_row(summ, s, b, g) for g in GAPS)]
     others = [s for s in have if s != REF]
     t = [f'{H} {b}', '', f'**{SHORT[b]}**: {WHAT[b]}.', '']
@@ -146,6 +169,8 @@ def board_page(b, summ, gen, notes, h, up):
         solves = int(sum(r['solves'] for r in rs))
         state = f'{n_done}' + ('' if n_done == 5 else ' (still solving)')
         t.append(f"| {s} | {state} | {solves} | {int(sum(r['checks_ok'] for r in rs))} |")
+    if T:
+        t.append('| Theory | worked out from the copper by hand formulas, nothing to solve | — | — |')
     t.append('')
 
     # the short answer for this board
@@ -165,6 +190,20 @@ def board_page(b, summ, gen, notes, h, up):
                 lines.append(f'- **{s}** has not finished a gap of this board yet; it is still solving.')
         if lines:
             t += ['Against FastHenry, the yardstick (the closest to the reference on the proof boards):', ''] + lines + ['']
+    if T:
+        lines = []
+        for s in C.SOLVERS:
+            r = row(summ, s, b, 1.0)
+            if not r or r['L_TX_away_nH'] in ('', None):
+                continue
+            lines.append(f"- **{s}**: L TX with the rotor away {num(r['L_TX_away_nH'], 1)} nH, "
+                         f"{against_l(r['L_TX_away_nH'], T)}; R TX {num(r['R_TX_away_mohm'], 0)} mΩ, "
+                         f"{rel(r['R_TX_away_mohm'] / T['R_dc_mohm'] - 1)} its DC value.")
+        if lines:
+            t += [f"Against the hand values (the Theory rows, worked out in [Formulas](#formulas)): with the rotor away, "
+                  f"L TX has to lie between about {num(T['L_hf_nH'], 1)} nH (all the current at the copper's surface) "
+                  f"and {num(T['L_dc_nH'], 1)} nH (its DC value, the most it can be at any frequency), and R TX can be "
+                  f"no less than its DC resistance, {num(T['R_dc_mohm'], 1)} mΩ.", ''] + lines + ['']
 
     t += [f'![{SHORT[b]} against the air gap]({up}charts/{b}.webp)', '',
           "*SIN's amplitude, L TX (its mean over the turn, and on the right with the rotor taken away) and the rms "
@@ -174,6 +213,9 @@ def board_page(b, summ, gen, notes, h, up):
     t += [f'{H2} At 1 mm', '', f'![The curves at 1 mm]({up}charts/{b}_1mm.webp)', '',
           '| Solver | SIN amplitude (nH) | COS amplitude (nH) | L TX (nH) | L TX, rotor away (nH) | R TX (mΩ) | '
           'Angle error, rms (°) | Angle error, peak (°) | Solves |', '|---|---|---|---|---|---|---|---|---|']
+    if T:
+        t.append(f"| **Theory** | no hand formula | no hand formula | ≤ {num(T['L_dc_nH'], 1)} | {bracket(T)} | "
+                 f"≥ {num(T['R_dc_mohm'], 1)} | 0 (ideal) | 0 (ideal) | — |")
     for s in C.SOLVERS:
         r = row(summ, s, b, 1.0)
         if not r:
@@ -189,24 +231,36 @@ def board_page(b, summ, gen, notes, h, up):
 
     # every gap, quantity by quantity
     t += [f'{H2} Every air gap', '']
+    if T:
+        t += ['In the Theory column: L TX can be no more than its DC value and R TX no less than its DC resistance, at '
+              "any gap; an ideal sensor's angle error is 0; and no hand formula gives the amplitudes (see "
+              '[Formulas](#formulas)).', '']
+    hand = {'amp_SIN_nH': '—', 'amp_COS_nH': '—', 'L_TX_mean_nH': f"≤ {num(T['L_dc_nH'], 1)}" if T else '',
+            'R_TX_mean_mohm': f"≥ {num(T['R_dc_mohm'], 1)}" if T else '', 'angle_error_rms_deg': '0'}
     for key, lab, d in (('amp_SIN_nH', "SIN's amplitude (nH)", 3), ('amp_COS_nH', "COS's amplitude (nH)", 3),
                         ('L_TX_mean_nH', 'L TX, mean over the turn (nH)', 1),
                         ('R_TX_mean_mohm', 'R TX, mean over the turn (mΩ)', 0),
                         ('angle_error_rms_deg', 'Angle error, rms (electrical °)', 3)):
-        t += [f'**{lab}**', '', '| Air gap | ' + ' | '.join(have) + ' |', '|---|' + '---|' * len(have)]
+        cols = have + (['Theory'] if T else [])
+        t += [f'**{lab}**', '', '| Air gap | ' + ' | '.join(cols) + ' |', '|---|' + '---|' * len(cols)]
         for g in GAPS:
             cells = []
             for s in have:
                 r = done_row(summ, s, b, g)
                 cells.append(num(r[key], d) if r else '—')
+            if T:
+                cells.append(hand[key])
             t.append(f'| {gap_label(g)} | ' + ' | '.join(cells) + ' |')
         t.append('')
 
     # against FastHenry, gap by gap
     if REF in have and others:
         t += [f'{H2} Against FastHenry, gap by gap', '',
-              "Each solver's value over FastHenry's at the same gap: SIN's amplitude, and in brackets L TX.", '',
-              '| Air gap | ' + ' | '.join(others) + ' |', '|---|' + '---|' * len(others)]
+              "Each solver's value over FastHenry's at the same gap: SIN's amplitude, and in brackets L TX."
+              + (" In the Theory column, in brackets, the most L TX can be (its DC value) over FastHenry's L TX; there "
+                 'is no hand value for the amplitude.' if T else ''), '',
+              '| Air gap | ' + ' | '.join(others + (['Theory'] if T else [])) + ' |',
+              '|---|' + '---|' * (len(others) + bool(T))]
         for g in GAPS:
             f = done_row(summ, REF, b, g)
             cells = []
@@ -214,28 +268,45 @@ def board_page(b, summ, gen, notes, h, up):
                 r = done_row(summ, s, b, g)
                 cells.append(f"{num(r['amp_SIN_nH'] / f['amp_SIN_nH'], 3)} ({num(r['L_TX_mean_nH'] / f['L_TX_mean_nH'], 3)})"
                              if r and f else '—')
+            if T:
+                cells.append(f"— (≤ {num(T['L_dc_nH'] / f['L_TX_mean_nH'], 3)})" if f else '—')
             t.append(f'| {gap_label(g)} | ' + ' | '.join(cells) + ' |')
         t.append('')
 
-    # the generator's estimates
+    # the hand values and the generator's estimates
     g = [x for x in gen if x['board'] == b]
-    if g:
-        g = g[0]
-        t += [f"{H2} The generator's estimates", '',
-              f"The generator's own figures from `Parameters.txt`, formulas rather than field solves: L TX "
-              f"{num(g['L_TX_away_nH'], 0)} nH with the rotor away and {num(g['L_TX_rotor_nH'], 0)} nH with it (which "
-              f"it calls an upper estimate of the drop), and R TX {num(g['R_TX_dc_mohm'], 0)} mΩ at DC.", '',
-              '| Solver | L TX, rotor away (nH) | Over the estimate | L TX at 0.1 mm (nH) | L TX at 1 mm (nH) |',
-              '|---|---|---|---|---|']
+    g = g[0] if g else None
+    if g or T:
+        intro = []
+        if T:
+            intro.append('The Theory row is worked out from the TX copper alone (see [Formulas](#formulas)).')
+        if g:
+            intro.append(f"The generator's figures come from `Parameters.txt`, formulas rather than field solves: L TX "
+                         f"{num(g['L_TX_away_nH'], 0)} nH with the rotor away and {num(g['L_TX_rotor_nH'], 0)} nH with "
+                         f"it at 1 mm (which it calls an upper estimate of the drop, so the true value should be above "
+                         f"it), and R TX {num(g['R_TX_dc_mohm'], 0)} mΩ at DC.")
+        t += [f"{H2} The hand values and the generator's estimates", '', ' '.join(intro), '',
+              '| | L TX, rotor away (nH) | Against the hand values | Over the generator\'s estimate | L TX at 0.1 mm (nH) '
+              '| L TX at 1 mm (nH) | R TX, rotor away (mΩ) |', '|---|---|---|---|---|---|---|']
+        if T:
+            t.append(f"| **Theory** | {bracket(T)} | — | "
+                     f"{pct(T['L_dc_nH'] / g['L_TX_away_nH'] - 1) + ' % (DC value)' if g else '—'} | "
+                     f"≤ {num(T['L_dc_nH'], 1)} | ≤ {num(T['L_dc_nH'], 1)} | ≥ {num(T['R_dc_mohm'], 1)} |")
+        if g:
+            t.append(f"| Generator | {num(g['L_TX_away_nH'], 0)} | — | — | — | ≥ {num(g['L_TX_rotor_nH'], 0)} | "
+                     f"{num(g['R_TX_dc_mohm'], 0)} (DC) |")
         for s in C.SOLVERS:
             r1 = row(summ, s, b, 1.0)
             r01 = done_row(summ, s, b, 0.1)
             aw = r1['L_TX_away_nH'] if r1 else None
             if aw in ('', None) and not r01:
                 continue
-            over = pct(aw / g['L_TX_away_nH'] - 1) + ' %' if aw not in ('', None) else '—'
-            t.append(f"| {s} | {num(aw, 1)} | {over} | {num(r01['L_TX_mean_nH'] if r01 else None, 1)} | "
-                     f"{num(r1['L_TX_mean_nH'] if r1 and C.complete(r1) else None, 1)} |")
+            has = aw not in ('', None)
+            over = pct(aw / g['L_TX_away_nH'] - 1) + ' %' if has and g else '—'
+            t.append(f"| {s} | {num(aw, 1)} | {against_l(aw, T) if has and T else '—'} | {over} | "
+                     f"{num(r01['L_TX_mean_nH'] if r01 else None, 1)} | "
+                     f"{num(r1['L_TX_mean_nH'] if r1 and C.complete(r1) else None, 1)} | "
+                     f"{num(r1['R_TX_away_mohm'] if r1 else None, 0)} |")
         t.append('')
 
     # time and memory on this board
@@ -251,6 +322,9 @@ def board_page(b, summ, gen, notes, h, up):
         mem = [r['peak_memory_gb'] for r in rs if r.get('peak_memory_gb') not in ('', None)]
         t.append(f'| {s} | {num(statistics.median(sec), 0)} | {span(sec, 0)} | '
                  f"{span(mem, 1)} |")
+    if T and T.get('seconds') not in ('', None):
+        t.append(f"| Theory | {num(T['seconds'], 0)} (once for the board: both of Neumann's sums) | — | "
+                 f"{num(T['peak_memory_gb'], 1)} |")
     t.append('')
 
     turned = sorted({(r['solver'], n) for r in summ if r['board'] == b for n in ('SIN', 'COS')
@@ -262,7 +336,75 @@ def board_page(b, summ, gen, notes, h, up):
     return t
 
 
-def root_page(summ, proof, gen, notes, st):
+def formulas(b, T, g, summ, e01, H, whose="this board's"):
+    """How each Theory value of board b is worked out, with the board's own numbers. H is the heading's #s."""
+    if not T:
+        return []
+    um = T['copper_mm'] * 1000
+    t = [f'{H} Formulas', '',
+         f"How each Theory value is worked out, with {whose} numbers. `scripts/theory.py` does the sums; its inputs "
+         "are the TX copper in the board's `Boards/Stator.kicad_pcb` and the stack-up KESE exported with it "
+         "(`3D_Geometry/Stator/materials.json`), read from the FastHenry branch (every branch has the same boards).", '',
+         "**1. L TX with the rotor away: Neumann's formula, with the geometric mean distance.**", '',
+         '```math', r"L = \frac{\mu_0}{4\pi} \oint \oint \frac{d\mathbf{l} \cdot d\mathbf{l}'}{r}", '```', '',
+         f"over the TX copper's centre line, {num(T['length_mm'], 1)} mm of {num(T['width_mm'], 1)} mm × "
+         f"{num(um, 0)} µm trace from one terminal end to the other, with the via that joins the layers (the two ends "
+         'sit stacked at the terminal, and the port closes the loop there at no length, as in E01). Along one stretch '
+         'of trace (points less than 2 mm apart along the copper), r becomes √(r² + g²), where g is the geometric mean distance (GMD) of the trace\'s cross-section: '
+         "a conductor's self-inductance is the mutual inductance of two thin filaments g apart (Rosa; Grover, "
+         '*Inductance Calculations*). Between separate stretches of copper (neighbouring turns, and the two layers '
+         f"{num(T['layer_gap_mm'], 3)} mm apart), 1/r is averaged over both cross-sections, to second order. The sum "
+         'runs over pieces of 0.05 mm with four Gauss points each.', '',
+         f"- **DC**, the current spread evenly: g = 0.2235 (w + t) = {num(T['gmd_dc_mm'], 4)} mm (Grover), so "
+         f"**L = {num(T['L_dc_nH'], 1)} nH**.",
+         f"- **High-frequency limit**, the current all at the copper's surface: g is then the rectangle's logarithmic "
+         f"capacity, {num(T['gmd_hf_mm'], 4)} mm (from a boundary-element solve of the cross-section, which gives the "
+         f"known 0.25 w for a thin strip and 0.590 a for a square of side a), so **L = {num(T['L_hf_nH'], 1)} nH**.", '']
+    if e01:
+        t += [f"The same code on E01's loop gives {num(e01['L_dc_nH'], 3)} nH against the textbook "
+              f"{num(e01['ref_dc_nH'], 3)} nH ({pct(e01['dc_off_pct'] / 100, 2)} %).", '']
+    t += ['**2. Why these bound the solvers.** With no magnetic material near, a coil\'s inductance can only fall, and '
+          'its resistance only rise, as the frequency goes up; and copper brought near it (the rotor) only lowers L '
+          f"and adds loss. So at 3.5 MHz and at every air gap, L TX ≤ {num(T['L_dc_nH'], 1)} nH and "
+          f"R TX ≥ {num(T['R_dc_mohm'], 1)} mΩ; with the rotor away, L TX lies between about "
+          f"{num(T['L_hf_nH'], 1)} and {num(T['L_dc_nH'], 1)} nH. The skin depth at 3.5 MHz,", '',
+          '```math', r"\delta = \frac{1}{\sqrt{\pi f \mu_0 \sigma}} = " + f"{num(T['skin_depth_um'], 1)}" +
+          r"\ \mu\mathrm{m},", '```', '',
+          "is the copper's own thickness, so the true value lies inside that range, not at either end. The lower end "
+          'counts each trace on its own; the turns pushing each other\'s current about at high frequency would lower '
+          'it by well under 1 %.', '',
+          '**3. R TX at DC.**', '',
+          '```math', r"R = \frac{\ell}{\sigma w t} = \frac{" + f"{num(T['length_mm'], 1)}" +
+          r"\ \mathrm{mm}}{58\ \mathrm{MS/m} \times " + f"{num(T['width_mm'], 1)}" + r"\ \mathrm{mm} \times " +
+          f"{num(um, 0)}" + r"\ \mu\mathrm{m}} = " + f"{num(T['R_dc_mohm'], 1)}" + r"\ \mathrm{m}\Omega", '```', '',
+          'The via adds well under 1 mΩ.', '',
+          "**4. Angle error 0.** The receivers are drawn so that SIN and COS follow the sine and cosine of the rotor "
+          "angle exactly, and an ideal sensor's angle error is zero. It is the design's target, not a bound: a "
+          "solver's error is the real board's departure from it plus the solver's own.", '',
+          '**5. No hand value for the amplitudes.** How much of the TX field reaches SIN and COS depends on the eddy '
+          "currents in the rotor's copper, and no closed formula gives those: only a field solve does."]
+    f1, f2 = done_row(summ, REF, b, 0.1), done_row(summ, REF, b, 2.0)
+    if T.get('period_mm') not in ('', None) and f1 and f2:
+        import math
+        guess = math.exp(-2 * math.pi * 1.9 / T['period_mm'])
+        t[-1] += (f" The generator's note that the signal falls about as exp(−2π gap / period), with a period of "
+                  f"{num(T['period_mm'], 1)} mm here, would keep SIN's amplitude at 2 mm at {num(100 * guess, 0)} % of "
+                  f"its value at 0.1 mm; FastHenry finds {num(100 * f2['amp_SIN_nH'] / f1['amp_SIN_nH'], 0)} %. It is a "
+                  'rule of thumb, and is not used here.')
+    t.append('')
+    if g:
+        above = [s for s in C.SOLVERS if done_row(summ, s, b, 1.0)]
+        ok = all(done_row(summ, s, b, 1.0)['L_TX_mean_nH'] >= g['L_TX_rotor_nH'] for s in above)
+        t += [f"**6. The generator's estimates.** L TX {num(g['L_TX_away_nH'], 0)} nH with the rotor away, from its own "
+              f"formula (the DC value above is {rel(T['L_dc_nH'] / g['L_TX_away_nH'] - 1)} it); "
+              f"{num(g['L_TX_rotor_nH'], 0)} nH with the rotor at 1 mm, which it calls an upper estimate of the drop, so "
+              'the true value should be above it' + (' (every solver\'s is)' if ok and above else '') + '; and R TX '
+              f"{num(g['R_TX_dc_mohm'], 0)} mΩ at DC, rounded (the copper's {num(T['length_mm'], 1)} mm give "
+              f"{num(T['R_dc_mohm'], 1)} mΩ).", '']
+    return t
+
+
+def root_page(summ, proof, gen, notes, st, th=(), e01=None):
     t = ['# Solvers comparison: the KESE inductive-coil examples', '',
          "KESE exports a KiCad board's copper and stackup for electromagnetic solvers. Four free, open-source solvers were "
          'run on the same six inductive position-sensor boards (a TX coil that drives the rotor, and SIN and COS '
@@ -275,23 +417,33 @@ def root_page(summ, proof, gen, notes, st):
         x = st[s]
         bd = f"{len(x['boards'])}" + ('' if len(x['boards']) == 6 else f" (still solving; {x['gaps']} of 30 gaps)")
         t.append(f"| {s} | {METHOD[s]} | `{BRANCH[s]}` | {bd} | {x['solves']} | {x['checks']} |")
+    if th:
+        t.append(f"| Theory | hand formulas: Neumann's integral over the TX copper, its DC resistance "
+                 f"([Formulas](#formulas)) | this one (`scripts/theory.py`) | {len(th)} | — | — |")
     t += ['', notes['INTRO_AFTER_STATUS'], '',
           f'This page shows one board, {ROOT_BOARD}. Every board has its own page in [`Comparisons/`](Comparisons/), '
           'named as its folder in the integration branches:', '',
-          '| Board | What it is | SIN amplitude at 1 mm: ' + ', '.join(C.SOLVERS) + ' (nH) |', '|---|---|---|']
+          '| Board | What it is | SIN amplitude at 1 mm: ' + ', '.join(C.SOLVERS) + ' (nH) | L TX with the rotor away, '
+          'Theory (nH) |', '|---|---|---|---|']
     for b in C.LABEL:
         amps = []
         for s in C.SOLVERS:
             r = done_row(summ, s, b, 1.0)
             amps.append(num(r['amp_SIN_nH'], 2) if r else '—')
-        t.append(f'| [{b}](Comparisons/{b}.md) | {SHORT[b]}: {WHAT[b]} | ' + ' / '.join(amps) + ' |')
-    t.append('')
-    t += board_page(ROOT_BOARD, summ, gen, notes, 2, '')
-    t += proof_section(proof, notes) + why_section(notes) + data_section() + tail()
+        T = theory(th, b)
+        t.append(f'| [{b}](Comparisons/{b}.md) | {SHORT[b]}: {WHAT[b]} | ' + ' / '.join(amps) +
+                 f" | {bracket(T) if T else '—'} |")
+    t += ['', 'There is no hand formula for the SIN amplitude; the Theory column gives the range L TX must lie in with '
+          'the rotor away (see [Formulas](#formulas)).', '']
+    t += board_page(ROOT_BOARD, summ, gen, notes, 2, '', th)
+    t += proof_section(proof, notes, e01) + why_section(notes) + data_section(bool(th))
+    t += formulas(ROOT_BOARD, theory(th, ROOT_BOARD), next((x for x in gen if x['board'] == ROOT_BOARD), None), summ,
+                  e01, '##', f"{SHORT[ROOT_BOARD]}'s")
+    t += proof_formulas(e01) + tail()
     return t
 
 
-def proof_section(proof, notes):
+def proof_section(proof, notes, e01=None):
     t = ['## The proof boards', '', '![The proof boards](charts/proof.webp)', '', notes['PROOF_INTRO'], '',
          '| Solver | E01, L, 10 kHz | E01, L, 3.5 MHz | E02, M, 10 kHz | E02, M, 3.5 MHz | Run |', '|---|---|---|---|---|---|']
     cases = [('E01_circular_loop', 1e4), ('E01_circular_loop', 3.5e6), ('E02_coaxial_loops', 1e4),
@@ -307,10 +459,43 @@ def proof_section(proof, notes):
             t.append(f'| {s} | ' + ' | '.join(cells) + f' | {run} |')
         if not files:
             t.append(f'| {s} | still to solve | | | | |')
+    refs = {(r['board'], r['frequency_hz']): r['reference_nH'] for r in proof}
+    if refs:
+        e01_hf = (f"{num(e01['L_hf_nH'], 2)} to {num(e01['ref_dc_nH'], 2)} nH (the branches use "
+                  f"{num(refs.get(('E01_circular_loop', 3.5e6)), 3)})" if e01 else
+                  f"{num(refs.get(('E01_circular_loop', 3.5e6)), 3)} nH")
+        t.append(f"| **Theory** | {num(refs.get(('E01_circular_loop', 1e4)), 3)} nH | {e01_hf} | "
+                 f"{num(refs.get(('E02_coaxial_loops', 1e4)), 3)} nH | {num(refs.get(('E02_coaxial_loops', 3.5e6)), 3)} nH "
+                 '| the references, by Neumann\'s integral ([Formulas](#the-proof-boards-references)) |')
     ref = sorted({(r['board'], r['frequency_hz'], r['reference_nH']) for r in proof})
+    if refs:
+        return t + ['']
     t += ['', 'The references: ' + '; '.join(f"{b.split('_')[0]} at {fr / 1e6:g} MHz {num(v, 3)} nH" if fr >= 1e6 else
                                            f"{b.split('_')[0]} at {fr / 1e3:g} kHz {num(v, 3)} nH" for b, fr, v in ref) + '.',
           '']
+    return t
+
+
+def proof_formulas(e01):
+    """The proof boards' references, as formulas."""
+    t = ["### The proof boards' references", '',
+         'E01 is one open circular loop, its trace 0.5 mm wide on a 10 mm radius, open by 0.2 mm; E02 is two such loops, '
+         'one on each side of a board, 1.565 mm apart (copper centre to copper centre). Both references are Neumann\'s '
+         'double integral over the open arcs, each over θ = 356.0°, between its round ends\' centres:', '',
+         '```math', r"M_{12} = \frac{\mu_0 r_1 r_2}{4\pi} \int_0^{\theta}\!\int_0^{\theta} "
+         r"\frac{\cos(\varphi_1 - \varphi_2)\, d\varphi_1\, d\varphi_2}"
+         r"{\sqrt{r_1^2 + r_2^2 - 2 r_1 r_2 \cos(\varphi_1 - \varphi_2) + d^2}}", '```', '',
+         "- E01's L is the loop's M with itself at d = g, the trace's GMD (the same method as the coils' L): "
+         'g = 0.2235 (w + t) at DC gives 55.590 nH. At 3.5 MHz the branches use g = w / 4 = 0.125 mm, the GMD of a '
+         'strip of no thickness with its current crowded to the edges, which gives 55.039 nH.']
+    if e01:
+        t[-1] += (f" With the copper's 35 µm thickness counted, the high-frequency limit's GMD is "
+                  f"{num(e01['gmd_hf_mm'], 4)} mm and L {num(e01['L_hf_nH'], 2)} nH; since the skin depth at 3.5 MHz "
+                  f"equals the thickness, the true value lies between that and the DC value, {num(e01['L_hf_nH'], 2)} to "
+                  f"{num(e01['ref_dc_nH'], 2)} nH, and 55.039 nH is one point inside that range rather than an exact "
+                  'answer.')
+    t += ["- E02's M is the two loops' M at d = 1.565 mm, averaged over both traces' widths with the current spread "
+          'evenly (21 × 21 radii): 23.886 nH, used at both frequencies.', '']
     return t
 
 
@@ -318,8 +503,8 @@ def why_section(notes):
     return ['## Why they differ', ''] + [x for k in notes['WHY'] for x in (k, '')]
 
 
-def data_section():
-    return ['## The data', '',
+def data_section(hand=False):
+    t = ['## The data', '',
             '| File | One row per | Columns |', '|---|---|---|',
             '| [data/solves.csv](data/solves.csv) | solve | solver, board, gap, rotor angle, M SIN and M COS (nH), L TX (nH), '
             "R TX (mΩ), whether it passed its branch's checks, seconds, peak memory |",
@@ -329,7 +514,13 @@ def data_section():
             '| [data/proof.csv](data/proof.csv) | proof-board value | solver, board, results file, frequency, value, '
             "reference, error (%), the run's settings |",
             "| [data/generator.csv](data/generator.csv) | board | the generator's estimates of L TX (rotor away, with the "
-            'rotor) and of R TX at DC |', '',
+            'rotor) and of R TX at DC |']
+    if hand:
+        t += ['| [data/theory.csv](data/theory.csv) | board | the hand values: L TX at DC and in the high-frequency '
+              "limit, R TX at DC, and their inputs (the copper's length, width and thickness, the GMDs, the layers' "
+              'spacing, the skin depth) |',
+              "| [data/theory_e01.csv](data/theory_e01.csv) | — | the same code on E01's loop, against its reference |"]
+    return t + ['',
             "A port's plus side is each branch's own convention, so a receiver can come out with the opposite sign. "
             "Where a solver's curve is more than 90° from FastHenry's, its sign is turned (the `sign_turned_SIN` and "
             '`sign_turned_COS` columns say so); amplitudes and angle errors do not depend on it.', '']
@@ -339,6 +530,7 @@ def tail():
     return ['## Running it again', '', '```',
             'git fetch origin Elmer_Integration PyPEEC_Integration FastHenry_Integration Palace_Integration',
             'python scripts/collect.py          # reads every branch into data/',
+            'python scripts/theory.py --check   # works out the hand values into data/ (a few minutes)',
             'python scripts/charts.py           # draws charts/',
             'python scripts/report.py           # writes this README and Comparisons/', '```', '',
             'It needs Python 3 with numpy and matplotlib (and Pillow for WebP). `collect.py --dir SOLVER=FOLDER` reads '
@@ -364,13 +556,14 @@ def finish(lines):
 
 
 def build():
-    summ, solves, proof, gen = load()
+    summ, solves, proof, gen, th, e01 = load()
     notes = json.loads((HERE / 'notes.json').read_text())
     st = status(summ)
-    pages = {ROOT / 'README.md': finish(root_page(summ, proof, gen, notes, st))}
+    pages = {ROOT / 'README.md': finish(root_page(summ, proof, gen, notes, st, th, e01))}
     for b in C.LABEL:
-        lines = board_page(b, summ, gen, notes, 1, '../')
+        lines = board_page(b, summ, gen, notes, 1, '../', th)
         lines[0] = f'# {b}: the solvers compared'
+        lines += formulas(b, theory(th, b), next((x for x in gen if x['board'] == b), None), summ, e01, '##')
         pages[PAGES / f'{b}.md'] = finish(['[Solvers comparison](../README.md) › ' + SHORT[b], ''] + lines + page_tail())
     return pages
 

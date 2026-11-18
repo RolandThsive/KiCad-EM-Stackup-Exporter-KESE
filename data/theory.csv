@@ -1,0 +1,7 @@
+board,L_dc_nH,L_hf_nH,R_dc_mohm,length_mm,width_mm,copper_mm,gmd_dc_mm,gmd_hf_mm,layer_gap_mm,vias,via_drill_mm,sigma_S_per_m,skin_depth_um,period_mm,seconds,peak_memory_gb,source
+S0_1x_OD21_2L_tiny,135.669,131.441,234.524,95.2169,0.2,0.035,0.0525225,0.0653476,0.725,1,0.4,5.8e+07,35.3242,29.2,16.4842,1.15131,origin/FastHenry_Integration
+S0_1x_OD21_2L_tiny_TXtop,132.995,129.07,228.69,92.848,0.2,0.035,0.0525225,0.0653476,0.725,1,0.4,5.8e+07,35.3242,27.3,15.0402,1.1777,origin/FastHenry_Integration
+S0_1x_OD22_2L_tiny_TXtop,147.419,143.174,247.257,100.386,0.2,0.035,0.0525225,0.0653476,0.725,1,0.4,5.8e+07,35.3242,29.2,18.0163,1.24839,origin/FastHenry_Integration
+S0_1x_OD22_2L_tiny_TXtop_Cut,147.419,143.174,247.257,100.386,0.2,0.035,0.0525225,0.0653476,0.725,1,0.4,5.8e+07,35.3242,29.2,17.6705,1.24839,origin/FastHenry_Integration
+S0_1x_OD23_2L_tiny_TX3top_Cut,295.638,289.225,379.391,154.033,0.2,0.035,0.0525225,0.0653476,0.725,1,0.4,5.8e+07,35.3242,29.2,44.9259,1.99764,origin/FastHenry_Integration
+S0d2_1x_OD23_2L_tiny_TX3top_Cut,295.638,289.225,379.391,154.033,0.2,0.035,0.0525225,0.0653476,0.725,1,0.4,5.8e+07,35.3242,14.6,43.6764,1.99776,origin/FastHenry_Integration
