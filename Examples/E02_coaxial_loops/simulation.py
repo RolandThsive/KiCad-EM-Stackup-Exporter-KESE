@@ -5,10 +5,13 @@ that M from the TX to the RX equals M from the RX to the TX.
     python simulation.py                      the mesh ladder at both frequencies
     python simulation.py --levels 0.5         one mesh only
     python simulation.py --mesh-only          build the meshes and print their size, solve nothing
-    python simulation.py --levels 0.75 --mesh grade=0.125 --mesh tet_grade=0.175 --mesh dz_max=0.2 \
-        --results results_grade.json --out case_grade --restart 100
-                                              the air graded as the coil boards' is (restarting GMRES every 100
-                                              iterations, so its vectors fit in 15 GB)
+    python simulation.py --levels 0.75 --freqs 1e5 3.5e6 --mesh grade=0.125 --mesh tet_grade=0.175 \
+        --mesh dz_max=0.2 --results results_grade.json --out case_grade --restart 100
+                                              the air graded as the coil boards' is: GMRES restarts every 100
+                                              iterations, so its vectors fit in 15 GB, and the low frequency is
+                                              100 kHz, since at 10 kHz it does not converge on this mesh
+    python simulation.py --levels 0.75 --freqs 1e5 --results results_100k.json --out case_100k
+                                              M at 100 kHz on the default mesh, to set beside 10 kHz
 
 Each loop is opened by its 0.2 mm gap, the two gaps one above the other, and each gap holds a lumped port: a sheet
 across it, through the copper, from one round end to the other. Both ports are driven in turn (two solves in one), so

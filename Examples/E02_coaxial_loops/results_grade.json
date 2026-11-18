@@ -1,0 +1,180 @@
+{
+ "board": "E02_coaxial_loops.kicad_pcb",
+ "settings": {
+  "board": "E02_coaxial_loops.kicad_pcb",
+  "centre": [
+   100.0,
+   -100.0
+  ],
+  "radius_mm": 10.0,
+  "width_mm": 0.5,
+  "gap_mm": 0.2,
+  "gap_box": [
+   109.75,
+   -100.35,
+   110.25,
+   -99.65
+  ],
+  "port_direction": "+Y",
+  "port_ohm": 50.0,
+  "sigma": 58000000.0,
+  "domain_radius_mm": 60.0,
+  "domain_half_height_mm": 60.0,
+  "freqs_hz": [
+   10000.0,
+   3500000.0
+  ],
+  "order": 1,
+  "levels": [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ],
+  "mesh": {
+   "h_edge": 0.09,
+   "h_in": 0.18,
+   "h_max": 6.0,
+   "grade": 0.125,
+   "dz_copper": 0.018,
+   "dz_max": 0.2,
+   "tet_max": 8.0,
+   "tet_grade": 0.175
+  },
+  "ranks": 4,
+  "solvers": {
+   "ams": {
+    "Type": "AMS",
+    "KSPType": "GMRES",
+    "Tol": 1e-08,
+    "MaxIts": 2000,
+    "MaxSize": 100,
+    "EstimatorTol": 0.01
+   }
+  },
+  "low_frequency": {
+   "AMSSingularOperator": true,
+   "MaxIts": 3000
+  }
+ },
+ "versions": {
+  "python": "3.13.18",
+  "kese": "kese 3.4.0 (made the export)",
+  "palace": "0.19.0-dirty",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "shapely": "2.2.0",
+  "trimesh": "5.2.1",
+  "mapbox_earcut": "2.1.0",
+  "gmsh": "4.15.2"
+ },
+ "references": {
+  "dz_mm": 1.565,
+  "M_closed_h": 2.439953697036839e-08,
+  "M_open_h": 2.388630876856698e-08,
+  "theta_open_rad": 6.213171007628889,
+  "M_filament_closed_h": 2.4512608243321854e-08
+ },
+ "runs": [
+  {
+   "level": 0.75,
+   "solver": "ams",
+   "order": 1,
+   "gmres_restart": 100,
+   "mesh_seconds": 36.0,
+   "nodes": 303129,
+   "wedges": 484656,
+   "tetrahedra": 337626,
+   "solves": [
+    {
+     "frequency_hz": 100000.0,
+     "M_h": 2.4166356226594833e-08,
+     "M_reverse_h": 2.4166356921986503e-08,
+     "L_tx_h": 5.588014379331101e-08,
+     "R_tx_ohm": 0.062344439963317885,
+     "L_rx_h": 5.58795675533425e-08,
+     "R_rx_ohm": 0.062344432788872264,
+     "L_from_energy_h": 5.588013510479791e-08,
+     "Z_ohm": {
+      "re": [
+       [
+        0.062344439963317885,
+        2.9448933770827432e-06
+       ],
+       [
+        2.944870766131903e-06,
+        0.062344432788872264
+       ]
+      ],
+      "im": [
+       [
+        0.035110529844521426,
+        0.015184169874028328
+       ],
+       [
+        0.015184169437100856,
+        0.03511016778227107
+       ]
+      ]
+     },
+     "seconds": 608.4,
+     "peak_memory_gb": 12.5,
+     "iterations": [
+      191,
+      183
+     ],
+     "residuals": [
+      9.754310759608907e-09,
+      3.9161823910897225e-09
+     ],
+     "converged": true,
+     "ranks": 4
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "M_h": 2.4104316151035332e-08,
+     "M_reverse_h": 2.410431442166688e-08,
+     "L_tx_h": 5.488858958710176e-08,
+     "R_tx_ohm": 0.08228949815827387,
+     "L_rx_h": 5.488818213482312e-08,
+     "R_rx_ohm": 0.08228622740980487,
+     "L_from_energy_h": 5.4881670101127246e-08,
+     "Z_ohm": {
+      "re": [
+       [
+        0.08228949815827387,
+        0.000944326488539662
+       ],
+       [
+        0.0009443376273950963,
+        0.08228622740980487
+       ]
+      ],
+      "im": [
+       [
+        1.2070631286892086,
+        0.5300815597484902
+       ],
+       [
+        0.5300815977792888,
+        1.207054168345612
+       ]
+      ]
+     },
+     "seconds": 447.3,
+     "peak_memory_gb": 12.5,
+     "iterations": [
+      135,
+      129
+     ],
+     "residuals": [
+      9.667565855438973e-09,
+      5.517602117095218e-09
+     ],
+     "converged": true,
+     "ranks": 4
+    }
+   ]
+  }
+ ]
+}

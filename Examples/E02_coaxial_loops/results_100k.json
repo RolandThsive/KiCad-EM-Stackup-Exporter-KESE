@@ -1,0 +1,136 @@
+{
+ "board": "E02_coaxial_loops.kicad_pcb",
+ "settings": {
+  "board": "E02_coaxial_loops.kicad_pcb",
+  "centre": [
+   100.0,
+   -100.0
+  ],
+  "radius_mm": 10.0,
+  "width_mm": 0.5,
+  "gap_mm": 0.2,
+  "gap_box": [
+   109.75,
+   -100.35,
+   110.25,
+   -99.65
+  ],
+  "port_direction": "+Y",
+  "port_ohm": 50.0,
+  "sigma": 58000000.0,
+  "domain_radius_mm": 60.0,
+  "domain_half_height_mm": 60.0,
+  "freqs_hz": [
+   10000.0,
+   3500000.0
+  ],
+  "order": 1,
+  "levels": [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ],
+  "mesh": {
+   "h_edge": 0.09,
+   "h_in": 0.18,
+   "h_max": 6.0,
+   "grade": 0.5,
+   "dz_copper": 0.018,
+   "dz_max": 0.4,
+   "tet_max": 8.0,
+   "tet_grade": 0.7
+  },
+  "ranks": 4,
+  "solvers": {
+   "ams": {
+    "Type": "AMS",
+    "KSPType": "GMRES",
+    "Tol": 1e-08,
+    "MaxIts": 2000,
+    "MaxSize": 300,
+    "EstimatorTol": 0.01
+   }
+  },
+  "low_frequency": {
+   "AMSSingularOperator": true,
+   "MaxIts": 3000
+  }
+ },
+ "versions": {
+  "python": "3.13.18",
+  "kese": "kese 3.4.0 (made the export)",
+  "palace": "0.19.0-dirty",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "shapely": "2.2.0",
+  "trimesh": "5.2.1",
+  "mapbox_earcut": "2.1.0",
+  "gmsh": "4.15.2"
+ },
+ "references": {
+  "dz_mm": 1.565,
+  "M_closed_h": 2.439953697036839e-08,
+  "M_open_h": 2.388630876856698e-08,
+  "theta_open_rad": 6.213171007628889,
+  "M_filament_closed_h": 2.4512608243321854e-08
+ },
+ "runs": [
+  {
+   "level": 0.75,
+   "solver": "ams",
+   "order": 1,
+   "gmres_restart": 300,
+   "mesh_seconds": 7.7,
+   "nodes": 92136,
+   "wedges": 154956,
+   "tetrahedra": 73798,
+   "solves": [
+    {
+     "frequency_hz": 100000.0,
+     "M_h": 2.3325726519090316e-08,
+     "M_reverse_h": 2.3325726384767206e-08,
+     "L_tx_h": 5.4184712183533206e-08,
+     "R_tx_ohm": 0.06230685815517986,
+     "L_rx_h": 5.4175328937564185e-08,
+     "R_rx_ohm": 0.062306843945556016,
+     "L_from_energy_h": 5.418470519178431e-08,
+     "Z_ohm": {
+      "re": [
+       [
+        0.06230685815517986,
+        2.729152698277539e-06
+       ],
+       [
+        2.7291445055831037e-06,
+        0.062306843945556016
+       ]
+      ],
+      "im": [
+       [
+        0.03404525874653305,
+        0.01465598613000605
+       ],
+       [
+        0.01465598621440375,
+        0.03403936307921243
+       ]
+      ]
+     },
+     "seconds": 122.2,
+     "peak_memory_gb": 4.0,
+     "iterations": [
+      134,
+      126
+     ],
+     "residuals": [
+      8.155485422633711e-09,
+      1.0909761311340745e-10
+     ],
+     "converged": true,
+     "ranks": 4
+    }
+   ]
+  }
+ ]
+}

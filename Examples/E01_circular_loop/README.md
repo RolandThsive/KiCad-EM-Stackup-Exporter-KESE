@@ -23,11 +23,11 @@ The bridge meshes KESE's solids as it meshes the coil boards: the board's plan i
 
 | Check | How | Reference |
 |---|---|---|
-| L at 10 kHz | Im(Z) / ω of the loop's port; the skin depth (0.66 mm) is far above the copper's 35 µm, so the current is uniform | Neumann's double integral over the open arc with the rectangle's geometric mean distance g = 0.2235 (w + t) (Grover, [`../references.py`](../references.py), `arc_inductance`): 55.590 nH for the arc between the round ends' centres (356.0°), 56.293 nH for the arc out to the gap's faces (358.9°). Palace's copper runs on round the round ends to the faces, so its L should sit between the two. For scale: Grover's ring formula for the closed ring, 56.622 nH |
+| L at 10 kHz | Im(Z) / ω of the loop's port; the skin depth (0.66 mm) is far above the copper's 35 µm, so the current is uniform | Neumann's double integral over the open arc with the rectangle's geometric mean distance g = 0.2235 (w + t) (Grover, [`../references.py`](../references.py), `arc_inductance`): 55.590 nH for the arc between the round ends' centres (356.0°), 56.293 nH for the arc out to the gap's faces (358.9°); Grover's ring formula for the closed ring, 56.622 nH. Palace's port sheet carries the current across the gap and so closes the loop: once the mesh is fine enough its L should lie above the open arcs and near the closed ring. The percentages in results.md are against the arc between the centres, the reference every solver's branch shares |
 | L from the field's energy | 2 W / I², from the magnetic energy Palace stores in the whole domain | the same L as from the port: the two agree only if the port and the field are consistent |
 | R at 10 kHz | Re(Z) | the DC resistance of the annular sector between the round ends' centres, θ / (σ t ln(r_out / r_in)): 61.201 mΩ; the half-discs past the centres add a little |
 | L and R at 3.5 MHz | as above, at the coil boards' frequency, where the skin depth (35 µm) equals the copper's thickness | no exact reference: L lies between its DC value and the value with all the current at the copper's surface; the arc integral with a thin strip's high-frequency GMD w / 4 gives 55.039 to 55.738 nH, an estimate that leaves out the copper's thickness |
-| The mesh | levels 0.25, 0.5, 0.75, 1: each divides the copper's mesh sizes by itself | L should rise towards the reference as the mesh gets finer; one more run grades the air as the coil boards' mesh does |
+| The mesh | levels 0.25, 0.5, 0.75, 1: each divides the copper's mesh sizes by itself | L should rise as the mesh gets finer; one more run grades the air as the coil boards' mesh does |
 
 ## How It Runs
 
