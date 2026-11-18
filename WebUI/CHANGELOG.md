@@ -2,6 +2,16 @@
 
 The newest first. Each entry is one pull request into `WebUI`; the footer's build stamp names the commit that is live.
 
+## Privacy page: what jsDelivr keeps (November 2026)
+
+- The privacy page now says what jsDelivr's privacy policy says it may log (IP address, browser type and version,
+  referring domain, the cdn.jsdelivr.net addresses asked for, date and time, device identifiers), that it sets no
+  cookies and does not act on Do Not Track, how long it keeps the logs (no number of days: "a shorter period" until
+  analyzed and deleted; totals without any single request are kept for good and are public), and that the networks
+  serving cdn.jsdelivr.net also see the IP address. The link goes to the policy's current address.
+- The first visit downloads about 20 MB, not 30 MB, as the page said while Python starts. Measured in Chromium with an
+  empty cache, up to Python ready: 20.3 MB over 36 requests (Pyodide 17.3 MB, three.js 2.3 MB).
+
 ## Actions updated, 3D view set up on first use (November 2026)
 
 - The deploy's GitHub Actions are updated (Dependabot): checkout, setup-python and the three Pages actions now run on
