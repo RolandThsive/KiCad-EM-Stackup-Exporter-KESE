@@ -40,13 +40,17 @@ Every angle at every gap, one Palace solve each: 16 angles at each of 5 gaps, an
 
 | Air gap | Amplitude SIN / COS | Angle error | Solves passing the checks | L TX over the turn |
 |---|---|---|---|---|
-| 2 mm | not solved yet | | | |
-| 1.5 mm | not solved yet | | | |
-| 1 mm | not solved yet | | | |
-| 0.5 mm | not solved yet | | | |
-| 0.1 mm | not solved yet | | | |
+| 2 mm | 1.91 / 1.92 nH (42 / 42 mV) | 0.1° rms, 0.2° peak | 16 of 16 | 269.0 to 269.2 nH |
+| 1.5 mm | 2.97 / 2.98 nH (65 / 65 mV) | 0.1° rms, 0.3° peak | 16 of 16 | 264.2 to 264.5 nH |
+| 1 mm | 4.65 / 4.66 nH (102 / 102 mV) | 0.2° rms, 0.4° peak | 16 of 16 | 256.2 to 256.7 nH |
+| 0.5 mm | 7.18 / 7.19 nH (158 / 158 mV) | 0.4° rms, 0.6° peak | 16 of 16 | 242.4 to 243.0 nH |
+| 0.1 mm | 9.71 / 9.71 nH (213 / 213 mV) | 0.9° rms, 1.2° peak | 16 of 16 | 219.3 to 220.1 nH |
 
-This board is still being solved; its charts and results come with its solves.
+![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
+
+*SIN at each air gap, one dot per solve; a ring would mark a solve that fails the checks (none does). [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
+
+Every solve converged and passes the checks: the TX's L from its port and from the field's energy agree within 0.01 %, where 1 % is allowed, and M back from SIN and COS to the TX, where they were driven too, equals M from the TX within 0.001 %. At every gap SIN and COS are within 0.2 % of each other in amplitude and 89.9° to 90.0° apart, and the angle error is 0.1° to 0.9° rms over the gaps. At 0.1 mm the angle error alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest the angles can show, which third or fifth harmonics of the coupling would give, and those fade faster with the gap than the sine itself. SIN's amplitude is 9.71 nH at 0.1 mm, 7.18 nH at 0.5 mm, 4.65 nH at 1 mm, 2.97 nH at 1.5 mm and 1.91 nH at 2 mm (213 down to 42 mV of EMF at 1 A). L TX moves by 0.8 nH at most over the turn, and rises from 219.7 nH at 0.1 mm to 269.1 nH at 2 mm; with the rotor away it is 281.0 nH, where the generator estimated 226 nH with the rotor and 292 nH without. The meshes have 177,568 to 292,344 nodes, 12 to 21 element layers through the copper, board and gap, and each solve took 2 to 12 min and 6.0 to 12.9 GB on 4 MPI ranks.
 
 ## The folder
 
@@ -63,8 +67,13 @@ Beside this README, `S0d2_1x_OD23_2L_tiny_TX3top_Cut_stator_and_rotor.webp` is t
 
 | Air gap | Mesh level | Nodes | Element layers | MPI ranks | Memory a solve | Time a solve |
 |---|---|---|---|---|---|---|
+| 0.1 mm | 0.25 | 177,568 to 179,385 | 12 | 4 | 6.0 to 8.0 GB | 1.9 to 6.2 min |
+| 0.5 mm | 0.25 | 202,416 to 204,487 | 14 | 4 | 6.8 to 9.0 GB | 2.9 to 9.5 min |
+| 1 mm | 0.25 | 227,264 to 229,589 | 16 | 4 | 7.5 to 10.5 GB | 3 to 11 min |
+| 1.5 mm | 0.25 | 264,536 to 267,242 | 19 | 4 | 8.7 to 11.7 GB | 4 to 11 min |
+| 2 mm | 0.25 | 289,384 to 292,344 | 21 | 4 | 9.4 to 12.9 GB | 3 to 12 min |
 
-Each solve is GMRES with hypre's AMS, at about 33 kB a mesh node, and 44 kB at the first angle of each gap, where the three coils are driven in turn, on 2 MPI ranks or 4 alike; a 16 GB machine runs two at once (`--jobs 2`) where a solve stays under 7 GB. Level 0.25 is the default (`--level` makes the copper's mesh finer); see [S0's README](../S0_1x_OD21_2L_tiny/README.md#what-the-solver-does) for what a finer mesh moves.
+Each solve is GMRES with hypre's AMS, at about 33 kB a mesh node, and 44 kB at the first angle of each gap, where the three coils are driven in turn (6.0 to 12.9 GB here), on 2 MPI ranks or 4 alike; a 16 GB machine runs two at once (`--jobs 2`) where a solve stays under 7 GB. Level 0.25 is the default (`--level` makes the copper's mesh finer); see [S0's README](../S0_1x_OD21_2L_tiny/README.md#what-the-solver-does) for what a finer mesh moves.
 
     cd "Palace Simulation"
     python simulation.py                      # the rotor away, then 0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5 degrees, at a 1 mm gap
