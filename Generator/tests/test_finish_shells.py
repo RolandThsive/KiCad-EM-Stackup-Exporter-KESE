@@ -1,11 +1,13 @@
 """The finish shells' air (kese/s4_geometry/shells.py, finish_shells.py, finish_bores.py) cut bore by bore, each by
-the solid near it alone (air_near), a span's bores worked on in groups, and an inner layer whose
-copper comes nowhere near the board edge left without air at once: every part's finish comes out,
-height by height, as the cut by the whole board's union makes it, but for slivers thinner than a
-grid step where an edge crossing rounds onto the grid another way.  A big part of the solid is cut
-into tiles that fill it and do not overlap, a tile whose corner a hole touches is cut exactly, bores
-whose shells could meet are put in one group (a hole with no drill too), and where there is no solid
-the band is all air.  Takes about half a minute.
+the solid near it alone (air_near), and a span's bores worked on in groups: every part's finish
+comes out, height by height, as the cut by the whole board's union makes it, but for slivers thinner
+than a grid step where an edge crossing rounds onto the grid another way.  A big part of the solid
+is cut into tiles that fill it and do not overlap, a tile whose corner a hole touches is cut
+exactly, bores whose shells could meet are put in one group (a hole with no drill too), and where
+there is no solid the band is all air.  The board's outline is routed after the finish goes on: the
+air beside the outer copper stops at the board edge, and with the edge not plated no finish stands
+outside the board (the castellations' cut ends and the copper the edge cuts are bare).  Takes about
+half a minute.
 
     python -m pytest tests/test_finish_shells.py    (or:  python tests/test_finish_shells.py)"""
 import numpy as np
@@ -58,18 +60,27 @@ def test_bores_whose_shells_could_meet_share_a_group():
     assert finish_bores.bore_groups(rings[:3], 0.01) == [[0, 1, 2]]
 
 
-def test_an_inner_band_inside_the_outline_has_no_air_and_joins_nothing():
-    outline, copper = box(0, 0, 10, 10), box(1, 1, 2, 2)
-    saved = finish_shells.union
-    finish_shells.union = lambda regions: (_ for _ in ()).throw(AssertionError("joined"))
-    try:
-        assert finish_shells.air_beside([copper, outline], False)(box(0.5, 0.5, 3, 3)).is_empty
-    finally:
-        finish_shells.union = saved
-    edge = finish_shells.air_beside([copper, outline], False)(box(9, 4, 11, 6))      # past the edge
-    assert abs(edge.area - 2) < 1e-9
-    outer = finish_shells.air_beside([copper], True)(box(0.5, 0.5, 3, 3))           # an outer layer
-    assert abs(outer.area - (2.5 ** 2 - 1)) < 1e-9
+def test_the_air_beside_the_outer_copper_stops_at_the_board_edge():
+    outline, copper = box(0, 0, 10, 10), box(8, 4, 10, 6)            # copper the edge cuts at x = 10
+    band = box(9, 3, 11, 7)
+    assert abs(finish_shells.air_beside([copper])(band).area - 6) < 1e-9
+    inside = finish_shells.inside(finish_shells.air_beside([copper]), outline)(band)
+    assert abs(inside.area - 2) < 1e-9 and inside.within(outline)
+
+
+def test_with_the_edge_not_plated_no_finish_stands_outside_the_board():
+    """Board 16's castellations and the copper its edge cuts, the edge plating off: every finish
+    prism lies inside the outline, and the castellations still have their bore side's finish."""
+    with settings({"Copper.EDGE_PLATING": "no"}):
+        r, _ = run_stages(FEATURES / "16_edge_plating_castellation.kicad_pcb", resolve)
+        geometry.geometry(r, "simulation")
+        prisms = finish_prisms(r, near=True)
+    assert any(h.castellated for h in r.items.holes)
+    board = r.outline.buffer(0.5 * sh.grid(), join_style="mitre")
+    outside = [(p.part, p.layer, sh.diff(p.region, board).area) for p in prisms if not p.region.within(board)]
+    assert not outside, outside[:5]
+    bores = union([r.to_board_T(h.drill) for h in r.items.holes if h.castellated])
+    assert sum(p.region.intersection(bores).area for p in prisms if p.layer == "Edge.Finish") > 0
 
 
 def test_the_air_near_no_solid_is_the_band_and_an_empty_band_has_none():
@@ -88,7 +99,7 @@ def finish_prisms(r, near):
             joined = sh.snap(union(list(regions)))
             return lambda band: sh.diff(band, joined)
         finish_shells.air_near = finish_bores.air_near = whole
-        finish_shells.air_beside = lambda solid, outer: lambda band: sh.diff(band, sh.snap(union(solid)))
+        finish_shells.air_beside = lambda solid: lambda band: sh.diff(band, sh.snap(union(solid)))
     try:
         with settings({"Geometry.FINISH_BORES_AT_A_TIME": 7 if near else 10 ** 9}):
             ps = PrismSet(regions=r)

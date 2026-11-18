@@ -490,9 +490,10 @@ items apart kept apart, the area within a grid step of the exact union and neare
 on the grid, no burr past the board edge once clipped to the outline, and the union on the grid
 used where GEOS refuses, in under a second (`python tests/test_copper_union.py`);
 `tests/test_finish_shells.py`, which cuts the finish shells' air bore by bore, each by the solid
-near it alone, and leaves an inner layer whose copper comes nowhere near the board edge without
-air, joining nothing; finds every finish prism of seven test boards as the cut by the whole board's
-union makes it, but for slivers thinner than a grid step; and finds a big part of the solid cut into
+near it alone; finds every finish prism of seven test boards as the cut by the whole board's
+union makes it, but for slivers thinner than a grid step; stops the air beside the outer copper at
+the board edge, and on 16_edge_plating_castellation with the edge not plated finds no finish
+outside the board, the castellations keeping theirs on their bore side; and finds a big part of the solid cut into
 tiles that fill it and do not overlap, a tile whose corner a hole touches cut exactly (GEOS's quick
 clip keeps only the hole's corner piece there), bores whose shells could meet put in one group (a hole with
 no drill too), and the band given back where there is no solid, in about half a minute
