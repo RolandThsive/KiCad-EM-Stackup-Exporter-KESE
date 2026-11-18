@@ -30,7 +30,7 @@ what came out. The inductive encoder coils are in `Examples/Inductive Coils/`, o
 |---|---|---|---|---|
 | [E01_circular_loop](Examples/E01_circular_loop/) | L and R of one loop at 10 kHz and 3.5 MHz, a mesh ladder | to be solved after the coil boards | 4 cores, 15 GB | |
 | [E02_coaxial_loops](Examples/E02_coaxial_loops/) | M between two coaxial loops, the TX's L beside an open loop, reciprocity | to be solved after the coil boards | 4 cores, 15 GB | |
-| [Inductive Coils](Examples/Inductive%20Coils/) | SIN and COS against the rotor's angle on six boards, at 0.1, 0.5, 1, 1.5 and 2 mm air gaps | S0 and S0 with the TX on top solved at every gap, 82 solves: SIN's amplitude from 1.00 nH (2 mm) to 6.44 nH (0.1 mm), the angle error 0.1° to 0.7° rms from 0.5 to 2 mm and up to 1.5° at 0.1 mm, every solve converged, the TX's L from its port and from the field's energy within 0.0018 %, reciprocity within 0.00015 %; the other 4 boards are being solved | 4 cores, 15 GB | 17 to 18 Nov 2026 |
+| [Inductive Coils](Examples/Inductive%20Coils/) | SIN and COS against the rotor's angle on six boards, at 0.1, 0.5, 1, 1.5 and 2 mm air gaps | S0, S0 with the TX on top, the 22 mm board and the 22 mm board opened by cuts solved at every gap, 164 solves: SIN's amplitude from 1.00 nH (2 mm) to 6.66 nH (0.1 mm), the angle error 0.1° to 0.7° rms from 0.5 to 2 mm and up to 1.5° at 0.1 mm, every solve converged, the TX's L from its port and from the field's energy within 0.0021 %, reciprocity within 0.00018 %; the other 2 boards are being solved | 4 cores, 15 GB | 17 to 18 Nov 2026 |
 
 ## Licence
 
