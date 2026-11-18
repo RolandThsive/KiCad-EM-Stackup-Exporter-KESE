@@ -223,7 +223,7 @@ file name and the OBJ object and material names carry it sanitised (the rule in 
 | via resin | `Via Resin`: the plugs and resin fills of KiCad 10's protected vias |
 | mask | `Top Solder Mask`, `Bottom Solder Mask`; visual mode also `Top Mask over Copper`, `Bottom Mask over Copper` |
 | silk | `Top Silkscreen`, `Bottom Silkscreen` |
-| finish | `Top Finish Nickel`, `Bottom Finish Gold`, `Edge Finish Nickel` (plated edge, castellations, inner copper cut by the edge), `Hole Finish Gold` (inside the plated holes), or `Top Finish Gold_<net>` |
+| finish | `Top Finish Nickel`, `Bottom Finish Gold`, `Edge Finish Nickel` (plated edge, castellations), `Hole Finish Gold` (inside the plated holes), or `Top Finish Gold_<net>` |
 
 Net names are used as KiCad shows them: the escapes KiCad stores for characters a net name cannot
 hold (`{slash}`, `{colon}`, `{dblquote}` and the rest of KiCad's `UnescapeString`) are turned back

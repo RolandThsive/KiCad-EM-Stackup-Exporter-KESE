@@ -490,9 +490,10 @@ items apart kept apart, the area within a grid step of the exact union and neare
 on the grid, no burr past the board edge once clipped to the outline, and the union on the grid
 used where GEOS refuses, in under a second (`python tests/test_copper_union.py`);
 `tests/test_finish_shells.py`, which cuts the finish shells' air bore by bore, each by the solid
-near it alone, and leaves an inner layer whose copper comes nowhere near the board edge without
-air, joining nothing; finds every finish prism of seven test boards as the cut by the whole board's
-union makes it, but for slivers thinner than a grid step; and finds a big part of the solid cut into
+near it alone; finds every finish prism of seven test boards as the cut by the whole board's
+union makes it, but for slivers thinner than a grid step; stops the air beside the outer copper at
+the board edge, and on 16_edge_plating_castellation with the edge not plated finds no finish
+outside the board, the castellations keeping theirs on their bore side; and finds a big part of the solid cut into
 tiles that fill it and do not overlap, a tile whose corner a hole touches cut exactly (GEOS's quick
 clip keeps only the hole's corner piece there), bores whose shells could meet put in one group (a hole with
 no drill too), and the band given back where there is no solid, in about half a minute
@@ -518,9 +519,15 @@ same with a big board's STEP parts written into files of their own and joined, n
 behind, in about fifteen seconds (`python tests/test_full_disk.py`);
 `tests/test_hatch.py`, which draws KiCad 10's hatched fills as KiCad does: lines ten pens apart, or
 the larger side over 100, at 45 degrees, a cross hatch's grid of square holes, the knockouts and
-their margins and which items knock out which hatch, the fill word as KiCad 10 writes it, and the
-copper, silkscreen and mask of featureTest/27 round each hatched drawing as KiCad 10 draws them, to
-0.3 %, in under a second (`python tests/test_hatch.py`);
+their margins and which items knock out which hatch (another footprint's courtyard on the
+drawing's side among them, on a board of two footprints, one courtyard drawn as four lines), the
+fill word as KiCad 10 writes it, and the copper, silkscreen and mask of featureTest/27 round each
+hatched drawing as KiCad 10 draws them, to 0.3 %, in under a second (`python tests/test_hatch.py`);
+`tests/test_pad_rules.py`, which reads pads and vias as KiCad's parser does: a chamfer making a pad
+of any shape word a chamfered rectangle, with KiCad's ratios where the file gives none (0.25
+rounding and 0.2 chamfer on the front, none on a padstack layer), and `remove_unused_layers`,
+`keep_end_layers` and `start_end_only` setting the rings' mode word by word, in the file's order,
+a via's and a pad's by their own rules, in a moment (`python tests/test_pad_rules.py`);
 `tests/test_machining.py`, which cuts KiCad 10's backdrills, counterbores and countersinks: a
 counterbore to its depth from the copper face (a floor inside an inner copper layer too), a
 countersink within its tolerance of the cone and with the cone's volume, the copper knocked out

@@ -15,7 +15,7 @@ Whether the finish is built is in `parameters/PCB_elements/Stackup.py`
 |---|---|---|
 | `top_finish` | the finish on the top copper the mask leaves bare, its tops and its side walls | `Top Finish <metal>` |
 | `bottom_finish` | the same on the bottom copper | `Bottom Finish <metal>` |
-| `hole_finish` | the finish inside the plated holes, on the plated board edge and the castellations, and on inner copper the board edge cuts | `Hole Finish <metal>`, `Edge Finish <metal>` |
+| `hole_finish` | the finish inside the plated holes, on the plated board edge and in the castellations | `Hole Finish <metal>`, `Edge Finish <metal>` |
 
 The finish adds its own thin solids on the copper, in every format and both modes; it never
 changes the copper itself. A line set to `False` leaves its parts out, and the short name
@@ -43,12 +43,15 @@ mask over bare copper"; no finish deposits through the cured mask). So KESE puts
 | Copper | Finish | Part |
 |---|---|---|
 | the top face of the outer copper in the mask openings (pads with their pad-to-mask clearance, drawn openings, untented vias) | stacked upward on the face, equation (15.2) | `Top Finish <metal>`, `Bottom Finish <metal>` |
-| the side walls of that copper, where they meet the air: pads and traces in the openings, and the outer copper the board edge cuts | a shell beside the wall, equation (15.3), joined to the face's finish over the top corner | the same part as the face |
-| the inner copper the board edge cuts (beside a castellation, say) | a shell beside the cut face, over the copper's height | `Edge Finish <metal>` |
-| the plated board edge and the castellations' part-barrels (section 15.2.1) | a shell from the bottom of `B.Cu` to the top of `F.Cu` | `Edge Finish <metal>` |
+| the side walls of that copper, where they meet the air inside the board: pads and traces in the openings | a shell beside the wall, equation (15.3), joined to the face's finish over the top corner | the same part as the face |
+| the plated board edge, and the castellations' part-barrels on their bore side (section 15.2.1) | a shell from the bottom of `B.Cu` to the top of `F.Cu` | `Edge Finish <metal>` |
 | inside the bore of every plated hole open at a face | a shell over the barrel's whole length | `Hole Finish <metal>` |
 
-Copper under the mask gets no finish, and a wall the mask touches none either. Neither does copper
+Copper the board edge cuts gets none on its cut face, on the outer layers or the inner ones: the
+board is routed out of its panel after the finish goes on, the last step of the fabrication
+([Eurocircuits, making a PCB](https://www.eurocircuits.com/technical-guidelines/pcb-manufacturing-technology/making-a-pcb-pcb-manufacture-step-by-step/);
+[NCAB, PCB production process](https://www.ncabgroup.com/pcb-production-process/)), so the router
+leaves the copper it cuts bare. Copper under the mask gets no finish, and a wall the mask touches none either. Neither does copper
 under silkscreen ink kept in an opening (`SilkScreen.SILKSCREEN_OVER_COPPER = True`): the legend is
 taken as printed before the finish. A hole closed at both faces gets no finish inside: a buried
 hole, or a via tented on both faces (the mask closes it, so no liquid gets in); a via tented on one
@@ -113,8 +116,14 @@ wall as it covers the pads; ENIG is the usual finish there, and an edge left und
 mask is plated but never finished
 ([JLCPCB, PCB edge plating guide](https://jlcpcb.com/blog/pcb-edge-plating-guide);
 [Sierra Circuits, side plating](https://www.protoexpress.com/kb/side-plating/)). Castellations are
-plated holes cut through by the board edge; KESE finishes their part-barrels and their cut ends the
-same way.
+plated holes cut through by the board edge, and the cut is made with the board's outline, after the
+finish: the hole is plated and finished whole, then routed through
+([JLCPCB, castellated PCBs](https://jlcpcb.com/blog/142-castellated-pcbs-introduction-and-design-requirements):
+the half-holes are cut "during the final routing phase", and ENIG is mandatory for a castellated
+slot of 5 mm or more; [Best Technology, castellated PCB](https://www.bestpcbs.com/blog/2026/08/castellated-pcb/):
+plate the hole, apply the finish, route through the barrels). So a part-barrel keeps the finish on
+its bore side, and its cut ends are bare copper, but where the board edge is plated: there the
+edge is routed before the plating, and the finish covers the cut ends too.
 
 Across a wall the shells are 2D shapes, so each metal is drawn a whole number of grid steps
 (`Geometry.SNAP_GRID_MM`, 0.1 µm) thick, at least one: ENIG's 0.08 µm gold is drawn 0.1 µm thick

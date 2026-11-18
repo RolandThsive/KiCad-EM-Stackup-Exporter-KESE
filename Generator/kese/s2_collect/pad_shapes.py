@@ -11,6 +11,8 @@ from kese.s2_collect.hatch import hatch_of
 
 def pad_shape(items, pad, w, h):
     shape = pad[3]
+    if num(pad, "chamfer_ratio", 0.0) > 0 or chamfer_corners(pad):
+        shape = "roundrect"            # KiCad makes any pad that has a chamfer a chamfered rectangle (parsePAD)
     if shape == "circle":
         return disk((0, 0), w / 2)
     if shape == "rect":
@@ -49,15 +51,21 @@ def oval(w, h):
 
 
 CORNERS = {"top_left": (-1, -1), "top_right": (1, -1), "bottom_right": (1, 1), "bottom_left": (-1, 1)}
+CHAMFER_RATIO = 0.2        # a pad's chamfer when it lists corners but gives no ratio (pad.cpp, PAD::PAD)
+
+
+def chamfer_corners(pad):
+    """The corners a pad's (chamfer ...) lists, as (x, y) signs in KiCad's frame (top is -y)."""
+    c = child(pad, "chamfer")
+    return [CORNERS[str(a)] for a in (c[1:] if c else []) if str(a) in CORNERS]
 
 
 def chamfered(pad, rounded, w, h):
     """A rounded rectangle pad with the corners its (chamfer ...) lists cut straight, the cut's legs
     chamfer_ratio x the shorter side, and those corners not rounded (KiCad's chamfered rectangle,
     TransformRoundChamferedRectToPolygon).  KiCad's frame: top is -y."""
-    c = child(pad, "chamfer")
-    cut = num(pad, "chamfer_ratio", 0.0) * min(w, h)
-    corners = [CORNERS[str(a)] for a in (c[1:] if c else []) if str(a) in CORNERS]
+    cut = num(pad, "chamfer_ratio", CHAMFER_RATIO) * min(w, h)
+    corners = chamfer_corners(pad)
     if not corners:
         return rounded
     sharp = [box(min(0, sx * w / 2), min(0, sy * h / 2), max(0, sx * w / 2), max(0, sy * h / 2)) for sx, sy in corners]

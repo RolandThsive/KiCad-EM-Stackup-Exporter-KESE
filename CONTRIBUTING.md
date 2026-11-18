@@ -121,6 +121,7 @@ python tests/test_copper_union.py # a net's copper joined with no crack and no b
 python tests/test_finish_shells.py # the finish's air cut bore by bore, as the whole board's union cuts it
 python tests/test_mask.py        # no slivers of mask on the copper where an opening follows a pad's edge: the finish covers them
 python tests/test_hatch.py       # KiCad 10's hatched fills, against what KiCad 10 itself draws
+python tests/test_pad_rules.py   # a pad's chamfer and the "remove unused layers" words, as KiCad's parser reads them
 python tests/test_machining.py   # KiCad 10's backdrills, counterbores and countersinks, against KiCad 10 and the cone
 python tests/test_via_protection.py # KiCad 10's via covering, plugging, capping and filling, as the file and the board say
 python tests/test_pairs.py       # pieces within a distance of each other, as an STRtree finds them; a tree threads share
@@ -131,7 +132,7 @@ python tests/test_step_arcs.py   # true arcs and cylinders in STEP (Step.STEP_EX
 python tests/test_boards.py      # every test board through both modes, against tests/baseline.json
 ```
 
-`python -m pytest tests` runs all thirty. When a change is meant to move the geometry, re-record the
+`python -m pytest tests` runs all thirty-two. When a change is meant to move the geometry, re-record the
 baseline with `python tests/test_boards.py --accept` and say why in the pull request; a new board is
 recorded with `python tests/test_boards.py --add`, which leaves the others as they are. What several test
 files share (the folders, settings changed for a block, a board run through the first stages, the plain

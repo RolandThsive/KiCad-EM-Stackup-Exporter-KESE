@@ -1,8 +1,8 @@
 """Vias: a ring on every copper layer they span, a plated hole, and whether each end is tented."""
-from kese.core.sexp import atoms, child, num, pt
+from kese.core.sexp import atoms, child, num, pt, yes
 from kese.core.shapes2d import disk, union
 from kese.model.items import Hole
-from kese.s1_read.parse_kicad_version import (flag, net_class_vias, padstack_entries, via_size, via_tenting,
+from kese.s1_read.parse_kicad_version import (net_class_vias, padstack_entries, via_size, via_tenting,
                                               zone_layer_connections)
 from kese.s2_collect.left_out import count_padstack
 from kese.s2_collect.machining import machine
@@ -10,6 +10,11 @@ from kese.s2_collect.nets import net_name
 from parameters import P
 
 OFF_BOARD = "vias on a copper layer the board does not have"     # a damaged file
+# which rings "remove unused layers" leaves (PADSTACK::UNCONNECTED_LAYER_MODE)
+KEEP_ALL, REMOVE_ALL, KEEP_ENDS, ENDS_ONLY = "keep all", "remove all", "keep ends", "ends only"
+# word -> (the mode it sets when on, the mode it sets on a pad when off); off, a via's word changes nothing
+RING_TOKENS = {"remove_unused_layers": (REMOVE_ALL, KEEP_ALL), "keep_end_layers": (KEEP_ENDS, REMOVE_ALL),
+               "start_end_only": (ENDS_ONLY, None)}
 
 
 def add_via(ctx, node):
@@ -27,15 +32,14 @@ def add_via(ctx, node):
     span = ctx.span(ends[0], ends[-1]) if len(ends) >= 2 else ctx.layers
     pad = disk((x, y), size / 2)
     sizes = padstack_sizes(node, ctx.layers)
-    prune = C.HONOUR_REMOVE_UNUSED_LAYERS and flag(node, "remove_unused_layers")
-    keep_ends = flag(node, "keep_end_layers")
-    ends_only = C.HONOUR_REMOVE_UNUSED_LAYERS and flag(node, "start_end_only")
+    mode = ring_mode(node, via=True) if C.HONOUR_REMOVE_UNUSED_LAYERS else KEEP_ALL
     forced, zones_count = zone_layer_connections(node)
     for l in span:
         ring = disk((x, y), sizes[l] / 2) if l in sizes else pad
-        if ends_only and l not in (span[0], span[-1]):
+        tip = l in (span[0], span[-1])
+        if mode == ENDS_ONLY and not tip:
             items.found["via rings removed on unconnected layers"] += 1
-        elif prune and not (keep_ends and l in (span[0], span[-1])) and l not in forced:
+        elif (mode == REMOVE_ALL or (mode == KEEP_ENDS and not tip)) and l not in forced:
             ctx.conditional_pads.append((l, ring, net, zones_count))
         else:
             items.copper_items[l].append((ring, net))
@@ -46,6 +50,26 @@ def add_via(ctx, node):
     items.via_tenting.append((pad, span, via_tenting(node, items.tent_default)))
     count_padstack(items, node, "vias")
     machine(ctx, node, len(items.holes) - 1, (x, y), "vias")
+
+
+def ring_mode(node, via):
+    """Which rings of a via or through-hole pad "remove unused layers" leaves, as KiCad's parser sets it
+    token by token, in the file's order: for a via each of remove_unused_layers, keep_end_layers and
+    start_end_only that is on sets its mode, so keep_end_layers alone keeps the ends and makes the
+    rest conditional (PCB_VIA::SetKeepStartEnd); for a pad remove_unused_layers sets "remove all" or
+    "keep all" and keep_end_layers "keep ends" or "remove all" (PAD::SetRemoveUnconnected,
+    SetKeepTopBottom).  A bare token, (token) and (token yes) are on, as KiCad reads them."""
+    mode = KEEP_ALL
+    for c in node[1:]:
+        name = str(c[0] if isinstance(c, list) and c else c)
+        if name not in RING_TOKENS or (name == "start_end_only" and not via):
+            continue
+        on_mode, pad_off = RING_TOKENS[name]
+        if not isinstance(c, list) or len(c) < 2 or yes(c[1]):
+            mode = on_mode
+        elif not via:
+            mode = pad_off
+    return mode
 
 
 def drop_unconnected_rings(ctx):

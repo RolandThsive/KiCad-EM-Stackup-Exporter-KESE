@@ -4,11 +4,12 @@ from shapely import affinity
 from kese.core.sexp import atoms, child, number, numbers, pt
 from kese.core.shapes2d import EMPTY, disk
 from kese.model.items import Hole
-from kese.s1_read.parse_kicad_version import flag, mask_margin, padstack_entries, zone_layer_connections
+from kese.s1_read.parse_kicad_version import mask_margin, padstack_entries, zone_layer_connections
 from kese.s2_collect.left_out import count_padstack
 from kese.s2_collect.machining import machine
 from kese.s2_collect.nets import net_name
 from kese.s2_collect.pad_shapes import oval, pad_shape
+from kese.s2_collect.vias import KEEP_ALL, KEEP_ENDS, ring_mode
 from parameters import P
 
 KICAD_DEFAULT_DRILL = 0.762            # pad.cpp PAD::PAD: a pad's drill is 30 mils until the file says
@@ -76,12 +77,12 @@ def add_pad(ctx, pad, T, fp_margin):
     else:
         # KiCad's "remove unused layers" on a through-hole pad: a ring stays only where copper meets it,
         # but on the outer layers when keep_end_layers says so (as for vias, s2_collect/vias.py)
-        prune = ptype == "thru_hole" and C.HONOUR_REMOVE_UNUSED_LAYERS and flag(pad, "remove_unused_layers")
-        keep = ("F.Cu", "B.Cu") if flag(pad, "keep_end_layers") else ()
+        mode = ring_mode(pad, via=False) if ptype == "thru_hole" and C.HONOUR_REMOVE_UNUSED_LAYERS else KEEP_ALL
+        keep = ("F.Cu", "B.Cu") if mode == KEEP_ENDS else ()
         forced, zones_count = zone_layer_connections(pad)
         for l in layers:
             if l in ctx.layers:
-                if prune and l not in keep and l not in forced:
+                if mode != KEEP_ALL and l not in keep and l not in forced:
                     ctx.conditional_pads.append((l, shape_on(l), net, zones_count))
                 else:
                     items.copper_items[l].append((shape_on(l), net))
@@ -137,6 +138,8 @@ def padstack_layers(pad, copper):
         rest = [c for c in pad[4:] if not (isinstance(c, list) and c and c[0] in SHAPE_KEYS)]
         if child(entry, "size") is None:
             body.append(child(pad, "size"))
+        # a padstack layer starts from no rounding and no chamfer, never the front's (PADSTACK::CopperLayer)
+        body += [[key, "0"] for key in ("roundrect_rratio", "chamfer_ratio") if child(entry, key) is None]
         node = ["pad", pad[1], pad[2], str(sh[1]) if sh else pad[3], *body, *rest]
         out.update((l, node) for l in layers)
     return out

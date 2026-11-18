@@ -1,8 +1,8 @@
 """Hatched fills of drawings (KiCad 10, (fill hatch|reverse_hatch|cross_hatch)): the copper, mask
 opening or ink KiCad draws inside a hatched circle, rectangle or polygon besides its outline
 (EDA_SHAPE::UpdateHatching in eda_shape.cpp), cut back from the drawings and text near it on its
-layer (PCB_SHAPE::getHatchingKnockouts in pcb_shape.cpp).  The knockouts need every item of the
-layer, so the hatches are worked out once the whole board is collected (finish)."""
+layer and from other footprints' courtyards (PCB_SHAPE::getHatchingKnockouts in pcb_shape.cpp).  The
+knockouts need every item, so the hatches are worked out once the whole board is collected (finish)."""
 import math
 from dataclasses import dataclass
 
@@ -42,7 +42,7 @@ class Knockout:
     """A drawing or text that cuts back the hatch of another drawing of its layer."""
     layer: str
     footprint: object
-    kind: str                        # "shape", "text", "field" (a footprint's reference, value, ...) or "textbox"
+    kind: str                        # "shape", "text", "field" (reference, value, ...), "textbox" or "courtyard"
     bounds: tuple
     make: object                     # margin (mm) -> the shape it knocks out
     key: int = 0
@@ -91,8 +91,6 @@ def hatch_segments(shape, slope, spacing):
     else:
         lo, hi = y0 - slope * x0, y1 - slope * x1
     ks = np.arange(math.ceil(lo / spacing), math.ceil(hi / spacing))
-    if not len(ks):
-        return []
     xa, xb = x0 - 1e3, x1 + 1e3
     lines = [LineString([(xa / NM, (slope * xa + k * spacing) / NM), (xb / NM, (slope * xb + k * spacing) / NM)])
              for k in ks]
@@ -156,16 +154,18 @@ def cross_hatch(shape, w, grid, knockouts):
 
 
 def knocks(pending, k):
-    """Whether knockout k cuts the hatch of `pending`: same layer, boxes that meet, and not text
-    boxes or plain text of a footprint, nor the hatched drawing's own footprint's items."""
-    if k.layer != pending.layer or k.key == pending.key:
+    """Whether knockout k cuts the hatch of `pending`: same layer (a courtyard: the courtyard of the
+    drawing's side, the front's for an inner layer: FOOTPRINT::GetCourtyard), boxes that meet, and not
+    text boxes or plain text of a footprint, nor the hatched drawing's own footprint's items."""
+    side = ("B." if pending.layer.startswith("B.") else "F.") + "CrtYd"
+    if k.layer != (side if k.kind == "courtyard" else pending.layer) or k.key == pending.key:
         return False
     a, b = pending.bounds, k.bounds
     if a[2] < b[0] or b[2] < a[0] or a[3] < b[1] or b[3] < a[1]:
         return False
     if k.footprint is None:                          # board items: drawings, text and text boxes
         return True
-    return k.footprint != pending.footprint and k.kind in ("shape", "field")
+    return k.footprint != pending.footprint and k.kind in ("shape", "field", "courtyard")
 
 
 def pen_growth(pen):

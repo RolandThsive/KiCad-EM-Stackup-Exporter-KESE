@@ -28,7 +28,7 @@ Per copper layer, these items are collected with their net (text always as no ne
 | `segment` (track) | the centre line thickened by the track width, round ends; a track left bare by the solder mask (KiCad 9 and later) also opens the mask, see [Solder Masks](Solder-Masks.md#171-kicads-mask-layers-are-negative) |
 | `arc` (arc track) | the arc flattened to `Geometry.ARC_STEP_DEG` steps, thickened; left bare by the solder mask, it opens the mask as a track does |
 | `via` | a disc of the via's size on every layer it spans, except rings dropped by KiCad's "remove unused layers" (see 13.3) |
-| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 13.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
+| `pad` | the pad shape (circle, rect, oval, roundrect, trapezoid, custom with anchor and primitives; a chamfered rectangle has the corners its `chamfer` lists cut straight, legs `chamfer_ratio` x the shorter side, and those corners not rounded; as in KiCad's parser, a `chamfer_ratio` above 0 or a `chamfer` list makes any pad a chamfered rectangle whatever its shape word, rounded by 0.25 of its shorter side and cut by 0.2 of it where the file gives no ratio, and a padstack layer that gives no ratio has none) at its position and angle, with the drill offset, on each copper layer the pad lists (`*.Cu`, `F&B.Cu` expanded), except inner rings of a through-hole pad dropped by "remove unused layers" (see 13.3.1); an NPTH pad gives its hole, and a copper ring only where KiCad flashes it (`PAD::FlashLayer`): not for a round (or oval) pad no bigger than its round (or oval) drill and not offset |
 | `zone` fill | the `filled_polygon` polygons stored in the file; a fill KiCad 5 drew with a pen (a file older than format 20250210 without `(filled_areas_thickness no)`) grows by half the zone's `min_thickness`, round at the corners, as KiCad does when it opens such a file; a KiCad 4 or 5 zone stored only as `fill_segments` is those segments, each drawn with a pen of `min_thickness` |
 | `gr_*` / `fp_*` graphics on a copper layer | lines and arcs thickened by their stroke width; filled shapes filled (with no `fill` in the file, as KiCad reads it: a circle or rectangle of width 0, and a polygon off Edge.Cuts); a self-crossing polygon keeps every lobe; unfilled closed shapes as their outline stroke; rectangles with their rounded corners (KiCad 10); a hatched circle, rectangle or polygon (KiCad 10) as its outline and the hatch inside it (13.1.2); a drawing left bare by the solder mask (KiCad 9 and later) also opens the mask, as a track does |
 | text on a copper layer | the stroke-font glyphs, as on silkscreen; knockout text (`(layer "F.Cu" knockout)`) is the text's box, square to the text and grown by max(pen / 2, height / 9), with the letters cut out |
@@ -125,6 +125,11 @@ layers alike:
   the box of its letters grown as much, a text box by its box; of the items in footprints only the
   drawings and fields (reference, value, ...) do, and not those of the shape's own footprint, as in
   KiCad;
+- the courtyard of every other footprint cuts the hatch back too, with no margin: the back
+  courtyard (`B.CrtYd`) on the back layers and the front one on the others, inner copper included,
+  built as KiCad builds it (the courtyard's lines and arcs chained where their ends lie within
+  0.02 mm, then shrunk by 5 µm; `FOOTPRINT::BuildCourtyardCaches`); a courtyard that does not close
+  cuts nothing;
 - on copper the hatch belongs to the shape's net; a hatched copper shape the mask leaves bare opens
   the mask over the whole shape, as KiCad's mask Gerber does.
 
@@ -249,8 +254,13 @@ file older than KiCad 7 has no such list, and zones count like any copper.
 
 The start and end layers are always kept when the via or pad says `keep_end_layers`. A KiCad 10
 via with `(start_end_only yes)` keeps its rings on its start and end layers only, whatever meets
-it. `report.txt` counts the rings removed under `via rings removed on unconnected layers` (pad
-rings included).
+it. The three words are read as KiCad's parser reads them, one after another in the file's order:
+for a via each one that is on sets its mode, so `keep_end_layers` on its own also makes the inner
+rings conditional and a later word overrides an earlier one; for a pad `remove_unused_layers` turns
+the option on or off and `keep_end_layers` keeps or drops the outer rings (`PCB_VIA::SetKeepStartEnd`,
+`PAD::SetKeepTopBottom`). KiCad writes them only in the combinations it reads back the same way,
+so this matters for a file edited by hand or written by another tool. `report.txt` counts the
+rings removed under `via rings removed on unconnected layers` (pad rings included).
 
 ### 13.3.2 Via Tenting
 
@@ -264,6 +274,12 @@ mask's, `SolderMask.VIA_TENTING` (`Copper.VIA_TENTING` before 25.2, which still 
 | `"file"` (default) | follow the board: the default comes from KiCad 9 / 10 `(tenting ...)` in Board Setup, else the older plot setting `viasonmask`, else KiCad's default (tented); a via's own `(tenting ...)` then overrides that default for that via, whichever source it came from: KiCad 9's short form (`(tenting front back)`, `(tenting front)`, `(tenting none)`) is the complete list of tented sides, so `none` opens both; KiCad 10's `(tenting (front yes) (back no))` sets each side it names |
 | `"tented"` | mask over every via's ring (the bore stays open) |
 | `"open"` | mask open over every via's pad, with the pad-to-mask clearance |
+
+KiCad 10 opens a KiCad 9 file's short form another way: a side the list leaves out, and both sides
+after `none`, follow the board's default instead of being open (`parseFrontBackOptBool` in KiCad
+10's parser, against KiCad 9's `parseTenting`). KESE keeps KiCad 9's reading, which is what the
+KiCad that wrote the file showed and plotted: KiCad 9 writes `none` for a via set to "not tented"
+on both sides, which KiCad 10 would then tent on a board that tents its vias.
 
 `report.txt` names the board's own tenting source on the `vias:` line (`board setup (tenting)`,
 `plot setting viasonmask`, `KiCad default (vias tented)`). That line does not change when
