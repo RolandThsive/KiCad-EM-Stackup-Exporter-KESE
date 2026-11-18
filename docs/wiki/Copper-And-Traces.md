@@ -275,6 +275,12 @@ mask's, `SolderMask.VIA_TENTING` (`Copper.VIA_TENTING` before 25.2, which still 
 | `"tented"` | mask over every via's ring (the bore stays open) |
 | `"open"` | mask open over every via's pad, with the pad-to-mask clearance |
 
+KiCad 10 opens a KiCad 9 file's short form another way: a side the list leaves out, and both sides
+after `none`, follow the board's default instead of being open (`parseFrontBackOptBool` in KiCad
+10's parser, against KiCad 9's `parseTenting`). KESE keeps KiCad 9's reading, which is what the
+KiCad that wrote the file showed and plotted: KiCad 9 writes `none` for a via set to "not tented"
+on both sides, which KiCad 10 would then tent on a board that tents its vias.
+
 `report.txt` names the board's own tenting source on the `vias:` line (`board setup (tenting)`,
 `plot setting viasonmask`, `KiCad default (vias tented)`). That line does not change when
 `VIA_TENTING` is `"tented"` or `"open"`; the override shows only in `parameters.txt`.
