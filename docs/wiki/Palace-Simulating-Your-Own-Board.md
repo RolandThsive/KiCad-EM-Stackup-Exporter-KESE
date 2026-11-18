@@ -45,8 +45,8 @@ files (the mesh, `config.json`, Palace's log and output) go under `case/`, which
 
 E01's command line: `--levels`, `--freqs`, `--ranks`, `--solver`, `--mesh-only` (build the meshes, solve nothing),
 `--mesh KEY=VALUE` (one mesh setting for this run, such as `--mesh grade=0.125`), `--domain-mm R` (the domain's radius
-and half height), `--results FILE` and `--out DIR`. E02 has `--levels`, `--freqs`, `--ranks`, `--solver`,
-`--mesh-only` and `--out`.
+and half height), `--results FILE` and `--out DIR`. E02 has the same but `--domain-mm`, and `--restart N`
+(GMRES restarts every N iterations instead of 300, with fewer vectors and less memory).
 
 ## 64.3 The Coil Board's Settings
 

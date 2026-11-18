@@ -10,8 +10,9 @@ by the bridge.
 > [!NOTE]
 > This category describes work in progress. The coil board `S0d2_1x_OD23_2L_tiny_TX3top_Cut` is solved at every air
 > gap (81 solves, every one converged and passing its checks; see
-> [Palace Test Board Results](Palace-Test-Board-Results.md)). The two proof boards E01 and E02 are built and set up,
-> and their solves are being finished.
+> [Palace Test Board Results](Palace-Test-Board-Results.md)), and the two proof boards E01 and E02 are solved on a
+> mesh ladder and with the coil board's air grading: E01's L lands 0.48 % above the open-arc formula and E02's M
+> 1.17 % above it, both under the closed rings, as they should.
 
 ## 61.1 What Palace Is Used For Here
 

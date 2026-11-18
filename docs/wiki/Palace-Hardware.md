@@ -1,10 +1,7 @@
 # 68. Palace Hardware
 
 What Palace needed on the test machine, and how to estimate a board of your own before you run it. Every number is
-from the results files of `S0d2_1x_OD23_2L_tiny_TX3top_Cut` on the `Palace_Integration` branch.
-
-> [!NOTE]
-> E01's and E02's memory and time join this page when their solves are on the branch.
+from the results files of `S0d2_1x_OD23_2L_tiny_TX3top_Cut`, E01 and E02 on the `Palace_Integration` branch.
 
 ## 68.1 The Test Machine
 
@@ -32,6 +29,21 @@ per-node memory usage`) and writes it into the results.
 A solve needs about **33 kB per mesh node** with the TX driven alone, and about **44 kB** at the first angle of each
 gap, where the three coils are driven in turn (three solves in one), on 2 MPI ranks or 4 alike. A larger gap means
 more air between the boards, so more element layers and more nodes.
+
+On the proof boards, all on 4 MPI ranks (E02 drives both ports in turn):
+
+| Run | Nodes | Solve at 10 kHz | Solve at 3.5 MHz |
+|---|---|---|---|
+| E01, level 0.25 | 18,677 | 219 s, 1.0 GB | 10 s, 0.8 GB |
+| E01, level 1 | 68,808 | 918 s, 3.3 GB | 45 s, 2.5 GB |
+| E01, level 0.75 with the coil board's air | 151,251 | 2258 s, 8.0 GB | 112 s, 5.8 GB |
+| E02, level 0.25 | 30,042 | 677 s, 1.7 GB | 26 s, 1.3 GB |
+| E02, level 1 | 119,637 | 3078 s, 6.3 GB | 160 s, 5.1 GB |
+| E02, level 0.75 with the coil board's air, GMRES restarted every 100 | 303,129 | 608 s, 12.5 GB (at 100 kHz) | 447 s, 12.5 GB |
+
+The 10 kHz solves are slow because GMRES runs to its 3,000 iteration limit there
+([Palace Troubleshooting](Palace-Troubleshooting.md#692-the-linear-solver)). GMRES keeps its restart's worth of
+vectors, so a smaller restart (`--restart 100` on E02) is what fitted 303,129 nodes in 15 GB.
 
 ## 68.3 Time, Measured
 

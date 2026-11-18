@@ -4,8 +4,7 @@ Where the Palace bridge's errors come from, how big each one measured, and what 
 Every number here is from the runs on the `Palace_Integration` branch.
 
 > [!NOTE]
-> The error budget against textbook references comes from E01 and E02, whose solves are being finished; their
-> section below is filled in from their results when they are on the branch. The coil board has no closed-form
+> The error budget against textbook references comes from E01 and E02 (67.7). The coil board has no closed-form
 > reference for M, so its accuracy rests on the checks and the mesh study here.
 
 ## 67.1 The Checks On Every Solve
@@ -80,9 +79,23 @@ a real harmonic, so these are upper bounds on the noise.
 
 ## 67.7 Against The References
 
-E01 and E02 set the bridge against textbook values: Neumann's integral over the open arc and an annular sector's
-resistance for E01, Maxwell's formula for coaxial rings for E02. Their numbers go here when their solves are on the
-branch. On the coil board, the only outside number is the generator's estimate of L TX with the rotor away, 292 nH,
+E01 and E02 set the bridge against textbook values. Palace's port sheet closes each loop across its gap, so a
+converged L or M should lie above the open arcs (the shared reference) and near the closed rings. All on level 0.75 of
+the copper's mesh, from `Examples/E01_circular_loop/results.md` and `Examples/E02_coaxial_loops/results.md`:
+
+| Source | Test | Effect |
+|---|---|---|
+| The copper's mesh | E01, level 0.25 → 0.5 → 0.75 → 1 | L +2.4 %, then slowing to +0.4 % (0.75 to 1); still 2.5 % under the open arc at level 1 |
+| The air's mesh | the coil board's grading (`grade` 0.125, `tet_grade` 0.175, `dz_max` 0.2) at level 0.75 | **E01's L +3.5 %, E02's M +3.6 %**: nine times what refining the copper from level 0.75 to 1 did |
+| The iteration limit at 10 kHz | converged 100 kHz checks against the 10 kHz solves stopped at 3,000 iterations | E01's L 0.01 %, E02's M 0.002 % |
+| Port against field energy | L from the port and from 2W / \|I\|² | within 0.01 % |
+| Reciprocity | E02's M both ways | within 0.03 % on the ladder, to the fourth decimal in the graded run |
+| **Palace against the references** | E01's L, E02's M with the graded air | **55.857 nH, +0.48 % on the open arc (1.4 % under the closed ring); 24.166 nH, +1.17 % on the open arcs (1.0 % under the closed rings)** |
+
+E01's R is 1.6 to 2.2 % above the annular sector's 61.201 mΩ: the half-discs past the round ends' centres add a
+little, and the current crowds where the port's sheet meets each round end along a line. The graded air is what the
+coil board is solved with, so these two boards measure that mesh's error on a coil with a known answer. On the coil
+board, the only outside number is the generator's estimate of L TX with the rotor away, 292 nH,
 against Palace's 281.0 nH (−3.8 %); the generator's figure is an estimate, not a reference.
 
 | Previous | Next |

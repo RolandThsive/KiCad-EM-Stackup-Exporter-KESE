@@ -19,8 +19,11 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| GMRES diverges at 10 kHz | At low frequency the field's gradients in the air cost almost nothing, and the operator AMS works on is all but singular there | Tell AMS so: `AMSSingularOperator: true` in the solver settings (E01 and E02 do). GMRES then converges, slowly (E01: hundreds of iterations) |
+| GMRES diverges at 10 kHz | At low frequency the field's gradients in the air cost almost nothing, and the operator AMS works on is all but singular there | Tell AMS so: `AMSSingularOperator: true` in the solver settings (E01 and E02 do). GMRES then converges, slowly, and on E01 and E02 it stops at its 3,000 iteration limit (next row) |
 | Slow or stalled iterations on an otherwise good mesh | Slivers (tetrahedra with four nearly coplanar corners) in the air | `tet_fill` runs gmsh's optimiser and then Netgen's, which swap and smooth them away without touching the surface |
+| GMRES runs to its 3,000 iteration limit at 10 kHz | The same near-singular operator: it converges slowly, to residuals of 3e-8 to 6e-5 on E01 and E02 | Harmless here: converged 100 kHz checks give the same L to 0.01 % and M to 0.002 % |
+| A large mesh does not fit in memory with GMRES's 300 vectors (E02 with the coil board's air, 303,129 nodes) | GMRES keeps one vector per iteration until it restarts | Restart every 100 iterations (`--restart 100` on E02): 12.5 GB |
+| At 10 kHz a graded, restarted solve does not converge (E02's RX stalled at a residual of 0.65, with plainly wrong numbers) | The short restart and the near-singular operator together | Solve the low frequency at 100 kHz, where AMS needs no singular-operator flag; on E02's default mesh M at 100 kHz and 10 kHz agree to 0.002 % |
 | No direct solver to fall back on | The committed build has none: SuperLU_DIST and STRUMPACK need ParMETIS, and MUMPS's source could not be downloaded on the test machine | Check every solve ([Palace Accuracy](Palace-Accuracy.md#671-the-checks-on-every-solve)); `WITH_MUMPS=1` in `build_palace.sh` builds MUMPS without ParMETIS, untried |
 | A solve reported as not readable | It did not converge, gave the TX a negative resistance, or its L from the port and from the field's energy (or M both ways) differ by more than 1 % | Its chart marks it with a ring and `SINCOS_Results.md` lists it under **Not readable**; its iterations and residual are in the gap's results table |
 
@@ -31,6 +34,7 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 | `Palace not found: see Solver_Palace/README.md, or set PALACE to its launcher` | The bridge looks for `$PALACE`, then `Solver_Palace/install/bin/palace`, then `palace` on the `PATH` | Use the committed build, or set `PALACE` |
 | The committed program does not start | It needs 64-bit Linux with glibc 2.38 or newer and Open MPI 4.1, OpenBLAS, gfortran's runtime and zlib from the system | `bash bridge/setup_machine.sh` installs them, and builds Palace from source where the committed one still does not run |
 | `mpirun` refuses to run as root, or to place more ranks than cores | Open MPI's defaults | The bridge sets `OMPI_ALLOW_RUN_AS_ROOT`, `OMPI_ALLOW_RUN_AS_ROOT_CONFIRM` and `OMPI_MCA_rmaps_base_oversubscribe` for each run |
+| Palace cannot open the mesh with a relative `--out` folder | Palace runs inside the case folder, so a relative mesh path points elsewhere | The proof boards' scripts now make the folder absolute |
 | `Palace failed in <folder> (exit N)` | Palace stopped; the bridge prints the end of its log | Read `palace.log` in that folder: it is written as Palace runs |
 | The machine runs out of memory | The mesh is too large | See [Palace Hardware](Palace-Hardware.md) for the memory per node, and check a mesh's size with `--mesh-only` first |
 

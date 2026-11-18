@@ -16,9 +16,9 @@ rotor. Every board is a folder under `Examples/` on the `Palace_Integration` bra
 | Board | 30 mm × 30 mm, 1.6 mm thick, written by `make_board.py` |
 | Copper | one trace on F.Cu, net `LOOP`: a circle of 10 mm radius to its centre line, 0.5 mm wide, 35 µm thick, opened by a 0.2 mm gap between its round ends |
 | Port | a lumped port of 50 Ω across the gap, through the copper's thickness, from one round end's tip to the other's, direction +Y |
-| What Palace checks | the loop's L and R at 10 kHz (uniform current) and 3.5 MHz (the coil board's frequency), on a mesh ladder of four levels, and L from the field's energy |
-| References | Neumann's double integral over the open arc with the trace's geometric mean distance, bracketed by the arc between the round ends' centres (356.0°) and the arc to the gap's faces (358.9°), at DC and with the current crowded to the edges; Grover's ring formula for the closed ring beside them; the resistance of an annular sector |
-| Status | **being solved**: [Palace Test Board Results](Palace-Test-Board-Results.md#661-e01-circular-loop) |
+| What Palace checks | the loop's L and R at 10 kHz (uniform current) and 3.5 MHz (the coil board's frequency), on a mesh ladder of four levels and once with the coil board's air grading, and L from the field's energy |
+| References | Neumann's double integral over the open arc with the trace's geometric mean distance: 55.590 nH for the arc between the round ends' centres (356.0°), 56.293 nH out to the gap's faces (358.9°); Grover's ring formula for the closed ring, 56.622 nH. Palace's port sheet carries the current across the gap and so closes the loop, so once the mesh is fine enough its L should lie above the open arcs and near the closed ring. Percentages are against the arc between the centres, the reference every solver's branch shares. R against the annular sector's DC resistance, 61.201 mΩ |
+| Status | **run**: [Palace Test Board Results](Palace-Test-Board-Results.md#661-e01-circular-loop) |
 
 ## 65.2 E02 Coaxial Loops
 
@@ -31,9 +31,9 @@ rotor. Every board is a folder under `Examples/` on the `Palace_Integration` bra
 | Board | 30 mm × 30 mm, 1.6 mm thick, written by `make_board.py` |
 | Copper | E01's loop twice: `TX` on F.Cu and `RX` on B.Cu, one above the other, their gaps one above the other, the traces' centres 1.565 mm apart in z |
 | Ports | one lumped port of 50 Ω across each gap; both are driven in turn, so Palace gives the whole 2 × 2 impedance matrix |
-| What Palace checks | M from the TX to the RX, M back from the RX to the TX (reciprocity), and the TX's L beside the open RX, at 10 kHz and 3.5 MHz |
-| References | Maxwell's formula for two coaxial rings, averaged over both traces' widths (21 × 21 radii), for the loops closed by their port sheets; the open arcs (356° each) for scale |
-| Status | **being solved**: [Palace Test Board Results](Palace-Test-Board-Results.md#662-e02-coaxial-loops) |
+| What Palace checks | M from the TX to the RX, M back from the RX to the TX (reciprocity), and the TX's L beside the open RX against E01's loop, at 10 kHz and 3.5 MHz on a mesh ladder of four levels, and once with the coil board's air grading |
+| References | Neumann's double integral averaged over filaments across both traces' widths: the two open arcs (356° each, between the round ends' centres), 23.886 nH, and the closed rings (Maxwell's formula), 24.400 nH. The port sheets close both loops, so once the mesh is fine enough M should lie above the open arcs and near the closed rings. Percentages are against the open arcs |
+| Status | **run**: [Palace Test Board Results](Palace-Test-Board-Results.md#662-e02-coaxial-loops) |
 
 ## 65.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 

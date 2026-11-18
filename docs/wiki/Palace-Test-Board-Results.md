@@ -8,15 +8,104 @@ solve.
 
 ## 66.1 E01 Circular Loop
 
-> [!NOTE]
-> E01's solves (the mesh ladder at 10 kHz and 3.5 MHz) are being finished; this section is filled in from its
-> results when they are on the branch.
+One circular trace, 10 mm in radius to its centre line, 0.5 mm wide and 35 µm thick, opened by a 0.2 mm gap where
+the bridge puts its lumped port. Palace drives the port and reads the loop's impedance back.
+
+### In Short
+
+E01 is one copper loop on a board, the simplest coil there is, and its inductance L and resistance R have textbook
+formulas. Palace's port sheet closes the loop across its gap, so its L should end above the open arc (55.590 nH)
+and near the closed ring (56.622 nH):
+
+| What | What it means | The formula | Palace |
+|---|---|---|---|
+| L at 10 kHz | the loop's inductance | open arc 55.590 nH, closed ring 56.622 nH | 55.857 nH with the coil board's air grading, +0.48 % on the open arc; 54.199 nH (−2.50 %) on the default ladder's finest level |
+| R at 10 kHz | its resistance, the current spread evenly | 61.201 mΩ | 62.193 to 62.524 mΩ, 1.6 to 2.2 % above |
+| R at 3.5 MHz | the current crowds to the copper's surface | no exact formula | 80.370 mΩ at level 1, 1.29 times its 10 kHz value |
+| L, two ways | from the port and from the energy of the whole field | the two must agree | within 0.01 % at every level |
+
+| Item | Value |
+|---|---|
+| Run | 18 November 2026, Palace 0.19.0, 4 MPI ranks (4 cores, 15 GB) |
+| Solver | first-order Nédélec elements, GMRES with hypre's AMS, `AMSSingularOperator` below 100 kHz, at most 3,000 iterations at 10 kHz |
+| Mesh | four levels, 18,677 to 68,808 nodes, and level 0.75 with the coil board's air (151,251 nodes) |
+| Air | a cylinder 60 mm in radius, ±60 mm, its surface a perfect conductor |
+
+### Expected Against What Came Out
+
+| Mesh level | 0.25 | 0.5 | 0.75 | 1 | 0.75, the coil board's air |
+|---|---|---|---|---|---|
+| Nodes | 18,677 | 29,946 | 53,299 | 68,808 | 151,251 |
+| L at 10 kHz (open arc 55.590 to 56.293 nH, closed ring 56.622 nH) | 51.946 nH (−6.55 %) | 53.184 nH (−4.33 %) | 53.993 nH (−2.87 %) | 54.199 nH (−2.50 %) | 55.857 nH (+0.48 %) |
+| L from the energy at 10 kHz | 51.946 nH | 53.183 nH | 53.993 nH | 54.197 nH | 55.856 nH |
+| R at 10 kHz (sector 61.201 mΩ) | 62.193 mΩ | 62.263 mΩ | 62.270 mΩ | 62.524 mΩ | 62.304 mΩ |
+| L at 3.5 MHz | 50.670 nH | 52.038 nH | 53.013 nH | 53.295 nH | 54.878 nH |
+| R at 3.5 MHz | 81.303 mΩ | 82.174 mΩ | 81.105 mΩ | 80.370 mΩ | 81.329 mΩ |
+| R at 3.5 MHz over R at 10 kHz | 1.31 | 1.32 | 1.30 | 1.29 | 1.31 |
+
+* **L is low and rises with the mesh**, as first-order edge elements driven at a port give it: 2.5 % under the open
+  arc at level 1. The rise slows from 2.4 % (0.25 to 0.5) to 0.4 % (0.75 to 1), so refining the copper alone does not
+  close the gap.
+* **The air's mesh held the gap.** With the air graded as the coil board's is (`grade` 0.125, `tet_grade` 0.175,
+  `dz_max` 0.2), L at level 0.75 moved by 3.5 %, nine times what refining the copper from level 0.75 to 1 did, to
+  55.857 nH: 0.48 % above the open arc and 1.4 % under the closed ring.
+* **R is 1.6 to 2.2 % above the sector's value.** The half-discs past the round ends' centres add a little, and the
+  port's sheet meets each round end only along a line, where the current crowds.
+* **At 3.5 MHz** L falls by 1.7 % and R rises by 29 % against 10 kHz at level 1, as the skin depth falls to the
+  copper's thickness. In the graded run L at 3.5 MHz is 54.878 nH, 0.3 % under the thin strip's high-frequency
+  estimate of 55.039 nH, which leaves out the copper's thickness and so is not a floor.
+* **At 10 kHz GMRES stops at its 3,000 iteration limit in every run**, at a residual of 4e-8 to 4e-5. A check at
+  100 kHz on level 0.5, where GMRES converged to 1e-8 in 79 iterations, gave L = 53.181 nH against 53.184 nH at
+  10 kHz: the L read at the limit is right to 0.01 %.
 
 ## 66.2 E02 Coaxial Loops
 
-> [!NOTE]
-> E02's solves (M both ways and the TX's L, at 10 kHz and 3.5 MHz) are being finished; this section is filled in
-> from its results when they are on the branch.
+E01's loop twice, the TX on F.Cu and the RX on B.Cu right under it, 1.565 mm apart. Both ports are driven in turn, so
+Palace gives the whole impedance matrix: M from the TX to the RX, M back, and the TX beside the open RX.
+
+### In Short
+
+| What | What it means | The formula | Palace |
+|---|---|---|---|
+| M at low frequency | how much of the TX's field the RX catches | open arcs 23.886 nH, closed rings 24.400 nH | 24.166 nH with the coil board's air grading (at 100 kHz), +1.17 % on the open arcs; 23.355 nH (−2.22 %) on the default ladder's finest level |
+| M back, RX to TX | reciprocity | the same M | within 0.03 % at every level, to the fourth decimal in the graded run |
+| L TX beside the open RX | an open loop carries no current round it | E01's loop | 55.880 nH against E01's 55.857 nH (+0.04 %) with the graded air |
+| M at 3.5 MHz | the current moves within each trace | close to the low-frequency M | 0.2 to 0.3 % under it at every mesh |
+
+| Item | Value |
+|---|---|
+| Run | 18 November 2026, Palace 0.19.0, 4 MPI ranks (4 cores, 15 GB) |
+| Mesh | four levels, 30,042 to 119,637 nodes, and level 0.75 with the coil board's air (303,129 nodes) |
+| Low frequency | 10 kHz on the ladder; 100 kHz in the graded run (see below) |
+
+### Expected Against What Came Out
+
+| Mesh level | 0.25 | 0.5 | 0.75 | 1 | 0.75, the coil board's air |
+|---|---|---|---|---|---|
+| Nodes | 30,042 | 49,643 | 92,136 | 119,637 | 303,129 |
+| M at 10 kHz (open arcs 23.886 nH, closed rings 24.400 nH) | 23.123 nH (−3.20 %) | 23.273 nH (−2.57 %) | 23.326 nH (−2.35 %) | 23.355 nH (−2.22 %) | 24.166 nH (+1.17 %) (100 kHz) |
+| M back, RX to TX, at 10 kHz | 23.123 nH | 23.281 nH | 23.326 nH | 23.355 nH | 24.166 nH (100 kHz) |
+| L TX at 10 kHz (E01's at the same level) | 52.597 nH (51.946) | 53.518 nH (53.184) | 54.187 nH (53.993) | 54.329 nH (54.199) | 55.880 nH (100 kHz) |
+| R TX at 10 kHz | 62.193 mΩ | 62.263 mΩ | 62.269 mΩ | 62.523 mΩ | 62.344 mΩ (100 kHz) |
+| M at 3.5 MHz | 23.047 nH (−3.51 %) | 23.203 nH (−2.86 %) | 23.266 nH (−2.60 %) | 23.299 nH (−2.46 %) | 24.104 nH (+0.91 %) |
+| M back at 3.5 MHz | 23.047 nH | 23.203 nH | 23.266 nH | 23.299 nH | 24.104 nH |
+
+* **M is low and settles with the mesh**, as E01's L does: 2.2 % under the open arcs at level 1, the rise slowing
+  from 0.7 % (0.25 to 0.5) to 0.1 % (0.75 to 1).
+* **Grading the air moved M by 3.6 %**, as it moved E01's L by 3.5 %, to 24.166 nH: 1.17 % above the open arcs and
+  1.0 % under the closed rings, as it should be with the ports' sheets closing both loops.
+* **The TX matches E01's loop once both have the graded air** (+0.04 %). On the default ladder it reads 0.2 to 1.3 %
+  more, because E02's fine wedges run through the board to the RX, so the air under the TX is meshed finer than in
+  E01. R at 10 kHz is E01's to 0.01 %.
+* **At 3.5 MHz** M is 0.2 to 0.3 % under its low-frequency value and the TX's R is 1 to 3 % above E01's: eddy currents
+  in the RX's copper take a little from the TX.
+* **At 10 kHz GMRES stops at its 3,000 iteration limit** for both ports at every ladder level. On level 0.75's default
+  mesh, where 100 kHz converged in 134 and 126 iterations, M is 23.3257 nH at 100 kHz against 23.3261 nH at 10 kHz
+  (−0.002 %), and L TX 54.1847 against 54.1867 nH (−0.004 %): the numbers read at the limit are right.
+* **The graded run is at 100 kHz and 3.5 MHz, not 10 kHz.** On its 303,129 node mesh GMRES had to restart every 100
+  iterations (`--restart 100`) to fit in 15 GB, and at 10 kHz it did not converge: after 3,000 iterations the RX's
+  solve had stalled at a residual of 0.65. At 100 kHz AMS needs no singular-operator flag and GMRES converged in 191
+  and 183 iterations; the 100 kHz and 10 kHz Ms agree to 0.002 % on the default mesh.
 
 ## 66.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
