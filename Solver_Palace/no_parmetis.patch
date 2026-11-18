@@ -1,0 +1,148 @@
+diff --git a/cmake/ExternalMETIS.cmake b/cmake/ExternalMETIS.cmake
+index ec91acb62..eccf09238 100644
+--- a/cmake/ExternalMETIS.cmake
++++ b/cmake/ExternalMETIS.cmake
+@@ -77,8 +77,8 @@ set(METIS_LIBRARIES ${CMAKE_INSTALL_PREFIX}/lib/libmetis${_METIS_LIB_SUFFIX} CAC
+   "List of library files for METIS"
+ )
+ 
+-# Build ParMETIS (as needed)
+-if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
++# Build ParMETIS (as needed: SuperLU_DIST and STRUMPACK only; MUMPS orders with METIS)
++if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK)
+   set(PARMETIS_OPTIONS ${PALACE_SUPERBUILD_DEFAULT_ARGS})
+   list(APPEND PARMETIS_OPTIONS
+     "-DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}"
+diff --git a/cmake/ExternalMFEM.cmake b/cmake/ExternalMFEM.cmake
+index 911e57649..141734f5f 100644
+--- a/cmake/ExternalMFEM.cmake
++++ b/cmake/ExternalMFEM.cmake
+@@ -204,7 +204,7 @@ if(PALACE_BUILD_EXTERNAL_DEPS)
+     "-DMETIS_INCLUDE_DIRS=${CMAKE_INSTALL_PREFIX}/include"
+     "-DHYPRE_DIR=${CMAKE_INSTALL_PREFIX}"
+   )
+-  if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
++  if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK)
+     list(APPEND MFEM_OPTIONS
+       "-DParMETIS_LIBRARIES=${PARMETIS_LIBRARIES}$<SEMICOLON>${METIS_LIBRARIES}"
+       "-DParMETIS_INCLUDE_DIRS=${CMAKE_INSTALL_PREFIX}/include"
+@@ -226,6 +226,14 @@ if(PALACE_BUILD_EXTERNAL_DEPS)
+     )
+   endif()
+ 
++  # HYPRE is built with the external BLAS/LAPACK (see ExternalHYPRE.cmake). Without a direct solver, nothing else
++  # puts them on MFEM's link line, so they are passed with HYPRE
++  if(NOT "${BLAS_LAPACK_LIBRARIES}" STREQUAL "")
++    list(APPEND MFEM_OPTIONS
++      "-DHYPRE_REQUIRED_LIBRARIES=${BLAS_LAPACK_LIBRARIES}"
++    )
++  endif()
++
+   # Need to pass gfortran (or similar) dependency to C++ linker for MFEM link line
+   if(PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
+     if(CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
+@@ -333,7 +341,7 @@ Intel C++ compiler for MUMPS and STRUMPACK dependencies")
+ 
+   # Configure MUMPS
+   if(PALACE_WITH_MUMPS)
+-    set(MUMPS_REQUIRED_PACKAGES "ParMETIS" "METIS" "LAPACK" "BLAS" "MPI" "MPI_Fortran" "Threads")
++    set(MUMPS_REQUIRED_PACKAGES "METIS" "LAPACK" "BLAS" "MPI" "MPI_Fortran" "Threads")
+     if(PALACE_WITH_OPENMP)
+       list(APPEND MUMPS_REQUIRED_PACKAGES "OpenMP")
+     endif()
+diff --git a/cmake/ExternalMUMPS.cmake b/cmake/ExternalMUMPS.cmake
+index 0c96a4838..5c6815763 100644
+--- a/cmake/ExternalMUMPS.cmake
++++ b/cmake/ExternalMUMPS.cmake
+@@ -6,7 +6,7 @@
+ #
+ 
+ # Force build order
+-set(MUMPS_DEPENDENCIES scalapack parmetis metis)
++set(MUMPS_DEPENDENCIES scalapack metis)
+ 
+ set(MUMPS_OPTIONS ${PALACE_SUPERBUILD_DEFAULT_ARGS})
+ list(APPEND MUMPS_OPTIONS
+@@ -23,12 +23,11 @@ list(APPEND MUMPS_OPTIONS
+   "-DBUILD_COMPLEX16=OFF"
+   "-DMUMPS_BUILD_TESTING=OFF"
+   "-DMUMPS_metis=ON"
+-  "-DMUMPS_parmetis=ON"
++  "-DMUMPS_parmetis=OFF"
+   "-DMUMPS_scotch=OFF"
+   "-DMUMPS_scalapack=ON"
+   "-DMUMPS_USE_MKL=OFF"
+   "-DMUMPS_gemmt=ON"
+-  "-DPARMETIS_LIBRARY=${PARMETIS_LIBRARIES}"
+   "-DMETIS_LIBRARY=${METIS_LIBRARIES}"
+   "-DMETIS_INCLUDE_DIR=${CMAKE_INSTALL_PREFIX}/include"
+   "-DSCALAPACK_LIBRARIES=${SCALAPACK_LIBRARIES}"
+diff --git a/palace/CMakeLists.txt b/palace/CMakeLists.txt
+index af859a186..0d3987868 100644
+--- a/palace/CMakeLists.txt
++++ b/palace/CMakeLists.txt
+@@ -555,6 +555,7 @@ else()
+   message(STATUS "Found METIS: ${METIS_VERSION}")
+ endif()
+ 
++if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK)
+ find_package(ParMETIS QUIET)
+ if(NOT TARGET ParMETIS::ParMETIS)
+   find_library(PARMETIS_LIBRARY NAMES parmetis HINTS ${ParMETIS_ROOT}/lib REQUIRED)
+@@ -568,6 +569,7 @@ if(NOT TARGET ParMETIS::ParMETIS)
+ else()
+   message(STATUS "Found ParMETIS: ${ParMETIS_VERSION}")
+ endif()
++endif()
+ 
+ # Find ScaLAPACK early (needed for MUMPS/STRUMPACK CMake configs)
+ if(PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
+@@ -696,7 +698,11 @@ if(PALACE_WITH_CUDSS)
+ endif()
+ 
+ # Link METIS and ParMETIS (must come after SuperLU_DIST, STRUMPACK, MUMPS for static linking)
+-target_link_libraries(${LIB_TARGET_NAME} PUBLIC ParMETIS::ParMETIS METIS::METIS)
++if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK)
++  target_link_libraries(${LIB_TARGET_NAME} PUBLIC ParMETIS::ParMETIS METIS::METIS)
++else()
++  target_link_libraries(${LIB_TARGET_NAME} PUBLIC METIS::METIS)
++endif()
+ 
+ # Link SUNDIALS
+ if(PALACE_WITH_SUNDIALS)
+@@ -761,6 +767,9 @@ set(VERSION_DEFINITIONS)
+ if(PALACE_WITH_SUPERLU)
+   list(APPEND VERSION_DEFINITIONS PALACE_WITH_SUPERLU)
+ endif()
++if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK)
++  list(APPEND VERSION_DEFINITIONS PALACE_WITH_PARMETIS)
++endif()
+ if(PALACE_WITH_CUDA OR PALACE_WITH_HIP)
+   list(APPEND VERSION_DEFINITIONS PALACE_WITH_UMPIRE)
+ endif()
+diff --git a/palace/utils/versions.cpp b/palace/utils/versions.cpp
+index 819db1ed0..1261f7f27 100644
+--- a/palace/utils/versions.cpp
++++ b/palace/utils/versions.cpp
+@@ -11,7 +11,9 @@
+ #include <ceed.h>
+ #include <metis.h>
+ #include <mpi.h>
++#if defined(PALACE_WITH_PARMETIS)
+ #include <parmetis.h>
++#endif
+ #include <fmt/format.h>
+ #include <scn/fwd.h>
+ #include <nlohmann/json.hpp>
+@@ -231,9 +233,11 @@ std::vector<std::pair<std::string, std::string>> GetDependencyVersions()
+ #endif
+   versions.emplace_back("METIS", fmt::format("{}.{}.{}", METIS_VER_MAJOR, METIS_VER_MINOR,
+                                              METIS_VER_SUBMINOR));
++#if defined(PALACE_WITH_PARMETIS)
+   versions.emplace_back("ParMETIS",
+                         fmt::format("{}.{}.{}", PARMETIS_MAJOR_VERSION,
+                                     PARMETIS_MINOR_VERSION, PARMETIS_SUBMINOR_VERSION));
++#endif
+ 
+ #if defined(MFEM_USE_CUDA)
+   int cuda_version = 0;

@@ -1,0 +1,62 @@
+Stator  (Stator.kicad_pcb)   generated 2026-11-16 18:13
+mode: simulation   formats: step, stl   units: mm
+KiCad format 20221018 (KiCad 7), generator coil_generator, title: Stator 1 loop, no sub-coils
+
+stack-up   built: PLIES_SEPARATE (parameters/PCB_elements/Stackup.py)
+  lines built: top_solder_mask, top_copper, prepreg_plies, resin_between_traces, inner_copper, cores, bottom_copper, bottom_solder_mask, plated_holes, via_resin
+  lines left out: top_silkscreen, top_finish, bottom_finish, bottom_silkscreen, hole_finish
+  copper layers: F.Cu, B.Cu
+  laminate 0.6900 mm (file (general (thickness 0.8)) less the outer copper and the masks - no usable stackup)
+  F.Cu     z +0.3450 .. +0.3800 mm  (foil 0.035 mm)
+  B.Cu     z -0.3800 .. -0.3450 mm  (foil 0.035 mm)
+  dielectric 1             core     FR4        0.6900 mm  er 4.5  tan d 0.02   z -0.3450 .. +0.3450   (djordjevic_sarkar, values given at 1 GHz)
+  vias: KiCad default (vias tented); pad-to-mask clearance 0.0 mm; silkscreen over copper (mask openings): False
+  origin: KiCad page origin
+
+read
+      61  graphics on B.SilkS
+      61  graphics on F.SilkS
+       2  outline shapes on Edge.Cuts
+      13  through vias
+     385  tracks on B.Cu
+    1006  tracks on F.Cu
+skipped
+  nothing
+
+notes
+  font: KiCad newstroke (kicad_newstroke.json.gz)
+  solder mask: 0.02 mm over laminate, 0.02 mm over copper (parameters/PCB_elements/SolderMask.py)
+  left out of every file: top_silkscreen, top_finish, bottom_finish, bottom_silkscreen, hole_finish (False in PLIES_SEPARATE, parameters/PCB_elements/Stackup.py)
+
+parts
+  Board_dielectric 1                       2340 triangles  material Board_core #968A58 alpha 1.0
+  Copper_1                                 6792 triangles  material Copper #CD803E alpha 1.0
+  Copper_2                                 6784 triangles  material Copper #CD803E alpha 1.0
+  Copper_TX                                5792 triangles  material Copper #CD803E alpha 1.0
+  Top Solder Mask                         40026 triangles  material Top Solder Mask #EBEBE6 alpha 0.8
+  Bottom Solder Mask                      20916 triangles  material Bottom Solder Mask #EBEBE6 alpha 0.8
+
+timing
+  read              0.0179 s
+  collect           0.0427 s
+  resolve           0.1333 s
+  geometry          0.0829 s
+  materials         0.0001 s
+  assemble          0.6091 s
+  write             0.9756 s
+  verify            0.0345 s
+
+Verifier: PASS
+  Board_dielectric 1                   closed=True winding=True volume=286.8028 mm3
+  Copper_1                             closed=True winding=True volume=0.6857 mm3
+  Copper_2                             closed=True winding=True volume=0.6857 mm3
+  Copper_TX                            closed=True winding=True volume=1.1221 mm3
+  Top Solder Mask                      closed=True winding=True volume=8.6216 mm3
+  Bottom Solder Mask                   closed=True winding=True volume=8.4175 mm3
+  overlap between different parts, every slice against the others: none
+  Board_dielectric 1                   volume from faces 286.802793 mesh 286.802793 slices 286.802793 prisms 286.802793 mm3 closed=True whole=True
+  Copper_1                             volume from faces 0.685725 mesh 0.685725 slices 0.685725 prisms 0.685725 mm3 closed=True whole=True
+  Copper_2                             volume from faces 0.685731 mesh 0.685731 slices 0.685731 prisms 0.685731 mm3 closed=True whole=True
+  Copper_TX                            volume from faces 1.122103 mesh 1.122103 slices 1.122103 prisms 1.122103 mm3 closed=True whole=True
+  Top Solder Mask                      volume from faces 8.621624 mesh 8.621624 slices 8.621624 prisms 8.621624 mm3 closed=True whole=True
+  Bottom Solder Mask                   volume from faces 8.417496 mesh 8.417496 slices 8.417496 prisms 8.417496 mm3 closed=True whole=True

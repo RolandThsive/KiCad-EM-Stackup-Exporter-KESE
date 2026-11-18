@@ -1,0 +1,12 @@
+{
+ "board": "S0_1x_OD21_2L_tiny",
+ "source": "the generator's estimates, from Parameters.txt (Boards/Parameters.txt)",
+ "units": "H, ohm",
+ "tx": {
+  "L_away_gen_H": 1.32e-07,
+  "L_rotor_gen_H": 1.09e-07,
+  "R_dc_ohm": 0.23,
+  "note": "the generator's estimate; its drop with the rotor is an upper estimate"
+ },
+ "coupling": "SIN and COS follow sin and cos of the rotor angle, one period per turn, 90 degrees apart"
+}

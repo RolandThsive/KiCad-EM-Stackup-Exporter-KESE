@@ -1,0 +1,303 @@
+"""How the board is set up in Palace, as one lossless WebP drawn from the same geometry simulation.py meshes: the
+stator's coils seen from above with the rotor over them, a section through the stack, and close-ups of where a
+receiver and the TX are opened for their lumped ports.
+
+    python rig_picture.py                 the rotor at 0 degrees and the spec's air gap
+    python rig_picture.py --gap 0.5 --angle 45
+
+Writes <board>_palace_setup.webp beside the board's README. Nothing here is solved: it reads KESE's export in
+../3D_Geometry (what simulation.py meshes) and the ports in test_spec.json, and draws them.
+This script is GPL-3.0 as the bridge.
+"""
+from __future__ import annotations
+
+import argparse
+import math
+from pathlib import Path
+
+import numpy as np
+import shapely
+from shapely.geometry import LineString, Point
+
+import simulation as sim
+from make_charts import COLOURS, INK, INK2, SURFACE, tint
+
+M, S = sim.M, sim.S
+HERE = Path(__file__).resolve().parent
+ROTOR = '#8a8984'
+
+
+def model_layout(gap, angle):
+    """The parts as simulation.py places them (insulators left out, as in the solve), sectioned in every slab."""
+    se = S.kese_geometry(sim.BOARD / sim.SETTINGS['stator'], sim.GEOMETRY, log=lambda *_: None)
+    re_ = S.kese_geometry(sim.BOARD / sim.SETTINGS['rotor'], sim.GEOMETRY, log=lambda *_: None)
+    stator = sim.stator_parts(se)
+    rot = sim.rotor_parts(re_, angle, gap)
+    lay = M.Layout(stator + sim.voids(stator) + rot, M.disc(sim.AXIS, 30.0, n=64), (-5, 5))
+    return lay.build(log=lambda *_: None, insulators=sim.SETTINGS['insulators'])
+
+
+def body_geom(lay, body, k):
+    """The geometry body `body` holds in slab k: its parts' sections less any void (air that wins over copper)."""
+    g = [p.polys[k] for p in lay.parts if p.body == body and k in p.polys]
+    if not g:
+        return None
+    v = [p.polys[k] for p in lay.parts if p.role == 'void' and k in p.polys]
+    out = shapely.unary_union(g)
+    return out.difference(shapely.unary_union(v)) if v else out
+
+
+def slab_of(lay, body, which):
+    """The slab index of a coil's top copper ('top') or bottom copper ('bottom')."""
+    ks = sorted(k for p in lay.parts if p.body == body for k in p.polys)
+    return ks[-1] if which == 'top' else ks[0]
+
+
+def fill(ax, g, **kw):
+    from matplotlib.patches import PathPatch
+    from matplotlib.path import Path as MPath
+    for p in shapely.get_parts(g):
+        if p.geom_type != 'Polygon' or p.is_empty:
+            continue
+        verts, codes = [], []
+        for ring in [p.exterior, *p.interiors]:
+            c = np.asarray(ring.coords)
+            verts += c.tolist()
+            codes += [MPath.MOVETO] + [MPath.LINETO] * (len(c) - 2) + [MPath.CLOSEPOLY]
+        ax.add_patch(PathPatch(MPath(verts, codes), **kw))
+
+
+def section_rects(lay, line, bodies):
+    """Where the vertical plane through `line` cuts each body: [(body, s0, s1, z0, z1)], s along the line."""
+    out = []
+    a = np.asarray(line.coords[0])
+    for body in bodies:
+        for k, (z0, z1) in enumerate(lay.slabs):
+            g = body_geom(lay, body, k)
+            if g is None:
+                continue
+            cut = line.intersection(g)
+            for seg in shapely.get_parts(cut):
+                if seg.geom_type != 'LineString' or seg.length < 1e-6:
+                    continue
+                s = sorted(float(np.linalg.norm(np.asarray(c) - a)) for c in seg.coords)
+                out.append((body, s[0], s[-1], z0, z1))
+    return out
+
+
+COIL = {'TX': INK2, 'SIN': tint(COLOURS['SIN'], 1.0), 'COS': tint(COLOURS['COS'], 1.0)}
+
+
+def kicad_axes(ax):
+    """Tick labels in KiCad's coordinates: the model's y is KiCad's y with its sign turned."""
+    import matplotlib.ticker
+    ax.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f'{-v:g}'))
+
+
+def style(ax):
+    ax.set_facecolor(SURFACE)
+    for s in ax.spines.values():
+        s.set_visible(False)
+    ax.tick_params(colors=INK2, labelsize=7.5)
+
+
+def top_view(ax, lay, angle, gap):
+    from matplotlib.patches import Circle
+    style(ax)
+    for name in ('TX', 'SIN', 'COS'):
+        fill(ax, body_geom(lay, name, slab_of(lay, name, 'bottom')), fc=tint(_rgb(COIL[name]), 0.35), ec='none',
+             zorder=2)
+    for name in ('TX', 'SIN', 'COS'):
+        fill(ax, body_geom(lay, name, slab_of(lay, name, 'top')), fc=COIL[name], ec='none', zorder=3)
+    kr = slab_of(lay, 'ROTOR', 'top')
+    fill(ax, body_geom(lay, 'ROTOR', kr), fc=ROTOR, alpha=0.22, ec=INK, lw=0.9, ls=(0, (4, 2)), zorder=4)
+    cx, cy = sim.AXIS
+    rot = body_geom(lay, 'ROTOR', kr)
+    rc = rot.centroid                                       # an arrow the way a positive angle turns the rotor
+    r = max(math.hypot(x - cx, y - cy) for x, y in rot.exterior.coords) + 0.7 if rot.geom_type == 'Polygon' else 9.0
+    a0 = math.atan2(rc.y - cy, rc.x - cx)
+    a1 = a0 - math.radians(20)                              # simulation.py's KiCad sense: -angle with y up
+    t = np.linspace(a0 + math.radians(20), a1, 40)
+    ax.plot(cx + r * np.cos(t), cy + r * np.sin(t), color=INK, lw=1.1, zorder=6)
+    ax.annotate('', (cx + r * math.cos(a1), cy + r * math.sin(a1)),
+                (cx + r * math.cos(t[-3]), cy + r * math.sin(t[-3])),
+                arrowprops=dict(arrowstyle='-|>', color=INK, lw=1.1), zorder=6)
+    ax.text(cx + (r + 0.5) * math.cos(a1), cy + (r + 0.5) * math.sin(a1), '+ angle', fontsize=7.5, color=INK,
+            ha='right' if math.cos(a1) < 0 else 'left', va='center', zorder=7)
+    ax.text(cx, cy - (r + 1.6) if rc.y < cy else cy + r + 1.6,
+            f'grey: the rotor at {angle:g}°, {gap:g} mm above, copper face down', ha='center', va='center',
+            fontsize=8, color=INK, zorder=7)
+    ax.plot(cx, cy, marker='+', color=INK, ms=9, mew=1.2, zorder=6)
+    tx = sim.SETTINGS['tx_end']
+    R = sim.SPEC['stator']['bore_and_outer_radius_mm'][1] + 1.2
+    labels = [(tx, 'TX port: its two ends,\nF.Cu over B.Cu', (tx[0] - 2.2, tx[1] - 2.6))]
+    for name, xy in sim.SETTINGS['rx_vias'].items():
+        if sim.RX_PORT == 'cut':                            # the cut, not the via, is the port
+            xy = sim.SETTINGS['rx_cuts'][name]['xy']
+        text = (f'{name} port: a {sim.SETTINGS["rx_cuts"][name]["gap_mm"]:g} mm cut\nacross the top trace'
+                if sim.RX_PORT == 'cut' else f'{name} port: one via\nleft out')
+        labels.append((xy, text, (cx - R + 0.1, xy[1] + (4.4 if xy[1] > cy else -4.6))))
+    for xy, text, at in labels:
+        ax.add_patch(Circle(xy, 0.55, fc='none', ec=INK, lw=1.4, zorder=8))
+        ax.annotate(text, xy, xytext=at, textcoords='data', fontsize=8, color=INK, zorder=8, va='center',
+                    arrowprops=dict(arrowstyle='-', color=INK, lw=0.8, shrinkA=2, shrinkB=9),
+                    bbox=dict(boxstyle='round,pad=0.25', fc=SURFACE, ec='none', alpha=0.9))
+    ax.set_xlim(cx - R, cx + R)
+    ax.set_ylim(cy - R, cy + R)
+    ax.set_aspect('equal')
+    kicad_axes(ax)
+    ax.set_xlabel('KiCad x (mm)', color=INK2, fontsize=8)
+    ax.set_ylabel('KiCad y (mm)', color=INK2, fontsize=8)
+    ax.set_title('Seen from above', color=INK, fontsize=10, loc='left')
+    from matplotlib.patches import Patch
+    hs = [Patch(fc=COIL[n], label=f'{n}, F.Cu') for n in ('TX', 'SIN', 'COS')]
+    hs += [Patch(fc=tint(_rgb(COIL[n]), 0.35), label=f'{n}, B.Cu') for n in ('TX', 'SIN', 'COS')]
+    hs.append(Patch(fc=ROTOR, alpha=0.22, ec=INK, ls=(0, (4, 2)), label='rotor copper'))
+    ax.legend(handles=hs, frameon=False, fontsize=7.5, ncol=4, loc='upper center', bbox_to_anchor=(0.5, -0.09),
+              labelcolor=INK)
+
+
+def _rgb(hexcol):
+    return tuple(int(hexcol[i:i + 2], 16) for i in (1, 3, 5))
+
+
+def stack_view(ax, lay, gap):
+    """A section along KiCad's y through the axis, heights stretched so the 35 um copper shows."""
+    from matplotlib.patches import Rectangle
+    style(ax)
+    cx, cy = sim.AXIS
+    R = sim.SPEC['stator']['bore_and_outer_radius_mm'][1] + 1.0
+    line = LineString([(cx, cy + R), (cx, cy - R)])       # KiCad y from -cy - R to -cy + R
+    y0 = -cy - R
+    for body, s0, s1, z0, z1 in section_rects(lay, line, ('TX', 'SIN', 'COS', 'ROTOR')):
+        ax.add_patch(Rectangle((y0 + s0, z0), s1 - s0, z1 - z0, fc=COIL.get(body, ROTOR), ec='none', zorder=3))
+    zs = sorted({z for z0, z1 in lay.slabs for z in (z0, z1)})
+    st_top, st_bot = 0.0, min(zs)
+    rot_face = min(z for p in lay.parts if p.body == 'ROTOR' for z in p.zrange)
+    for z0, z1, text in ((st_bot, st_top, 'stator: FR-4 and mask are air to this solve'),):
+        ax.axhspan(z0, z1, color=INK2, alpha=0.06, lw=0, zorder=1)
+        ax.text(y0 + 0.2, (z0 + z1) / 2, text, fontsize=7.5, color=INK2, va='center')
+    xd = y0 + 2 * R - 0.6
+    ax.annotate('', (xd, st_top), (xd, rot_face), arrowprops=dict(arrowstyle='<->', color=INK, lw=0.9))
+    ax.text(xd - 0.25, (st_top + rot_face) / 2, f'air gap {gap:g} mm\n(copper to copper)', ha='right',
+            va='center', fontsize=7.5, color=INK)
+    ring = sim.SPEC['rotor']['rings'][0]
+    shape = ('a half ring' if ring['sectors'] == 1 and abs(ring['duty'] - 0.5) < 1e-6 else
+             f"{ring['sectors']} sectors of a ring")
+    ax.text(y0 + 2 * R - 0.2, rot_face + 0.12, f'rotor copper, {shape} (its FR-4 above is air too)',
+            fontsize=7.5, color=INK2, va='bottom', ha='right')
+    ax.set_xlim(y0, y0 + 2 * R)
+    ax.set_ylim(st_bot - 0.25, rot_face + 0.45)
+    ax.set_xlabel(f'KiCad y (mm), along x = {cx:g} through the axis', color=INK2, fontsize=8)
+    ax.set_ylabel('z (mm)', color=INK2, fontsize=8)
+    box_r = sim.SETTINGS['domain_radius_mm']
+    ax.set_title(f'Section through the stack, heights stretched; air all round out to {box_r:g} mm from the axis '
+                 f'and {sim.SETTINGS["domain_margin_mm"]:g} mm above and below',
+                 color=INK, fontsize=8.5, loc='left')
+
+
+def port_view(ax, lay, name, xy, half, hole_r, title, note):
+    """A true-scale section along KiCad's x through a port: the copper there and the lumped port, a sheet standing
+    between the coil's two copper layers, its two ends on the copper's faces toward the dielectric."""
+    from matplotlib.patches import Rectangle
+    style(ax)
+    w = 1.3
+    line = LineString([(xy[0] - w, xy[1]), (xy[0] + w, xy[1])])
+    rects = section_rects(lay, line, (name,))
+    for _, s0, s1, z0, z1 in rects:
+        ax.add_patch(Rectangle((xy[0] - w + s0, z0), s1 - s0, z1 - z0, fc=COIL[name], ec='none', zorder=3))
+    lv = sorted({z for p in lay.parts if p.body == name for z in p.levels()})
+    lo, hi = lv[0], lv[-1]
+    inner = [z for z in lv if lo < z < hi]
+    b0, b1 = min(inner), max(inner)
+    ax.add_patch(Rectangle((xy[0] - half, b0), 2 * half, b1 - b0, fc='none', ec=INK, lw=0, hatch='////',
+                           alpha=0.55, zorder=2))
+    for z in (b0, b1):                                     # the sheet's two ends, on the copper
+        ax.plot([xy[0] - half, xy[0] + half], [z, z], color=INK, lw=2.4, solid_capstyle='butt', zorder=5)
+    ax.annotate('', (xy[0] + half + 0.1, b1), (xy[0] + half + 0.1, b0), zorder=6,
+                arrowprops=dict(arrowstyle='-|>', color=INK, lw=0.9, shrinkA=0, shrinkB=0))
+    ax.text(xy[0] + half + 0.16, (b0 + b1) / 2, 'direction\n+z', fontsize=7.5, color=INK, va='center', zorder=6)
+    ax.text(xy[0] - half - 0.06, (b0 + b1) / 2, 'lumped port\n(hatched sheet)', fontsize=7.5, color=INK,
+            ha='right', va='center', zorder=6)
+    ax.text(xy[0] - w + 0.05, lo - 0.08, note, fontsize=7.5, color=INK2, va='top')
+    ax.set_xlim(xy[0] - w, xy[0] + w)
+    ax.set_ylim(lo - 0.42, hi + 0.12)
+    ax.set_aspect('equal')
+    ax.set_xlabel(f'KiCad x (mm), along y = {-xy[1]:g}', color=INK2, fontsize=8)
+    ax.set_ylabel('z (mm)', color=INK2, fontsize=8)
+    ax.set_title(title, color=INK, fontsize=9, loc='left')
+
+
+def cut_view(ax, lay, name, title, note):
+    """A section along the trace through a cut, heights stretched: the top copper either side of the gap and the
+    lumped port, a sheet across the gap from one cut face to the other, through the copper's thickness."""
+    from matplotlib.patches import Rectangle
+    style(ax)
+    c = sim.SETTINGS['rx_cuts'][name]
+    d = np.asarray(c['along'], float) / np.linalg.norm(c['along'])
+    o, w, g = np.asarray(c['xy']), 0.6, c['gap_mm']
+    f0, f1 = sim.top_copper([p for p in lay.parts if p.role != 'void'], name)
+    t = f1 - f0
+    for _, s0, s1, z0, z1 in section_rects(lay, LineString([o - w * d, o + w * d]), (name,)):
+        if z0 >= f0 - 1e-9:                                # the top copper only: the cut is in it
+            ax.add_patch(Rectangle((s0 - w, z0), s1 - s0, z1 - z0, fc=COIL[name], ec='none', zorder=3))
+    box, port = sim.cut_geometry(name)
+    gl = port.length                                       # the port's length: the cut, as the mesh has it
+    ax.add_patch(Rectangle((-gl / 2, f0), gl, t, fc='none', ec=INK, lw=0, hatch='////', alpha=0.55, zorder=4))
+    for u in (-gl / 2, gl / 2):                            # the sheet's two ends, on the cut faces
+        ax.plot([u, u], [f0, f1], color=INK, lw=2.4, solid_capstyle='butt', zorder=5)
+    ax.annotate('', (gl / 2, f1 + 0.6 * t), (-gl / 2, f1 + 0.6 * t), zorder=6,
+                arrowprops=dict(arrowstyle='-|>', color=INK, lw=0.9, shrinkA=0, shrinkB=0))
+    ax.text(0, f1 + 0.9 * t, 'direction: along the trace', fontsize=7.5, color=INK, ha='center', va='bottom')
+    ax.annotate('lumped port (hatched): a sheet\nacross the cut, through the copper', (0, f0),
+                xytext=(0, f0 - 1.5 * t), fontsize=7.5, color=INK, ha='center', va='center',
+                arrowprops=dict(arrowstyle='-', color=INK, lw=0.7, shrinkB=2))
+    ax.text(-w + 0.02, f0 - 2.75 * t, note, fontsize=7.5, color=INK2, va='top')
+    ax.set_xlim(-w, w)
+    ax.set_ylim(f0 - 4.2 * t, f1 + 2.0 * t)
+    ax.set_yticks([f0, f1], [f'{round(z, 3) + 0.0:.3f}' for z in (f0, f1)])   # the copper's two faces only, so
+                                                                            # the note below stays clear of them
+    ax.set_box_aspect(1.3)                                 # narrow, as the via close-up is, clear of the TX label
+    ax.set_anchor('E')
+    ax.set_xlabel(f'along the trace (mm), the cut {g:g} mm wide at 0', color=INK2, fontsize=8)
+    ax.set_ylabel('z (mm), stretched', color=INK2, fontsize=8)
+    ax.set_title(title, color=INK, fontsize=9, loc='left')
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
+    ap.add_argument('--gap', type=float, default=sim.SETTINGS['air_gap_mm'])
+    ap.add_argument('--angle', type=float, default=0.0)
+    ap.add_argument('--out', default=str(sim.BOARD / f'{sim.BOARD.name}_palace_setup.webp'))
+    a = ap.parse_args()
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    lay = model_layout(a.gap, a.angle)
+    fig = plt.figure(figsize=(13, 6.9), dpi=200)
+    fig.patch.set_facecolor(SURFACE)
+    gs = fig.add_gridspec(2, 2, width_ratios=[1.1, 1.25], height_ratios=[0.8, 1.0], wspace=0.14, hspace=0.42)
+    top_view(fig.add_subplot(gs[:, 0]), lay, a.angle, a.gap)
+    stack_view(fig.add_subplot(gs[0, 1]), lay, a.gap)
+    sub = gs[1, 1].subgridspec(1, 2, wspace=0.22)
+    s = sim.SETTINGS
+    rx = 'SIN'
+    if sim.RX_PORT == 'cut':
+        cut_view(fig.add_subplot(sub[0, 0]), lay, rx, f'{rx} port (COS the same):\nthe cut in its top trace',
+                 f'1 MΩ across the port: {rx} is open, so the\nvoltage across the cut is its open-circuit EMF')
+    else:
+        port_view(fig.add_subplot(sub[0, 0]), lay, rx, s['rx_vias'][rx], s['rx_sheet_half_mm'],
+                  s['via_void_radius_mm'], f'{rx} port (COS the same):\nthe via left out',
+                  f'1 MΩ across the port: {rx} is open, so the\nvoltage across it is its open-circuit EMF')
+    port_view(fig.add_subplot(sub[0, 1]), lay, 'TX', s['tx_end'], s['sheet_half_mm'], s['tx_end_radius_mm'],
+              'TX port:\nbetween its two stacked ends', 'the TX is driven through this port\n(50 Ω), at '
+              f'{s["freq_hz"] / 1e6:g} MHz')
+    fig.suptitle(f'{sim.BOARD.name}: how the stator and rotor are set up in Palace', x=0.06, ha='left', y=0.985,
+                 color=INK, fontsize=12)
+    fig.savefig(a.out, facecolor=SURFACE, bbox_inches='tight', pil_kwargs={'lossless': True, 'method': 6})
+    plt.close(fig)
+    print('wrote', a.out)
+
+
+if __name__ == '__main__':
+    main()

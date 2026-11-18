@@ -1,0 +1,121 @@
+{
+ "board": "S0_1x_OD21_2L_tiny_TXtop",
+ "generator": "Single",
+ "made_from": "Coil_2_10.5_1_1_2_Single_SteppedDiagonal",
+ "purpose": "the SIN and COS curves against the rotor angle, at any air gap",
+ "units": "mm, H, Hz, ohm, degrees",
+ "files": {
+  "stator": "Boards/Stator.kicad_pcb",
+  "rotor": "Boards/Rotor.kicad_pcb",
+  "parameters": "Boards/Parameters.txt",
+  "expected": "Results/expected_results.json",
+  "note": "paths from the board folder"
+ },
+ "coordinates": {
+  "kicad_axis_xy": [
+   100.0,
+   100.0
+  ],
+  "model_origin": "the rotation axis, at the top face of the stator's F.Cu copper",
+  "z": "z up, from the stator towards the rotor. Stator F.Cu top face at z = 0, B.Cu at z = -0.8"
+ },
+ "stator": {
+  "layers": [
+   "F.Cu",
+   "B.Cu"
+  ],
+  "board_thickness_mm": 0.8,
+  "copper_thickness_mm": 0.035,
+  "bore_and_outer_radius_mm": [
+   2.0,
+   10.5
+  ],
+  "rx_band_mm": [
+   3.2,
+   5.5
+  ],
+  "tx_ring_mm": [
+   6.6,
+   7.2
+  ]
+ },
+ "rotor": {
+  "placement": "copper side towards the stator, not mirrored, its copper face at z = +air_gap",
+  "rings": [
+   {
+    "r_in": 2.52,
+    "r_out": 7.8,
+    "sectors": 1,
+    "duty": 0.5
+   }
+  ]
+ },
+ "air_gap_mm": 1.0,
+ "air_gap_definition": "stator F.Cu top face to rotor copper face (copper to copper)",
+ "air_box": {
+  "radius_or_half_width_mm": 31.5,
+  "note": "3 x the board radius, as on the other boards; its height follows the gap"
+ },
+ "nets": {
+  "2": "SIN",
+  "1": "COS",
+  "TX": "TX"
+ },
+ "terminals": {
+  "TX": {
+   "kind": "TX ends",
+   "source": "the two free ends of the TX copper in Stator.kicad_pcb, stacked at one point (as Parameters.txt's lead-cutting suggestion)",
+   "ends_xy_kicad": [
+    109.8,
+    100.0
+   ],
+   "end_radius_mm": 0.1,
+   "how": "the two coil ends lie stacked at this point on the two layers; the terminal goes between them"
+  },
+  "2": {
+   "kind": "RX via",
+   "source": "the generator found no cut spot; the layer-change via farthest from the TX copper (3.40 mm), of those the farthest from the TX ends",
+   "generator_cut_xy_kicad": null,
+   "via_xy_kicad": [
+    97.737258,
+    102.262742
+   ],
+   "void_radius_mm": 0.3,
+   "how": "leave this via out (opens the loop); the terminal goes between its two pads"
+  },
+  "1": {
+   "kind": "RX via",
+   "source": "the generator found no cut spot; the layer-change via farthest from the TX copper (3.40 mm), of those the farthest from the TX ends",
+   "generator_cut_xy_kicad": null,
+   "via_xy_kicad": [
+    97.737258,
+    97.737258
+   ],
+   "void_radius_mm": 0.3,
+   "how": "leave this via out (opens the loop); the terminal goes between its two pads"
+  }
+ },
+ "sets": [
+  {
+   "set": 1,
+   "tx": "TX",
+   "sin": "2",
+   "cos": "1",
+   "f_Hz": 3500000.0,
+   "loops": 1,
+   "electrical_period_mech_deg": 360.0,
+   "rotor_period_mech_deg": 360.0,
+   "sweep_angles_mech_deg": [
+    0.0,
+    45.0,
+    90.0,
+    135.0,
+    180.0,
+    225.0,
+    270.0,
+    315.0
+   ]
+  }
+ ],
+ "mesh_level": 0.25
+}
