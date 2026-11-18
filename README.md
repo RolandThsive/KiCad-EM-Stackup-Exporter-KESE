@@ -147,7 +147,7 @@ The Theory row is worked out from the TX copper alone (see [Formulas](#formulas)
 
 ### Time and memory
 
-Each branch records the wall time and the peak memory of every solve. They all ran on the same machine (4 cores, 15 GB), often while another solver shared it, and each with its own process layout (FastHenry runs several single-threaded solves at once; Palace runs two or four MPI processes per solve). Read these as rough.
+Each branch records the wall time and the peak memory of every solve. They all ran on machines of the same size (4 cores, 15 GB), often while another solver shared the machine, and each with its own process layout (FastHenry runs several single-threaded solves at once; Palace runs two or four MPI processes per solve, and solved S0d2's five gaps on five such machines at once). Read these as rough.
 
 | Solver | Seconds per solve (median over the gaps) | Range | Peak memory of a solve, as the branch measured it (GB) |
 |---|---|---|---|
@@ -172,14 +172,18 @@ Two boards whose answer is known from a formula, solved by every branch: E01, on
 | Elmer | 55.731 nH (+0.25 %) | — | — | — | `results_grade2.json` (a finer mesh, kept by the branch) |
 | PyPEEC | 56.089 nH (+0.90 %) | 54.990 nH (−0.09 %) | 24.091 nH (+0.86 %) | 23.841 nH (−0.19 %) | as each branch solves it |
 | FastHenry | 55.580 nH (−0.02 %) | 54.797 nH (−0.44 %) | 23.892 nH (+0.03 %) | 23.856 nH (−0.12 %) | as each branch solves it |
-| Palace | still to solve | | | | |
+| Palace | 54.199 nH (−2.50 %) | 53.295 nH (−3.17 %) | 23.355 nH (−2.22 %) | 23.299 nH (−2.46 %) | as each branch solves it |
+| Palace | 55.857 nH (+0.48 %) | 54.878 nH (−0.29 %) | 24.166 nH (+1.17 %) at 100 kHz | 24.104 nH (+0.91 %) | `results_grade.json` (a finer mesh, kept by the branch) |
 | **Theory** | 55.590 nH | 53.37 to 55.59 nH (the branches use 55.039) | 23.886 nH | 23.886 nH | the references, by Neumann's integral ([Formulas](#the-proof-boards-references)) |
+
+- **Palace's values sit above the open arcs.** Its lumped port is a sheet across each gap: the TX's current crosses it and the RX's EMF is taken across it, so Palace's loops are closed across their gaps, and once its mesh is fine enough its L and M should lie above the open arcs and near the closed rings. With the coil boards' air its E01 L is 0.48 % above the open arc and 1.4 % under the closed ring (56.622 nH), and its E02 M is 1.17 % above the open arcs and 1.0 % under the closed rings (24.400 nH). FastHenry's port closes its loop at no length, which is what the open arcs describe.
+- **Palace's graded E02 is solved at 100 kHz** in place of 10 kHz: on its 303,129 node mesh GMRES does not converge at 10 kHz within 15 GB, and on the default mesh M at the two frequencies agrees to 0.002 %.
 
 ## Why they differ
 
 **FEM against PEEC.** A FEM solver has to mesh the air, and on a coarse air mesh it stores too little magnetic energy, so L and M come out low and rise as the mesh is refined. Palace's mesh study on S0 at 1 mm shows it: at the bridges' default mesh L TX is 114.3 nH, with the air graded four times as finely and thinner layers 118.3 nH, and with the copper refined too 120.0 nH, against FastHenry's 126.3 nH at the same angle. The coupling moves less, 3 to 4 %, and had settled to 0.5 % at the mesh Palace's results use. The outer boundary also lowers L a little.
 
-**Elmer and Palace agree on the same mesh.** On S0 at 1 mm and rotor angle 0, with the bridges' default mesh, Elmer gives L TX 114.27 nH and M 2.004 and 1.880 nH; Palace, two unrelated codes, gives 114.31 nH and 2.015 and 1.881 nH. So Elmer's 9 % deficit in L is its mesh, not its physics, and its branch's mesh ladder (which refines only the copper) cannot show it. Its proof board E01 says the same: −2.4 % at its default mesh, +0.25 % with the air graded finely.
+**Elmer and Palace agree on the same mesh.** On S0 at 1 mm and rotor angle 0, with the bridges' default mesh, Elmer gives L TX 114.27 nH and M 2.004 and 1.880 nH; Palace, two unrelated codes, gives 114.31 nH and 2.015 and 1.881 nH. So Elmer's 9 % deficit in L is its mesh, not its physics, and its branch's mesh ladder (which refines only the copper) cannot show it. Its proof board E01 says the same: −2.4 % at its default mesh, +0.25 % with the air graded finely. So does Palace's: −2.5 % at the finest level of its default mesh, +0.48 % with the coil boards' air.
 
 **PyPEEC against FastHenry.** Both are PEEC, so the difference is how they cut up the copper. PyPEEC draws the tracks onto a grid of 50 µm voxels, which turns every arc into a staircase; FastHenry follows each track's centreline with straight filaments (3 across the width, 5° per segment at most). PyPEEC's coupling is about 2 % under FastHenry's and its L TX about 1 % over; on the proof boards PyPEEC is 0.9 % high at 10 kHz and settles towards the reference as its voxels shrink, while FastHenry is within 0.03 %.
 

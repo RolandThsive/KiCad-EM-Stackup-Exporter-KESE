@@ -182,7 +182,8 @@ def align_signs(rows, summary):
 # distance (w / 4) and is an estimate: the skin depth equals the copper's thickness there.
 REFERENCES = {('E01_circular_loop', 'dc'): 55.590, ('E01_circular_loop', 'hf'): 55.039,
               ('E02_coaxial_loops', 'dc'): 23.886, ('E02_coaxial_loops', 'hf'): 23.886}
-EXTRA = {'Elmer': {'E01_circular_loop': ['results_grade2.json'], 'E02_coaxial_loops': ['results_grade.json']}}
+EXTRA = {'Elmer': {'E01_circular_loop': ['results_grade2.json'], 'E02_coaxial_loops': ['results_grade.json']},
+         'Palace': {'E01_circular_loop': ['results_grade.json'], 'E02_coaxial_loops': ['results_grade.json']}}
 
 
 def proof(sources):

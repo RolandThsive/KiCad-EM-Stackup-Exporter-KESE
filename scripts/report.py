@@ -453,8 +453,12 @@ def proof_section(proof, notes, e01=None):
         for f in files:
             cells = []
             for b, fr in cases:
-                r = [x for x in proof if x['solver'] == s and x['file'] == f and x['board'] == b and x['frequency_hz'] == fr]
-                cells.append(f"{num(r[0]['value_nH'], 3)} nH ({pct(r[0]['error_pct'] / 100, 2)} %)" if r else '—')
+                mine = [x for x in proof if x['solver'] == s and x['file'] == f and x['board'] == b]
+                r = [x for x in mine if x['frequency_hz'] == fr]
+                tag = ''
+                if not r and fr == 1e4:             # a run whose low frequency is 100 kHz (same L and M, see notes)
+                    r, tag = [x for x in mine if x['frequency_hz'] == 1e5], ' at 100 kHz'
+                cells.append(f"{num(r[0]['value_nH'], 3)} nH ({pct(r[0]['error_pct'] / 100, 2)} %){tag}" if r else '—')
             run = 'as each branch solves it' if f == 'results.json' else f'`{f}` (a finer mesh, kept by the branch)'
             t.append(f'| {s} | ' + ' | '.join(cells) + f' | {run} |')
         if not files:
@@ -469,7 +473,8 @@ def proof_section(proof, notes, e01=None):
                  '| the references, by Neumann\'s integral ([Formulas](#the-proof-boards-references)) |')
     ref = sorted({(r['board'], r['frequency_hz'], r['reference_nH']) for r in proof})
     if refs:
-        return t + ['']
+        return t + [''] + [x for k in notes.get('PROOF_AFTER', []) for x in ('- ' + k,)] + (
+            [''] if notes.get('PROOF_AFTER') else [])
     t += ['', 'The references: ' + '; '.join(f"{b.split('_')[0]} at {fr / 1e6:g} MHz {num(v, 3)} nH" if fr >= 1e6 else
                                            f"{b.split('_')[0]} at {fr / 1e3:g} kHz {num(v, 3)} nH" for b, fr, v in ref) + '.',
           '']
