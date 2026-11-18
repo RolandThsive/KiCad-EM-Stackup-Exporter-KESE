@@ -16,7 +16,7 @@ run goes:
   size is that of the `stl/` folder, one file a part, and the OBJ size includes its `.mtl`. MB is a
   million bytes.
 - Boards 29 to 29d came with the stack-up changes of
-  [44.2](Future-Upgrades-And-Planning.md#442-model-accuracy) and were timed after them; the other
+  [72.2](Future-Upgrades-And-Planning.md#722-model-accuracy) and were timed after them; the other
   boards were timed before. A rerun of those 40 boards in simulation GLB and visual GLB, before and
   after the changes one right after the other, gave the same model files byte for byte and the same
   times: the sum of the medians went from 144.0 s to 143.5 s.

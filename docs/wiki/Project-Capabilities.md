@@ -92,7 +92,8 @@ with 4 workers; visual mode with the Verifier 219 s, 209 s and 187 s, about 3 GB
 
 > [!NOTE]
 > Every dimension in the model is a model value until it is measured. Validation against
-> fabricated boards and reference solvers is planned but not done.
+> fabricated boards is planned but not done; so far four solvers have been checked against
+> closed-form formulas and against each other ([Solvers Comparison](Solvers-Comparison.md)).
 
 | Previous | Next |
 |:---|---:|
