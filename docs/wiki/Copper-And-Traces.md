@@ -254,8 +254,13 @@ file older than KiCad 7 has no such list, and zones count like any copper.
 
 The start and end layers are always kept when the via or pad says `keep_end_layers`. A KiCad 10
 via with `(start_end_only yes)` keeps its rings on its start and end layers only, whatever meets
-it. `report.txt` counts the rings removed under `via rings removed on unconnected layers` (pad
-rings included).
+it. The three words are read as KiCad's parser reads them, one after another in the file's order:
+for a via each one that is on sets its mode, so `keep_end_layers` on its own also makes the inner
+rings conditional and a later word overrides an earlier one; for a pad `remove_unused_layers` turns
+the option on or off and `keep_end_layers` keeps or drops the outer rings (`PCB_VIA::SetKeepStartEnd`,
+`PAD::SetKeepTopBottom`). KiCad writes them only in the combinations it reads back the same way,
+so this matters for a file edited by hand or written by another tool. `report.txt` counts the
+rings removed under `via rings removed on unconnected layers` (pad rings included).
 
 ### 13.3.2 Via Tenting
 

@@ -121,7 +121,7 @@ python tests/test_copper_union.py # a net's copper joined with no crack and no b
 python tests/test_finish_shells.py # the finish's air cut bore by bore, as the whole board's union cuts it
 python tests/test_mask.py        # no slivers of mask on the copper where an opening follows a pad's edge: the finish covers them
 python tests/test_hatch.py       # KiCad 10's hatched fills, against what KiCad 10 itself draws
-python tests/test_pad_rules.py   # a pad's chamfer, as KiCad's parser reads it
+python tests/test_pad_rules.py   # a pad's chamfer and the "remove unused layers" words, as KiCad's parser reads them
 python tests/test_machining.py   # KiCad 10's backdrills, counterbores and countersinks, against KiCad 10 and the cone
 python tests/test_via_protection.py # KiCad 10's via covering, plugging, capping and filling, as the file and the board say
 python tests/test_pairs.py       # pieces within a distance of each other, as an STRtree finds them; a tree threads share

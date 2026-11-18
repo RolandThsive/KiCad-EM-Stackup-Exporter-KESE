@@ -1,7 +1,9 @@
-"""KiCad's parser rules for a pad's shape (kese/s2_collect/pad_shapes.py, pads.py), checked against
-pcb_io_kicad_sexpr_parser.cpp: a chamfer makes any pad a chamfered rectangle, with KiCad's own ratios
-where the file gives none (0.25 rounding and 0.2 chamfer on the front, nothing on a padstack layer).
-No board is run.
+"""KiCad's parser rules for a pad's shape and for the rings "remove unused layers" leaves
+(kese/s2_collect/pad_shapes.py, pads.py, vias.py), each checked against pcb_io_kicad_sexpr_parser.cpp:
+a chamfer makes any pad a chamfered rectangle, with KiCad's own ratios where the file gives none
+(0.25 rounding and 0.2 chamfer on the front, nothing on a padstack layer); remove_unused_layers,
+keep_end_layers and start_end_only set the mode token by token, in the file's order, a via's and a
+pad's by their own rules.  No board is run.
 
     python -m pytest tests/test_pad_rules.py        (or:  python tests/test_pad_rules.py)"""
 import math
@@ -11,6 +13,7 @@ from helpers import run_tests
 from kese.core.sexp import parse
 from kese.s2_collect.pad_shapes import pad_shape
 from kese.s2_collect.pads import padstack_layers
+from kese.s2_collect.vias import ENDS_ONLY, KEEP_ALL, KEEP_ENDS, REMOVE_ALL, ring_mode
 
 ITEMS = SimpleNamespace(skipped={})
 
@@ -51,6 +54,28 @@ def test_a_padstack_layer_starts_from_no_rounding_and_no_chamfer():
     assert math.isclose(pad_shape(ITEMS, stack["In1.Cu"], 2, 1).area, 2.0)               # square corners
     assert math.isclose(pad_shape(ITEMS, stack["B.Cu"], 2, 1).area,
                         rounded(2, 1, 0.5) + (4 - math.pi) / 4 * 0.5 ** 2, rel_tol=5e-3)   # corner squared, no cut
+
+
+def test_the_unused_layer_tokens_set_the_mode_one_by_one():
+    """PCB_VIA: each token that is on sets its mode (SetRemoveUnconnected, SetKeepStartEnd, START_END_ONLY),
+    one that is off changes nothing; PAD: remove_unused_layers sets REMOVE_ALL or KEEP_ALL and
+    keep_end_layers REMOVE_EXCEPT_START_AND_END or REMOVE_ALL, and a pad has no start_end_only."""
+    cases = {
+        "": (KEEP_ALL, KEEP_ALL),
+        "(remove_unused_layers yes) (keep_end_layers no)": (REMOVE_ALL, REMOVE_ALL),
+        "(remove_unused_layers yes) (keep_end_layers yes)": (KEEP_ENDS, KEEP_ENDS),
+        "(keep_end_layers yes)": (KEEP_ENDS, KEEP_ENDS),                 # keep alone keeps the ends, removes the rest
+        "(keep_end_layers yes) (remove_unused_layers yes)": (REMOVE_ALL, REMOVE_ALL),     # the later token wins
+        "(remove_unused_layers no)": (KEEP_ALL, KEEP_ALL),
+        "(keep_end_layers no)": (KEEP_ALL, REMOVE_ALL),
+        "(remove_unused_layers yes) (remove_unused_layers no)": (REMOVE_ALL, KEEP_ALL),
+        "(start_end_only yes)": (ENDS_ONLY, KEEP_ALL),
+        "(remove_unused_layers) (keep_end_layers)": (KEEP_ENDS, KEEP_ENDS),               # KiCad 7 and 8: bare
+        "remove_unused_layers": (REMOVE_ALL, REMOVE_ALL),                                 # a bare word, read leniently
+    }
+    for tokens, (via, pad) in cases.items():
+        assert ring_mode(parse(f"(via (at 0 0) {tokens})"), via=True) == via, tokens
+        assert ring_mode(parse(f'(pad "1" thru_hole circle {tokens})'), via=False) == pad, tokens
 
 
 if __name__ == "__main__":
