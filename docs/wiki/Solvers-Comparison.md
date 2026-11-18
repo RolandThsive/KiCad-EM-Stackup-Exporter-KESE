@@ -45,7 +45,8 @@ Each solver sets up `S0d2_1x_OD23_2L_tiny_TX3top_Cut` its own way, from the same
 | Elmer | 55.731 nH (+0.25 %) | — | 23.866 nH (−0.08 %) | — | a finer air mesh, kept by the branch |
 | PyPEEC | 56.089 nH (+0.90 %) | 54.990 nH (−0.09 %) | 24.091 nH (+0.86 %) | 23.841 nH (−0.19 %) | as its branch solves it |
 | FastHenry | 55.580 nH (−0.02 %) | 54.797 nH (−0.44 %) | 23.892 nH (+0.03 %) | 23.856 nH (−0.12 %) | as its branch solves it |
-| Palace | still being solved | | | | |
+| Palace | 54.199 nH (−2.50 %) | 53.295 nH (−3.17 %) | 23.355 nH (−2.22 %) | 23.299 nH (−2.46 %) | as its branch solves it |
+| Palace | 55.857 nH (+0.48 %) | 54.878 nH (−0.29 %) | 24.166 nH (+1.17 %) at 100 kHz | 24.104 nH (+0.91 %) | a finer air mesh, kept by the branch |
 | **Theory** | 55.590 nH | 53.37 to 55.59 nH | 23.886 nH | 23.886 nH | Neumann's integral |
 
 The percentages are against the references the branches share: Neumann's double integral over the open arcs, 55.590 nH for E01 at 10 kHz and 23.886 nH for E02, and for E01 at 3.5 MHz 55.039 nH, the value for a strip of no thickness with its current at the edges. At 3.5 MHz the skin depth equals the copper's thickness, so the true value lies between the surface-current limit, 53.37 nH, and the DC value: the Theory row.
@@ -53,6 +54,7 @@ The percentages are against the references the branches share: Neumann's double 
 - **FastHenry is within a few hundredths of a percent at 10 kHz**, on both boards.
 - **PyPEEC is 0.9 % high at 10 kHz** on its 12.5 µm (E01) and 50 µm (E02) voxels, and close at 3.5 MHz.
 - **Elmer is 2.4 % low at its default mesh** and within 0.3 % once the air is graded finely: the FEM solvers' error is in the air mesh.
+- **Palace is above the open arcs once its air is graded as on the coil boards**: E01 +0.48 % and E02 +1.17 %, against −2.5 % and −2.2 % on its default mesh. Its lumped port is a sheet across each gap that carries the TX's current across it and takes the RX's EMF across it, so its loops are closed, and its L and M should end above the open arcs and near the closed rings (56.622 and 24.400 nH). Its graded E02 is solved at 100 kHz: at 10 kHz GMRES does not converge on that mesh within 15 GB, and on the default mesh the two frequencies agree to 0.002 %.
 
 ## 70.4 S0d2_1x_OD23_2L_tiny_TX3top_Cut: The Signal Over The Air Gap
 
@@ -129,7 +131,7 @@ The PEEC solvers need far less memory, since they mesh no air; Elmer's direct so
 
 ## 70.8 Why They Differ
 
-**FEM against PEEC.** A FEM solver meshes the air and closes it at an outer boundary. On a coarse air mesh it stores too little magnetic energy, so L and M come out low and rise as the mesh is refined; the boundary lowers them a little more. With the rotor away, Palace's L TX is 4.6 % under FastHenry's and Elmer's 6.9 %, both under the high-frequency limit ([70.5](#705-s0d2_1x_od23_2l_tiny_tx3top_cut-the-tx-coil-against-the-hand-values)). Palace grades its air four times as finely as Elmer (a grade of 0.125 against 0.5) and stacks its wedge layers half as thick, and it lands closer. Elmer's E01 shows where the error lies: −2.4 % on its default mesh, +0.25 % once the air is graded finely.
+**FEM against PEEC.** A FEM solver meshes the air and closes it at an outer boundary. On a coarse air mesh it stores too little magnetic energy, so L and M come out low and rise as the mesh is refined; the boundary lowers them a little more. With the rotor away, Palace's L TX is 4.6 % under FastHenry's and Elmer's 6.9 %, both under the high-frequency limit ([70.5](#705-s0d2_1x_od23_2l_tiny_tx3top_cut-the-tx-coil-against-the-hand-values)). Palace grades its air four times as finely as Elmer (a grade of 0.125 against 0.5) and stacks its wedge layers half as thick, and it lands closer. E01 shows where the error lies: Elmer is −2.4 % on its default mesh and +0.25 % once the air is graded finely, Palace −2.5 % and +0.48 %.
 
 **PyPEEC against FastHenry.** Both model only the copper, so the difference is how they cut it up. PyPEEC draws the tracks onto a grid of 50 µm voxels, which turns every arc into a staircase; FastHenry follows each track's centre line with straight filaments, three across the width and one through the thickness. On this board PyPEEC's signal is 2.2 % under FastHenry's and its L TX 0.6 % over; on E01 at 10 kHz PyPEEC is 0.9 % high and FastHenry 0.02 % low.
 
