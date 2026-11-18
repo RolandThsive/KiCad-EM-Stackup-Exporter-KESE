@@ -10,7 +10,7 @@ The mesh and the ports were settled on S0 at 1 mm and 0° ([its README](S0_1x_OD
 
 ## The boards here
 
-All of them are S0 and boards made from it. A solve takes 4.4 to 9.3 GB and 2 to 12 min on 2 or 4 MPI ranks, so a 16 GB machine runs one at a time, on all its cores:
+All of them are S0 and boards made from it. A solve takes 4.4 to 9.7 GB and 1 to 12 min on 2 or 4 MPI ranks, so a 16 GB machine runs one at a time, on all its cores:
 
 | Board | What it is |
 |---|---|
@@ -25,18 +25,18 @@ Every board folder holds the same files and stands on its own: its README has th
 
 ## Results in short
 
-Every board is solved at 0.1, 0.5, 1, 1.5 and 2 mm, at 8 angles over the turn (S0d2 at 16), with the rotor taken away once at 1 mm: 42 solves so far, every one readable. SIN's amplitude, the best sine through each gap's solves (1 nH is 22 mV of EMF with 1 A at 3.5 MHz in the TX):
+Every board is solved at 0.1, 0.5, 1, 1.5 and 2 mm, at 8 angles over the turn (S0d2 at 16), with the rotor taken away once at 1 mm: 82 solves so far, every one readable. SIN's amplitude, the best sine through each gap's solves (1 nH is 22 mV of EMF with 1 A at 3.5 MHz in the TX):
 
 | Board | 0.1 mm | 0.5 mm | 1 mm | 1.5 mm | 2 mm |
 |---|---|---|---|---|---|
 | [S0](S0_1x_OD21_2L_tiny/) | 6.44 nH | 4.62 nH | 2.93 nH | 1.88 nH | 1.23 nH |
-| [21 mm, 2 TX turns on top](S0_1x_OD21_2L_tiny_TXtop/) | — | — | — | — | — |
+| [21 mm, 2 TX turns on top](S0_1x_OD21_2L_tiny_TXtop/) | 5.20 nH | 3.82 nH | 2.42 nH | 1.53 nH | 1.00 nH |
 | [22 mm, 2 TX turns on top](S0_1x_OD22_2L_tiny_TXtop/) | — | — | — | — | — |
 | [22 mm, 2 TX turns on top, opened by cuts](S0_1x_OD22_2L_tiny_TXtop_Cut/) | — | — | — | — | — |
 | [23 mm, 3 TX turns on top, opened by cuts](S0_1x_OD23_2L_tiny_TX3top_Cut/) | — | — | — | — | — |
 | [23 mm, 3 TX turns on top, opened by cuts, 2 periods per turn](S0d2_1x_OD23_2L_tiny_TX3top_Cut/) | — | — | — | — | — |
 
-SIN and COS match within 0.2 % on every board. The angle error is 0.1° to 0.2° rms from 0.5 to 2 mm and up to 0.5° at 0.1 mm, where the fourth-harmonic ripple that two-coil sensors typically have shows. On S0, L TX with the rotor away is 127.1 nH, 4.1 % under a hand calculation that leaves out the leads to the terminal (two coaxial rings of 7.2 mm radius 0.765 mm apart, in series, 132.5 nH by Grover's and Maxwell's formulas). [`Comparisons/`](Comparisons/README.md) sets the boards side by side.
+SIN and COS match within 0.2 % on every board. The angle error is 0.1° to 0.7° rms from 0.5 to 2 mm and up to 1.5° at 0.1 mm, where the fourth-harmonic ripple that two-coil sensors typically have shows. On S0, L TX with the rotor away is 127.1 nH, 4.1 % under a hand calculation that leaves out the leads to the terminal (two coaxial rings of 7.2 mm radius 0.765 mm apart, in series, 132.5 nH by Grover's and Maxwell's formulas). [`Comparisons/`](Comparisons/README.md) sets the boards side by side.
 
 ## A small board for the SIN and COS curves
 
