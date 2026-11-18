@@ -44,7 +44,7 @@ The same build, from source (the commands that made `install/`):
 ```
 sudo apt-get update
 sudo apt-get install -y build-essential cmake git gfortran libopenmpi-dev libblas-dev liblapack-dev \
-    libopenblas-dev libmumps-dev libparmetis-dev libscalapack-openmpi-dev
+    libopenblas-dev libmumps-dev libscalapack-openmpi-dev
 cd Solver_Elmer
 git clone --depth 1 --branch release-26.2.1 https://github.com/ElmerCSC/elmerfem.git elmerfem
 mkdir build && cd build
@@ -53,7 +53,8 @@ cmake ../elmerfem -DCMAKE_BUILD_TYPE=Release -DWITH_ELMERGUI:BOOL=FALSE -DWITH_M
 make -j"$(nproc)" install
 ```
 
-`elmerfem/` and `build/` stay out of git. gmsh, the mesher, comes from PyPI into the bridge's Python environment:
+ParMETIS is not needed: nothing in `install/` links it (checked with `ldd` on every binary and library), and its
+licence is not an open-source one, so it is left out. `elmerfem/` and `build/` stay out of git. gmsh, the mesher, comes from PyPI into the bridge's Python environment:
 `pip install gmsh==4.15.2`.
 
 Elmer's repository has build instructions for Windows (MSYS2) and macOS; follow those, and install into
