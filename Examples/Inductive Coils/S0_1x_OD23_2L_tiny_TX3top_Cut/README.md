@@ -40,13 +40,17 @@ Every angle at every gap, one Palace solve each: 8 angles at each of 5 gaps, and
 
 | Air gap | Amplitude SIN / COS | Angle error | Solves passing the checks | L TX over the turn |
 |---|---|---|---|---|
-| 2 mm | not solved yet | | | |
-| 1.5 mm | not solved yet | | | |
-| 1 mm | not solved yet | | | |
-| 0.5 mm | not solved yet | | | |
-| 0.1 mm | not solved yet | | | |
+| 2 mm | 2.36 / 2.37 nH (52 / 52 mV) | 0.3° rms, 0.4° peak | 8 of 8 | 266.4 to 266.6 nH |
+| 1.5 mm | 3.43 / 3.43 nH (75 / 76 mV) | 0.3° rms, 0.4° peak | 8 of 8 | 260.6 to 260.8 nH |
+| 1 mm | 5.03 / 5.04 nH (111 / 111 mV) | 0.3° rms, 0.5° peak | 8 of 8 | 251.0 to 251.4 nH |
+| 0.5 mm | 7.31 / 7.32 nH (161 / 161 mV) | 0.6° rms, 0.7° peak | 8 of 8 | 234.7 to 235.2 nH |
+| 0.1 mm | 9.38 / 9.39 nH (206 / 206 mV) | 1.2° rms, 1.5° peak | 8 of 8 | 208.6 to 209.2 nH |
 
-This board is still being solved; its charts and results come with its solves.
+![SIN at each air gap](Results/SINCOS_gaps_SIN.webp)
+
+*SIN at each air gap, one dot per solve; a ring would mark a solve that fails the checks (none does). [`SINCOS_gaps_COS.webp`](Results/SINCOS_gaps_COS.webp) is the same for COS, and [`SINCOS_gaps.webp`](Results/SINCOS_gaps.webp) has both.*
+
+Every solve converged and passes the checks: the TX's L from its port and from the field's energy agree within 0.01 %, where 1 % is allowed, and M back from SIN and COS to the TX, where they were driven too, equals M from the TX within 0.001 %. At every gap SIN and COS are within 0.2 % of each other in amplitude and 90.0° apart, and the angle error is 0.3° to 1.2° rms over the gaps. At 0.1 mm the angle error alternates in sign from one angle to the next: a ripple at four periods per electrical period, the fastest the angles can show, which third or fifth harmonics of the coupling would give, and those fade faster with the gap than the sine itself. SIN's amplitude is 9.38 nH at 0.1 mm, 7.31 nH at 0.5 mm, 5.03 nH at 1 mm, 3.43 nH at 1.5 mm and 2.36 nH at 2 mm (206 down to 52 mV of EMF at 1 A). L TX moves by 0.7 nH at most over the turn, and rises from 208.9 nH at 0.1 mm to 266.5 nH at 2 mm; with the rotor away it is 281.4 nH, where the generator estimated 226 nH with the rotor and 292 nH without. The meshes have 155,195 to 254,931 nodes, 12 to 21 element layers through the copper, board and gap, and each solve took 2 to 12 min and 5.1 to 11.4 GB on 4 MPI ranks.
 
 ## The folder
 
@@ -63,8 +67,13 @@ Beside this README, `S0_1x_OD23_2L_tiny_TX3top_Cut_stator_and_rotor.webp` is the
 
 | Air gap | Mesh level | Nodes | Element layers | MPI ranks | Memory a solve | Time a solve |
 |---|---|---|---|---|---|---|
+| 0.1 mm | 0.25 | 155,195 to 157,146 | 12 | 4 | 5.1 to 6.9 GB | 1.6 to 5.6 min |
+| 0.5 mm | 0.25 | 176,661 to 178,876 | 14 | 4 | 5.7 to 7.8 GB | 1.9 to 6.5 min |
+| 1 mm | 0.25 | 198,127 to 200,606 | 16 | 4 | 6.4 to 8.8 GB | 2.3 to 8.0 min |
+| 1.5 mm | 0.25 | 230,326 to 233,201 | 19 | 4 | 7.4 to 10.2 GB | 2.7 to 9.2 min |
+| 2 mm | 0.25 | 251,792 to 254,931 | 21 | 4 | 8.2 to 11.4 GB | 3 to 12 min |
 
-Each solve is GMRES with hypre's AMS, at about 33 kB a mesh node, and 44 kB at the first angle of each gap, where the three coils are driven in turn, on 2 MPI ranks or 4 alike; a 16 GB machine runs two at once (`--jobs 2`) where a solve stays under 7 GB. Level 0.25 is the default (`--level` makes the copper's mesh finer); see [S0's README](../S0_1x_OD21_2L_tiny/README.md#what-the-solver-does) for what a finer mesh moves.
+Each solve is GMRES with hypre's AMS, at about 33 kB a mesh node, and 44 kB at the first angle of each gap, where the three coils are driven in turn (5.1 to 11.4 GB here), on 2 MPI ranks or 4 alike; a 16 GB machine runs two at once (`--jobs 2`) where a solve stays under 7 GB. Level 0.25 is the default (`--level` makes the copper's mesh finer); see [S0's README](../S0_1x_OD21_2L_tiny/README.md#what-the-solver-does) for what a finer mesh moves.
 
     cd "Palace Simulation"
     python simulation.py                      # the rotor away, then 0, 45, 90, 135, 180, 225, 270, 315 degrees, at a 1 mm gap
