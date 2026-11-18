@@ -57,7 +57,41 @@
 **Solver Comparison**
 - [Elmer vs openEMS](Elmer-vs-OpenEMS.md)
 
+**PyPEEC Implementation**
+- [PyPEEC Introduction](PyPEEC-Introduction.md)
+- [PyPEEC Installation](PyPEEC-Installation.md)
+- [PyPEEC Workflow](PyPEEC-Workflow.md)
+- [PyPEEC Simulating Your Own Board](PyPEEC-Simulating-Your-Own-Board.md)
+- [PyPEEC Test Boards](PyPEEC-Test-Boards.md)
+- [PyPEEC Test Board Results](PyPEEC-Test-Board-Results.md)
+- [PyPEEC Accuracy](PyPEEC-Accuracy.md)
+- [PyPEEC Hardware](PyPEEC-Hardware.md)
+- [PyPEEC Troubleshooting](PyPEEC-Troubleshooting.md)
+
+**FastHenry Implementation**
+- [FastHenry Introduction](FastHenry-Introduction.md)
+- [FastHenry Installation](FastHenry-Installation.md)
+- [FastHenry Workflow](FastHenry-Workflow.md)
+- [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md)
+- [FastHenry Test Boards](FastHenry-Test-Boards.md)
+- [FastHenry Test Board Results](FastHenry-Test-Board-Results.md)
+- [FastHenry Accuracy](FastHenry-Accuracy.md)
+- [FastHenry Hardware](FastHenry-Hardware.md)
+- [FastHenry Troubleshooting](FastHenry-Troubleshooting.md)
+
+**Palace Implementation**
+- [Palace Introduction](Palace-Introduction.md)
+- [Palace Installation](Palace-Installation.md)
+- [Palace Workflow](Palace-Workflow.md)
+- [Palace Simulating Your Own Board](Palace-Simulating-Your-Own-Board.md)
+- [Palace Test Boards](Palace-Test-Boards.md)
+- [Palace Test Board Results](Palace-Test-Board-Results.md)
+- [Palace Accuracy](Palace-Accuracy.md)
+- [Palace Hardware](Palace-Hardware.md)
+- [Palace Troubleshooting](Palace-Troubleshooting.md)
+
 **Research And Community**
+- [Solvers Comparison](Solvers-Comparison.md)
 - [Glossary](Glossary.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
 - [Real PCB Stackup](Real-PCB-Stackup.md)
