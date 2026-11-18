@@ -518,9 +518,10 @@ same with a big board's STEP parts written into files of their own and joined, n
 behind, in about fifteen seconds (`python tests/test_full_disk.py`);
 `tests/test_hatch.py`, which draws KiCad 10's hatched fills as KiCad does: lines ten pens apart, or
 the larger side over 100, at 45 degrees, a cross hatch's grid of square holes, the knockouts and
-their margins and which items knock out which hatch, the fill word as KiCad 10 writes it, and the
-copper, silkscreen and mask of featureTest/27 round each hatched drawing as KiCad 10 draws them, to
-0.3 %, in under a second (`python tests/test_hatch.py`);
+their margins and which items knock out which hatch (another footprint's courtyard on the
+drawing's side among them, on a board of two footprints, one courtyard drawn as four lines), the
+fill word as KiCad 10 writes it, and the copper, silkscreen and mask of featureTest/27 round each
+hatched drawing as KiCad 10 draws them, to 0.3 %, in under a second (`python tests/test_hatch.py`);
 `tests/test_machining.py`, which cuts KiCad 10's backdrills, counterbores and countersinks: a
 counterbore to its depth from the copper face (a floor inside an inner copper layer too), a
 countersink within its tolerance of the cone and with the cone's volume, the copper knocked out

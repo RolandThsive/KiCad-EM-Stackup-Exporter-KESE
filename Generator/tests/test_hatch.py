@@ -105,6 +105,38 @@ def test_which_items_knock_out_which_hatch():
     assert knocks(h, k(fp=8)) and knocks(h, k(fp=8, kind="field"))     # another footprint's drawings and fields
     assert not knocks(h, k(fp=8, kind="text"))                   # but not its other text
     assert not knocks(h, k(fp=7)) and not knocks(h, k(fp=7, kind="field"))   # nor its own footprint's
+    # another footprint's courtyard on the drawing's side (the front's for an inner layer), not its own's
+    assert knocks(h, k("F.CrtYd", 8, "courtyard")) and not knocks(h, k("B.CrtYd", 8, "courtyard"))
+    assert not knocks(h, k("F.CrtYd", 7, "courtyard")) and not knocks(h, k("F.CrtYd", None, "shape"))
+    back, inner = (Hatched(layer, box(0, 0, 10, 10), 0.1, "hatch", None, "", (0, 0, 10, 10), 1) for layer in ("B.Cu", "In1.Cu"))
+    assert knocks(back, k("B.CrtYd", 8, "courtyard")) and not knocks(back, k("F.CrtYd", 8, "courtyard"))
+    assert knocks(inner, k("F.CrtYd", 8, "courtyard")) and not knocks(inner, k("B.CrtYd", 8, "courtyard"))
+
+
+def test_other_footprints_courtyards_cut_back_a_hatch(tmp_path):
+    """A hatched rectangle on each face, footprint A's front courtyard of four lines and its smaller
+    back one inside them, and footprint B's hatch inside its own courtyard: each face's hatch stops
+    at A's courtyard of that side (no margin), and B's own courtyard leaves B's hatch alone."""
+    text = BOARD.read_text(encoding="utf-8")
+    pen = '(stroke (width 0.05) (type solid))'
+
+    def rect(kind, a, b, layer, fill="hatch"):
+        return f'({kind} (start {a[0]} {a[1]}) (end {b[0]} {b[1]}) {pen} (fill {fill}) (layer "{layer}"))'
+    corners = [(-3, -3), (3, -3), (3, 3), (-3, 3)]
+    lines = " ".join(f'(fp_line (start {a[0]} {a[1]}) (end {b[0]} {b[1]}) {pen} (layer "F.CrtYd"))'
+                     for a, b in zip(corners, corners[1:] + corners[:1]))
+    items = [rect("gr_rect", (100, 100), (160, 140), "Edge.Cuts", "no"),
+             rect("gr_rect", (110, 110), (130, 130), "F.Cu"), rect("gr_rect", (110, 110), (130, 130), "B.Cu"),
+             f'(footprint "T:A" (layer "F.Cu") (at 120 120) {lines} {rect("fp_rect", (-2, -2), (2, 2), "B.CrtYd", "no")})',
+             (f'(footprint "T:B" (layer "F.Cu") (at 145 120) {rect("fp_rect", (-3, -3), (3, 3), "F.CrtYd", "no")} '
+              f'{rect("fp_rect", (-5, -5), (5, 5), "F.Cu")})')]
+    pcb = tmp_path / "courtyards.kicad_pcb"
+    pcb.write_text(text[:text.index("\n\t(gr_rect")] + "\n" + "\n".join(items) + "\n)\n", encoding="utf-8")
+    r, _ = run_stages(pcb, resolve)
+    area = lambda layer, *b: r.copper_all[layer].intersection(r.to_board_T(box(*b))).area      # noqa: E731
+    assert area("F.Cu", 117.05, 117.05, 122.95, 122.95) < 1e-9 < area("F.Cu", 112, 112, 116.9, 128)
+    assert area("B.Cu", 118.05, 118.05, 121.95, 121.95) < 1e-9 < area("B.Cu", 117.2, 117.2, 117.9, 122.8)
+    assert area("F.Cu", 142, 117, 148, 123) > 1                 # B's hatch, inside B's own courtyard
 
 
 def test_the_fill_word_is_read_as_kicad_10_writes_it():

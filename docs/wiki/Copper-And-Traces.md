@@ -125,6 +125,11 @@ layers alike:
   the box of its letters grown as much, a text box by its box; of the items in footprints only the
   drawings and fields (reference, value, ...) do, and not those of the shape's own footprint, as in
   KiCad;
+- the courtyard of every other footprint cuts the hatch back too, with no margin: the back
+  courtyard (`B.CrtYd`) on the back layers and the front one on the others, inner copper included,
+  built as KiCad builds it (the courtyard's lines and arcs chained where their ends lie within
+  0.02 mm, then shrunk by 5 µm; `FOOTPRINT::BuildCourtyardCaches`); a courtyard that does not close
+  cuts nothing;
 - on copper the hatch belongs to the shape's net; a hatched copper shape the mask leaves bare opens
   the mask over the whole shape, as KiCad's mask Gerber does.
 

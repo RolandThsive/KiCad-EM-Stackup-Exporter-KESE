@@ -55,7 +55,7 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Backdrills, tertiary drills, counterbores and countersinks of pads and vias (KiCad 10) | yes: drilled and cut as KiCad's fabrication files have them, the rings outside them kept ([Copper And Traces](Copper-And-Traces.md#1333-backdrills), [Board](Board.md#1241-counterbores-and-countersinks)) |
 | Covered, plugged, capped and filled vias (IPC-4761), also when the board setup makes them so (KiCad 10) | yes: the mask over the hole, resin plugs, copper or resin fills and caps ([Copper And Traces](Copper-And-Traces.md#1334-via-protection)) |
 | Item kinds KESE does not know | skipped; counted under `skipped` in `report.txt` as `<kind> items (unknown to KESE)`, with a warning |
-| Hatched fills of graphics (KiCad 10) | yes: the hatch KiCad draws, with its knockouts, on copper, mask and silk layers ([Copper And Traces](Copper-And-Traces.md#1312-hatched-fills)) |
+| Hatched fills of graphics (KiCad 10) | yes: the hatch KiCad draws, with its knockouts (other footprints' courtyards among them), on copper, mask and silk layers ([Copper And Traces](Copper-And-Traces.md#1312-hatched-fills)) |
 | Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 
