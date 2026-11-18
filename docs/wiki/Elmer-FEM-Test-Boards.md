@@ -1,10 +1,10 @@
 # 28. Elmer FEM Test Boards
 
-The boards the Elmer bridge is proved on. The ten coil boards are drawn by the Sinusoidal Coil
-Generator's own picture tool, the stator beside the rotor; E01 and E02 are drawn in the same style,
-from above and in section. A board that has run links to its results; a board that has not is marked
-**YET TO BE RUN**. Every board is a folder under `Examples/` on the `Elmer_Integration` branch, with
-its KiCad files, its `simulation.py` and its `README.md`.
+The boards the Elmer bridge is proved on: two proof boards with textbook answers, and one whole
+inductive encoder, a stator under a rotor. E01 and E02 are drawn from above and in section; the coil
+board is drawn by the Sinusoidal Coil Generator's own picture tool, the stator beside the rotor.
+Every board is a folder under `Examples/` on the `Elmer_Integration` branch, with its KiCad files,
+its `simulation.py` and its `README.md`, and all three have run.
 
 ## 28.1 E01 Circular Loop
 
@@ -30,58 +30,51 @@ its KiCad files, its `simulation.py` and its `README.md`.
 | References | Maxwell's formula for two coaxial circles, averaged over both traces' widths, times the share of the circle the copper covers |
 | Status | **run**: [Elmer FEM Test Board Results](Elmer-FEM-Test-Board-Results.md#292-e02-coaxial-loops) |
 
-## 28.3 The Ten Inductive Encoder Boards
+## 28.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
-Ten angle-encoder boards from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator),
-in `Examples/Inductive Coils/` (non-commercial licence, see that folder's `LICENSE.md`). A stator
-carries one TX and two RX coils (SIN and COS) per coil set, the single boards (S) one set and the dual
-boards (D) two; a rotor with copper sectors sits 1.0 mm above it. The TX runs at 3 to 5 MHz, where
-the boards are about 1/2000 of a wavelength across: magneto-quasi-static, Elmer's ground.
+A small angle encoder from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator)
+(`Coil_2_11.7_2_1_3_Single_SteppedDiagonal`), in `Examples/Inductive Coils/` (non-commercial licence,
+see that folder's `LICENSE.md`). A stator carries one TX and two receivers, SIN and COS; a rotor with
+two quarter-ring copper sectors sits above it. The TX runs at 3.5 MHz, where eddy currents in the
+rotor change how much of the TX's field reaches each receiver, so SIN and COS follow the sine and
+cosine of twice the rotor's angle.
 
-Per board Elmer gives the TX's L and R with the rotor away and present (C1, C2, C10), the direct TX
-to RX coupling (C3), the coupling against the rotor's angle (C4), the SIN and COS match (C5), the angle
-error (C6), the crosstalk between the two sets of a dual board (C7) and the rotor's loss (C10). The
-single most important number is C2: how much the rotor lowers the TX's inductance, 12 to 21 % by the
-generator and 2 to 7 % by the quasi-static reference.
+<img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S0d2_1x_OD23_2L_tiny_TX3top_Cut/elmerboards_1_boards.webp" width="760" alt="S0d2_1x_OD23_2L_tiny_TX3top_Cut, drawn by the coil generator. Left, the stator, board radius 2 to 11.7 mm: three TX turns in red on the top layer round the outside, with a short tail to the terminal at the right; inside them the SIN and COS receivers, each weaving between Top (red) and Bottom (blue) through vias (dots), two sine periods per turn. Right, the rotor: two copper quarter-ring sectors on Top, opposite each other round the bore">
 
-S2 runs first. Its mesh is built and checked: 17 layers of wedges through the stator, 1,781,549
-wedges and 479,322 tetrahedra, 979,420 nodes, and every coil's electrodes found (TX 24 and 24 faces,
-SIN 233 and 233, COS 203 and 203). Elmer needs about 59 kB of memory per node on the test boards
-([Elmer FEM Hardware](Elmer-FEM-Hardware.md)), so S2 needs about 59 GB, four times the test
-machine's 15 GB. Every coil board is therefore held for a bigger PC; the memory below scales S2's
-mesh by each stator's length of copper, about 61 GB per metre.
+| Item | Value |
+|---|---|
+| Stator | 23.4 mm across (bore and outer radius 2 and 11.7 mm), 0.8 mm thick, 2 copper layers of 35 µm |
+| TX | three turns, all on F.Cu (r = 7.2, 7.8 and 8.4 mm); a short tail on B.Cu brings the inner end back out, so the two ends sit stacked at KiCad (111, 100) |
+| SIN and COS | the band r = 3.2 to 6.1 mm, each making two sine periods per turn, nets `2` and `1` |
+| Rotor | two quarter-ring sectors, r = 2.52 to 9.0 mm; it repeats itself every 180° |
+| Air gap | stator F.Cu top face to rotor copper face, 1 mm by default; run at 0.1, 0.5, 1, 1.5 and 2 mm |
+| Masks | both boards get 20 µm of solder mask on both faces with tented vias, as the coil boards' brief sets; to this solve it is air |
+| What Elmer checks | M from the TX to SIN and to COS at 16 rotor angles, the angle error read back from them, the TX's L and R with the rotor away and present; every solve checks the TX's L and R a second way, from the field energy and the eddy power |
+| References | the generator's estimates for the TX (0.29 µH with the rotor away, 0.23 µH with it, 0.38 Ω DC), and a perfect sine and cosine pair 90° apart |
+| Status | **run**: [Elmer FEM Test Board Results](Elmer-FEM-Test-Board-Results.md#293-s0d2_1x_od23_2l_tiny_tx3top_cut) |
 
-| # | Board | What it tests | Stator copper | Solves | Memory | Status |
-|---|---|---|---|---|---|---|
-| 1 | `S2_4x_OD40_2L_small` | the smallest single board, the cheapest model | 0.96 m | 9 | about 59 GB (its mesh: 979,420 nodes) | **meshed, YET TO BE RUN**: held for a bigger PC |
-| 2 | `S1_1x_OD54_2L_baseline` | the generator's default, the simplest geometry; the mesh study C0 | 0.92 m | 9 | about 55 GB | **YET TO BE RUN**: held for a bigger PC |
-| 3 | `D2_1x8x_OD40_small` | the smallest dual board, tight spacing between the sets | 1.56 m | 18 | about 95 GB | **YET TO BE RUN**: held for a bigger PC |
-| 4 | `S3_8x_OD59_4L_series_wideband` | TX on the inner layers, far from the rotor; a wide band | 1.91 m | 9 | about 115 GB | **YET TO BE RUN**: held for a bigger PC |
-| 5 | `S4_16x_OD54_2L_fingers` | the finest single pitch, and the bridging fingers | 1.30 m | 9 | about 80 GB | **YET TO BE RUN**: held for a bigger PC |
-| 6 | `S5_4x_OD98_cosine_r_2subcoils_spiralTX` | the other RX profile, sub-coils, a spiral TX, the biggest board | 3.41 m | 9 | about 210 GB | **YET TO BE RUN**: held for a bigger PC |
-| 7 | `D1_1x16x_OD54_Renesas_R145_size` | the dual default, a 3.2 mm board | 3.14 m | 18 | about 190 GB | **YET TO BE RUN**: held for a bigger PC |
-| 8 | `D3_1x16x_OD59_fitted_bands` | a typical dual board | 3.07 m | 18 | about 190 GB | **YET TO BE RUN**: held for a bigger PC |
-| 9 | `D4_2x8x_OD59_parallel_TX` | parallel TX wiring, a 2-period set | 2.74 m | 18 | about 170 GB | **YET TO BE RUN**: held for a bigger PC |
-| 10 | `D5_1x16x_OD74_ID40_large` | a large thin ring | 3.96 m | 18 | about 240 GB | **YET TO BE RUN**: held for a bigger PC |
+**How SIN and COS are opened.** A 0.2 mm cut across a top trace of each, because that is how the
+real board is opened and routed to the IC. The cut is made in the model; the board files are as the
+generator wrote them. Each cut is the spot on the receiver's top trace nearest its layer-change via
+where a 0.2 mm cut has at least 0.45 mm of free board round it and sits at least 0.75 mm from any via
+centre: 0.86 mm from the via on both receivers. The two spots are 45° apart about the axis, a quarter
+of the electrical period, as SIN and COS are.
 
-The boards, stator and rotor:
+![Where SIN and COS are opened. Left, the stator from above with the TX in dark grey, SIN in blue and COS in orange, each on F.Cu (dark) and B.Cu (light); a small white box marks each cut and the TX port is ringed at the right. Right, close-ups: SIN cut at KiCad (96.59, 100.50) and COS cut at KiCad (97.24, 97.94), each a 0.2 mm white box across the top trace 0.86 mm from the via, which stays, with 0.46 mm clear of other copper; and the TX's two ends, F.Cu over B.Cu, at KiCad (111.00, 100.00), not cut. A note says the copper inside each box is taken out, the two cut faces become the electrodes and the port sheet spans the gap at the trace's lower face](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S0d2_1x_OD23_2L_tiny_TX3top_Cut/elmerboards_2_cuts.webp)
 
-| | |
-|:---:|:---:|
-| `S2_4x_OD40_2L_small`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S2_4x_OD40_2L_small/elmerboards_1_boards.webp" width="420" alt="S2_4x_OD40_2L_small, drawn by the coil generator: the stator (4x loops · TX 3 turns per layer · board r 10 to 20 mm; RX on Top + Bottom, TX on Top + Bottom) beside the rotor (4 sectors)"> | `S1_1x_OD54_2L_baseline`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S1_1x_OD54_2L_baseline/elmerboards_1_boards.webp" width="420" alt="S1_1x_OD54_2L_baseline, drawn by the coil generator: the stator (1x loops · TX 3 turns per layer · board r 15 to 27 mm; RX on Top + Bottom, TX on Top + Bottom) beside the rotor (1 sector)"> |
-| `D2_1x8x_OD40_small`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/D2_1x8x_OD40_small/elmerboards_1_boards.webp" width="420" alt="D2_1x8x_OD40_small, drawn by the coil generator: the stator (1x + 8x loops · TX 3 + 2 turns per layer · board r 5 to 20 mm; RX on Top + Inner 1, TX on Top + Inner 2) beside the rotor (1 + 8 sectors)"> | `S3_8x_OD59_4L_series_wideband`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S3_8x_OD59_4L_series_wideband/elmerboards_1_boards.webp" width="420" alt="S3_8x_OD59_4L_series_wideband, drawn by the coil generator: the stator (8x loops · TX 3 turns per layer · board r 10.8 to 29.6 mm; RX on Top + Inner 1, TX on Inner 2 + Bottom) beside the rotor (8 sectors)"> |
-| `S4_16x_OD54_2L_fingers`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S4_16x_OD54_2L_fingers/elmerboards_1_boards.webp" width="420" alt="S4_16x_OD54_2L_fingers, drawn by the coil generator: the stator (16x loops · TX 3 turns per layer · board r 15 to 27 mm; RX on Top + Bottom, TX on Top + Bottom) beside the rotor (16 sectors)"> | `S5_4x_OD98_cosine_r_2subcoils_spiralTX`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S5_4x_OD98_cosine_r_2subcoils_spiralTX/elmerboards_1_boards.webp" width="420" alt="S5_4x_OD98_cosine_r_2subcoils_spiralTX, drawn by the coil generator: the stator (4x loops · TX 5 turns per layer · board r 28.8 to 48.8 mm; RX on Top + Bottom, TX on Top + Bottom) beside the rotor (4 sectors)"> |
-| `D1_1x16x_OD54_Renesas_R145_size`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/D1_1x16x_OD54_Renesas_R145_size/elmerboards_1_boards.webp" width="420" alt="D1_1x16x_OD54_Renesas_R145_size, drawn by the coil generator: the stator (1x + 16x loops · TX 4 + 4 turns per layer · board r 7.25 to 26.88 mm; RX on Top + Inner 1, TX on Top + Inner 2) beside the rotor (1 + 16 sectors)"> | `D3_1x16x_OD59_fitted_bands`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/D3_1x16x_OD59_fitted_bands/elmerboards_1_boards.webp" width="420" alt="D3_1x16x_OD59_fitted_bands, drawn by the coil generator: the stator (1x + 16x loops · TX 3 + 3 turns per layer · board r 8.5 to 29.5 mm; RX on Top + Inner 1, TX on Top + Inner 2) beside the rotor (1 + 16 sectors)"> |
-| `D4_2x8x_OD59_parallel_TX`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/D4_2x8x_OD59_parallel_TX/elmerboards_1_boards.webp" width="420" alt="D4_2x8x_OD59_parallel_TX, drawn by the coil generator: the stator (2x + 8x loops · TX 3 + 3 turns per layer · board r 8.5 to 29.5 mm; RX on Top + Inner 1, TX on Top + Inner 2) beside the rotor (2 + 8 sectors)"> | `D5_1x16x_OD74_ID40_large`<br><img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/D5_1x16x_OD74_ID40_large/elmerboards_1_boards.webp" width="420" alt="D5_1x16x_OD74_ID40_large, drawn by the coil generator: the stator (1x + 16x loops · TX 3 + 3 turns per layer · board r 20 to 37 mm; RX on Top + Inner 1, TX on Top + Inner 2) beside the rotor (1 + 16 sectors)"> |
+| Coil | Net | Opened at (KiCad mm) | How |
+|---|---|---|---|
+| TX | `TX` | (111, 100), F.Cu and B.Cu | its two stacked ends; 1 A is driven here |
+| SIN | `2` | cut at (96.591, 100.496), F.Cu | a 0.2 mm gap across the top trace; the via at (97.044, 101.225) stays |
+| COS | `1` | cut at (97.239, 97.940), F.Cu | a 0.2 mm gap across the top trace; the via at (97.044, 98.775) stays |
 
-Each picture is the generator's own (`RepresentativeSVGMaker.py`, drawn from the two board files):
-the stator on the left with every copper layer in its colour (Top red, Inner 1 green, Inner 2
-yellow, Bottom blue) and the vias as dots, the rotor on the right with its copper sectors. Copper
-under Top is drawn wider, so a trace that runs right under a Top trace shows as a coloured edge.
+The generator also warns, for this board, that the tank's parallel resistance at the nominal air
+gap may be as low as 32 Ω (if the AC resistance is twice the DC value), where the IPS2550 needs at
+least 250 Ω, and that it found no spot on either receiver with room for two vias for its own cut;
+the cuts above were placed for Elmer instead.
 
-The pictures leave out the solder mask, so that the copper shows; the simulations keep it (20 µm,
-εr 3.8, tan δ 0.02 on both faces of both boards, as each board's `test_spec.json` sets), though to
-Elmer's magneto-quasi-static solve it is air.
+The branch solves five more coil boards made from the same small coil set; they are in
+[`Examples/Inductive Coils/`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Elmer_Integration/Examples/Inductive%20Coils).
 
 | Previous | Next |
 |:---|---:|

@@ -27,9 +27,10 @@ each output comes with a `parameters.txt` that lists the parameter values behind
 
 > [!IMPORTANT]
 > **Validation against measurements is pending.** The models have not yet been compared with
-> measured boards. The two solver bridges have checked their first test boards against closed-form
-> formulas only ([Elmer FEM Test Board Results](Elmer-FEM-Test-Board-Results.md),
-> [OpenEMS Implementation Test Board Results](OpenEMS-Implementation-Test-Board-Results.md)).
+> measured boards. Four solvers, Elmer FEM, PyPEEC, FastHenry and Palace, have checked the same
+> test boards against closed-form formulas and against each other only
+> ([Solvers Comparison](Solvers-Comparison.md)), and the openEMS bridge its own first boards
+> ([OpenEMS Implementation Test Board Results](OpenEMS-Implementation-Test-Board-Results.md)).
 > Thicknesses default to KiCad's own values
 > (35 µm copper, 10 µm solder mask), not to any fabricator's process. Set your fabricator's
 > numbers in `parameters/` before trusting a simulation built on the output.
@@ -43,6 +44,8 @@ are those of the parameter files on `main`. Everything KESE is made of lives in 
 - [Repository README](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE#readme)
 - [Getting Started](Getting-Started.md): install and export a first board.
 - [Contents](Contents.md): every page of this wiki.
+- [Solvers Comparison](Solvers-Comparison.md): Elmer FEM, PyPEEC, FastHenry and Palace on the same boards, against
+  the values worked out by hand.
 
 | Previous | Next |
 |:---|---:|
