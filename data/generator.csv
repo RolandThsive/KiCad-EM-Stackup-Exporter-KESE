@@ -1,0 +1,7 @@
+board,L_TX_away_nH,L_TX_rotor_nH,R_TX_dc_mohm,source
+S0_1x_OD21_2L_tiny,132,109,230,Boards/Parameters.txt
+S0_1x_OD21_2L_tiny_TXtop,130,106,230,Boards/Parameters.txt
+S0_1x_OD22_2L_tiny_TXtop,144,116,250,Boards/Parameters.txt
+S0_1x_OD22_2L_tiny_TXtop_Cut,144,116,250,Boards/Parameters.txt
+S0_1x_OD23_2L_tiny_TX3top_Cut,292,226,380,Boards/Parameters.txt
+S0d2_1x_OD23_2L_tiny_TX3top_Cut,292,226,380,Boards/Parameters.txt
