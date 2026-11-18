@@ -4,8 +4,8 @@ Neumann's integral over the open arc and the resistance of an annular sector.
     python simulation.py                      the mesh ladder at both frequencies
     python simulation.py --levels 0.5         one mesh only
     python simulation.py --mesh-only          build the meshes and print their size, solve nothing
-    python simulation.py --levels 0.75 --mesh grade=0.125 --mesh tet_grade=0.175 --results results_grade.json \
-        --out case_grade                      the air graded four times as finely
+    python simulation.py --levels 0.75 --mesh grade=0.125 --mesh tet_grade=0.175 --mesh dz_max=0.2 \
+        --results results_grade.json --out case_grade      the air graded as the coil boards' is
     python simulation.py --levels 0.75 --domain-mm 120 --results results_domain120.json --out case_domain120
 
 The trace is meshed from KESE's export as the coil boards are: a 2.5D mesh of wedges through the copper and the
@@ -48,10 +48,11 @@ SETTINGS = dict(
     mesh=dict(h_edge=0.09, h_in=0.18, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4,
               tet_max=8.0, tet_grade=0.7),
     ranks=4,
-    # GMRES with hypre's AMS. At 10 kHz the operator AMS works on is all but singular in the air (the electric field's
-    # gradients there cost almost nothing), and unless AMS is told so, GMRES diverges
-    solvers={'ams': dict(Type='AMS', KSPType='GMRES', Tol=1e-10, MaxIts=3000, MaxSize=300,
-                         AMSSingularOperator=True)},
+    # GMRES with hypre's AMS, as on the coil boards (a residual of 1e-8 of where it starts). Below 100 kHz the operator
+    # AMS works on is all but singular in the air (the electric field's gradients there cost almost nothing): AMS is
+    # told so (low_frequency), or GMRES diverges, and it then converges slowly, so it may stop at MaxIts
+    solvers={'ams': dict(Type='AMS', KSPType='GMRES', Tol=1e-8, MaxIts=2000, MaxSize=300, EstimatorTol=1e-2)},
+    low_frequency=dict(AMSSingularOperator=True, MaxIts=3000),
 )
 
 
@@ -116,7 +117,7 @@ def main():
         if k not in mesh:
             ap.error(f'--mesh {k}: not one of {sorted(mesh)}')
         mesh[k] = float(v)
-    out = Path(a.out)
+    out = Path(a.out).resolve()
     out.mkdir(parents=True, exist_ok=True)
     logf = open(out / 'run.log', 'a')
 
@@ -150,6 +151,7 @@ def main():
                       order=SETTINGS['order'], solver=SETTINGS['solvers'][a.solver])
         solves = []
         for f in a.freqs:
+            case.solver = dict(SETTINGS['solvers'][a.solver], **(SETTINGS['low_frequency'] if f < 1e5 else {}))
             got = C.run(case, f, folder / f'f{f:g}', np_=a.ranks, log=log)
             row = C.coil_rows(case, got, 'LOOP')['LOOP']
             le = C.energy_check(case, got, 'LOOP')

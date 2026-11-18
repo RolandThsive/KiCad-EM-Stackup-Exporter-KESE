@@ -1,0 +1,129 @@
+{
+ "board": "E01_circular_loop.kicad_pcb",
+ "settings": {
+  "board": "E01_circular_loop.kicad_pcb",
+  "centre": [
+   100.0,
+   -100.0
+  ],
+  "radius_mm": 10.0,
+  "width_mm": 0.5,
+  "gap_mm": 0.2,
+  "gap_box": [
+   109.75,
+   -100.35,
+   110.25,
+   -99.65
+  ],
+  "port_direction": "+Y",
+  "sigma": 58000000.0,
+  "domain_radius_mm": 60.0,
+  "domain_half_height_mm": 60.0,
+  "freqs_hz": [
+   10000.0,
+   3500000.0
+  ],
+  "order": 1,
+  "levels": [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ],
+  "mesh": {
+   "h_edge": 0.09,
+   "h_in": 0.18,
+   "h_max": 6.0,
+   "grade": 0.125,
+   "dz_copper": 0.018,
+   "dz_max": 0.2,
+   "tet_max": 8.0,
+   "tet_grade": 0.175
+  },
+  "ranks": 4,
+  "solvers": {
+   "ams": {
+    "Type": "AMS",
+    "KSPType": "GMRES",
+    "Tol": 1e-08,
+    "MaxIts": 2000,
+    "MaxSize": 300,
+    "EstimatorTol": 0.01
+   }
+  },
+  "low_frequency": {
+   "AMSSingularOperator": true,
+   "MaxIts": 3000
+  }
+ },
+ "copper_mm": 0.03500000000000003,
+ "references": {
+  "L_arc_centres_dc_h": 5.558979180727529e-08,
+  "L_arc_faces_dc_h": 5.6292671167837174e-08,
+  "L_arc_centres_hf_h": 5.503934033647907e-08,
+  "L_arc_faces_hf_h": 5.573757044682325e-08,
+  "L_ring_dc_h": 5.662229455907937e-08,
+  "R_dc_ohm": 0.06120075252410373,
+  "theta_centres_rad": 6.213171007628889,
+  "theta_faces_rad": 6.263184973831252,
+  "gmd_dc_mm": 0.11957250000000001,
+  "gmd_hf_mm": 0.125
+ },
+ "versions": {
+  "python": "3.13.18",
+  "kese": "kese 3.4.0 (made the export)",
+  "palace": "0.19.0-dirty",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "shapely": "2.2.0",
+  "trimesh": "5.2.1",
+  "mapbox_earcut": "2.1.0",
+  "gmsh": "4.15.2"
+ },
+ "runs": [
+  {
+   "level": 0.75,
+   "solver": "ams",
+   "order": 1,
+   "mesh_seconds": 36.7,
+   "nodes": 151251,
+   "wedges": 181746,
+   "tetrahedra": 337599,
+   "port_mm": 0.2009999999999934,
+   "solves": [
+    {
+     "frequency_hz": 10000.0,
+     "L_h": 5.585697571819079e-08,
+     "R_ohm": 0.06230387042557731,
+     "L_from_energy_h": 5.585584516966139e-08,
+     "seconds": 2257.9,
+     "peak_memory_gb": 8.0,
+     "iterations": [
+      3000
+     ],
+     "residuals": [
+      6.6662322062541564e-06
+     ],
+     "converged": false,
+     "ranks": 4
+    },
+    {
+     "frequency_hz": 3500000.0,
+     "L_h": 5.4878316245760996e-08,
+     "R_ohm": 0.08132900723233297,
+     "L_from_energy_h": 5.4878443384921625e-08,
+     "seconds": 112.0,
+     "peak_memory_gb": 5.8,
+     "iterations": [
+      102
+     ],
+     "residuals": [
+      9.61364563102337e-09
+     ],
+     "converged": true,
+     "ranks": 4
+    }
+   ]
+  }
+ ]
+}

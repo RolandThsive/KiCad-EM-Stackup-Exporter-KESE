@@ -5,6 +5,10 @@ that M from the TX to the RX equals M from the RX to the TX.
     python simulation.py                      the mesh ladder at both frequencies
     python simulation.py --levels 0.5         one mesh only
     python simulation.py --mesh-only          build the meshes and print their size, solve nothing
+    python simulation.py --levels 0.75 --mesh grade=0.125 --mesh tet_grade=0.175 --mesh dz_max=0.2 \
+        --results results_grade.json --out case_grade --restart 100
+                                              the air graded as the coil boards' is (restarting GMRES every 100
+                                              iterations, so its vectors fit in 15 GB)
 
 Each loop is opened by its 0.2 mm gap, the two gaps one above the other, and each gap holds a lumped port: a sheet
 across it, through the copper, from one round end to the other. Both ports are driven in turn (two solves in one), so
@@ -49,9 +53,11 @@ SETTINGS = dict(
     mesh=dict(h_edge=0.09, h_in=0.18, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4,
               tet_max=8.0, tet_grade=0.7),
     ranks=4,
-    # GMRES with hypre's AMS; at 10 kHz AMS must be told its operator is all but singular in the air (see E01)
-    solvers={'ams': dict(Type='AMS', KSPType='GMRES', Tol=1e-10, MaxIts=3000, MaxSize=300,
-                         AMSSingularOperator=True)},
+    # GMRES with hypre's AMS, as on the coil boards (a residual of 1e-8 of where it starts). Below 100 kHz the operator
+    # AMS works on is all but singular in the air (the electric field's gradients there cost almost nothing): AMS is
+    # told so (low_frequency), or GMRES diverges, and it then converges slowly, so it may stop at MaxIts
+    solvers={'ams': dict(Type='AMS', KSPType='GMRES', Tol=1e-8, MaxIts=2000, MaxSize=300, EstimatorTol=1e-2)},
+    low_frequency=dict(AMSSingularOperator=True, MaxIts=3000),
 )
 
 
@@ -113,9 +119,21 @@ def main():
     ap.add_argument('--solver', choices=sorted(SETTINGS['solvers']), default='ams')
     ap.add_argument('--ranks', type=int, default=SETTINGS['ranks'])
     ap.add_argument('--mesh-only', action='store_true', help='build and write the meshes, solve nothing')
+    ap.add_argument('--mesh', action='append', default=[], metavar='KEY=VALUE',
+                    help='change one of SETTINGS["mesh"], e.g. grade=0.125 (the air near the copper graded finer)')
+    ap.add_argument('--results', default='results.json', help='the results file, beside this script')
     ap.add_argument('--out', default=str(HERE / 'case'))
+    ap.add_argument('--restart', type=int, help="GMRES's restart (MaxSize) in place of SETTINGS': fewer vectors "
+                    'held, for a mesh whose solve would not fit in memory')
     a = ap.parse_args()
-    out = Path(a.out)
+    solver = dict(SETTINGS['solvers'][a.solver], **({'MaxSize': a.restart} if a.restart else {}))
+    mesh = dict(SETTINGS['mesh'])
+    for kv in a.mesh:
+        k, v = kv.split('=')
+        if k not in mesh:
+            ap.error(f'--mesh {k}: not one of {sorted(mesh)}')
+        mesh[k] = float(v)
+    out = Path(a.out).resolve()
     out.mkdir(parents=True, exist_ok=True)
     logf = open(out / 'run.log', 'a')
 
@@ -124,13 +142,13 @@ def main():
         logf.write(f'{time.strftime("%H:%M:%S")} {msg}\n')
         logf.flush()
     export = S.kese_geometry(HERE / SETTINGS['board'], HERE / '3D_Geometry', log=log)
-    res_file = HERE / 'results.json'
+    res_file = HERE / a.results
     old = json.loads(res_file.read_text()) if res_file.exists() else {}
-    result = dict(board=SETTINGS['board'], settings=SETTINGS, versions=S.versions([export]),
+    result = dict(board=SETTINGS['board'], settings=dict(SETTINGS, mesh=mesh, solvers=dict(SETTINGS['solvers'], **{a.solver: solver})), versions=S.versions([export]),
                   references=old.get('references'), runs=old.get('runs', []))
     for level in a.levels:
         t0 = time.time()
-        m, lay, bnds = build(export, level, SETTINGS['mesh'], log)
+        m, lay, bnds = build(export, level, mesh, log)
         if not result['references']:
             (tx0, tx1), (rx0, rx1) = zrange(lay, 'TX'), zrange(lay, 'RX')
             result['references'] = references(0.5 * (tx0 + tx1) - 0.5 * (rx0 + rx1))
@@ -149,9 +167,10 @@ def main():
                                     excite=1),
                              C.Port('RX', tags['RX_PORT'], SETTINGS['port_direction'], R=SETTINGS['port_ohm'],
                                     excite=2)],
-                      sigma=SETTINGS['sigma'], order=SETTINGS['order'], solver=SETTINGS['solvers'][a.solver])
+                      sigma=SETTINGS['sigma'], order=SETTINGS['order'], solver=solver)
         solves = []
         for f in a.freqs:
+            case.solver = dict(solver, **(SETTINGS['low_frequency'] if f < 1e5 else {}))
             got = C.run(case, f, folder / f'f{f:g}', np_=a.ranks, log=log)
             rows = C.coil_rows(case, got, 'TX')
             tx, rx = rows['TX'], rows['RX']
@@ -166,7 +185,8 @@ def main():
                 f"{tx['L'] * 1e9:.3f} nH, R_TX {tx['R'] * 1e3:.3f} mOhm, L_RX {rx['L_self'] * 1e9:.3f} nH, "
                 f"{size['nodes']:,} nodes, {got['seconds']:.0f} s, {got['peak_memory_gb']} GB, iterations "
                 f"{got['iterations']}")
-        run = dict(level=level, solver=a.solver, order=SETTINGS['order'], mesh_seconds=round(mesh_s, 1), **size,
+        run = dict(level=level, solver=a.solver, order=SETTINGS['order'], gmres_restart=solver['MaxSize'],
+                   mesh_seconds=round(mesh_s, 1), **size,
                    solves=solves)
         result['runs'] = [r for r in result['runs'] if (r['level'], r['solver']) != (level, a.solver)] + [run]
         result['runs'].sort(key=lambda r: (r['solver'], r['level']))
