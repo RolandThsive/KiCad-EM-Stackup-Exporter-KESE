@@ -1,11 +1,17 @@
 # 29. Elmer FEM Test Board Results
 
 What Elmer gave on each board of [Elmer FEM Test Boards](Elmer-FEM-Test-Boards.md), against numbers
-known without any solver. Every chart and picture here is drawn from Elmer's own output by
-`Examples/E01_circular_loop/make_pictures.py`; nothing is drawn by hand. The numbers are in each
-example's `results*.json` on the `Elmer_Integration` branch, with the settings, the versions, the
-mesh's size, the time, the memory and the solver's last residual of every solve, and each example's
-`results.md` has the full tables.
+known without any solver. Every chart and picture here is drawn from Elmer's own output, E01's and
+E02's by `Examples/E01_circular_loop/make_pictures.py` and the coil board's by its own
+`make_charts.py`; nothing is drawn by hand. The numbers are in each example's results files on the
+`Elmer_Integration` branch, with the settings, the versions, the mesh's size, the time and the memory
+of every solve; each example's `results.md` (E01, E02) or `Results/SINCOS_Results.md` (the coil
+board) has the full tables.
+
+> [!NOTE]
+> E01 and E02 ran on 15 and 16 November with the iterative solve (BiCGStab(l)) and `Activate
+> Constraint` on, the bridge's settings then. The coil board ran on 17 November with the direct solve
+> (MUMPS) and the constraint off, today's default ([Elmer FEM Workflow](Elmer-FEM-Workflow.md#266-write-the-elmer-case)).
 
 ## 29.1 E01 Circular Loop
 
@@ -126,12 +132,85 @@ E01's, a lower bound by up to 0.8 %.
   circulate across its width and dissipate power that the TX has to supply: the proximity effect. It
   shows also as a real part of the RX's transfer impedance, 0.91 mΩ.
 
-## 29.3 The Ten Inductive Encoder Boards
+## 29.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
-**YET TO BE RUN.** Every coil board needs more memory than the 15 GB test machine has: S2, the
-smallest, about 59 GB for its measured mesh, the largest about 240 GB
-([Elmer FEM Test Boards](Elmer-FEM-Test-Boards.md#283-the-ten-inductive-encoder-boards),
-[Elmer FEM Hardware](Elmer-FEM-Hardware.md#315-the-coil-boards)). They wait for a bigger machine.
+The whole encoder: the TX carries 1 A at 3.5 MHz, SIN and COS carry none, and the voltage across each
+receiver's cut is its open-circuit EMF, given as the mutual inductance M = V / (jωI) (1 nH is 22 mV
+of EMF). The rotor is solved at 16 angles over the whole turn, every 22.5° from 0 to 337.5° (two of
+its 180° periods), at each of 5 air gaps, and once with the rotor away: 81 solves, each direct
+(MUMPS) on its own mesh at level 0.25.
+
+### In Short
+
+The coil board is a real sensor: as the rotor turns, SIN and COS should trace a sine and a cosine,
+equal in size and a quarter period apart, and an IC reads the angle from the pair. Elmer turns the
+rotor in 22.5° steps and solves each position:
+
+| What | What it means | Elmer |
+|---|---|---|
+| SIN and COS amplitude | the signal the IC gets | 9.44 nH (208 mV) at a 0.1 mm gap, 4.51 nH (99 mV) at 1 mm, 1.86 nH (41 mV) at 2 mm |
+| SIN against COS | must be equal and 90° apart | equal within 0.06 %, 90.06 to 90.18° apart at every gap |
+| Angle error | how far the angle read from SIN and COS is from the true one | 0.2° rms (electrical) from 1 to 2 mm, 0.4° at 0.5 mm, 0.9° at 0.1 mm; half that in mechanical degrees |
+| TX's L | lowered by the rotor's eddy currents | 274.2 nH with the rotor away; 250.0 to 250.6 nH at 1 mm |
+| The two checks | the TX's L and R read two ways must agree | within 0.004 % on every solve, where 1 % is allowed: 81 of 81 pass |
+
+### SIN And COS Against The Rotor Angle
+
+![SIN (blue) and COS (orange) against the rotor angle at a 1 mm air gap, 0 to 360 degrees, mesh level 0.25: the mutual inductance from the TX, one dot per Elmer solve joined by a solid line, with each channel's best sine fit dotted. Both swing between about -4.5 and +4.5 nH with two full periods over the turn, COS leading SIN by a quarter period; the dots sit on the dotted curves](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/S0d2_1x_OD23_2L_tiny_TX3top_Cut/elmerresults_1_gap1mm.webp)
+
+At 1 mm, the default gap, SIN and COS are close to a sine and a cosine: best sine fits of 4.511 and
+4.514 nH, with offsets of 0.100 and 0.020 nH, 90.09° apart. The second half turn repeats the first:
+at six of its eight angles each solve gives the same M, to the last digit, as the one 180° before it,
+and at 225° and 315°, where the 2D mesh comes out a few triangles different, it is within 0.03 nH.
+
+| Air gap | Amplitude SIN / COS | Angle error (electrical) | Solves passing both checks | L TX over the turn |
+|---|---|---|---|---|
+| 2 mm | 1.86 / 1.86 nH (41 / 41 mV) | 0.2° rms, 0.4° peak | 16 of 16 | 262.4 to 262.8 nH |
+| 1.5 mm | 2.88 / 2.88 nH (63 / 63 mV) | 0.2° rms, 0.4° peak | 16 of 16 | 257.6 to 258.1 nH |
+| 1 mm | 4.51 / 4.51 nH (99 / 99 mV) | 0.2° rms, 0.4° peak | 16 of 16 | 250.0 to 250.6 nH |
+| 0.5 mm | 6.97 / 6.98 nH (153 / 153 mV) | 0.4° rms, 0.6° peak | 16 of 16 | 236.3 to 237.0 nH |
+| 0.1 mm | 9.44 / 9.44 nH (208 / 208 mV) | 0.9° rms, 1.2° peak | 16 of 16 | 213.1 to 214.2 nH |
+
+### Every Air Gap
+
+![SIN at each air gap, 0.1, 0.5, 1, 1.5 and 2 mm, against the rotor angle from 0 to 360 degrees, one colour per gap: each a two-period sine, its amplitude falling from about 9.4 nH at 0.1 mm to about 1.9 nH at 2 mm, the solves joined by solid lines and each gap's best sine fit dotted. Below, the solves minus the fit: within about 0.03 nH at 1 to 2 mm, within about 0.07 nH at 0.5 mm, and at 0.1 mm a ripple of about ±0.1 to 0.2 nH that changes sign from one angle to the next](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/S0d2_1x_OD23_2L_tiny_TX3top_Cut/elmerresults_2_gaps_SIN.webp)
+
+The signal grows 5.08 times from a 2 mm to a 0.1 mm gap. The lower panel shows what the angle error
+is made of: at 0.1 mm the solves alternate about the fit from one angle to the next, a ripple at four
+periods per electrical period, the fastest that eight angles a period can show, which fades with the
+gap faster than the sine. [COS at each gap](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/S0d2_1x_OD23_2L_tiny_TX3top_Cut/elmerresults_3_gaps_COS.webp) is the same picture a
+quarter period on.
+
+### How The Angle Error Is Worked Out
+
+Each channel gets its best sine over the rotor's period, M = offset + amplitude × sin(θ + phase).
+Each channel's offset is taken out and it is divided by its amplitude, so both swing between −1 and
++1, as a decoder chip's offset and gain calibration does. The angle is read back as atan2(SIN, COS);
+the error at each angle is that reading less the true angle, less the average of all of them, since a
+fixed offset only moves where zero is. The rms and the worst of them are the angle error, in
+electrical degrees; with two periods per turn, a mechanical degree is two electrical ones.
+
+### The TX And The Rotor
+
+| Quantity | Generator's estimate | Elmer |
+|---|---|---|
+| L TX, rotor away | 292 nH | 274.2 nH |
+| L TX, rotor at 1 mm | 226 nH (its drop with the rotor is an upper estimate) | 250.0 to 250.6 nH |
+| L TX, rotor at 0.1 mm | | 213.1 to 214.2 nH |
+| R TX at DC | 0.38 Ω | 0.377 Ω (Elmer's DC solve of the current's direction) |
+| R TX at 3.5 MHz, rotor away | | 437.6 mΩ |
+| R TX at 3.5 MHz, rotor at 2 mm and at 0.1 mm | | 449 to 450 mΩ, and 507 to 512 mΩ |
+
+The rotor lowers the TX's L by about 4.2 % at 2 mm, 8.7 % at 1 mm and 22 % at 0.1 mm against the rotor
+away (worked out from the table), and L TX moves by 1.1 nH at most over a turn. The TX's R rises as
+the rotor comes closer: the power the rotor's eddy currents take shows as resistance in the TX.
+
+> [!NOTE]
+> These are on the coarse mesh, level 0.25, on which a direct solve runs on a 16 GB machine with a swap file,
+> and the level was not refined on this board. On the proof boards the air's mesh held L and M about
+> 3 % low with the examples' grading ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)),
+> so the coil board's L TX and M are best read as lower bounds. The angle error is worked out after
+> each channel's gain is calibrated out, so an error that scales SIN and COS alike leaves it as it is.
 
 | Previous | Next |
 |:---|---:|

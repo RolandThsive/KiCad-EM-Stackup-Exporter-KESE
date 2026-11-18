@@ -1,8 +1,10 @@
 # 30. Elmer FEM Accuracy
 
-Where the Elmer bridge's errors come from, how big each one measured on E01 and E02, and what the
-bridge leaves out of the physics. Every number here is from the runs on the `Elmer_Integration`
-branch (`Examples/E01_circular_loop/results*.json`, `Examples/E02_coaxial_loops/results*.json`).
+Where the Elmer bridge's errors come from, how big each one measured on E01 and E02, what that means
+for the coil board, and what the bridge leaves out of the physics. Every number here is from the runs
+on the `Elmer_Integration` branch (`Examples/E01_circular_loop/results*.json`,
+`Examples/E02_coaxial_loops/results*.json` and the coil board's
+`Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/Results/`).
 
 ## 30.1 The Error Budget On E01
 
@@ -62,17 +64,37 @@ not follow one power of the mesh size, and no value extrapolated to a zero mesh 
 R settles first, the field's energy next, the circuit's voltage last. At 3.5 MHz, where the solve
 converges, none of this applies.
 
+The bridge has moved on since these runs. Its README says that with the coils' scalar potentials
+left out (the default today) and GCR with the shifted ILU(1), E01 converges to 1e-10 in 400
+iterations; E01's committed results are still those of the older solve above. On the coil board at
+3.5 MHz the iterative solve no longer stalls but converges too slowly to read M, so the coil board
+uses the direct solve, which has no iteration error at all.
+
 ## 30.3 What The Bridge Leaves Out
 
 | What | In the bridge | What it does to the numbers |
 |---|---|---|
-| Displacement current | none: the magneto-quasi-static A-V formulation | no capacitance between turns and no self resonance; the answer holds only well below the coil's self resonance, which openEMS finds ([Elmer vs openEMS](Elmer-vs-OpenEMS.md#423-which-one-for-what)) |
+| Displacement current | none: the magneto-quasi-static A-V formulation | no capacitance between turns and no self resonance; the answer holds only well below the coil's self resonance, which another solver has to find ([Solvers Comparison](Solvers-Comparison.md)) |
 | The insulators | FR-4, solder mask and air are all μr 1, σ 0 | right for the magnetic field; εr plays no part without displacement current |
 | The copper's conductivity | 5.8 × 10⁷ S/m, one value for all copper | copper at 20 °C; R rises about 0.4 % per kelvin above that, which the bridge does not follow |
 | The copper's shape | KESE's solids, extruded straight through the board: a 2.5D mesh | the etched trapezoid and the copper's roughness are not in the mesh |
-| The terminals | two electrodes on the gap's faces and a sheet across the gap | the gap's own short piece of current path is not counted; E01's reference accounts for it with the open-loop share |
+| The terminals | two electrodes on the gap's faces and a sheet across the gap | the gap's own short piece of current path is not counted; E01's reference accounts for it with the open-loop share. On the coil board each receiver's 0.2 mm cut is made in the model only: the real board's leads to the IC are not in it |
 
-## 30.4 What To Trust
+## 30.4 The Coil Board
+
+S0d2_1x_OD23_2L_tiny_TX3top_Cut has no textbook answer, so its accuracy rests on what E01 and E02
+measured and on checks inside its own runs:
+
+| Source | On the coil board | What it does to the numbers |
+|---|---|---|
+| The linear solve | direct (MUMPS) on every solve | no iteration error |
+| The two readings of the TX | L from its voltage against L from the field energy, R from its voltage against R from the eddy power | within 0.004 % on all 81 solves, where 1 % is allowed: the ports and the circuit read back what the field holds |
+| The copper's mesh | level 0.25 only, on every gap; not refined on this board | not measured here |
+| The air's mesh | the examples' grading (`grade` 0.5, `tet_grade` 0.7) | on E01 and E02 it held L and M about 3 % low; the same is likely here, so L TX and M are lower bounds |
+| A mesh per angle | every angle gets its own mesh, so the stator's mesh differs a little from angle to angle | the second half turn repeats the first: at six of eight angles M is the same to the last digit, at 225° and 315° within 0.03 nH, against a 4.51 nH amplitude at 1 mm |
+| The angle error | SIN and COS each fitted with a sine, offset and gain calibrated out | an error that scales SIN and COS alike leaves it as it is; mesh noise between angles adds to it |
+
+## 30.5 What To Trust
 
 | Quantity | On boards like E01 and E02 |
 |---|---|
@@ -82,9 +104,15 @@ converges, none of this applies.
 | R at 3.5 MHz, skin and proximity effect | no exact reference, and not yet settled with the mesh: it fell 1.2 % from level 0.75 to level 1; the change against 10 kHz (+29 %) and the RX's share on E02 (+1.5 mΩ) behave as they should |
 | L from the circuit against L from the energy | within 0.05 %: a check on every run, at no cost |
 
-The coil boards' most important number, C2, is a ratio: how much the rotor lowers the TX's L. Errors
-that lower L and M alike may largely cancel in such a ratio, but that is not shown yet; the first coil
-board to run should be run with two air gradings as well as two mesh levels to show it.
+| Quantity | On the coil board |
+|---|---|
+| The shape of SIN and COS, their match and their phase | equal within 0.06 %, 90.06 to 90.18° apart; the angle error of 0.2 to 0.9° rms (electrical) includes the mesh's noise between angles |
+| M and L TX | lower bounds, probably by a few percent, from the air's mesh as on E01 and E02 |
+| How much the rotor lowers L TX | a ratio of two L values on like meshes; errors that lower both alike may largely cancel, but that is not shown yet |
+| R TX | the DC value, 0.377 Ω, against the generator's 0.38 Ω; at 3.5 MHz level 0.25 allows wedge layers up to 72 µm, so each 35 µm foil gets a single layer, where E01 at level 1 has two, and the skin effect is only coarsely resolved |
+
+A ladder that refines the air with the copper, run on the coil board with two air gradings, is the
+next check these numbers need ([Future Upgrades And Planning](Future-Upgrades-And-Planning.md)).
 
 | Previous | Next |
 |:---|---:|
