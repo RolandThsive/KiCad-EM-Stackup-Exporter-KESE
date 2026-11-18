@@ -88,8 +88,6 @@ def walls(r, ps, layers, zone):
 
     def layer_walls(k):
         layer = r.layers[k]
-        if k not in (0, last):
-            return []
         nets = [(net, cu) for net, cu in r.copper[layer].items() if not cu.is_empty]
         per_net = list(zip(own([cu for _, cu in nets]), [net for net, _ in nets]))
         if not per_net:
@@ -110,7 +108,7 @@ def walls(r, ps, layers, zone):
         return shells(layers, C, groups(per_net, d), inside(air_beside(solid), own(r.outline)), (bottom, top),
                       caps, named(prefix), f"{side}.Finish", side)
 
-    done = in_parallel(layer_walls, range(len(r.layers)))
+    done = in_parallel(layer_walls, (0, last))                # the inner copper meets no air inside the board
     for adds in done:
         add_all(ps, adds)
     note(ps, "on the copper's walls where they meet the air", layers if any(done) else [], "wall")

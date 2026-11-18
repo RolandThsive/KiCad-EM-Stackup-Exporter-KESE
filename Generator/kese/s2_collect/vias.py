@@ -12,7 +12,9 @@ from parameters import P
 OFF_BOARD = "vias on a copper layer the board does not have"     # a damaged file
 # which rings "remove unused layers" leaves (PADSTACK::UNCONNECTED_LAYER_MODE)
 KEEP_ALL, REMOVE_ALL, KEEP_ENDS, ENDS_ONLY = "keep all", "remove all", "keep ends", "ends only"
-RING_TOKENS = ("remove_unused_layers", "keep_end_layers", "start_end_only")
+# word -> (the mode it sets when on, the mode it sets on a pad when off); off, a via's word changes nothing
+RING_TOKENS = {"remove_unused_layers": (REMOVE_ALL, KEEP_ALL), "keep_end_layers": (KEEP_ENDS, REMOVE_ALL),
+               "start_end_only": (ENDS_ONLY, None)}
 
 
 def add_via(ctx, node):
@@ -37,7 +39,7 @@ def add_via(ctx, node):
         tip = l in (span[0], span[-1])
         if mode == ENDS_ONLY and not tip:
             items.found["via rings removed on unconnected layers"] += 1
-        elif mode in (REMOVE_ALL, KEEP_ENDS) and not (mode == KEEP_ENDS and tip) and l not in forced:
+        elif (mode == REMOVE_ALL or (mode == KEEP_ENDS and not tip)) and l not in forced:
             ctx.conditional_pads.append((l, ring, net, zones_count))
         else:
             items.copper_items[l].append((ring, net))
@@ -62,13 +64,11 @@ def ring_mode(node, via):
         name = str(c[0] if isinstance(c, list) and c else c)
         if name not in RING_TOKENS or (name == "start_end_only" and not via):
             continue
-        on = not isinstance(c, list) or len(c) < 2 or yes(c[1])
-        if name == "start_end_only":
-            mode = ENDS_ONLY if on else mode
-        elif name == "remove_unused_layers":
-            mode = REMOVE_ALL if on else (mode if via else KEEP_ALL)
-        else:
-            mode = KEEP_ENDS if on else (mode if via else REMOVE_ALL)
+        on_mode, pad_off = RING_TOKENS[name]
+        if not isinstance(c, list) or len(c) < 2 or yes(c[1]):
+            mode = on_mode
+        elif not via:
+            mode = pad_off
     return mode
 
 

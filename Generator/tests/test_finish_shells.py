@@ -93,19 +93,18 @@ def test_the_air_near_no_solid_is_the_band_and_an_empty_band_has_none():
 def finish_prisms(r, near):
     """The finish prisms of a resolved board: the air cut bore by bore, the bores in groups of seven
     (near), or by the whole union, each span at once (as before)."""
-    saved = finish_shells.air_near, finish_shells.air_beside, finish_bores.air_near
+    saved = finish_shells.air_near, finish_bores.air_near
     if not near:
         def whole(regions):
             joined = sh.snap(union(list(regions)))
             return lambda band: sh.diff(band, joined)
         finish_shells.air_near = finish_bores.air_near = whole
-        finish_shells.air_beside = lambda solid: lambda band: sh.diff(band, sh.snap(union(solid)))
     try:
         with settings({"Geometry.FINISH_BORES_AT_A_TIME": 7 if near else 10 ** 9}):
             ps = PrismSet(regions=r)
             finish_shells.build(r, ps)
     finally:
-        finish_shells.air_near, finish_shells.air_beside, finish_bores.air_near = saved
+        finish_shells.air_near, finish_bores.air_near = saved
     return [p for p in ps.prisms if p.role == "finish"]
 
 

@@ -1,6 +1,8 @@
 """Footprint courtyards (F.CrtYd, B.CrtYd), for what KESE needs them for: KiCad 10 cuts the hatch of
 a hatched drawing back from the courtyard of every other footprint on the drawing's side
 (PCB_SHAPE::getHatchingKnockouts), the courtyard built as FOOTPRINT::BuildCourtyardCaches builds it."""
+import functools
+
 import shapely
 
 from kese.core.outlines import faces, nested
@@ -21,13 +23,8 @@ def add_courtyards(ctx, drawn, fp):
 
 def once(parts):
     """margin -> the courtyard of `parts`, made on the first call: it knocks out no more for a margin."""
-    made = []
-
-    def make(_margin):
-        if not made:
-            made.append(courtyard(parts))
-        return made[0]
-    return make
+    built = functools.cache(lambda: courtyard(parts))
+    return lambda _margin: built()
 
 
 def courtyard(parts):

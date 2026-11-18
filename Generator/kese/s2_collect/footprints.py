@@ -26,8 +26,9 @@ def add_footprint(ctx, fp):
             continue
         if node[0] in GRAPHICS:
             add_drawing(ctx, node, T, in_footprint=True, fp=id(fp))
-            if str(layer_of(node)) in COURTYARDS:         # they cut back other footprints' hatches
-                courtyards.setdefault(str(layer_of(node)), []).append(graphic(node, T)[:2])
+            layer = str(layer_of(node))
+            if layer in COURTYARDS:                       # they cut back other footprints' hatches
+                courtyards.setdefault(layer, []).append(graphic(node, T)[:2])
         elif node[0] == "pad":
             add_pad(ctx, node, T, fp_margin)
         elif node[0] == "zone":
