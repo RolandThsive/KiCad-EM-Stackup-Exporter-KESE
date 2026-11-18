@@ -3,8 +3,7 @@
     python scripts/charts.py
 
 For each board: <board>.webp (SIN's amplitude, L TX and the angle error against the air gap, one line per solver)
-and <board>_1mm.webp (SIN and COS against the rotor angle at 1 mm). For all boards: ratio_to_fasthenry.webp (each
-solver's SIN amplitude and L TX over FastHenry's, gap by gap) and proof.webp (the proof boards against their
+and <board>_1mm.webp (SIN and COS against the rotor angle at 1 mm); and proof.webp (the proof boards against their
 references). GPL-3.0.
 """
 from __future__ import annotations
@@ -192,47 +191,6 @@ def curves_chart(board, solves, matplotlib, plt, gap=1.0):
     return save(fig, CHARTS / f'{board}_{gap:g}mm.webp', plt)
 
 
-def ratio_chart(summ, matplotlib, plt, ref='FastHenry'):
-    fig, axes = plt.subplots(1, 2, figsize=(9.5, 4.4), dpi=200, sharex=True, layout='constrained')
-    fig.patch.set_facecolor(SURFACE)
-    base = {(r['board'], r['gap_mm']): r for r in summ if r['solver'] == ref and complete(r)}
-    ends = {ax: [] for ax in axes}
-    for ax, (key, lab) in zip(axes, (('amp_SIN_nH', "SIN's amplitude over FastHenry's"),
-                                     ('L_TX_mean_nH', "L TX over FastHenry's"))):
-        style(ax, matplotlib)
-        ax.axhline(1, color=INK2, lw=0.8, zorder=1)
-        ax.set_title(lab, color=INK, fontsize=10, loc='left')
-        for k, s in enumerate(s for s in SOLVERS if s != ref):
-            by_gap = defaultdict(list)
-            for r in summ:
-                b = base.get((r['board'], r['gap_mm']))
-                if r['solver'] == s and b and complete(r):
-                    by_gap[r['gap_mm']].append(r[key] / b[key])
-            if not by_gap:
-                continue
-            g = sorted(by_gap)
-            mean = [np.mean(by_gap[x]) for x in g]
-            lo = [min(by_gap[x]) for x in g]
-            hi = [max(by_gap[x]) for x in g]
-            dx = (k - 1) * 0.04
-            ax.errorbar([x + dx for x in g], mean, yerr=[np.subtract(mean, lo), np.subtract(hi, mean)],
-                        color=COLOUR[s], lw=1.8, marker=MARKER[s], ms=6.5, mec=SURFACE, mew=1.2, capsize=3,
-                        ls='-' if KIND[s] == 'PEEC' else (0, (5, 2)), zorder=3, label=f'{s} ({KIND[s]})')
-            ends[ax].append((g[-1] + dx, mean[-1], s))
-        ax.set_xlabel('air gap (mm)', color=INK2)
-        ax.set_xticks([0.1, 0.5, 1.0, 1.5, 2.0])
-        ax.set_xlim(0, 2.45)
-    fig.suptitle('Each solver against FastHenry: the mean over the boards solved, and the range', x=0.02, ha='left',
-                 color=INK, fontsize=12)
-    h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, frameon=False, fontsize=8, labelcolor=INK, loc='outside lower center', ncol=3)
-    fig.canvas.draw()
-    for ax, e in ends.items():
-        if e:
-            spread(ax, [(y, s) for _, y, s in e], max(x for x, _, _ in e))
-    return save(fig, CHARTS / 'ratio_to_fasthenry.webp', plt)
-
-
 def proof_chart(proof, matplotlib, plt):
     cases = [('E01_circular_loop', 1e4, 'E01, L, 10 kHz'), ('E01_circular_loop', 3.5e6, 'E01, L, 3.5 MHz'),
              ('E02_coaxial_loops', 1e4, 'E02, M, 10 kHz'), ('E02_coaxial_loops', 3.5e6, 'E02, M, 3.5 MHz')]
@@ -267,7 +225,6 @@ def main():
     for b in LABEL:
         print('wrote', board_chart(b, summ, matplotlib, plt).name)
         print('wrote', curves_chart(b, solves, matplotlib, plt).name)
-    print('wrote', ratio_chart(summ, matplotlib, plt).name)
     print('wrote', proof_chart(proof, matplotlib, plt).name)
 
 

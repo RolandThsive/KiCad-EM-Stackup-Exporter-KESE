@@ -11,187 +11,41 @@ KESE exports a KiCad board's copper and stackup for electromagnetic solvers. Fou
 
 Each integration branch keeps its own solver's results, settings and checks, and knows nothing of the others. The numbers here are read from those branches unchanged by `scripts/collect.py`. The two FEM solvers mesh the air around the copper and close it at an outer boundary; the two PEEC solvers model only the copper, and the air's field comes from the free-space formulas, with no mesh and no boundary.
 
-## The short answer
+This page shows one board, S0d2_1x_OD23_2L_tiny_TX3top_Cut. Every board has its own page in [`Comparisons/`](Comparisons/), named as its folder in the integration branches:
 
-- **FastHenry is the yardstick.** On the two proof boards it lands within 0.03 % of the reference at 10 kHz, the closest of the four (the table under "The proof boards"). Every ratio below is against FastHenry, board by board and gap by gap.
-- **Elmer** (FEM): the coupling (the amplitude of SIN and COS) is 4.7 % under FastHenry's on average (−6.1 to −3.0 % over the 30 board-gaps both have finished); L TX is 8.4 % under (−10.5 to −6.8 %); the rms angle error is within 0.17° of FastHenry's, 0.05° typically (electrical degrees).
-- **PyPEEC** (PEEC): the coupling (the amplitude of SIN and COS) is 1.9 % under FastHenry's on average (−2.8 to −1.2 % over the 30 board-gaps both have finished); L TX is 1.2 % over (+0.6 to +1.9 %); the rms angle error is within 0.04° of FastHenry's, 0.02° typically (electrical degrees).
-- **Palace** (FEM): the coupling (the amplitude of SIN and COS) is 1.7 % under FastHenry's on average (−2.5 to −0.5 % over the 20 board-gaps both have finished); L TX is 6.2 % under (−7.1 to −5.6 %); the rms angle error is within 0.06° of FastHenry's, 0.02° typically (electrical degrees).
+| Board | What it is | SIN amplitude at 1 mm: Elmer, PyPEEC, FastHenry, Palace (nH) |
+|---|---|---|
+| [S0_1x_OD21_2L_tiny](Comparisons/S0_1x_OD21_2L_tiny.md) | S0: 21 mm across, one period per turn, the TX one turn on each layer, a half-ring rotor; SIN and COS opened at a left-out via | 2.81 / 2.94 / 2.99 / 2.93 |
+| [S0_1x_OD21_2L_tiny_TXtop](Comparisons/S0_1x_OD21_2L_tiny_TXtop.md) | S0 TXtop: S0 with the TX two turns on the top layer (the generator narrows the RX band to fit them) | 2.35 / 2.43 / 2.48 / 2.42 |
+| [S0_1x_OD22_2L_tiny_TXtop](Comparisons/S0_1x_OD22_2L_tiny_TXtop.md) | OD22 TXtop: the TX two turns on the top layer around S0's own RX coils, the board grown to 22.2 mm | 3.26 / 3.38 / 3.43 / 3.37 |
+| [S0_1x_OD22_2L_tiny_TXtop_Cut](Comparisons/S0_1x_OD22_2L_tiny_TXtop_Cut.md) | OD22 Cut: the 22 mm board with SIN and COS opened by a 0.2 mm cut in a top trace instead of a left-out via | 3.26 / 3.34 / 3.40 / 3.37 |
+| [S0_1x_OD23_2L_tiny_TX3top_Cut](Comparisons/S0_1x_OD23_2L_tiny_TX3top_Cut.md) | OD23 Cut: the TX three turns on the top layer around S0's RX coils, 23.4 mm, opened by cuts | 4.88 / 4.98 / 5.07 / — |
+| [S0d2_1x_OD23_2L_tiny_TX3top_Cut](Comparisons/S0d2_1x_OD23_2L_tiny_TX3top_Cut.md) | S0d2: the three-turn 23 mm board with two electrical periods per turn and a rotor of two sectors, so the curves repeat every 180°; solved at 16 angles over the whole turn | 4.51 / 4.61 / 4.73 / — |
 
-So the two PEEC solvers agree within about 2 %, and the angle error, which is what a position sensor is for, agrees best of all: it is set by the coils' shapes, which every solver sees alike. The FEM solvers read the coupling and L TX low on the meshes they were run with, by an amount that shrinks as the mesh is refined ("Why they differ" below).
+## S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
-The generator's own estimates of L TX (from each board's `Parameters.txt`) against FastHenry:
+**S0d2**: the three-turn 23 mm board with two electrical periods per turn and a rotor of two sectors, so the curves repeat every 180°; solved at 16 angles over the whole turn.
 
-| Board | Generator, rotor away (nH) | FastHenry, rotor away (nH) | Generator, with the rotor (nH) | FastHenry, rotor at 1 mm (nH) |
-|---|---|---|---|---|
-| S0 | 132 | 135.3 | 109 | 126.4 |
-| S0 TXtop | 130 | 132.5 | 106 | 122.1 |
-| OD22 TXtop | 144 | 146.9 | 116 | 134.1 |
-| OD22 Cut | 144 | 146.9 | 116 | 134.1 |
-| OD23 Cut | 292 | 294.6 | 226 | 263.8 |
-| S0d2 | 292 | 294.6 | 226 | 269.6 |
-
-The generator's estimates are formulas, not field solves. With the rotor away they land within a few percent of FastHenry. Its value with the rotor is close to what the solvers give at 0.1 mm, not at 1 mm: the generator calls it an upper estimate of the drop the rotor causes.
-
-## How close the solvers are, all boards together
-
-![Each solver over FastHenry](charts/ratio_to_fasthenry.webp)
-
-Each solver's value over FastHenry's on the same board and gap: the mean over the boards both have finished, and in brackets the lowest and the highest.
-
-**SIN's amplitude**
-
-| Air gap | Elmer | PyPEEC | Palace |
+| Solver | Gaps finished (of 5) | Solves | Passing their own checks |
 |---|---|---|---|
-| 0.1 mm | 0.960 (0.949 to 0.970) | 0.986 (0.984 to 0.988) | 0.985 (0.979 to 0.995) |
-| 0.5 mm | 0.954 (0.943 to 0.964) | 0.985 (0.981 to 0.987) | 0.982 (0.975 to 0.991) |
-| 1 mm | 0.952 (0.941 to 0.962) | 0.981 (0.975 to 0.984) | 0.981 (0.975 to 0.990) |
-| 1.5 mm | 0.951 (0.940 to 0.961) | 0.978 (0.972 to 0.981) | 0.983 (0.977 to 0.991) |
-| 2 mm | 0.952 (0.939 to 0.962) | 0.978 (0.972 to 0.982) | 0.985 (0.980 to 0.993) |
+| Elmer | 5 | 80 | 80 |
+| PyPEEC | 5 | 80 | 80 |
+| FastHenry | 5 | 80 | 80 |
+| Palace | 0 (still solving) | 0 | 0 |
 
-**L TX, mean over the turn**
+Against FastHenry, the yardstick (the closest to the reference on the proof boards):
 
-| Air gap | Elmer | PyPEEC | Palace |
-|---|---|---|---|
-| 0.1 mm | 0.906 (0.895 to 0.916) | 1.017 (1.013 to 1.019) | 0.930 (0.929 to 0.930) |
-| 0.5 mm | 0.915 (0.902 to 0.926) | 1.009 (1.006 to 1.010) | 0.938 (0.934 to 0.939) |
-| 1 mm | 0.918 (0.904 to 0.929) | 1.010 (1.008 to 1.011) | 0.940 (0.936 to 0.942) |
-| 1.5 mm | 0.919 (0.906 to 0.931) | 1.013 (1.011 to 1.015) | 0.942 (0.938 to 0.944) |
-| 2 mm | 0.920 (0.906 to 0.932) | 1.009 (1.007 to 1.010) | 0.943 (0.939 to 0.944) |
-
-**R TX, mean over the turn**
-
-| Air gap | Elmer | PyPEEC | Palace |
-|---|---|---|---|
-| 0.1 mm | 1.057 (1.053 to 1.073) | 1.132 (1.128 to 1.136) | 1.070 (1.069 to 1.071) |
-| 0.5 mm | 1.049 (1.046 to 1.058) | 1.136 (1.129 to 1.141) | 1.067 (1.064 to 1.071) |
-| 1 mm | 1.048 (1.044 to 1.055) | 1.139 (1.131 to 1.144) | 1.066 (1.064 to 1.072) |
-| 1.5 mm | 1.048 (1.044 to 1.055) | 1.141 (1.133 to 1.147) | 1.068 (1.066 to 1.073) |
-| 2 mm | 1.048 (1.044 to 1.056) | 1.143 (1.135 to 1.148) | 1.068 (1.066 to 1.073) |
-
-## Board by board
-
-For each board, the first chart has SIN's amplitude, L TX (its mean over the turn, and on the right with the rotor taken away) and the rms angle error, all against the air gap. The second chart (linked under it) has the SIN and COS curves at 1 mm. The numbers are in the tables under each chart, and every gap is in data/summary.csv.
-
-### S0: 21 mm, TX one turn on each layer
-
-![S0 against the air gap](charts/S0_1x_OD21_2L_tiny.webp)
-
-At 1 mm (the curves: [charts/S0_1x_OD21_2L_tiny_1mm.webp](charts/S0_1x_OD21_2L_tiny_1mm.webp)):
-
-| Solver | SIN amplitude (nH) | COS amplitude (nH) | L TX (nH) | L TX, rotor away (nH) | R TX (mΩ) | Angle error, rms (°) | Angle error, peak (°) | Solves |
-|---|---|---|---|---|---|---|---|---|
-| Elmer | 2.812 | 2.820 | 114.3 | 122.6 | 271 | 0.141 | 0.289 | 8 |
-| PyPEEC | 2.937 | 2.944 | 127.8 | 136.5 | 294 | 0.062 | 0.107 | 8 |
-| FastHenry | 2.989 | 2.995 | 126.4 | 135.3 | 257 | 0.050 | 0.105 | 8 |
-| Palace | 2.926 | 2.930 | 118.3 | 127.1 | 276 | 0.069 | 0.098 | 8 |
-
-SIN's amplitude (nH) at every gap:
-
-| Air gap | Elmer | PyPEEC | FastHenry | Palace |
-|---|---|---|---|---|
-| 0.1 mm | 6.225 | 6.478 | 6.561 | 6.437 |
-| 0.5 mm | 4.452 | 4.657 | 4.720 | 4.618 |
-| 1 mm | 2.812 | 2.937 | 2.989 | 2.926 |
-| 1.5 mm | 1.798 | 1.874 | 1.913 | 1.875 |
-| 2 mm | 1.178 | 1.230 | 1.255 | 1.233 |
-
-### S0 TXtop: 21 mm, 2 TX turns on top
-
-![S0 TXtop against the air gap](charts/S0_1x_OD21_2L_tiny_TXtop.webp)
-
-At 1 mm (the curves: [charts/S0_1x_OD21_2L_tiny_TXtop_1mm.webp](charts/S0_1x_OD21_2L_tiny_TXtop_1mm.webp)):
-
-| Solver | SIN amplitude (nH) | COS amplitude (nH) | L TX (nH) | L TX, rotor away (nH) | R TX (mΩ) | Angle error, rms (°) | Angle error, peak (°) | Solves |
-|---|---|---|---|---|---|---|---|---|
-| Elmer | 2.346 | 2.346 | 111.6 | 121.2 | 265 | 0.423 | 0.579 | 8 |
-| PyPEEC | 2.429 | 2.435 | 123.4 | 133.7 | 290 | 0.445 | 0.562 | 8 |
-| FastHenry | 2.481 | 2.486 | 122.1 | 132.5 | 254 | 0.413 | 0.517 | 8 |
-| Palace | 2.420 | 2.424 | 114.8 | 125.1 | 270 | 0.440 | 0.576 | 8 |
-
-SIN's amplitude (nH) at every gap:
-
-| Air gap | Elmer | PyPEEC | FastHenry | Palace |
-|---|---|---|---|---|
-| 0.1 mm | 5.060 | 5.229 | 5.314 | 5.202 |
-| 0.5 mm | 3.708 | 3.848 | 3.915 | 3.818 |
-| 1 mm | 2.346 | 2.429 | 2.481 | 2.420 |
-| 1.5 mm | 1.486 | 1.533 | 1.570 | 1.534 |
-| 2 mm | 0.965 | 0.993 | 1.016 | 0.995 |
-
-### OD22 TXtop: 22 mm, 2 TX turns on top
-
-![OD22 TXtop against the air gap](charts/S0_1x_OD22_2L_tiny_TXtop.webp)
-
-At 1 mm (the curves: [charts/S0_1x_OD22_2L_tiny_TXtop_1mm.webp](charts/S0_1x_OD22_2L_tiny_TXtop_1mm.webp)):
-
-| Solver | SIN amplitude (nH) | COS amplitude (nH) | L TX (nH) | L TX, rotor away (nH) | R TX (mΩ) | Angle error, rms (°) | Angle error, peak (°) | Solves |
-|---|---|---|---|---|---|---|---|---|
-| Elmer | 3.261 | 3.263 | 122.7 | 134.6 | 286 | 0.221 | 0.374 | 8 |
-| PyPEEC | 3.377 | 3.383 | 135.6 | 148.2 | 312 | 0.212 | 0.298 | 8 |
-| FastHenry | 3.433 | 3.439 | 134.1 | 146.9 | 274 | 0.193 | 0.268 | 8 |
-| Palace | 3.369 | 3.374 | 126.2 | 138.9 | 292 | 0.197 | 0.269 | 8 |
-
-SIN's amplitude (nH) at every gap:
-
-| Air gap | Elmer | PyPEEC | FastHenry | Palace |
-|---|---|---|---|---|
-| 0.1 mm | 6.470 | 6.680 | 6.764 | 6.659 |
-| 0.5 mm | 4.916 | 5.098 | 5.164 | 5.069 |
-| 1 mm | 3.261 | 3.377 | 3.433 | 3.369 |
-| 1.5 mm | 2.153 | 2.223 | 2.265 | 2.226 |
-| 2 mm | 1.445 | 1.490 | 1.518 | 1.495 |
-
-### OD22 Cut: 22 mm, 2 TX turns on top, opened by cuts
-
-![OD22 Cut against the air gap](charts/S0_1x_OD22_2L_tiny_TXtop_Cut.webp)
-
-At 1 mm (the curves: [charts/S0_1x_OD22_2L_tiny_TXtop_Cut_1mm.webp](charts/S0_1x_OD22_2L_tiny_TXtop_Cut_1mm.webp)):
-
-| Solver | SIN amplitude (nH) | COS amplitude (nH) | L TX (nH) | L TX, rotor away (nH) | R TX (mΩ) | Angle error, rms (°) | Angle error, peak (°) | Solves |
-|---|---|---|---|---|---|---|---|---|
-| Elmer | 3.257 | 3.267 | 122.7 | 134.6 | 286 | 0.207 | 0.304 | 8 |
-| PyPEEC | 3.340 | 3.342 | 135.6 | 148.2 | 313 | 0.179 | 0.333 | 8 |
-| FastHenry | 3.403 | 3.410 | 134.1 | 146.9 | 274 | 0.155 | 0.237 | 8 |
-| Palace | 3.368 | 3.374 | 126.2 | 138.9 | 292 | 0.195 | 0.276 | 8 |
-
-SIN's amplitude (nH) at every gap:
-
-| Air gap | Elmer | PyPEEC | FastHenry | Palace |
-|---|---|---|---|---|
-| 0.1 mm | 6.466 | 6.600 | 6.695 | 6.661 |
-| 0.5 mm | 4.912 | 5.040 | 5.117 | 5.069 |
-| 1 mm | 3.257 | 3.340 | 3.403 | 3.368 |
-| 1.5 mm | 2.149 | 2.198 | 2.246 | 2.226 |
-| 2 mm | 1.441 | 1.473 | 1.504 | 1.495 |
-
-### OD23 Cut: 23 mm, 3 TX turns on top, opened by cuts
-
-![OD23 Cut against the air gap](charts/S0_1x_OD23_2L_tiny_TX3top_Cut.webp)
-
-At 1 mm (the curves: [charts/S0_1x_OD23_2L_tiny_TX3top_Cut_1mm.webp](charts/S0_1x_OD23_2L_tiny_TX3top_Cut_1mm.webp)):
-
-| Solver | SIN amplitude (nH) | COS amplitude (nH) | L TX (nH) | L TX, rotor away (nH) | R TX (mΩ) | Angle error, rms (°) | Angle error, peak (°) | Solves |
-|---|---|---|---|---|---|---|---|---|
-| Elmer | 4.879 | 4.882 | 245.1 | 273.3 | 455 | 0.344 | 0.560 | 8 |
-| PyPEEC | 4.984 | 4.986 | 266.4 | 296.7 | 493 | 0.318 | 0.489 | 8 |
-| FastHenry | 5.074 | 5.081 | 263.8 | 294.6 | 436 | 0.300 | 0.418 | 8 |
-
-SIN's amplitude (nH) at every gap:
-
-| Air gap | Elmer | PyPEEC | FastHenry |
-|---|---|---|---|
-| 0.1 mm | 9.123 | 9.276 | 9.407 |
-| 0.5 mm | 7.099 | 7.255 | 7.361 |
-| 1 mm | 4.879 | 4.984 | 5.074 |
-| 1.5 mm | 3.321 | 3.386 | 3.457 |
-| 2 mm | 2.286 | 2.329 | 2.377 |
-
-### S0d2: 23 mm, 3 TX turns on top, cuts, 2 periods per turn
+- **Elmer** (FEM): the coupling (SIN's and COS's amplitude) is 4.3 % under FastHenry's on average over the 5 gaps both have finished (−4.8 to −3.3 %); L TX is 7.4 % under (−8.4 to −6.9 %); the rms angle error is within 0.08° of FastHenry's (electrical degrees).
+- **PyPEEC** (PEEC): the coupling (SIN's and COS's amplitude) is 2.2 % under FastHenry's on average over the 5 gaps both have finished (−2.8 to −1.4 %); L TX is 0.9 % over (+0.6 to +1.3 %); the rms angle error is within 0.04° of FastHenry's (electrical degrees).
+- **Palace** has not finished a gap of this board yet; it is still solving.
 
 ![S0d2 against the air gap](charts/S0d2_1x_OD23_2L_tiny_TX3top_Cut.webp)
 
-At 1 mm (the curves: [charts/S0d2_1x_OD23_2L_tiny_TX3top_Cut_1mm.webp](charts/S0d2_1x_OD23_2L_tiny_TX3top_Cut_1mm.webp)):
+*SIN's amplitude, L TX (its mean over the turn, and on the right with the rotor taken away) and the rms angle error against the air gap, one line per solver.*
+
+### At 1 mm
+
+![The curves at 1 mm](charts/S0d2_1x_OD23_2L_tiny_TX3top_Cut_1mm.webp)
 
 | Solver | SIN amplitude (nH) | COS amplitude (nH) | L TX (nH) | L TX, rotor away (nH) | R TX (mΩ) | Angle error, rms (°) | Angle error, peak (°) | Solves |
 |---|---|---|---|---|---|---|---|---|
@@ -199,7 +53,9 @@ At 1 mm (the curves: [charts/S0d2_1x_OD23_2L_tiny_TX3top_Cut_1mm.webp](charts/S0
 | PyPEEC | 4.613 | 4.627 | 271.8 | 296.4 | 496 | 0.216 | 0.434 | 16 |
 | FastHenry | 4.730 | 4.736 | 269.6 | 294.6 | 436 | 0.181 | 0.331 | 16 |
 
-SIN's amplitude (nH) at every gap:
+### Every air gap
+
+**SIN's amplitude (nH)**
 
 | Air gap | Elmer | PyPEEC | FastHenry |
 |---|---|---|---|
@@ -208,6 +64,80 @@ SIN's amplitude (nH) at every gap:
 | 1 mm | 4.511 | 4.613 | 4.730 |
 | 1.5 mm | 2.882 | 2.940 | 3.026 |
 | 2 mm | 1.856 | 1.891 | 1.946 |
+
+**COS's amplitude (nH)**
+
+| Air gap | Elmer | PyPEEC | FastHenry |
+|---|---|---|---|
+| 0.1 mm | 9.437 | 9.625 | 9.766 |
+| 0.5 mm | 6.976 | 7.157 | 7.285 |
+| 1 mm | 4.514 | 4.627 | 4.736 |
+| 1.5 mm | 2.884 | 2.950 | 3.030 |
+| 2 mm | 1.857 | 1.898 | 1.950 |
+
+**L TX, mean over the turn (nH)**
+
+| Air gap | Elmer | PyPEEC | FastHenry |
+|---|---|---|---|
+| 0.1 mm | 213.6 | 236.1 | 233.2 |
+| 0.5 mm | 236.6 | 257.4 | 255.8 |
+| 1 mm | 250.3 | 271.8 | 269.6 |
+| 1.5 mm | 257.9 | 280.3 | 277.4 |
+| 2 mm | 262.6 | 284.2 | 282.2 |
+
+**R TX, mean over the turn (mΩ)**
+
+| Air gap | Elmer | PyPEEC | FastHenry |
+|---|---|---|---|
+| 0.1 mm | 509 | 540 | 475 |
+| 0.5 mm | 473 | 508 | 447 |
+| 1 mm | 460 | 496 | 436 |
+| 1.5 mm | 453 | 490 | 430 |
+| 2 mm | 449 | 486 | 426 |
+
+**Angle error, rms (electrical °)**
+
+| Air gap | Elmer | PyPEEC | FastHenry |
+|---|---|---|---|
+| 0.1 mm | 0.917 | 0.892 | 0.862 |
+| 0.5 mm | 0.386 | 0.384 | 0.349 |
+| 1 mm | 0.212 | 0.216 | 0.181 |
+| 1.5 mm | 0.181 | 0.173 | 0.139 |
+| 2 mm | 0.197 | 0.157 | 0.122 |
+
+### Against FastHenry, gap by gap
+
+Each solver's value over FastHenry's at the same gap: SIN's amplitude, and in brackets L TX.
+
+| Air gap | Elmer | PyPEEC |
+|---|---|---|
+| 0.1 mm | 0.967 (0.916) | 0.984 (1.013) |
+| 0.5 mm | 0.958 (0.925) | 0.981 (1.006) |
+| 1 mm | 0.954 (0.928) | 0.975 (1.008) |
+| 1.5 mm | 0.953 (0.930) | 0.972 (1.011) |
+| 2 mm | 0.953 (0.931) | 0.972 (1.007) |
+
+### The generator's estimates
+
+The generator's own figures from `Parameters.txt`, formulas rather than field solves: L TX 292 nH with the rotor away and 226 nH with it (which it calls an upper estimate of the drop), and R TX 380 mΩ at DC.
+
+| Solver | L TX, rotor away (nH) | Over the estimate | L TX at 0.1 mm (nH) | L TX at 1 mm (nH) |
+|---|---|---|---|---|
+| Elmer | 274.2 | −6.1 % | 213.6 | 250.3 |
+| PyPEEC | 296.4 | +1.5 % | 236.1 | 271.8 |
+| FastHenry | 294.6 | +0.9 % | 233.2 | 269.6 |
+
+### Time and memory
+
+Each branch records the wall time and the peak memory of every solve. They all ran on the same machine (4 cores, 15 GB), often while another solver shared it, and each with its own process layout (FastHenry runs several single-threaded solves at once; Palace runs two or four MPI processes per solve). Read these as rough.
+
+| Solver | Seconds per solve (median over the gaps) | Range | Peak memory of a solve, as the branch measured it (GB) |
+|---|---|---|---|
+| Elmer | 382 | 217 to 583 | 13.3 |
+| PyPEEC | 305 | 184 to 678 | 1.7 to 3.5 |
+| FastHenry | 245 | 212 to 269 | 1.1 |
+
+A receiver whose plus terminal sits on the other side in one branch comes out turned over; here Elmer COS, PyPEEC COS is turned back to match FastHenry. Amplitudes and angle errors are the same either way.
 
 ## The proof boards
 
@@ -240,17 +170,6 @@ The references: E01 at 10 kHz 55.590 nH; E01 at 3.5 MHz 55.039 nH; E02 at 10 kHz
 
 **The signs.** Where a receiver's plus terminal is on the other side in one branch than in another, its curve comes out turned over. The comparison turns it back (see "The data"); the amplitudes and the angle errors are the same either way.
 
-## Time and memory
-
-Each branch records the wall time and the peak memory of every solve. They all ran on the same machine (4 cores, 15 GB), often while another solver shared it, and each with its own process layout (FastHenry runs several single-threaded solves at once; Palace runs two MPI processes per solve). Read these as rough.
-
-| Solver | Seconds per solve (median over the gaps) | Range | Peak memory of a solve, as the branch measured it (GB) |
-|---|---|---|---|
-| Elmer | 202 | 115 to 583 | 13.1 to 13.3 |
-| PyPEEC | 288 | 138 to 678 | 1.3 to 3.5 |
-| FastHenry | 180 | 78 to 279 | 0.7 to 1.1 |
-| Palace | 174 | 117 to 305 | 5.9 to 10.0 |
-
 ## The data
 
 | File | One row per | Columns |
@@ -260,7 +179,7 @@ Each branch records the wall time and the peak memory of every solve. They all r
 | [data/proof.csv](data/proof.csv) | proof-board value | solver, board, results file, frequency, value, reference, error (%), the run's settings |
 | [data/generator.csv](data/generator.csv) | board | the generator's estimates of L TX (rotor away, with the rotor) and of R TX at DC |
 
-A port's plus side is each branch's own convention, so a receiver can come out with the opposite sign. Where a solver's curve is more than 90° from FastHenry's, its sign is turned (the `sign_turned_SIN` and `sign_turned_COS` columns say so); amplitudes and angle errors do not depend on it. Turned here: Elmer COS, Palace COS, Palace SIN, PyPEEC COS.
+A port's plus side is each branch's own convention, so a receiver can come out with the opposite sign. Where a solver's curve is more than 90° from FastHenry's, its sign is turned (the `sign_turned_SIN` and `sign_turned_COS` columns say so); amplitudes and angle errors do not depend on it.
 
 ## Running it again
 
@@ -268,11 +187,11 @@ A port's plus side is each branch's own convention, so a receiver can come out w
 git fetch origin Elmer_Integration PyPEEC_Integration FastHenry_Integration Palace_Integration
 python scripts/collect.py          # reads every branch into data/
 python scripts/charts.py           # draws charts/
-python scripts/report.py           # writes this README
+python scripts/report.py           # writes this README and Comparisons/
 ```
 
 It needs Python 3 with numpy and matplotlib (and Pillow for WebP). `collect.py --dir SOLVER=FOLDER` reads one solver from a checkout instead of git.
 
 ## Licence
 
-The scripts are GPL-3.0 ([LICENSE](LICENSE)). The boards are the Sinusoidal Coil Generator's, and the data, charts and this README describe them, so they keep its non-commercial terms: see [LICENSE.md](LICENSE.md).
+The scripts are GPL-3.0 ([LICENSE](LICENSE)). The boards are the Sinusoidal Coil Generator's, and the data, charts and these pages describe them, so they keep its non-commercial terms: see [LICENSE.md](LICENSE.md).
