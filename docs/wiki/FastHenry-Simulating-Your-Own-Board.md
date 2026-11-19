@@ -1,10 +1,10 @@
-# 55. FastHenry Simulating Your Own Board
+# 35. FastHenry Simulating Your Own Board
 
 Every example on the `FastHenry_Integration` branch is one folder with its board and a `simulation.py` whose settings
 are all in one dictionary, `SETTINGS`, at the top of the file. To simulate a board of your own, copy the example
 closest to it and change those settings; this page lists every one.
 
-## 55.1 Start From An Example
+## 35.1 Start From An Example
 
 | Your board has | Start from |
 |---|---|
@@ -19,11 +19,11 @@ cp ~/my_board.kicad_pcb .               # and set SETTINGS['board'] to its name
 ../../.venv/bin/python simulation.py --nwinc 3      # a first run, 3 filaments across each track
 ```
 
-The first run exports the board's stack-up with KESE (see [FastHenry Installation](FastHenry-Installation.md) for
+The first run exports the board's stack-up with KESE (see [FastHenry Walkthrough 34.5](FastHenry-Walkthrough.md#345-installing-on-linux-ubuntu-2404) for
 KESE) into the folder's `3D_Geometry/`. Every run writes the results file beside the script and its working files
 under `case/` (each solve's `model.inp`, `Zc.mat` and FastHenry's log), which is not committed.
 
-## 55.2 The Proof Boards' Settings
+## 35.2 The Proof Boards' Settings
 
 | Setting | Example (E01) | What it is |
 |---|---|---|
@@ -41,7 +41,7 @@ under `case/` (each solve's `model.inp`, `Zc.mat` and FastHenry's log), which is
 The coil itself is named in `build()`: `C.add_board(m, board, zl, {'LOOP': 'LOOP'}, nwinc=..., nhinc=...)` takes the
 nets to model, as `{net: coil name}`, and `m.port(name, a, b)` opens each coil between two nodes, found with
 `C.nearest_node(m, net, layer, x, y, within)`. For the other ways to open a coil (two stacked ends, a via left out,
-a cut across a trace) see [FastHenry Workflow 54.4](FastHenry-Workflow.md#544-open-each-coil-at-its-port).
+a cut across a trace) see [FastHenry Walkthrough 34.11](FastHenry-Walkthrough.md#3411-open-each-coil-at-its-port).
 
 | Option | What it does |
 |---|---|
@@ -53,7 +53,7 @@ a cut across a trace) see [FastHenry Workflow 54.4](FastHenry-Workflow.md#544-op
 
 A rerun of the same rung replaces it in `results.json`; the other rungs are kept.
 
-## 55.3 A Coil Board From The Generator
+## 35.3 A Coil Board From The Generator
 
 Any single coil set from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator)
 is set up in one command, from the branch's `Examples/Inductive Coils/`:
@@ -74,7 +74,7 @@ and each RX coil at one of its layer-change vias: the one nearest the generator'
 no cut spot, the one farthest from the TX copper. To open SIN and COS by a cut across a top trace instead, as on
 `S0d2_1x_OD23_2L_tiny_TX3top_Cut`, set `"rx_port": "cut"` in `test_spec.json` and give each receiver a `cut`.
 
-## 55.4 The Coil Board's test_spec.json
+## 35.4 The Coil Board's test_spec.json
 
 Everything that belongs to the board is in `test_spec.json`; `simulation.py` reads it. On
 `S0d2_1x_OD23_2L_tiny_TX3top_Cut`:
@@ -113,7 +113,7 @@ And in `SETTINGS` at the top of `simulation.py`:
 One of the 16 rotor angles, drawn by `angle_setup.py`; `FastHenry Simulation/RotorStator_AngleSetup/` has all of
 them, with the two cuts and the TX port ringed. Check them before a long sweep: a port in the wrong place shows here.
 
-## 55.5 The Coil Board's Command Line
+## 35.5 The Coil Board's Command Line
 
 | Option | What it does |
 |---|---|
@@ -133,13 +133,20 @@ An angle already in the results is skipped, so a stopped sweep picks up where it
 the angle error at each angle, `python make_charts.py` redraws every chart, `python rig_picture.py` redraws how the
 boards sit in FastHenry, and `python angle_setup.py` redraws the rotor at each angle.
 
-## 55.6 Before A Large Board
+## 35.6 Before A Large Board
 
-Check the memory first ([FastHenry Hardware](FastHenry-Hardware.md)): build the model alone with `--model-only`, read
+Check the memory first: build the model alone with `--model-only`, read
 its filaments, and square them. The dense direct solve holds every filament's coupling to every other, so a board
 with twice the filaments needs four times the memory and eight times the time. If it does not fit, make the coil smaller or
 the rotor's grid coarser (`--rotor-edge`, `--rotor-max`), as the branch's coil workflow says.
 
+For scale, on the 4-core, 15 GB test machine: the coil board's 9,264 filaments took 1.1 GB and 2.9 to 5.9 min a
+solve on one core, its 4,722 with the rotor away 0.46 GB and 36 s, and E02's 6,804 filaments (9 × 3) 1.10 GB and
+5.2 min. `new_coil.py` estimates a coil board as about 0.0158 GB × (filaments / 1000)² and 0.0051 min ×
+(filaments / 1000)³ on one core, fitted to the coil boards' solves (6,555 to 9,306 filaments); the proof boards' runs
+with 3 filaments through the copper took more than that, so check any other board with `--model-only` and one solve
+first.
+
 | Previous | Next |
 |:---|---:|
-| [FastHenry Workflow](FastHenry-Workflow.md) | [FastHenry Test Boards](FastHenry-Test-Boards.md) |
+| [FastHenry Walkthrough](FastHenry-Walkthrough.md) | [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md) |
