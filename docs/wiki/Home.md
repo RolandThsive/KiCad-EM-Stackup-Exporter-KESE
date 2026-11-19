@@ -29,8 +29,7 @@ each output comes with a `parameters.txt` that lists the parameter values behind
 > **Validation against measurements is pending.** The models have not yet been compared with
 > measured boards. Four solvers, Elmer FEM, PyPEEC, FastHenry and Palace, have checked the same
 > test boards against closed-form formulas and against each other only
-> ([Solvers Comparison](Solvers-Comparison.md)), and the openEMS bridge its own first boards
-> ([OpenEMS Implementation Test Board Results](OpenEMS-Implementation-Test-Board-Results.md)).
+> ([Solvers Comparison](Solvers-Comparison.md)).
 > Thicknesses default to KiCad's own values
 > (35 µm copper, 10 µm solder mask), not to any fabricator's process. Set your fabricator's
 > numbers in `parameters/` before trusting a simulation built on the output.
