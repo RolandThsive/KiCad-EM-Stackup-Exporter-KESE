@@ -1,4 +1,4 @@
-# 20. Checks, Errors And Warnings
+# 25. Checks, Errors And Warnings
 
 KESE reports in three places: the terminal while it runs, `report.txt` next to every output,
 and the Verifier, whose lines are appended to `report.txt`. Most items the model leaves
@@ -12,7 +12,8 @@ python run_KESE.py board.kicad_pcb              # generate, then run the Verifie
 python tests/test_boards.py                     # the regression suite over every board
 ```
 
-## 20.1 Levels
+<a name="201-levels"></a>
+## 25.1 Levels
 
 | Level | Meaning | What happens |
 |---|---|---|
@@ -22,7 +23,8 @@ python tests/test_boards.py                     # the regression suite over ever
 | Note | A fact about the run. | In `report.txt` under `notes`. |
 | Verifier | The model's own proof. | `Verifier: PASS` or `FAIL` plus one line per check, at the end of `report.txt`. The run does not fail on a Verifier FAIL. |
 
-### 20.1.1 Errors
+<a name="2011-errors"></a>
+### 25.1.1 Errors
 
 | Message | Cause and way out |
 |---|---|
@@ -36,16 +38,16 @@ python tests/test_boards.py                     # the regression suite over ever
 | `MODE must be 'simulation' or 'visual', not ...` | A typo in `Run.MODE` (or `--set Run.MODE=...`). A typo in `--mode` is caught earlier by the command line: `argument --mode: invalid choice`, exit code 2. |
 | `unknown FILE_FORMAT entries [...]` | Only `glb`, `stl`, `obj`, `step`. One format may be given as a list or as a single word (`--set Run.FILE_FORMAT=step`). |
 | `<Module>.<NAME> must be '...' or '...', not ...` | A setting that takes one of a few words (those whose range [Parameter Reference](Parameter-Reference.md) gives as words with `/` between them, such as `Run.UNITS` or `Copper.COPPER_GROUPING`) has another value. The run stops before reading the board. |
-| `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/Run_KESE/Parallel.py`](Parameter-Reference.md#199-parallel-parametersrun_keseparallelpy) is negative, fractional or not a number. |
+| `Parallel.WORKERS must be a whole number, 0 or more (0: one per processor thread), not ...` (or `Parallel.PROCESS_WORKERS`, `Parallel.PROCESS_MIN_COORDINATES`, with what their `0` means) | A count in [`parameters/Run_KESE/Parallel.py`](Parameter-Reference.md#249-parallel-parametersrun_keseparallelpy) is negative, fractional or not a number. |
 | `Stackup.top_solder_mask must be True or False, not 'false'` (or `must be a number`, `must be text, in quotes`, `must be a list`, `must be a dict`, for any setting) | A setting, or a line of `Stackup.py`, given a value of another kind than its parameter file gives it: most often `--set Stackup.solder_mask=false`, which gives the word `false`, which Python would take as true (write `False`), or a number with its unit (`0.02mm`). A setting that is `None` in its file takes a value of its own kind or `None` (`Board.RESIN_EPSILON_R must be a number, 1 or more, or None`). The old switch `Copper.ETCH_APPLY_TO_INNER_LAYERS` is held to `True` or `False` in the same way. |
-| `parameters/PCB_elements/Copper.py sets ETCH_FACTOR, which is now Copper.TOP_ETCH_FACTOR and Copper.BOTTOM_ETCH_FACTOR (parameters/PCB_elements/Copper.py): set them there` (or another setting under a name of before 25.2: `parameters/PCB_elements/Finish.py sets FINISH_ENABLED, which is now the lines "top_finish", "bottom_finish" and "hole_finish" of parameters/PCB_elements/Stackup.py`; one setting with one new name ends `set it there`) | A parameter file edited by hand, or kept through an update, still sets a setting that was moved or renamed; the run stops rather than leave the value unused. The names of before are listed in [Parameter Reference](Parameter-Reference.md#1914-names-of-before-252). |
+| `parameters/PCB_elements/Copper.py sets ETCH_FACTOR, which is now Copper.TOP_ETCH_FACTOR and Copper.BOTTOM_ETCH_FACTOR (parameters/PCB_elements/Copper.py): set them there` (or another setting under a name of before 25.2: `parameters/PCB_elements/Finish.py sets FINISH_ENABLED, which is now the lines "top_finish", "bottom_finish" and "hole_finish" of parameters/PCB_elements/Stackup.py`; one setting with one new name ends `set it there`) | A parameter file edited by hand, or kept through an update, still sets a setting that was moved or renamed; the run stops rather than leave the value unused. The names of before are listed in [Parameter Reference](Parameter-Reference.md#2414-names-of-before-252). |
 | `parameters/board.py is not read any more: its settings are now in parameters/PCB_elements/Board.py: move your values there and delete it` (or another file of before 25.2; several are named together, ending `delete them`) | Before 25.2 the parameter files lay in `parameters/` itself. One of them is still there, most often after an update that copied the new files over the old folder. It is not read any more, so a value edited in it would do nothing: move the values and delete the file. |
 | `parameters/PCB_elements/Stackup.py: PLIES_FUSED has the line 'top_finsh', which is not one of its lines (did you mean top_finish?); they are top_silkscreen, ...` (or `PLIES_FUSED has no line 'via_resin'; every line must be there, True or False`) | A line of a stack-up in `Stackup.py` misspelt, added or deleted. Every line of each stack-up must be there, `True` or `False`. |
 | `nothing to build: every line of PLIES_FUSED is False (parameters/PCB_elements/Stackup.py)` | Every line of the stack-up being built is `False`, so there is nothing to write; the run stops before reading the board. |
 | `Color.MATERIALS is no longer a parameter: every colour is now a setting of its own in its element's file: Board.CORE_COLOR, ...` (or, for any other name of that file, `Color.<NAME> is not a parameter: parameters/color.py is gone, and every colour is now in its element's file of parameters/PCB_elements/ (Board.py, Copper.py, Finish.py, SolderMask.py, SilkScreen.py)`) | `--set Color.MATERIALS=...`, the one setting of before 25.2 that has no single home now: each colour is a setting of its element's file ([Colorizing](Colorizing.md)). A name the old colour file never had is answered with where the colours are now. |
 | `Board.PLIES_BY_HAND['<board>'][('F.Cu', 'In2.Cu')]: ('F.Cu', 'In2.Cu') is not two neighbouring copper layers of this board, the upper one first; its gaps are ...` (or `... has no 'thickness_mm': a ply takes type, thickness_mm, material, epsilon_r, loss_tangent, and may take frequency_hz, model`, `'thickness_mm' must be more than 0`, `'type' must be 'core' or 'prepreg'`, `'model' may be 'table' only when Board.DIELECTRIC_TABLE has rows`) | A mistake in the plies written by hand for this board ([Board](Board.md#1214-plies-written-by-hand)). The message names the entry. |
-| `Board.DIELECTRIC_MODEL is 'table' but Board.DIELECTRIC_TABLE is empty: give it rows of (frequency in Hz, er, tan d)` (or `Board.DIELECTRIC_TABLE must be rows of (frequency in Hz, er, tan d) by rising frequency, not ...`) | The table model needs its table, each row a frequency above 0, an εr of 1 or more and a tan δ of 0 or more, by rising frequency ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)). |
-| `Board.DS_LOW_FREQUENCY_HZ must be less than Board.DS_HIGH_FREQUENCY_HZ, not 1000000000000.0 and 1000.0` | The two corner frequencies of the Djordjevic-Sarkar model are the wrong way round, or the same. No ply could be fitted between them, so the run stops before reading the board ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)). |
+| `Board.DIELECTRIC_MODEL is 'table' but Board.DIELECTRIC_TABLE is empty: give it rows of (frequency in Hz, er, tan d)` (or `Board.DIELECTRIC_TABLE must be rows of (frequency in Hz, er, tan d) by rising frequency, not ...`) | The table model needs its table, each row a frequency above 0, an εr of 1 or more and a tan δ of 0 or more, by rising frequency ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)). |
+| `Board.DS_LOW_FREQUENCY_HZ must be less than Board.DS_HIGH_FREQUENCY_HZ, not 1000000000000.0 and 1000.0` | The two corner frequencies of the Djordjevic-Sarkar model are the wrong way round, or the same. No ply could be fitted between them, so the run stops before reading the board ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)). |
 | `Geometry.PINCH_CUT_ROUNDS must be a whole number, 1 or more, not ...` (or `Geometry.VERTEX_SHARING_ROUNDS`, `Geometry.NODING_ROUNDS`, a batch or group size of `parameters/Run_KESE/Parallel.py` or `parameters/Run_KESE/Geometry.py`, `Verifier.VERIFY_RAYS`; `Step.STEP_ARC_MIN_POINTS`, `Geometry.PINCH_DISC_SIDES`, `Geometry.ELLIPSE_MIN_SEGMENTS`, 3 or more; the digits, margins and other counts of `parameters/Run_KESE/Geometry.py`, `Parallel.PROCESS_MIN_NETS` and `Verifier.VERIFY_MERGE_EXTRA_DIGITS`, 0 or more) | At least one round, one item in a batch or one ray is needed: with no round of opening, every region checked would be noted as still pinched, and with no ray the visual check would pass on nothing. An arc needs three points to make a circle, and a disc or an ellipse three sides. A count, a number of digits or a margin cannot be negative or fractional. |
 | `Verifier.VERIFY_VOLUME_TOLERANCE must be a number, 0 or more, not ...` (or `Verifier.VERIFY_OPENED_VOLUME_MM3`, `Verifier.VERIFY_GONE_AREA_MM2`, `Verifier.VERIFY_VOLUME_NOISE_MM3`, `Step.STEP_TANGENT_MM`, `Step.STEP_ARC_CHECK_FACTOR`, `Parallel.WORKER_STOP_WAIT_S`, `Copper.VIA_RESIN_LOSS_TANGENT`; `Finish.FINISH_MITRE_LIMIT` and `Copper.VIA_RESIN_EPSILON_R`, 1 or more) | A tolerance, a wait or a loss tangent is negative or not a number, the finish's mitre limit is below 1, where the finish would be thinner at a sharp corner than its thickness, or the via resin's εr is below that of vacuum. |
 | `Copper.VIA_PLUG_DEPTH_FRACTION must be a number more than 0 and at most 1, not ...` | A plug reaches into its hole by this share of the hole's length; past 1 it would stick out of the board. |
@@ -62,7 +64,8 @@ python tests/test_boards.py                     # the regression suite over ever
 | `no boards given and none found in Input/` | Put a board in `Input/` or give a path. |
 | `OSError: [Errno 28] No space left on device` (the last line of the traceback; or another error writing a file, such as `PermissionError`) | The disk filled while the files were written. The file being written is removed (an OBJ with its MTL), so no half-written file is left to be opened; the files written whole before it stay, and the run folder is removed when nothing in it was written whole. Free some space and run again. |
 
-### 20.1.2 Warnings
+<a name="2012-warnings"></a>
+### 25.1.2 Warnings
 
 | Message | Meaning |
 |---|---|
@@ -83,13 +86,14 @@ python tests/test_boards.py                     # the regression suite over ever
 | `N text(s) in a TrueType face drawn with KiCad's stroke font, in other letter shapes: the file has no render cache for them, or one made for other words or another angle (open the board in KiCad and save it)` | KiCad saves the letters of TrueType text with it, and KESE draws those; these texts have none that fit, as when a script wrote the board or it was edited by hand. They are drawn in the stroke font, in their place and size. With `SilkScreen.DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT = False` they are left out instead ([Silkscreens](Silkscreens.md#1624-fonts-and-faces)). |
 | `the stack-up colour '<value>' of <layer> is neither a colour name of its table (parameters/PCB_elements/SolderMask.py) nor #RRGGBBAA; its parts keep the colour of that file` (or `SilkScreen.py` for a silkscreen layer) | A mask or silkscreen colour KESE cannot read keeps KESE's colour. Add the name to the table of colour names in that file ([Colorizing](Colorizing.md#142-colours-from-the-stack-up)). |
 | `dielectric 4 ply 2 is 0.0005 mm thick, less than Board.PLY_MIN_THICKNESS_MM (0.001 mm): joined to dielectric 4 ply 1` (or `dielectric 4 ply 2 has no thickness: joined to dielectric 4 ply 1`) | With the plies separate: a ply too thin to build as a solid of its own, such as a bond film, is joined to its thicker neighbour in the gap; the gap keeps its thickness ([Board](Board.md#1213-equal-plies-and-thin-plies)). A ply the file gives no thickness is joined whatever the setting, since it has nothing to build. |
-| `dielectric 2: the Djordjevic-Sarkar model needs its spec frequency (1e+13 Hz) between Board.DS_LOW_FREQUENCY_HZ (1000) and Board.DS_HIGH_FREQUENCY_HZ (1e+12): written with constant values` | The model cannot be fitted to values given outside its two corner frequencies; that ply is written with constant εr and tan δ, as KiCad falls back ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)). |
+| `dielectric 2: the Djordjevic-Sarkar model needs its spec frequency (1e+13 Hz) between Board.DS_LOW_FREQUENCY_HZ (1000) and Board.DS_HIGH_FREQUENCY_HZ (1e+12): written with constant values` | The model cannot be fitted to values given outside its two corner frequencies; that ply is written with constant εr and tan δ, as KiCad falls back ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)). |
 | `dielectric 2: its dielectric model is "table" but Board.DIELECTRIC_TABLE is empty: written with constant values` | The board file gives this ply the table model, and the table of the parameters has no rows. The ply is written with constant εr and tan δ. |
 | `dielectric 1: a ply with er 0 or less cannot be put in series (Board.FUSED_PROPERTIES): the gap keeps its first ply's values` | With `Board.FUSED_PROPERTIES = "series"` the plies of a gap are put in series by their thickness over their εr, which a ply with an εr of 0 or less in the file does not allow. The gap keeps the values of its first ply, as with `"first"` ([Board](Board.md#1211-plies-fused)). |
 | `Stackup.cores changes nothing in this run: "cores" is a line of PLIES_SEPARATE, and PLIES_FUSED is built` | A `--set` of a line that only the other stack-up has: `prepreg_plies` and `cores` are lines of `PLIES_SEPARATE`, `board` is a line of `PLIES_FUSED`. Set `Stackup.FUSION_BUILD` to the stack-up meant, or the line of the one being built. |
 | `nothing was built: this board has no part of the lines that are True in PLIES_FUSED (parameters/PCB_elements/Stackup.py)` | Every line that is `True` is one this board has no part of, such as `inner_copper` alone on a two-layer board. The run ends well and its model files are empty; the Verifier passes it with nothing to check. |
 
-### 20.1.3 Notes Worth Knowing
+<a name="2013-notes-worth-knowing"></a>
+### 25.1.3 Notes Worth Knowing
 
 | Message in `notes` | Meaning |
 |---|---|
@@ -103,7 +107,7 @@ python tests/test_boards.py                     # the regression suite over ever
 | `plated holes cross the board edge but the stackup has no (castellated_pads yes); set Copper.CASTELLATION = 'auto' to plate them` | With `Copper.CASTELLATION = "file"`, plated holes cut by the edge are left bare because the stack-up does not say they are castellated. |
 | `edge plating: copper of net '<net>' inside the edge band moved to net '<edge net>' on N layer(s)` | Copper of another net reached into the plated edge band; it now belongs to the edge's net (see 20.5). |
 | `worker processes failed (...); the N parts left are built in this process, one after another`, or `... are built in 2 processes` (in visual mode `sliced`; a big board's copper `the N copper layers left are joined`; its STEP file `made ready for STEP`, then `written to STEP`; after a lost worker, ending `(most often a lack of memory: fewer processes, Parallel.PROCESS_WORKERS, use less)`) | Stage 3, 6 or 7 could not start its worker processes (`Parallel.WORKERS`, at most `Parallel.PROCESS_WORKERS`), or lost one: the system stopped it, most often for lack of memory, or it ran out of memory (`MemoryError`). After a lost worker, what the workers did not do goes to half as many processes (a note each time), and to the main process once that would be one; where the processes cannot start, the main process does it. The files are the same, only slower. An error in a part itself is not caught here: it stops the run at once, with its traceback. With little memory, `--set Parallel.PROCESS_WORKERS=1` starts no worker process (stages 6 and 7 work in the main process, stage 3 in threads), and `--set Parallel.WORKERS=1` does everything in turn. |
-| `Run.WORKERS is now Parallel.WORKERS (parameters/Run_KESE/Parallel.py): the value given for Run.WORKERS is used as Parallel.WORKERS` (or another setting given by a name of before, such as `Finish.FINISH_ENABLED is now the lines "top_finish", "bottom_finish" and "hole_finish" of parameters/PCB_elements/Stackup.py: the value given for Finish.FINISH_ENABLED is used for each of them`; the old switch of the inner copper's etch ends `True gives the inner copper the top copper's etch factor, False gives it 0`) | A `--set` with a setting's old name was taken under its new name, or names: every name of before 25.2 still works on the command line ([Parameter Reference](Parameter-Reference.md#1914-names-of-before-252)). |
+| `Run.WORKERS is now Parallel.WORKERS (parameters/Run_KESE/Parallel.py): the value given for Run.WORKERS is used as Parallel.WORKERS` (or another setting given by a name of before, such as `Finish.FINISH_ENABLED is now the lines "top_finish", "bottom_finish" and "hole_finish" of parameters/PCB_elements/Stackup.py: the value given for Finish.FINISH_ENABLED is used for each of them`; the old switch of the inner copper's etch ends `True gives the inner copper the top copper's etch factor, False gives it 0`) | A `--set` with a setting's old name was taken under its new name, or names: every name of before 25.2 still works on the command line ([Parameter Reference](Parameter-Reference.md#2414-names-of-before-252)). |
 | `left out of every file: top_silkscreen, top_solder_mask, bottom_solder_mask, bottom_silkscreen (False in PLIES_FUSED, parameters/PCB_elements/Stackup.py)` | The lines of the stack-up being built that are `False`: their parts are in no file, in any mode or format. The same lists open the stack-up block at the top of `report.txt` (`lines built:`, `lines left out:`). |
 | `inner copper pockets left empty ("resin_between_traces" is False)` | The space beside the inner copper was not filled ([Board](Board.md#122-resin-between-the-traces-of-the-inner-copper)). |
 | `step: <part>: N edges are not shared by two faces (the solid is open there)` | The STEP writer found the part open. It is still written, and a CAD tool will report free edges on it. |
@@ -111,9 +115,11 @@ python tests/test_boards.py                     # the regression suite over ever
 | `step: no part has a solid; STEP skipped` | None of the parts has a solid, so no `<board>.step` is written. |
 | `FINISH ERROR: Finish.FINISH_TYPE = "file" but no finish was found in the KiCad file ...` | `FINISH_TYPE = "file"`, the default, and the board has no stack-up or its Copper finish is empty; also `FINISH ERROR: the KiCad file's finish '...' is not one KESE knows` and `FINISH ERROR: Finish.FINISH_TYPE = '...' is not a finish KESE knows`. The run stops when the stack-up is read, before any work. Set the finish in KiCad (Board Setup > Physical Stackup > Copper finish), or name one (`--set Finish.FINISH_TYPE=ENIG`, or in `Finish.py`), or leave the finish out (`--set Stackup.finish=False`); a run that builds no finish line does not look at the type ([Finish](Finish.md#153-finish-types)). |
 
-## 20.2 What `report.txt` Counts
+<a name="202-what-reporttxt-counts"></a>
+## 25.2 What `report.txt` Counts
 
-### 20.2.1 Read
+<a name="2021-read"></a>
+### 25.2.1 Read
 
 Tracks and arc tracks per layer, zone fills per layer, graphics and footprint graphics per layer,
 text per layer, pads, pad mask openings per side, the mask openings of tracks, arc tracks and
@@ -123,7 +129,8 @@ layers, castellated holes, the edge plating band and its net, KiCad 10's backdri
 render cache or drawn with the stroke font (also a warning). A face named `KiCad Font`, as KiCad 10
 can write it, is KiCad's stroke font, and its text counts as text.
 
-### 20.2.2 Skipped
+<a name="2022-skipped"></a>
+### 25.2.2 Skipped
 
 | Entry | Why |
 |---|---|
@@ -144,7 +151,8 @@ can write it, is KiCad's stroke font, and its text counts as text.
 | `TrueType text on <layer> (DRAW_TRUETYPE_TEXT_WITH_STROKE_FONT is False)` | Skipped by the setting. |
 | `castellation plating (CASTELLATION is 'off')` | The holes stay bare. The same line appears with `CASTELLATION = "file"` when the stack-up lacks `(castellated_pads yes)`. |
 
-## 20.3 The Verifier
+<a name="203-the-verifier"></a>
+## 25.3 The Verifier
 
 `kese/s8_verify/`, run at the end of every run (`Verifier.VERIFY = True`, the default) unless
 `--no-verify` or `Verifier.VERIFY = False` leaves it out; `--verify` puts it back for one run. It checks the meshes that
@@ -234,11 +242,11 @@ still meets is reported with the volume the two parts share. The slices are spli
 and the polygons shrunk and tested, `Parallel.WORKERS` at a time in threads:
 
 ```math
-V_{AB} = \operatorname{area}\left( R_A \cap R_B \right) \cdot h_{AB}, \qquad h_{AB} = \min\left( z^{A}_{1}, z^{B}_{1} \right) - \max\left( z^{A}_{0}, z^{B}_{0} \right) \qquad (20.1)
+V_{AB} = \operatorname{area}\left( R_A \cap R_B \right) \cdot h_{AB}, \qquad h_{AB} = \min\left( z^{A}_{1}, z^{B}_{1} \right) - \max\left( z^{A}_{0}, z^{B}_{0} \right) \qquad (25.1)
 ```
 
 ```math
-\text{PASS} \iff \text{every part closed, consistently wound and whole, and no pair with } \ h_{AB} > 10^{-9} \text{ mm and } \left( R_A \ominus g \right) \cap \left( R_B \ominus g \right) \neq \varnothing \qquad (20.2)
+\text{PASS} \iff \text{every part closed, consistently wound and whole, and no pair with } \ h_{AB} > 10^{-9} \text{ mm and } \left( R_A \ominus g \right) \cap \left( R_B \ominus g \right) \neq \varnothing \qquad (25.2)
 ```
 
 | Symbol | Meaning |
@@ -263,7 +271,8 @@ biggest overlap (of overlaps as big, the first by part name, so the line is the 
 worker processes and threads ran), and how many places there are. All of these are bugs worth reporting with the
 board file.
 
-## 20.4 The Regression Suite
+<a name="204-the-regression-suite"></a>
+## 25.4 The Regression Suite
 
 `tests/test_boards.py` runs every board in `tests/boards/`, `featureTest/` and `Input/` (a board of
 `Input/` that `featureTest/` holds too, byte for byte, only once) through every output, with the Verifier: simulation mode written as GLB and STEP, visual mode as GLB. It
@@ -288,7 +297,7 @@ mode, faces that do not take turns in visual mode), when a part's volume moved f
 baseline by more than
 
 ```math
-\left| V - V_0 \right| > 10^{-3} \cdot \max\left( |V_0|,\ 10^{-9} \right) \qquad (20.3)
+\left| V - V_0 \right| > 10^{-3} \cdot \max\left( |V_0|,\ 10^{-9} \right) \qquad (25.3)
 ```
 
 where $`V`$ is the part's volume now and $`V_0`$ the baseline, both in mm³, when a part disappeared
@@ -547,7 +556,8 @@ and two STEP tests, also on their own (`python tests/test_step_native.py`,
 | `test_step_native.py` | the STEP writer (`kese/s7_write/step.py`) and the suite's read-back (`tests/step_audit.py`) | a box with a through hole beside a second box, written from their faces and read back by OpenCascade as two valid solids with no free edge, the right faces and the right volume; names with a quote and letters outside ASCII come back as they went in. A file of three such parts, read back part by part, gives what the whole file gives, also with a face left out of the first part and of the last; a part cut in the wrong place does not pass as clean, and a file another program wrote, or one with other line ends, is read whole. Needs OCP (`python -m pip install "cadquery-ocp==7.8.1.1.post1"`), and is skipped without it; takes a few seconds |
 | `test_step_arcs.py` | the true arcs of STEP files (`Step.STEP_EXACT_ARCS`; `kese/s7_write/step_arcs.py`, `step_curved.py`) | a run of vertices on one circle is written as an arc edge, and the walls on it as a cylinder, only where the arc cannot cross anything: circles and round ends become arcs, and the two arcs of an S-bend share only the vertex between them; an arc that would cross its own ring, or overlap another polygon's arc, stays straight, an outline may touch an arc where it joins it but not cross it, and an edge near the arc at another height leaves it be; a failure in the arcs writes the part with flat faces; with `Step.STEP_ARC_MAX_SWEEP_DEG` at 90 a whole circle comes out in quarters, and the turn ratios decide whether unevenly spaced vertices make an arc. With OCP every file is also read back: valid solids, no free edge, the volume of the true shape. Takes a few seconds |
 
-## 20.5 Inputs KESE Refuses Or Changes
+<a name="205-inputs-kese-refuses-or-changes"></a>
+## 25.5 Inputs KESE Refuses Or Changes
 
 | Situation | What happens |
 |---|---|

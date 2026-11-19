@@ -1,4 +1,4 @@
-# 27.1 Elmer FEM Accuracy
+# 22.1 Elmer FEM Accuracy
 
 Where the Elmer bridge's errors come from, how big each one measured on E01 and E02, what that means
 for the coil board, and what the bridge leaves out of the physics. Every number here is from the runs
@@ -6,7 +6,7 @@ on the `Elmer_Integration` branch (`Examples/E01_circular_loop/results*.json`,
 `Examples/E02_coaxial_loops/results*.json` and the coil board's
 `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/Results/`).
 
-## 27.1.1 The Error Budget On E01
+## 22.1.1 The Error Budget On E01
 
 Each line changes one thing and keeps the rest; all are L at 10 kHz.
 
@@ -32,7 +32,7 @@ grow from 0.12 mm at the copper's edge to 0.62 mm a millimetre away (the size is
 not move, since it depends on the copper's mesh alone, and the circuit's L and the field energy's
 still agreed. The board under the copper is not meshed apart from the air: a board or mask part that
 lies wholly outside the copper's heights is merged into it
-([Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md#2419-section-the-parts-into-slabs)), so the air's grading
+([Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md#1919-section-the-parts-into-slabs)), so the air's grading
 covers it too.
 
 ![E01's mesh at level 0.75, cut through the loop's axis, 4 mm by 4 mm round one crossing of the trace. Left, the examples' grading (grade 0.5, tet_grade 0.7; 59,782 nodes, L 3.7 % low): the tetrahedra above and below the thin band of wedges grow to about a millimetre within a millimetre of the copper. Right, twice as fine (grade 0.25, tet_grade 0.35; 88,760 nodes, L 1.55 % low): the elements stay smaller round the trace](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Accuracy/E01_circular_loop/elmeraccuracy_1_air_mesh.webp)
@@ -46,7 +46,7 @@ domain holds L down by about 0.3 % more. Against that stands the reference's own
 with the copper is the fix this points to; it is not yet in the bridge
 ([Future Upgrades And Planning](Future-Upgrades-And-Planning.md)).
 
-## 27.1.2 The Iterative Solve
+## 22.1.2 The Iterative Solve
 
 At 10 kHz the BiCGStab(l) solve reaches a relative residual of about 1e-6 within 1500 iterations and
 stalls there: the conduction term jωσ is too small, next to the curl-curl term, to steady the system
@@ -76,7 +76,7 @@ iterations; E01's committed results are still those of the older solve above. On
 3.5 MHz the iterative solve no longer stalls but converges too slowly to read M, so the coil board
 uses the direct solve, which has no iteration error at all.
 
-## 27.1.3 What The Bridge Leaves Out
+## 22.1.3 What The Bridge Leaves Out
 
 | What | In the bridge | What it does to the numbers |
 |---|---|---|
@@ -86,7 +86,7 @@ uses the direct solve, which has no iteration error at all.
 | The copper's shape | KESE's solids, extruded straight through the board: a 2.5D mesh | the etched trapezoid and the copper's roughness are not in the mesh |
 | The terminals | two electrodes on the gap's faces and a sheet across the gap | the gap's own short piece of current path is not counted; E01's reference accounts for it with the open-loop share. On the coil board each receiver's 0.2 mm cut is made in the model only: the real board's leads to the IC are not in it |
 
-## 27.1.4 The Coil Board
+## 22.1.4 The Coil Board
 
 S0d2_1x_OD23_2L_tiny_TX3top_Cut has no textbook answer, so its accuracy rests on what E01 and E02
 measured and on checks inside its own runs:
@@ -100,7 +100,7 @@ measured and on checks inside its own runs:
 | A mesh per angle | every angle gets its own mesh, so the stator's mesh differs a little from angle to angle | the second half turn repeats the first: at six of eight angles M is the same to the last digit, at 225° and 315° within 0.03 nH, against a 4.51 nH amplitude at 1 mm |
 | The angle error | SIN and COS each fitted with a sine, offset and gain calibrated out | an error that scales SIN and COS alike leaves it as it is; mesh noise between angles adds to it |
 
-## 27.1.5 What To Trust
+## 22.1.5 What To Trust
 
 | Quantity | On boards like E01 and E02 |
 |---|---|

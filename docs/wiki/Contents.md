@@ -31,15 +31,7 @@ All pages of this wiki, in reading order.
 - [Feature Test Collection](Feature-Test-Collection.md)
 - [Corpus Testing](Corpus-Testing.md)
 
-## 2.5 References And Compatibilities
-
-- [Parameter Reference](Parameter-Reference.md)
-- [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
-- [Material Properties](Material-Properties.md)
-- [KiCad And Solver Compatibility](Compatibility.md)
-- [openEMS Workflow](OpenEMS-Workflow.md)
-
-## 2.6 FEM Solvers' Integration
+## 2.5 FEM Solvers' Integration
 
 - [Walkthrough](Walkthrough.md)
   - [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md)
@@ -66,6 +58,14 @@ All pages of this wiki, in reading order.
   - [PyPEEC Troubleshooting](PyPEEC-Troubleshooting.md)
   - [FastHenry Troubleshooting](FastHenry-Troubleshooting.md)
   - [Palace Troubleshooting](Palace-Troubleshooting.md)
+
+## 2.6 References And Compatibilities
+
+- [Parameter Reference](Parameter-Reference.md)
+- [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
+- [Material Properties](Material-Properties.md)
+- [KiCad And Solver Compatibility](Compatibility.md)
+- [openEMS Workflow](OpenEMS-Workflow.md)
 
 ## 2.7 Research And Community
 

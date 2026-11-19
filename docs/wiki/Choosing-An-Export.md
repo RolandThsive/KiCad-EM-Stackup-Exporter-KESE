@@ -114,8 +114,8 @@ with no option (`python run_KESE.py board.kicad_pcb`) gives it:
 | `Stackup.FUSION_BUILD` | `PLIES_SEPARATE`: every ply, every core and the resin between the traces a solid of its own |
 | The solder mask and the silkscreen | left out (`Stackup.solder_mask`, `Stackup.silkscreen`) |
 | `Finish.FINISH_TYPE` | `file`: the finish the board file names; a board that names none stops the run until a finish is named or the finish is left out ([Finish](Finish.md#153-finish-types)) |
-| `Board.DIELECTRIC_MODEL` | `djordjevic_sarkar`: the wideband model's parameters beside each εr and tan δ ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
-| `Copper.COPPER_ROUGHNESS_MODEL` | `huray`, with the values Ansys's tools start with ([Material Properties](Material-Properties.md#216-copper-by-layer)) |
+| `Board.DIELECTRIC_MODEL` | `djordjevic_sarkar`: the wideband model's parameters beside each εr and tan δ ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)) |
+| `Copper.COPPER_ROUGHNESS_MODEL` | `huray`, with the values Ansys's tools start with ([Material Properties](Material-Properties.md#266-copper-by-layer)) |
 | `Verifier.VERIFY` | `True`: every model is checked before it goes to a solver (`--no-verify` leaves the checks out) |
 
 The material values are generic ones. Set the fabricator's values in

@@ -181,4 +181,4 @@ The boards are the Sinusoidal Coil Generator's and keep its non-commercial terms
 
 | Previous | Next |
 |:---|---:|
-| [Palace Troubleshooting](Palace-Troubleshooting.md) | [Glossary](Glossary.md) |
+| [openEMS Workflow](OpenEMS-Workflow.md) | [Glossary](Glossary.md) |

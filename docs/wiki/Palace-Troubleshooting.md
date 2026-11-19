@@ -1,9 +1,9 @@
-# 28.4 Palace Troubleshooting
+# 23.4 Palace Troubleshooting
 
 What went wrong while the bridge was built, what it looked like, and what fixed it. The bridge already does what the
 right-hand column says; this page is for reading a failed run of your own, or a case changed by hand.
 
-## 28.4.1 Ports
+## 23.4.1 Ports
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -15,7 +15,7 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 | M about 13 % low at a left-out via (found on another coil board) | KESE exports a via with its drill hole through the pads, and a port sheet standing over the hole does not end on copper where it crosses it | Fill the left-out via's pads over the hole (`voids()` in the coil board's `simulation.py`): a via that is left out is not drilled |
 | A receiver should be opened by a cut, as the real board is, without editing the board files | `new_coil.py` opens each receiver at a left-out via | Set `"rx_port": "cut"` and each receiver's `cut` in `test_spec.json`; `simulation.py` takes the copper in the cut box out as a `void` part and draws the box's outline into the mesh, so both cut faces are meshed exactly |
 
-## 28.4.2 The Linear Solver
+## 23.4.2 The Linear Solver
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -24,10 +24,10 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 | GMRES runs to its 3,000 iteration limit at 10 kHz | The same near-singular operator: it converges slowly, to residuals of 3e-8 to 6e-5 on E01 and E02 | Harmless here: converged 100 kHz checks give the same L to 0.01 % and M to 0.002 % |
 | A large mesh does not fit in memory with GMRES's 300 vectors (E02 with the coil board's air, 303,129 nodes) | GMRES keeps one vector per iteration until it restarts | Restart every 100 iterations (`--restart 100` on E02): 12.5 GB |
 | At 10 kHz a graded, restarted solve does not converge (E02's RX stalled at a residual of 0.65, with plainly wrong numbers) | The short restart and the near-singular operator together | Solve the low frequency at 100 kHz, where AMS needs no singular-operator flag; on E02's default mesh M at 100 kHz and 10 kHz agree to 0.002 % |
-| No direct solver to fall back on | The committed build has none: SuperLU_DIST and STRUMPACK need ParMETIS, and MUMPS's source could not be downloaded on the test machine | Check every solve ([Palace Accuracy](Palace-Accuracy.md#2741-the-checks-on-every-solve)); `WITH_MUMPS=1` in `build_palace.sh` builds MUMPS without ParMETIS, untried |
+| No direct solver to fall back on | The committed build has none: SuperLU_DIST and STRUMPACK need ParMETIS, and MUMPS's source could not be downloaded on the test machine | Check every solve ([Palace Accuracy](Palace-Accuracy.md#2241-the-checks-on-every-solve)); `WITH_MUMPS=1` in `build_palace.sh` builds MUMPS without ParMETIS, untried |
 | A solve reported as not readable | It did not converge, gave the TX a negative resistance, or its L from the port and from the field's energy (or M both ways) differ by more than 1 % | Its chart marks it with a ring and `SINCOS_Results.md` lists it under **Not readable**; its iterations and residual are in the gap's results table |
 
-## 28.4.3 Running Palace
+## 23.4.3 Running Palace
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -38,7 +38,7 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 | `Palace failed in <folder> (exit N)` | Palace stopped; the bridge prints the end of its log | Read `palace.log` in that folder: it is written as Palace runs |
 | The machine runs out of memory | The mesh is too large | A solve needs about 33 kB per mesh node (44 kB with several ports driven in turn); check a mesh's size with `--mesh-only` first |
 
-## 28.4.4 Building Palace
+## 23.4.4 Building Palace
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -46,7 +46,7 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 | MFEM's first example fails to link in a build with no direct solver | In Palace's own build, BLAS and LAPACK reach MFEM's link line only through a direct solver | `no_parmetis.patch` gives MFEM hypre's BLAS and LAPACK (OpenBLAS) |
 | A build with ParMETIS in it | Palace's release build links ParMETIS, whose licence is not open source | `no_parmetis.patch`; `build_palace.sh` refuses to install a program in which any ParMETIS symbol is found |
 
-## 28.4.5 KESE And The Mesh
+## 23.4.5 KESE And The Mesh
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -56,4 +56,4 @@ right-hand column says; this page is for reading a failed run of your own, or a 
 
 | Previous | Next |
 |:---|---:|
-| [FastHenry Troubleshooting](FastHenry-Troubleshooting.md) | [Solvers Comparison](Solvers-Comparison.md) |
+| [FastHenry Troubleshooting](FastHenry-Troubleshooting.md) | [Parameter Reference](Parameter-Reference.md) |

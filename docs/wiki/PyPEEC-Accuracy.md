@@ -1,11 +1,11 @@
-# 27.2 PyPEEC Accuracy
+# 22.2 PyPEEC Accuracy
 
 Where the PyPEEC bridge's errors come from, how big each one measured on E01, E02 and the coil board,
 and what the bridge leaves out of the physics. Every number here is from the runs on the
 `PyPEEC_Integration` branch (`Examples/E01_circular_loop/results*.json`,
 `Examples/E02_coaxial_loops/results.json`, and the coil board's `Results/`).
 
-## 27.2.1 The Error Budget On E01
+## 22.2.1 The Error Budget On E01
 
 Each line changes one thing and keeps the rest.
 
@@ -26,7 +26,7 @@ nothing on a lone trace: it is the same above and below its middle, so its two h
 current whatever the frequency, and the current's drift towards the surfaces would take three layers
 or more to show.
 
-## 27.2.2 E02: The Mutual Inductance
+## 22.2.2 E02: The Mutual Inductance
 
 | Quantity | 100 µm | 50 µm | Reference |
 |---|---|---|---|
@@ -39,7 +39,7 @@ cannot tell PyPEEC's M from it more finely than that. The open RX leaves the TX'
 10 kHz to 0.01 %, as an open loop must. At 3.5 MHz the RX's eddy currents add 0.8 % to the TX's R:
 the proximity effect, which the voxels across the RX's trace resolve.
 
-## 27.2.3 The Coil Board
+## 22.2.3 The Coil Board
 
 S0d2_1x_OD23_2L_tiny_TX3top_Cut has no exact reference, so its accuracy is read from its own checks
 and symmetries:
@@ -59,7 +59,7 @@ where the stator is. The rotor's edges then fall on the voxels a little differen
 which shows as small noise on the curves; each gap's best sine fit says how much (at 1 mm, 0.025 nH rms
 left on SIN, 0.018 nH on COS, against swings of 4.6 nH).
 
-## 27.2.4 What The Bridge Leaves Out
+## 22.2.4 What The Bridge Leaves Out
 
 | What | In the bridge | What it does to the numbers |
 |---|---|---|
@@ -71,7 +71,7 @@ left on SIN, 0.018 nH on COS, against swings of 4.6 nH).
 | The board's shape | layered, flat at a few heights | a board over another works (the rotor over the stator); a part tilted out of the board's plane does not |
 | The terminals | the coil's voxels on the two faces of its gap, held as one potential each | the gap's own short piece of current path is not counted; E01's reference accounts for it with the open-loop share |
 
-## 27.2.5 What To Trust
+## 22.2.5 What To Trust
 
 | Quantity | On boards like these |
 |---|---|

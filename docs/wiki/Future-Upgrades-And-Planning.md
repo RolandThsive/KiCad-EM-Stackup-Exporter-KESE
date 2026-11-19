@@ -18,7 +18,7 @@ and the materials have to be shown correct first.
 | Reading the board file | tested | The [Feature Test Collection](Feature-Test-Collection.md), KiCad 4 to 10 ([Compatibility](Compatibility.md)), and the open hardware boards of [Corpus Testing](Corpus-Testing.md) |
 | The solids | tested | The Verifier on every run: closed, wound one way, no two parts overlapping, volumes agreeing ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
 | The EM result a solver gets from the model | **not yet checked** | No model has been compared with a measured board or with a reference solver result |
-| The material numbers | typical values, with their frequency and a model of how they change with it | The stack-up's or the defaults of [Material Properties](Material-Properties.md#213-the-default-numbers); they are not measured values, and the copper roughness is a solver's starting values, not a foil's |
+| The material numbers | typical values, with their frequency and a model of how they change with it | The stack-up's or the defaults of [Material Properties](Material-Properties.md#263-the-default-numbers); they are not measured values, and the copper roughness is a solver's starting values, not a foil's |
 
 So a model from KESE is known to be the geometry the board file describes, as closed solids. It is
 not yet known how close a simulation of it comes to the fabricated board. [31.2](#312-model-accuracy)
@@ -155,7 +155,7 @@ In no fixed order:
   [PyPEEC Walkthrough](PyPEEC-Walkthrough.md), [FastHenry Walkthrough](FastHenry-Walkthrough.md),
   [Palace Walkthrough](Palace-Walkthrough.md)). The Elmer bridge's mesh ladder should refine the air round the copper as well as
   the copper, which its first runs showed holds most of its error
-  ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#2711-the-error-budget-on-e01)). Another way, still open: an openEMS model whose overlapping primitives are settled
+  ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#2211-the-error-budget-on-e01)). Another way, still open: an openEMS model whose overlapping primitives are settled
   by CSXCAD's priorities, with no booleans, which would skip stages 3, 4 and 6 for openEMS users. It
   is a new output with its own physics checks, and the finish shells and the conformal mask do not
   map onto priorities.

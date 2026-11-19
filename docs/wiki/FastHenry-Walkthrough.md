@@ -1,7 +1,7 @@
 > [!CAUTION]
 > The bridge lives on the [`FastHenry_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/FastHenry_Integration) branch.
 
-# 24.3 FastHenry Walkthrough
+# 19.3 FastHenry Walkthrough
 
 [FastHenry](https://github.com/ediloren/FastHenry2) is the magneto-quasi-static inductance and resistance extractor
 written at M.I.T. by Mattan Kamon, Lou Silveira and others (1994 to 1996), kept up by FastFieldSolvers as release
@@ -16,7 +16,7 @@ a geometry exporter, and is never changed by the bridge.
 > [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md)). Every solve fitted the 4-core, 15 GB test
 > machine.
 
-## 24.3.1 What FastHenry Is Used For Here
+## 19.3.1 What FastHenry Is Used For Here
 
 At the frequencies of inductive position sensors (3 to 5 MHz) a coil board is about 1/2000 of a wavelength across,
 so the physics is **magneto-quasi-static**: currents and magnetic fields, eddy currents in nearby copper, and no wave
@@ -36,7 +36,7 @@ inductance. Only the copper is discretised; the air needs no mesh and has no bou
 What FastHenry does **not** give here: capacitance, self-resonance, temperature or stress. Its solve has no
 displacement current.
 
-## 24.3.2 How It Fits Together
+## 19.3.2 How It Fits Together
 
 ```mermaid
 flowchart TB
@@ -54,13 +54,13 @@ flowchart TB
     S1 -->|ports: stacked ends,<br>left-out via, cut| S2
 ```
 
-Each step is described in [24.3.8](#2438-export-the-stack-up-with-kese) to [24.3.14](#24314-sin-cos-and-the-angle-error) below.
+Each step is described in [19.3.8](#1938-export-the-stack-up-with-kese) to [19.3.14](#19314-sin-cos-and-the-angle-error) below.
 
-## 24.3.3 The FastHenry Pages
+## 19.3.3 The FastHenry Pages
 
 | Page | What it covers |
 |---|---|
-| FastHenry Walkthrough (this page) | What FastHenry does here ([24.3.1](#2431-what-fasthenry-is-used-for-here)), installing it ([24.3.5](#2435-installing-on-linux-ubuntu-2404)), and every step from the board file to the numbers ([24.3.8](#2438-export-the-stack-up-with-kese)) |
+| FastHenry Walkthrough (this page) | What FastHenry does here ([19.3.1](#1931-what-fasthenry-is-used-for-here)), installing it ([19.3.5](#1935-installing-on-linux-ubuntu-2404)), and every step from the board file to the numbers ([19.3.8](#1938-export-the-stack-up-with-kese)) |
 | [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md) | Every setting of an example's `simulation.py`, and how to start a new one |
 | [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md) | The three boards and what came out on each, against the references, with charts |
 | [FastHenry Accuracy](FastHenry-Accuracy.md) | Where the errors come from and how big they are |
@@ -69,7 +69,7 @@ Each step is described in [24.3.8](#2438-export-the-stack-up-with-kese) to [24.3
 How FastHenry compares with the other solvers of the project is on
 [Solvers Comparison](Solvers-Comparison.md).
 
-## 24.3.4 Where The Code Is
+## 19.3.4 Where The Code Is
 
 | Folder on `FastHenry_Integration` | What it holds |
 |---|---|
@@ -84,7 +84,7 @@ How FastHenry compares with the other solvers of the project is on
 The branch solves five more coil boards of the same family the same way; they are listed in the branch's
 [`Examples/Inductive Coils/README.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/FastHenry_Integration/Examples/Inductive%20Coils/README.md).
 
-## 24.3.5 Installing On Linux (Ubuntu 24.04)
+## 19.3.5 Installing On Linux (Ubuntu 24.04)
 
 The bridge needs three things: FastHenry, a Python environment with the bridge's packages, and, only to export a
 board whose `3D_Geometry/` is not committed, a copy of KESE. Unlike the other solvers' branches, this one carries its
@@ -161,19 +161,19 @@ cd Examples/E01_circular_loop
 ```
 
 Each solve takes under a second. It should print L about 55.538 nH and R about 61.208 mOhm at 10 kHz, the 9 × 1
-values of [FastHenry Test Board Results](FastHenry-Test-Boards-And-Results.md#2631-e01-circular-loop). A rerun replaces
+values of [FastHenry Test Board Results](FastHenry-Test-Boards-And-Results.md#2131-e01-circular-loop). A rerun replaces
 that rung in the committed `results.json`, with the same numbers.
 
-## 24.3.6 Installing On Windows
+## 19.3.6 Installing On Windows
 
 The committed program is a Linux build. Two routes:
 
 | Route | Steps | Notes |
 |---|---|---|
-| **WSL 2 (recommended)** | Install Ubuntu 24.04 from the Microsoft Store, then follow [24.3.5](#2435-installing-on-linux-ubuntu-2404) inside it | The bridge, KESE and the committed FastHenry all run as on Linux. Keep the repository inside the WSL file system (not under `/mnt/c`) |
+| **WSL 2 (recommended)** | Install Ubuntu 24.04 from the Microsoft Store, then follow [19.3.5](#1935-installing-on-linux-ubuntu-2404) inside it | The bridge, KESE and the committed FastHenry all run as on Linux. Keep the repository inside the WSL file system (not under `/mnt/c`) |
 | **Native** | Use FastFieldSolvers' FastHenry2 for Windows, set `FASTHENRY` to its program, and set up Python with `py -m venv .venv` and `.venv\Scripts\pip install -r requirements.txt` | Not run on the test boards. The bridge passes `-s ludecomp -m direct -a off` and reads `Zc.mat`; check that the Windows build takes those options and writes that file |
 
-## 24.3.7 What The Test Machine Had
+## 19.3.7 What The Test Machine Had
 
 | Item | Version |
 |---|---|
@@ -187,7 +187,7 @@ The committed program is a Linux build. Two routes:
 Each example writes the versions it ran with into its results file, so every number on
 [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md) names the software that made it.
 
-## 24.3.8 Export The Stack-Up With KESE
+## 19.3.8 Export The Stack-Up With KESE
 
 What happens between `python simulation.py` and the numbers in the results file, step by step. Every step is one
 function of the bridge on the `FastHenry_Integration` branch; the file is named with each. The bridge is general:
@@ -212,13 +212,13 @@ part gives its layer's thickness (`copper_layers`). The export is kept beside th
 What FastHenry takes from KESE is the stack-up only. The model's coordinates: x and y as KiCad's with y up
 (y_model = −y_KiCad), and z shifted so that the top face of the top copper is z = 0.
 
-## 24.3.9 Read The Copper From The Board File
+## 19.3.9 Read The Copper From The Board File
 
 `bridge/kicad.py` (`read`) reads the `.kicad_pcb` itself (KiCad 6 to 9): every track and arc, every via, and every
 copper polygon (`gr_poly` on a copper layer, and zones' filled polygons), with its net and layer. A KiCad track is a
 centre line with a width, which is exactly a FastHenry segment, so the board file is where the conductors come from.
 
-## 24.3.10 Build The Filament Model
+## 19.3.10 Build The Filament Model
 
 `bridge/fasthenry_case.py` (`add_board`, `add_polygon`) turns the copper into FastHenry's nodes and segments:
 
@@ -227,7 +227,7 @@ centre line with a width, which is exactly a FastHenry segment, so the board fil
 | A track | a segment between nodes at its ends, at the middle of its layer's copper, as wide as the track and as thick as the copper, split into `nwinc` filaments across its width (the edge ones `rw` times narrower than the next in, so the current can crowd to the edges) and `nhinc` through its thickness |
 | An arc | chords of at most 5° and 0.5 mm, each a segment as above |
 | Tracks of one net that meet | one shared node |
-| Two consecutive pieces of a trace straight to within 0.01° | one segment (`merge_collinear`), for the reason in [FastHenry Troubleshooting](FastHenry-Troubleshooting.md#2831-nan-in-the-impedance-matrix) |
+| Two consecutive pieces of a trace straight to within 0.01° | one segment (`merge_collinear`), for the reason in [FastHenry Troubleshooting](FastHenry-Troubleshooting.md#2331-nan-in-the-impedance-matrix) |
 | A via | a vertical bar between its nodes on the layers it joins, a square with the copper section of a barrel plated 25 µm; its pads are left out |
 | A copper polygon (the rotor) | a grid of bars at its layer's height, each as wide as the cell it stands for: a polar grid graded towards all four edges where the polygon is a sector of a ring, so its arcs are not stair steps; a square grid clipped to it otherwise |
 
@@ -242,7 +242,7 @@ mask are air to this solve, so the section shows nothing round the copper: nothi
 picture's title (9,306 filaments, 1,602 track segments) are from before straight pieces of a trace were merged; the
 solves have 9,264 filaments and 1,588 stator segments.
 
-## 24.3.11 Open Each Coil At Its Port
+## 19.3.11 Open Each Coil At Its Port
 
 A FastHenry port (`.external`) is a pair of nodes. The bridge opens each coil where the real board gets its leads;
 the example says where, since the bridge does not guess:
@@ -274,7 +274,7 @@ Each cut is the spot on the receiver's top trace nearest its layer-change via wh
 of free board round it and sits at least 0.75 mm from any via centre. The generator itself found no spot with room
 for two lead vias on either receiver.
 
-## 24.3.12 Write FastHenry's Input
+## 19.3.12 Write FastHenry's Input
 
 `Model.text` writes one `model.inp` per solve, kept under the example's `case/` (which git ignores):
 
@@ -282,10 +282,10 @@ for two lead vias on either receiver.
 |---|---|
 | Units | millimetres |
 | Copper | σ = 5.8e7 S/m |
-| Coordinates | x and y measured from the model's middle (rounded to the whole millimetre), to 12 significant digits, for the reason in [FastHenry Troubleshooting](FastHenry-Troubleshooting.md#2831-nan-in-the-impedance-matrix) |
+| Coordinates | x and y measured from the model's middle (rounded to the whole millimetre), to 12 significant digits, for the reason in [FastHenry Troubleshooting](FastHenry-Troubleshooting.md#2331-nan-in-the-impedance-matrix) |
 | Content | the nodes, the segments with their width, height and filaments, the `.external` ports, and one frequency |
 
-## 24.3.13 Solve And Read Back
+## 19.3.13 Solve And Read Back
 
 `run` starts FastHenry in the case's folder with the dense direct solve:
 
@@ -314,7 +314,7 @@ The examples write all of it, with the settings, the versions, the model's size 
 solve, to their results files; on the coil board each air gap gets its own folder in `Results/`, with
 `results_gap<gap>mm.json`, a `.csv` and the chart, and `SINCOS_Results.md` gathers every gap on one page.
 
-## 24.3.14 SIN, COS And The Angle Error
+## 19.3.14 SIN, COS And The Angle Error
 
 On the coil board, `simulation.py` solves the rotor away once, then each angle of `test_spec.json`.
 `angle_error.py` then gives each channel its best sine over the rotor's period, M = offset + amplitude ×

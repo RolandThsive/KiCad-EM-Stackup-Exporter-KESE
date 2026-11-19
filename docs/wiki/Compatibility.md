@@ -1,6 +1,7 @@
-# 22. KiCad And Solver Compatibility
+# 27. KiCad And Solver Compatibility
 
-## 22.1 KiCad Files
+<a name="221-kicad-files"></a>
+## 27.1 KiCad Files
 
 | KiCad | File format number of the release | Status |
 |---|---|---|
@@ -59,7 +60,8 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 
-## 22.2 Output Formats
+<a name="222-output-formats"></a>
+## 27.2 Output Formats
 
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
@@ -70,7 +72,8 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 
 Visual mode writes GLB and OBJ only.
 
-## 22.3 Tools
+<a name="223-tools"></a>
+## 27.3 Tools
 
 Apart from the solver bridges, which run KESE's export themselves, none of these imports has been tried with KESE
 output yet: the routes follow each tool's
@@ -91,7 +94,8 @@ Research underway.
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
 | Other thermal / FEA tools reading STL | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
 
-## 22.4 Python And Packages
+<a name="224-python-and-packages"></a>
+## 27.4 Python And Packages
 
 | | Version |
 |---|---|

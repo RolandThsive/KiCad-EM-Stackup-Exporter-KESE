@@ -1,4 +1,4 @@
-# 27.4 Palace Accuracy
+# 22.4 Palace Accuracy
 
 Where the Palace bridge's errors come from, how big each one measured, and what the bridge leaves out of the physics.
 Every number here is from the runs on the `Palace_Integration` branch.
@@ -7,9 +7,9 @@ Every number here is from the runs on the `Palace_Integration` branch.
 > The error budget against textbook references comes from E01 and E02 (42.7). The coil board has no closed-form
 > reference for M, so its accuracy rests on the checks and the mesh study here.
 
-## 27.4.1 The Checks On Every Solve
+## 22.4.1 The Checks On Every Solve
 
-The committed Palace has no direct solver ([Palace Walkthrough](Palace-Walkthrough.md#2448-why-it-is-built-without-parmetis)),
+The committed Palace has no direct solver ([Palace Walkthrough](Palace-Walkthrough.md#1948-why-it-is-built-without-parmetis)),
 so every iterative solve is checked before it is read. A solve on the coil board is **readable** when all of these
 hold (`readable()` in its `make_charts.py`):
 
@@ -23,13 +23,13 @@ hold (`readable()` in its `make_charts.py`):
 These say the solve reached the answer of its own mesh. They do not say how far that mesh is from the true answer,
 which is what the rest of this page is about.
 
-## 27.4.2 The Linear Solve's Tolerance
+## 22.4.2 The Linear Solve's Tolerance
 
 The tolerance was chosen on the branch's smallest coil board, at 1 mm and 0°: a residual of 1e-10 instead of
 1e-8 moved L, R and M by under 3e-7 of themselves, and 1e-6 by under 4e-5. At 1e-8 the solve's own error is far below
 the mesh's.
 
-## 27.4.3 The Mesh
+## 22.4.3 The Mesh
 
 The coil board's mesh settings were settled on the branch's smallest coil board at 1 mm and 0°, one setting changed at a time from the bridge's
 defaults. The air close round the thin tracks holds most of what a coarse mesh misses: grading it four times as
@@ -43,7 +43,7 @@ mesh, twice as fine, moved M by under 1 %. With the air graded four times as fin
 | L TX | still rising with the copper's mesh (+1.5 % with it twice as fine); first-order edge elements give the field's energy from below, so L TX reads low, by about 5 % if each refinement keeps adding half as much as the one before |
 | R TX | not studied apart |
 
-## 27.4.4 The Mesh At Each Angle
+## 22.4.4 The Mesh At Each Angle
 
 Every rotor angle gets its own mesh, the rotor's outline at that angle drawn into it, so the stator's mesh differs a
 little between angles. That shows as small noise on the curves, and the best sine fit measures it: the rms of what the
@@ -58,10 +58,10 @@ fit leaves, as a share of the amplitude.
 | 0.1 mm | 1.2 % | 1.21 % |
 
 The residual grows as the gap closes, as the harmonics the rotor adds at a small gap do
-([Palace Test Boards And Results](Palace-Test-Boards-And-Results.md#2643-s0d2_1x_od23_2l_tiny_tx3top_cut)); the fit cannot tell mesh noise from
+([Palace Test Boards And Results](Palace-Test-Boards-And-Results.md#2143-s0d2_1x_od23_2l_tiny_tx3top_cut)); the fit cannot tell mesh noise from
 a real harmonic, so these are upper bounds on the noise.
 
-## 27.4.5 The Ports
+## 22.4.5 The Ports
 
 | Item | Effect |
 |---|---|
@@ -69,7 +69,7 @@ a real harmonic, so these are upper bounds on the noise.
 | A port sheet over a via's drill hole | measured on the branch's smallest coil board: a sheet standing over the hole of a left-out via does not end on copper where it crosses the hole, and read M 13 % low when the mesh resolved it. The bridge fills a left-out via's pads over the hole; the sheet then reads the same M in pieces as drawn whole, within 0.5 %. `S0d2_1x_OD23_2L_tiny_TX3top_Cut` is opened by cuts and keeps its vias, so this does not arise on it |
 | Where the coil is opened | the cut sits 0.86 mm from the via, where the real board is opened; the voltage across it is the coil's EMF round the whole loop |
 
-## 27.4.6 What The Model Leaves Out
+## 22.4.6 What The Model Leaves Out
 
 | Item | In the model | What it does to the answer |
 |---|---|---|
@@ -77,7 +77,7 @@ a real harmonic, so these are upper bounds on the noise.
 | The outer boundary | a perfect conductor three board radii out (35.1 mm) | far enough out not to matter, by the branch's choice; not measured apart on the coil board |
 | Mesh order | first order | see 42.3: L TX reads low |
 
-## 27.4.7 Against The References
+## 22.4.7 Against The References
 
 E01 and E02 set the bridge against textbook values. Palace's port sheet closes each loop across its gap, so a
 converged L or M should lie above the open arcs (the shared reference) and near the closed rings. All on level 0.75 of

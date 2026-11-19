@@ -1,4 +1,4 @@
-# 23. openEMS Workflow
+# 28. openEMS Workflow
 
 openEMS is a free FDTD solver; its geometry front end CSXCAD has no STEP reader but imports STL
 files, each into one material. KESE's `openems` preset writes one closed STL per net and per
@@ -9,7 +9,8 @@ were measured at, how they change with frequency, and the copper's conductivity.
 > This page describes the manual route and a script skeleton built from the CSXCAD Python API.
 > A comparison against a measured board is still planned.
 
-## 23.1 Export
+<a name="231-export"></a>
+## 28.1 Export
 
 ```bash
 cd Generator
@@ -50,7 +51,8 @@ Consider before exporting:
   `--set Stackup.FUSION_BUILD=PLIES_FUSED` if one STL for each gap between two copper layers is
   enough, or if a ply is too thin for the mesh.
 
-## 23.2 Building The CSXCAD Model
+<a name="232-building-the-csxcad-model"></a>
+## 28.2 Building The CSXCAD Model
 
 For each part in `materials.json`, create one property from its `properties` and import the
 STL named in `file_names.stl`. Metals become `AddMetal` (PEC) or a lossy material with
@@ -61,7 +63,7 @@ when they are built, the solder mask, the silkscreen and the via resin. FDTD mod
 loss as a conductivity, which equals the loss tangent at one frequency:
 
 ```math
-\kappa = 2 \pi f_0 \varepsilon_0 \varepsilon_r \tan\delta \qquad (23.1)
+\kappa = 2 \pi f_0 \varepsilon_0 \varepsilon_r \tan\delta \qquad (28.1)
 ```
 
 | Symbol | Meaning | Source |
@@ -77,8 +79,8 @@ $`\kappa`$ gives a loss tangent that falls as $`1/f`$.
 
 `epsilon_r` and `loss_tangent` are the values at the part's `spec_frequency_hz`, which is seldom
 $`f_0`$. A laminate part's `dielectric_model` says how to carry them there
-([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)):
-`constant` uses them as they are, `djordjevic_sarkar` gives the four numbers of equation (21.1),
+([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)):
+`constant` uses them as they are, `djordjevic_sarkar` gives the four numbers of equation (26.1),
 and `table` gives rows of frequency, εr and tan δ. The function `at_f0` below reads all three. It
 still hands openEMS one εr and one $`\kappa`$: openEMS has dispersive materials of its own (Debye,
 Lorentz and Drude), and fitting one of them to the model, for a run whose band is wide enough
@@ -156,7 +158,8 @@ Points that matter:
 - **Ports.** Place them in the layout's coordinates: with `ORIGIN = "kicad"` the x of a pad is the
   same as in KiCad, and y is KiCad's y negated.
 
-## 23.3 Octave
+<a name="233-octave"></a>
+## 28.3 Octave
 
 The same route exists with the Octave interface. Each call returns the updated `CSX`, which
 must be assigned:
@@ -173,7 +176,8 @@ In Octave the STL is read only when openEMS runs, from inside the simulation fol
 `fullfile(pwd, 'Output/board/simulation_STL/stl/Copper_GND.stl')`. Read the property values from
 `materials.json` with `jsondecode`.
 
-## 23.4 Checking The Import
+<a name="234-checking-the-import"></a>
+## 28.4 Checking The Import
 
 - The number of imported STL files should equal the number of parts you kept from
   `materials.json` (a part whose mesh came out empty has an entry but no file).
@@ -185,4 +189,4 @@ In Octave the STL is read only when openEMS runs, from inside the simulation fol
 
 | Previous | Next |
 |:---|---:|
-| [KiCad And Solver Compatibility](Compatibility.md) | [Walkthrough](Walkthrough.md) |
+| [KiCad And Solver Compatibility](Compatibility.md) | [Solvers Comparison](Solvers-Comparison.md) |

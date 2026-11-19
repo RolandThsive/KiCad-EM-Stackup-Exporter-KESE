@@ -281,7 +281,7 @@ Each side is one part, `Top Silkscreen` or `Bottom Silkscreen`.
 ## 16.4 Material For The Solver
 
 `materials.json` gives each silkscreen part its side, its thickness and a material
-([Material Properties](Material-Properties.md#212-properties-per-role)):
+([Material Properties](Material-Properties.md#262-properties-per-role)):
 
 ```json
 "Top Silkscreen": {

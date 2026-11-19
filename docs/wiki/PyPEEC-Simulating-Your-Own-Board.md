@@ -1,4 +1,4 @@
-# 25.2 PyPEEC Simulating Your Own Board
+# 20.2 PyPEEC Simulating Your Own Board
 
 Every example on the `PyPEEC_Integration` branch is one folder with its board and a `simulation.py`.
 The proof boards keep all their settings in one dictionary, `SETTINGS`, at the top of the script; the
@@ -6,13 +6,13 @@ coil board keeps every fact about the board in a `test_spec.json` beside its scr
 runs any coil set the Sinusoidal Coil Generator makes. To simulate a board of your own, copy the example
 closest to it; this page lists every setting.
 
-## 25.2.1 Start From An Example
+## 20.2.1 Start From An Example
 
 | Your board has | Start from |
 |---|---|
 | One coil, opened by a gap between two trace ends | `Examples/E01_circular_loop/` |
 | Two coils, one driven and one sensing (mutual inductance) | `Examples/E02_coaxial_loops/` |
-| An inductive encoder from the Sinusoidal Coil Generator: a stator with TX, SIN and COS, and a rotor at many angles | `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/`, set up for a new board by `Examples/Inductive Coils/new_coil.py` ([25.2.5](#2525-a-new-coil-board-in-one-command)) |
+| An inductive encoder from the Sinusoidal Coil Generator: a stator with TX, SIN and COS, and a rotor at many angles | `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/`, set up for a new board by `Examples/Inductive Coils/new_coil.py` ([20.2.5](#2025-a-new-coil-board-in-one-command)) |
 
 ```bash
 cp -r Examples/E01_circular_loop Examples/MY_BOARD
@@ -25,7 +25,7 @@ cp ~/my_board.kicad_pcb .                       # and set SETTINGS['board'] to i
 E01 and E02 write `results.json` beside the script and their working files under `case/` (KESE's
 export, PyPEEC's inputs and logs), which git ignores.
 
-## 25.2.2 The Proof Boards' Settings
+## 20.2.2 The Proof Boards' Settings
 
 `SETTINGS` in E01's `simulation.py` (E02's is the same, with two coils):
 
@@ -58,7 +58,7 @@ coil or 0.0 for a sensing one.
 A rerun of the same voxel size adds to `results.json`: a solve at a frequency already there is
 replaced, the others are kept.
 
-## 25.2.3 The Coil Board's `test_spec.json`
+## 20.2.3 The Coil Board's `test_spec.json`
 
 Every board fact `simulation.py` needs, with paths from the board folder:
 
@@ -78,7 +78,7 @@ Every board fact `simulation.py` needs, with paths from the board folder:
 The script's own `SETTINGS` takes these and adds `sigma` 5.8e7, `insulators` False, `n_cu` 1,
 `threads` 4 and `tolerance` {} (changes to `bridge/tolerance.yaml`, none by default).
 
-## 25.2.4 The Coil Board's Command Line
+## 20.2.4 The Coil Board's Command Line
 
 Run from the board's `PyPEEC Simulation/` folder:
 
@@ -108,7 +108,7 @@ boards sit in PyPEEC voxel by voxel, and `angle_setup.py` draws the rotor at eac
 `angle_setup.py`'s picture at 45°, one of the 16 in `RotorStator_AngleSetup/`: a quick check that the
 rotor turns the right way and the ports sit where they should, before any solve.
 
-## 25.2.5 A New Coil Board In One Command
+## 20.2.5 A New Coil Board In One Command
 
 `Examples/Inductive Coils/new_coil.py` turns the generator's output folder into a board folder laid
 out as S0d2's, whose scripts run it as they are, since they read every board fact from
@@ -124,13 +124,13 @@ python new_coil.py <folder> MY_COIL --angles 16 --voxel 0.035 --no-estimate
 |---|---|
 | 1. Make the coil | Set the generator's parameters and run it; read its warnings (a via too close to other copper means the board is not right yet; the TX tank warning does not matter to the simulation) |
 | 2. Set it up | `new_coil.py` makes `Boards/` (straight from the generator), `PyPEEC Simulation/` (with `test_spec.json` and the scripts), `Results/` (with `expected_results.json`) and a README. With KESE in place it exports the two boards into `3D_Geometry/`, draws the voxels at one angle and prints the grid's size and the memory and time a solve needs (`--no-estimate` skips this) |
-| 3. Check it | Check the estimate ([25.2.6](#2526-before-a-large-board)), then the terminals in the new README against `python rig_picture.py`. `new_coil.py` opens the TX at its stacked ends and each RX at a layer-change via; to open SIN and COS by a cut, as on S0d2, set `"rx_port": "cut"` and give each receiver a `cut` in `test_spec.json` |
+| 3. Check it | Check the estimate ([20.2.6](#2026-before-a-large-board)), then the terminals in the new README against `python rig_picture.py`. `new_coil.py` opens the TX at its stacked ends and each RX at a layer-change via; to open SIN and COS by a cut, as on S0d2, set `"rx_port": "cut"` and give each receiver a `cut` in `test_spec.json` |
 | 4. Run it | `python simulation.py` in `PyPEEC Simulation/`, then other gaps with `--gap` |
 | 5. Read the results | `Results/<gap>_AirGap/` and `Results/SINCOS_Results.md` ([PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md)); commit the folder without `case/` |
 
 The limits: single coil sets only, since a `DualCoil_` board has two sets.
 
-## 25.2.6 Before A Large Board
+## 20.2.6 Before A Large Board
 
 Check the size first: `--voxels-only` draws the voxels and prints the grid's size (with `--angles 0` on
 the coil board; `new_coil.py` does it for a new coil board). The memory and the time follow the whole

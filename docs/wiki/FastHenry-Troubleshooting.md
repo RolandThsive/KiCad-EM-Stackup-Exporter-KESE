@@ -1,10 +1,10 @@
-# 28.3 FastHenry Troubleshooting
+# 23.3 FastHenry Troubleshooting
 
 What went wrong while the bridge was built, what it looked like, and what fixed it. The bridge already does what the
 right-hand column says; this page is for reading a failed run of your own, or a case changed by hand. A run's working
 files are under the example's `case/`: each solve's `model.inp`, `Zc.mat` and `fasthenry.log`.
 
-## 28.3.1 NaN In The Impedance Matrix
+## 23.3.1 NaN In The Impedance Matrix
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -12,7 +12,7 @@ files are under the example's `case/`: each solve's `model.inp`, `Zc.mat` and `f
 | The same NaN from joints in the stator's traces | A straight track split in two, its points rounded to KiCad's nanometre, leaves two pieces a few ten-thousandths of a degree apart. FastHenry takes filaments that meet end to end as parallel only if they are exactly so; at that angle their mutual inductance is infinite | Two consecutive pieces of a trace straight to within 0.01° become one segment (`merge_collinear`) |
 | Thousands of *mutual inductance = infinity* warnings and a matrix of NaN, with Whiteley Research's FastHenry 3.0wr (in XicTools, release 031424) | 3.0wr lacks two of FastFieldSolvers' fixes in `mutual.c`: the formula for filaments meeting at a point, and a negative distance clipped to zero. A rotor grid of collinear bars trips exactly those cases | Use FastHenry 3.0.1, the committed build. With the rotor away both give the same matrix, to 1e-20 |
 
-## 28.3.2 The Solve
+## 23.3.2 The Solve
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -20,9 +20,9 @@ files are under the example's `case/`: each solve's `model.inp`, `Zc.mat` and `f
 | M from the TX to a receiver and M from the receiver back 2.7 % apart | FastHenry's default solve, GMRES with its multipole speed-up, is iterative and approximate | The dense direct solve, `-s ludecomp -m direct`: the matrix comes out symmetric to the last digit |
 | A solve is marked not readable | M to and from the TX differ by more than 1 % of the larger receiver's M, or R TX is not positive (`readable()` in the coil board's `make_charts.py`) | Read `fasthenry.log` in that angle's folder under `case/`; with the direct solve none of the 81 solves on the FastHenry pages was unreadable |
 | `RuntimeError: FastHenry failed in ... (status ...)` with the end of its log | FastHenry stopped, or wrote no `Zc.mat` | The last 2,000 characters of its log are in the message; the full log is `fasthenry.log` in the case folder |
-| The machine runs out of memory | The dense matrix grows with the square of the filaments | Count them first with `--model-only`; see [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md#2536-before-a-large-board) |
+| The machine runs out of memory | The dense matrix grows with the square of the filaments | Count them first with `--model-only`; see [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md#2036-before-a-large-board) |
 
-## 28.3.3 Ports
+## 23.3.3 Ports
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -31,24 +31,24 @@ files are under the example's `case/`: each solve's `model.inp`, `Zc.mat` and `f
 | `rx_port 'cut' needs a 'cut' for SIN and COS in test_spec.json` | `"rx_port": "cut"` is set, but a receiver has no `cut` | Give both receivers a `cut` under `terminals`, or set `"rx_port": "via"` |
 | A receiver's curve comes out with the opposite sign | A cut and a left-out via put the plus terminal on opposite sides of the coil | Harmless: the sign of M follows the port's direction. The branch's comparison scripts turn a receiver's sign where they set boards opened both ways side by side |
 
-## 28.3.4 References
+## 23.3.4 References
 
 | Symptom | Cause | Fix |
 |---|---|---|
 | E01's L 0.7 % under the first reference (55.99 nH) | The first reference was Grover's ring formula times the share of the circle the arc covers. That is not how an open loop's inductance scales: each part of the ring loses its coupling to the missing part, which the share leaves out | Neumann's double integral over the arc itself, with the same GMD: 55.590 nH (`arc_inductance` in `Examples/references.py`), 0.02 % over FastHenry's limit |
 
-## 28.3.5 Building And Setting Up
+## 23.3.5 Building And Setting Up
 
 | Symptom | Cause | Fix |
 |---|---|---|
 | GCC refuses to build FastHenry | GCC 10 and newer refuse the program's shared global variables | Build with `-fcommon`, as `Solver_FastHenry/build_fasthenry.sh` does |
 | The committed `fasthenry` does not run | It is built for 64-bit Linux with glibc 2.34 or newer | `bash bridge/setup_machine.sh` builds it from source when the committed one does not run; or `bash Solver_FastHenry/build_fasthenry.sh` |
 | The bridge runs another FastHenry than you expect | It takes `$FASTHENRY` first, then `Solver_FastHenry/install/bin/fasthenry`, then `fasthenry` on the PATH | Unset `FASTHENRY`, or point it at the program you want; each results file records the version that ran |
-| `KESE not found: copy main's Generator into 3D_Geometry ...` | A board's stack-up must be exported, and neither `3D_Geometry/run_KESE.py` nor `KESE_PATH` points at KESE | Copy KESE in ([FastHenry Walkthrough 34.5](FastHenry-Walkthrough.md#2435-installing-on-linux-ubuntu-2404)) or set `KESE_PATH`; boards with a committed, unchanged `3D_Geometry/` need no KESE |
+| `KESE not found: copy main's Generator into 3D_Geometry ...` | A board's stack-up must be exported, and neither `3D_Geometry/run_KESE.py` nor `KESE_PATH` points at KESE | Copy KESE in ([FastHenry Walkthrough 34.5](FastHenry-Walkthrough.md#1935-installing-on-linux-ubuntu-2404)) or set `KESE_PATH`; boards with a committed, unchanged `3D_Geometry/` need no KESE |
 | `KESE failed on <board>` or `KESE wrote no materials.json` | KESE stopped on the board, or wrote no simulation export | Its output is in the message; run `run_KESE.py <board> --for elmer` by hand to see it in full |
 | A board is exported again when nothing seemed to change | The board file's hash differs from the one in its export's `source.json` | Expected: any change to the `.kicad_pcb` makes a new export |
 
-## 28.3.6 The Coil Generator
+## 23.3.6 The Coil Generator
 
 | Symptom | Cause | Fix |
 |---|---|---|

@@ -1,11 +1,11 @@
-# 27.3 FastHenry Accuracy
+# 22.3 FastHenry Accuracy
 
 Where the FastHenry bridge's errors come from, how big each one measured on E01, E02 and the coil board, and what
 the bridge leaves out of the physics. Every number here is from the runs on the `FastHenry_Integration` branch
 (`Examples/E01_circular_loop/results.json`, `Examples/E02_coaxial_loops/results.json`, the coil board's `Results/`),
 and from the filament study in the branch's `Examples/Inductive Coils/README.md`.
 
-## 27.3.1 No Mesh In The Air, No Iteration
+## 22.3.1 No Mesh In The Air, No Iteration
 
 Two of the usual sources of a field solver's error are not there:
 
@@ -22,7 +22,7 @@ chords of an arc, and the rotor's grid of bars.
 > on the coil boards, and is not used. The multipole refinement is also off (`-a off`): at the 1 mm gap, where both
 > ways ran, they gave the same numbers to 3 parts in 10⁸.
 
-## 27.3.2 The Error Budget On E01
+## 22.3.2 The Error Budget On E01
 
 Each line changes one thing and keeps the rest.
 
@@ -46,7 +46,7 @@ filaments the crowding of the current needs:
 One filament holds the current uniform, so it misses the rise of R altogether. With 3 × 1, the coil board's setting,
 E01 reads L at 3.5 MHz 0.2 % high and R 7 % low on its 0.5 mm trace. From 9 × 3 on, L and R move by 0.01 % and 0.08 %.
 
-## 27.3.3 Mutual Inductance On E02
+## 22.3.3 Mutual Inductance On E02
 
 M is the number the coil board's signal rests on.
 
@@ -60,7 +60,7 @@ even one filament per segment is within 0.004 % of the finest. The 0.024 % left 
 approximations: it averages Neumann's integral over 21 × 21 radii across the two traces' widths with the current
 uniform across each, leaving out the traces' thickness and the current's slight lean to the inside of a ring.
 
-## 27.3.4 The Coil Board
+## 22.3.4 The Coil Board
 
 The coil board runs at 3 filaments across each track and 1 through, the edge ones twice as narrow, and a rotor grid
 of bars 0.05 mm wide at its edges growing to 0.3 mm. What that setting costs was measured on a sibling board of the
@@ -83,7 +83,7 @@ best sine through each gap's 16 solves leaves 0.018 to 0.019 nH rms at 1 mm, aga
 solves at θ and θ + 180° came out as the same numbers, as the two-sector rotor's symmetry asks: turning the rotor
 moves only its grid, never the stator's filaments, so there is no meshing noise between angles.
 
-## 27.3.5 What The Bridge Leaves Out
+## 22.3.5 What The Bridge Leaves Out
 
 | What | In the bridge | What it does to the numbers |
 |---|---|---|
@@ -95,7 +95,7 @@ moves only its grid, never the stator's filaments, so there is no meshing noise 
 | Boards, not arbitrary 3D | copper flat at its layers' heights | a board over another (a rotor over a stator) works; a part tilted out of the board's plane does not |
 | The terminals | a port between two nodes; at a cut, the copper inside the 0.2 mm cut taken out | the leads to the IC are not modelled |
 
-## 27.3.6 What To Trust
+## 22.3.6 What To Trust
 
 | Quantity | On boards like E01, E02 and the coil board |
 |---|---|

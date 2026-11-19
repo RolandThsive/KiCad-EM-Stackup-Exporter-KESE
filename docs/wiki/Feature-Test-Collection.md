@@ -2553,4 +2553,4 @@ Seconds, the median of three runs for each stage, unless marked ms; the total is
 
 | Previous | Next |
 |:---|---:|
-| [Solder Masks](Solder-Masks.md) | [Parameter Reference](Parameter-Reference.md) |
+| [Solder Masks](Solder-Masks.md) | [Walkthrough](Walkthrough.md) |

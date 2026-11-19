@@ -166,7 +166,7 @@ The short name `copper` sets the first four at once. With `"net"` grouping a net
 holds only the layers that are built: with `inner_copper` left out, `Copper_GND` is its top and
 bottom copper and the walls of its holes. A net whose copper is all left out has no part.
 Before 25.2 one switch, `Copper.COPPER_ENABLED`, did what `copper` does now; it still works with
-`--set` ([Parameter Reference](Parameter-Reference.md#1914-names-of-before-252)).
+`--set` ([Parameter Reference](Parameter-Reference.md#2414-names-of-before-252)).
 
 ## 13.3 Vias And Plated Holes
 
@@ -529,14 +529,14 @@ geometry:
 | `"huray"` (default) | the "snowball" model, a nodule radius and a surface ratio for each face: `radius_treated_um`, `radius_other_um`, `surface_ratio_treated`, `surface_ratio_other` | `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM`, `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` |
 
 A separate `Plating` part (with `Copper.COPPER_GROUPING = "layer"`) carries only `material` and
-`conductivity_S_per_m`. See [Material Properties](Material-Properties.md#216-copper-by-layer) for
+`conductivity_S_per_m`. See [Material Properties](Material-Properties.md#266-copper-by-layer) for
 the formulas a solver applies to these numbers.
 
 ## 13.9 Settings
 
 All in `parameters/PCB_elements/Copper.py`, in the file's seven sections. Whether copper is
 built is not here: it is the lines of `Stackup.py`, section 13.2.1. The names of before 25.2
-still work with `--set`; see [Parameter Reference](Parameter-Reference.md#1914-names-of-before-252).
+still work with `--set`; see [Parameter Reference](Parameter-Reference.md#2414-names-of-before-252).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|

@@ -1,7 +1,7 @@
 > [!CAUTION]
 > The bridge lives on the [`Elmer_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Elmer_Integration) branch.
 
-# 24.1 Elmer FEM Walkthrough
+# 19.1 Elmer FEM Walkthrough
 
 [Elmer](https://github.com/ElmerCSC/elmerfem) is an open-source finite element solver from CSC in
 Finland. The **Elmer bridge** turns a KiCad board into an Elmer simulation: KESE exports the board's
@@ -17,7 +17,7 @@ bottom: what Elmer does here, installing it, and every step from a board file to
 > and 5 air gaps: 81 Elmer solves, every one of which passed its two checks. All three have run; their
 > results are on [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md).
 
-## 24.1.1 What Elmer Is Used For Here
+## 19.1.1 What Elmer Is Used For Here
 
 At the frequencies of inductive position sensors and planar coils (kHz to a few MHz) a board is a
 tiny fraction of a wavelength across: a 40 mm coil at 3.5 MHz is about 1/2000 of a wavelength. The
@@ -40,7 +40,7 @@ What Elmer does **not** give here: the coils' capacitance and self-resonance. An
 solve has no displacement current, so those need another solver; how the solvers of this project
 divide the work is on [Solvers Comparison](Solvers-Comparison.md).
 
-## 24.1.2 How It Fits Together
+## 19.1.2 How It Fits Together
 
 ```mermaid
 flowchart TB
@@ -60,13 +60,13 @@ flowchart TB
     S2 -->|ElmerSolver| S3
 ```
 
-Each step is described below, from [24.1.8](#2418-export-the-board-with-kese) on.
+Each step is described below, from [19.1.8](#1918-export-the-board-with-kese) on.
 
-## 24.1.3 The Elmer FEM Pages
+## 19.1.3 The Elmer FEM Pages
 
 | Page | What it covers |
 |---|---|
-| Elmer FEM Walkthrough (this page) | What Elmer does here, installing it ([24.1.5](#2415-linux-ubuntu-2404)), and every step from the board file to the numbers ([24.1.8](#2418-export-the-board-with-kese) on) |
+| Elmer FEM Walkthrough (this page) | What Elmer does here, installing it ([19.1.5](#1915-linux-ubuntu-2404)), and every step from the board file to the numbers ([19.1.8](#1918-export-the-board-with-kese) on) |
 | [Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md) | Every setting of an example's `simulation.py`, how to start a new one, and the memory a board needs |
 | [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) | E01, E02 and the coil board, and what came out on each |
 | [Elmer FEM Accuracy](Elmer-FEM-Accuracy.md) | Where the errors come from and how big they are |
@@ -74,7 +74,7 @@ Each step is described below, from [24.1.8](#2418-export-the-board-with-kese) on
 
 How Elmer sits beside the project's other solvers is on [Solvers Comparison](Solvers-Comparison.md).
 
-## 24.1.4 Where The Code Is
+## 19.1.4 Where The Code Is
 
 | Folder on `Elmer_Integration` | What it holds |
 |---|---|
@@ -82,13 +82,13 @@ How Elmer sits beside the project's other solvers is on [Solvers Comparison](Sol
 | `Examples/E01_circular_loop/`, `Examples/E02_coaxial_loops/` | The proof boards, each with its board, `make_board.py`, `simulation.py`, `README.md` and `results.md` |
 | `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/` | The coil board: `Boards/` (from the generator), `3D_Geometry/` (KESE's export), `Elmer Simulation/` (`test_spec.json`, `simulation.py` and the chart scripts) and `Results/` (non-commercial licence, see that folder's `LICENSE.md`) |
 | `Examples/Inductive Coils/new_coil.py` | Sets up any single coil set from the generator as a folder like the coil board's |
-| `Solver_Elmer/install/` | The Elmer 26.2.1 build every example ran on, for Ubuntu 24.04 (see [24.1.5](#2415-linux-ubuntu-2404)) |
+| `Solver_Elmer/install/` | The Elmer 26.2.1 build every example ran on, for Ubuntu 24.04 (see [19.1.5](#1915-linux-ubuntu-2404)) |
 | `3D_Geometry/` | Empty on purpose: KESE's `Generator/` is copied here from `main`, or `KESE_PATH` points at it |
 
 The branch also solves five more coil boards made from the same small coil set; they are in
 [`Examples/Inductive Coils/`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Elmer_Integration/Examples/Inductive%20Coils).
 
-## 24.1.5 Linux (Ubuntu 24.04)
+## 19.1.5 Linux (Ubuntu 24.04)
 
 The bridge needs three things: Elmer with OpenMP and the MUMPS direct solver, a Python environment
 with the bridge's packages, and a copy of KESE. The branch carries the Elmer every example ran on,
@@ -187,34 +187,34 @@ cd Examples/E01_circular_loop
 
 The committed results give L 52.93 nH and R 80.19 mOhm for this solve (3 minutes on the 4-core test
 machine), the level 0.75 values of
-[Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#2611-e01-circular-loop); its own
+[Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#2111-e01-circular-loop); its own
 `--results` file keeps the committed `results.json` as it is. Those results were made with the
-bridge of 15 and 16 November ([Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#2611-e01-circular-loop)), so today's bridge may differ in the last digits.
+bridge of 15 and 16 November ([Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#2111-e01-circular-loop)), so today's bridge may differ in the last digits.
 
 ### A Swap File For The Coil Board
 
 The coil board's direct solves need more memory than a 16 GB machine has
-([Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md#2517-before-a-large-board)). On Linux a swap file makes up the
+([Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md#2017-before-a-large-board)). On Linux a swap file makes up the
 rest:
 
 ```bash
 sudo fallocate -l 26G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
 ```
 
-## 24.1.6 Windows
+## 19.1.6 Windows
 
 The committed build runs inside WSL with Ubuntu 24.04, the same way as on Linux. It does not run on
 Windows itself, on macOS, or on another Linux release without its libraries at these versions.
 
 | Route | Steps | Notes |
 |---|---|---|
-| **WSL 2 (recommended)** | Install Ubuntu 24.04 from the Microsoft Store, then follow [24.1.5](#2415-linux-ubuntu-2404) inside it | The bridge, KESE and Elmer all run as on Linux. Keep the repository inside the WSL file system (not under `/mnt/c`), which is many times faster for the mesh files |
+| **WSL 2 (recommended)** | Install Ubuntu 24.04 from the Microsoft Store, then follow [19.1.5](#1915-linux-ubuntu-2404) inside it | The bridge, KESE and Elmer all run as on Linux. Keep the repository inside the WSL file system (not under `/mnt/c`), which is many times faster for the mesh files |
 | **Native** | Build Elmer with the instructions in Elmer's repository (MSYS2) and install it into `Solver_Elmer\install`; install Python 3.11 or later from python.org; `py -m venv .venv` and `.venv\Scripts\pip install -r requirements.txt` | The bridge calls `ElmerSolver` from `Solver_Elmer/install/bin`, so that folder must hold `ElmerSolver.exe`. Not yet run on the test boards |
 
 macOS has the same route as native Windows: build Elmer with the instructions in its repository and
 install it into `Solver_Elmer/install`.
 
-## 24.1.7 What The Test Machines Had
+## 19.1.7 What The Test Machines Had
 
 | Item | Version |
 |---|---|
@@ -227,7 +227,7 @@ install it into `Solver_Elmer/install`.
 Each example writes the versions it ran with into its results files, so every number on
 [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) names the software that made it.
 
-## 24.1.8 Export The Board With KESE
+## 19.1.8 Export The Board With KESE
 
 The rest of this page is what happens between `python simulation.py` and the numbers in the results files, step by step. Every
 step is one function of the bridge on the `Elmer_Integration` branch; the file is named with each.
@@ -253,7 +253,7 @@ Either way an unchanged board is not exported twice.
 KESE writes the board with y up (y_model = −y_KiCad) and z = 0 in the middle of the board. The
 bridge shifts z so that the top face of the F.Cu copper is z = 0.
 
-## 24.1.9 Section The Parts Into Slabs
+## 19.1.9 Section The Parts Into Slabs
 
 `bridge/mesh25d.py` builds a **2.5D mesh**, the shape a printed board has: everything is flat in z.
 `Layout.build` takes every height at which some part starts or ends, which splits the board into
@@ -266,7 +266,7 @@ altogether, which removes their heights from the slabs; with `insulators=True` t
 board or mask part that lies wholly outside the copper's heights is merged into the air anyway.
 All three boards on the Elmer FEM pages run with `insulators=False`.
 
-## 24.1.10 Triangulate The Footprint
+## 19.1.10 Triangulate The Footprint
 
 One triangle mesh covers the whole footprint: a disc around the board (its rim sized to the far
 field's element size), with every copper edge of every slab drawn into it as a line, so each
@@ -275,7 +275,7 @@ raster: `h_edge` at copper edges, growing by `grade` per mm away from them, at m
 copper and `h_max` far away. Lines given in `extra_lines` (port sheets, the outline of a cut, a
 rotor's copper at its angle) are drawn in too.
 
-## 24.1.11 Stack The Wedges, Fill The Air
+## 19.1.11 Stack The Wedges, Fill The Air
 
 The triangle mesh is repeated at a series of heights in z and joined into wedges (prisms):
 
@@ -292,7 +292,7 @@ triangle (copper over mask over board); a `void` part (air of higher priority th
 copper out, which is how a cut across a trace or a left-out via is made in the model while the
 board file stays as it is.
 
-## 24.1.12 Open Each Coil At Its Port
+## 19.1.12 Open Each Coil At Its Port
 
 Elmer's 3D massive coils take their current's direction from a potential (`W`) that runs from 0 at
 one electrode to 1 at the other, so a coil must be **open**. `bridge/ports.py` opens it where the
@@ -326,7 +326,7 @@ both receivers, at KiCad (96.591, 100.496) for SIN and (97.239, 97.940) for COS.
 
 ![Where SIN and COS are opened. Left, the stator from above with the TX in dark grey, SIN in blue and COS in orange, each on F.Cu (dark) and B.Cu (light); a small white box marks each cut and the TX port is ringed at the right. Right, close-ups: SIN cut at KiCad (96.59, 100.50) and COS cut at KiCad (97.24, 97.94), each a 0.2 mm white box across the top trace 0.86 mm from the via, which stays, with 0.46 mm clear of other copper; and the TX's two ends, F.Cu over B.Cu, at KiCad (111.00, 100.00), not cut. A note says the copper inside each box is taken out, the two cut faces become the electrodes and the port sheet spans the gap at the trace's lower face](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Boards/S0d2_1x_OD23_2L_tiny_TX3top_Cut/elmerboards_2_cuts.webp)
 
-## 24.1.13 Write The Elmer Case
+## 19.1.13 Write The Elmer Case
 
 `bridge/elmer_case.py` writes one `.sif` per frequency:
 
@@ -356,7 +356,7 @@ in mm (`Coordinate Scaling = 0.001`).
 > eddy power is then a second check on R. E01 and E02 ran on 15 and 16 November with it on, the
 > bridge's setting then; the coil board ran on 17 November with it off.
 
-## 24.1.14 Solve And Read Back
+## 19.1.14 Solve And Read Back
 
 `bridge/study.py` runs ElmerSolver once per frequency (OpenMP threads set by `threads`, the stack
 limit lifted for serial MUMPS), reads the scalars and, for an iterative solve, the last iteration
@@ -374,14 +374,14 @@ count and residual from its log, and records Elmer's peak memory. Per coil it re
 All of it, with the mesh's size, the run's time, memory and the software versions, is written to the
 example's results files; each example's results page sets it against the reference.
 
-## 24.1.15 A Rotor Over A Stator
+## 19.1.15 A Rotor Over A Stator
 
 The coil board adds a second board. `load_parts` turns the rotor copper side down without mirroring
 it, lifts its copper face to the air gap above z = 0, and turns it about the axis (KiCad's point
 (100, 100)) by the rotor angle. Every angle gets its own mesh, with the rotor's copper at that angle
 drawn into it, and one solve; a run with the rotor's copper made air gives the TX with the rotor
 away. The receivers' M at each angle is fitted with a sine, and the angle read back as
-atan2(SIN, COS) gives the angle error ([Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#2613-s0d2_1x_od23_2l_tiny_tx3top_cut)).
+atan2(SIN, COS) gives the angle error ([Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#2113-s0d2_1x_od23_2l_tiny_tx3top_cut)).
 
 | Previous | Next |
 |:---|---:|
