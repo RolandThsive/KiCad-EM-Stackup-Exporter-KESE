@@ -79,7 +79,7 @@ Research underway.
 
 | Tool | Route | Notes |
 |---|---|---|
-| openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) by hand, or the openEMS bridge ([OpenEMS Implementation Introduction](OpenEMS-Implementation-Introduction.md)) |
+| openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md), by hand |
 | FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
 | Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#102-the-presets)); the Elmer bridge builds its own mesh from the preset's STL files instead ([Elmer FEM Introduction](Elmer-FEM-Introduction.md)) |
 | PyPEEC | STL per part, mm, with `materials.json` (`--for elmer`) | the PyPEEC bridge draws the copper onto PyPEEC's uniform voxel grid ([PyPEEC Introduction](PyPEEC-Introduction.md)) |

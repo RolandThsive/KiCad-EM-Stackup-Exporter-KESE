@@ -7,10 +7,7 @@ were measured at, how they change with frequency, and the copper's conductivity.
 
 > [!NOTE]
 > This page describes the manual route and a script skeleton built from the CSXCAD Python API.
-> The openEMS bridge on the `OpenEMS_Integration` branch automates it (mesh, ports, preflight,
-> read-back) and has been checked on a microstrip against closed-form references; see
-> [OpenEMS Implementation Introduction](OpenEMS-Implementation-Introduction.md). A comparison
-> against a measured board is still planned.
+> A comparison against a measured board is still planned.
 
 ## 23.1 Export
 
@@ -188,4 +185,4 @@ In Octave the STL is read only when openEMS runs, from inside the simulation fol
 
 | Previous | Next |
 |:---|---:|
-| [KiCad And Solver Compatibility](Compatibility.md) | [Elmer FEM Introduction](Elmer-FEM-Introduction.md) |
+| [KiCad And Solver Compatibility](Compatibility.md) | [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md) |
