@@ -1,10 +1,12 @@
+> [!CAUTION]
+> The bridge lives on the [`Palace_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Palace_Integration) branch.
+
 # 39. Palace Walkthrough
 
 [Palace](https://github.com/awslabs/palace) is an open-source finite element solver for electromagnetics from AWS
 Labs, built on [MFEM](https://mfem.org) and [hypre](https://github.com/hypre-space/hypre) and released under the
 Apache 2.0 licence. The **Palace bridge** turns a KiCad board into a Palace simulation: KESE exports the board's 3D
-geometry, the bridge meshes it, writes Palace's input, runs Palace and reads the answer back. The bridge lives on the
-`Palace_Integration` branch of the repository; KESE itself stays what it is, a geometry exporter, and is never changed
+geometry, the bridge meshes it, writes Palace's input, runs Palace and reads the answer back. KESE itself stays what it is, a geometry exporter, and is never changed
 by the bridge.
 
 > [!NOTE]

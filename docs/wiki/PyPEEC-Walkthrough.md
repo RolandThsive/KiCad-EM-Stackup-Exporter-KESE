@@ -1,11 +1,13 @@
+> [!CAUTION]
+> The bridge lives on the [`PyPEEC_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/PyPEEC_Integration) branch.
+
 # 29. PyPEEC Walkthrough
 
 [PyPEEC](https://github.com/otvam/pypeec) is an open-source magneto-quasi-static solver by Thomas
 Guillod (Dartmouth College, MPL-2.0) that uses the PEEC method (partial element equivalent circuits) on
 voxels. The **PyPEEC bridge** turns a KiCad board into a PyPEEC simulation: KESE exports the board's
 3D geometry, the bridge draws its copper onto PyPEEC's uniform voxel grid, writes PyPEEC's input, runs
-it and reads the answer back. The bridge lives on the `PyPEEC_Integration` branch of the repository;
-KESE itself stays what it is, a geometry exporter, and is never changed by the bridge.
+it and reads the answer back. KESE itself stays what it is, a geometry exporter, and is never changed by the bridge.
 
 > [!NOTE]
 > This category uses three boards: the two proof boards E01 and E02, and one inductive encoder board,

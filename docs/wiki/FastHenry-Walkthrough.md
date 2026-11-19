@@ -1,10 +1,13 @@
+> [!CAUTION]
+> The bridge lives on the [`FastHenry_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/FastHenry_Integration) branch.
+
 # 34. FastHenry Walkthrough
 
 [FastHenry](https://github.com/ediloren/FastHenry2) is the magneto-quasi-static inductance and resistance extractor
 written at M.I.T. by Mattan Kamon, Lou Silveira and others (1994 to 1996), kept up by FastFieldSolvers as release
 3.0.1. The **FastHenry bridge** turns a KiCad board into a FastHenry simulation: KESE exports the board's stack-up,
 the bridge reads the copper itself from the `.kicad_pcb`, writes FastHenry's input, runs it and reads the impedance
-matrix back. The bridge lives on the `FastHenry_Integration` branch of the repository; KESE itself stays what it is,
+matrix back. KESE itself stays what it is,
 a geometry exporter, and is never changed by the bridge.
 
 > [!NOTE]

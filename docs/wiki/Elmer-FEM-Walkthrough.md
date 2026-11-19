@@ -1,9 +1,12 @@
+> [!CAUTION]
+> The bridge lives on the [`Elmer_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Elmer_Integration) branch.
+
 # 24. Elmer FEM Walkthrough
 
 [Elmer](https://github.com/ElmerCSC/elmerfem) is an open-source finite element solver from CSC in
 Finland. The **Elmer bridge** turns a KiCad board into an Elmer simulation: KESE exports the board's
 3D geometry, the bridge meshes it, writes Elmer's case, runs ElmerSolver and reads the answer back.
-The bridge lives on the `Elmer_Integration` branch of the repository; KESE itself stays what it is,
+KESE itself stays what it is,
 a geometry exporter, and is never changed by the bridge. This page walks through it from top to
 bottom: what Elmer does here, installing it, and every step from a board file to the numbers.
 
