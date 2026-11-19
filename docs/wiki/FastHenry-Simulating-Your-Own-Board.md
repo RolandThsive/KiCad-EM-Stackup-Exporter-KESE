@@ -1,10 +1,10 @@
-# 35. FastHenry Simulating Your Own Board
+# 25.3 FastHenry Simulating Your Own Board
 
 Every example on the `FastHenry_Integration` branch is one folder with its board and a `simulation.py` whose settings
 are all in one dictionary, `SETTINGS`, at the top of the file. To simulate a board of your own, copy the example
 closest to it and change those settings; this page lists every one.
 
-## 35.1 Start From An Example
+## 25.3.1 Start From An Example
 
 | Your board has | Start from |
 |---|---|
@@ -19,11 +19,11 @@ cp ~/my_board.kicad_pcb .               # and set SETTINGS['board'] to its name
 ../../.venv/bin/python simulation.py --nwinc 3      # a first run, 3 filaments across each track
 ```
 
-The first run exports the board's stack-up with KESE (see [FastHenry Walkthrough 34.5](FastHenry-Walkthrough.md#345-installing-on-linux-ubuntu-2404) for
+The first run exports the board's stack-up with KESE (see [FastHenry Walkthrough 34.5](FastHenry-Walkthrough.md#2435-installing-on-linux-ubuntu-2404) for
 KESE) into the folder's `3D_Geometry/`. Every run writes the results file beside the script and its working files
 under `case/` (each solve's `model.inp`, `Zc.mat` and FastHenry's log), which is not committed.
 
-## 35.2 The Proof Boards' Settings
+## 25.3.2 The Proof Boards' Settings
 
 | Setting | Example (E01) | What it is |
 |---|---|---|
@@ -41,7 +41,7 @@ under `case/` (each solve's `model.inp`, `Zc.mat` and FastHenry's log), which is
 The coil itself is named in `build()`: `C.add_board(m, board, zl, {'LOOP': 'LOOP'}, nwinc=..., nhinc=...)` takes the
 nets to model, as `{net: coil name}`, and `m.port(name, a, b)` opens each coil between two nodes, found with
 `C.nearest_node(m, net, layer, x, y, within)`. For the other ways to open a coil (two stacked ends, a via left out,
-a cut across a trace) see [FastHenry Walkthrough 34.11](FastHenry-Walkthrough.md#3411-open-each-coil-at-its-port).
+a cut across a trace) see [FastHenry Walkthrough 34.11](FastHenry-Walkthrough.md#24311-open-each-coil-at-its-port).
 
 | Option | What it does |
 |---|---|
@@ -53,7 +53,7 @@ a cut across a trace) see [FastHenry Walkthrough 34.11](FastHenry-Walkthrough.md
 
 A rerun of the same rung replaces it in `results.json`; the other rungs are kept.
 
-## 35.3 A Coil Board From The Generator
+## 25.3.3 A Coil Board From The Generator
 
 Any single coil set from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator)
 is set up in one command, from the branch's `Examples/Inductive Coils/`:
@@ -74,7 +74,7 @@ and each RX coil at one of its layer-change vias: the one nearest the generator'
 no cut spot, the one farthest from the TX copper. To open SIN and COS by a cut across a top trace instead, as on
 `S0d2_1x_OD23_2L_tiny_TX3top_Cut`, set `"rx_port": "cut"` in `test_spec.json` and give each receiver a `cut`.
 
-## 35.4 The Coil Board's test_spec.json
+## 25.3.4 The Coil Board's test_spec.json
 
 Everything that belongs to the board is in `test_spec.json`; `simulation.py` reads it. On
 `S0d2_1x_OD23_2L_tiny_TX3top_Cut`:
@@ -113,7 +113,7 @@ And in `SETTINGS` at the top of `simulation.py`:
 One of the 16 rotor angles, drawn by `angle_setup.py`; `FastHenry Simulation/RotorStator_AngleSetup/` has all of
 them, with the two cuts and the TX port ringed. Check them before a long sweep: a port in the wrong place shows here.
 
-## 35.5 The Coil Board's Command Line
+## 25.3.5 The Coil Board's Command Line
 
 | Option | What it does |
 |---|---|
@@ -133,7 +133,7 @@ An angle already in the results is skipped, so a stopped sweep picks up where it
 the angle error at each angle, `python make_charts.py` redraws every chart, `python rig_picture.py` redraws how the
 boards sit in FastHenry, and `python angle_setup.py` redraws the rotor at each angle.
 
-## 35.6 Before A Large Board
+## 25.3.6 Before A Large Board
 
 Check the memory first: build the model alone with `--model-only`, read
 its filaments, and square them. The dense direct solve holds every filament's coupling to every other, so a board
@@ -149,4 +149,4 @@ first.
 
 | Previous | Next |
 |:---|---:|
-| [FastHenry Walkthrough](FastHenry-Walkthrough.md) | [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md) |
+| [PyPEEC Simulating Your Own Board](PyPEEC-Simulating-Your-Own-Board.md) | [Palace Simulating Your Own Board](Palace-Simulating-Your-Own-Board.md) |

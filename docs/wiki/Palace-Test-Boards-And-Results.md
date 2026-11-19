@@ -1,11 +1,11 @@
-# 41. Palace Test Boards And Results
+# 26.4 Palace Test Boards And Results
 
 The three boards the Palace bridge is proved on, and what Palace gave on each: the proof boards in
 `Examples/E01_circular_loop/` and `Examples/E02_coaxial_loops/`, and the coil board in
 `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/` on the `Palace_Integration` branch, each with its results
 files. The branch solves five more coil boards in the same way, in [`Examples/Inductive Coils/`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Palace_Integration/Examples/Inductive%20Coils).
 
-## 41.1 E01 Circular Loop
+## 26.4.1 E01 Circular Loop
 
 One copper loop on F.Cu, 10 mm in radius to its centre line, 0.5 mm wide and 35 µm thick, opened by a 0.2 mm gap where
 the bridge puts its lumped port.
@@ -32,7 +32,7 @@ closed ring, where a loop closed by its port sheet should lie. L from the port a
 a little. At 10 kHz GMRES stops at its 3,000 iteration limit, but a converged check at 100 kHz gives the same L to
 0.01 %.
 
-## 41.2 E02 Coaxial Loops
+## 26.4.2 E02 Coaxial Loops
 
 E01's loop twice, the TX on F.Cu and the RX on B.Cu right under it, 1.565 mm apart, both ports driven in turn.
 
@@ -56,7 +56,7 @@ closed rings, and the TX's L matches E01's loop to 0.04 %. M from the TX to the 
 every level. The graded run's low frequency is 100 kHz, since at 10 kHz its restarted GMRES did not converge; on the
 default mesh 100 kHz and 10 kHz agree to 0.002 %.
 
-## 41.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
+## 26.4.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
 An inductive angle encoder from the
 [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator): a stator
@@ -87,4 +87,4 @@ at 0.1 mm.
 
 | Previous | Next |
 |:---|---:|
-| [Palace Simulating Your Own Board](Palace-Simulating-Your-Own-Board.md) | [Palace Accuracy](Palace-Accuracy.md) |
+| [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md) | [Accuracy](Accuracy.md) |

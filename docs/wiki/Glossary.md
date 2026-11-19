@@ -1,4 +1,4 @@
-# 45. Glossary
+# 30. Glossary
 
 The words this wiki uses, grouped by subject, each with the section that explains it in full.
 Terms from KiCad and PCB manufacturing keep their usual meaning; names in `code` are KESE's own
@@ -6,16 +6,16 @@ parameters, roles and files.
 
 | Subject | Terms |
 |---|---|
-| [45.1 Board And Stack-Up](#451-board-and-stack-up) | Core, Dielectric, Djordjevic-Sarkar model, εr (epsilon_r), tanδ (loss tangent), Foil, Laminate, Mid-plane, Plies fused, Plies separate, Ply, Prepreg, Resin fill, Spec frequency, Stack-up, Stack-up line |
-| [45.2 Holes And Vias](#452-holes-and-vias) | Annular ring, Backdrill, Barrel, Blind / buried via, Bore, Capped via, Castellation, Counterbore, Countersink, Covered via, Filled via, IPC-4761, Microvia, NPTH, Plugged via, PTH, Tenting, Through via, Via resin |
-| [45.3 Copper](#453-copper) | Conductivity, Copper grouping, Edge plating, Etch factor, Hammerstad model, Hatched fill, Huray model, Net, Outer plating, Surface roughness, Treated face |
-| [45.4 Solder Mask, Silkscreen And Finish](#454-solder-mask-silkscreen-and-finish) | Conformal mask, Finish, LPI, Mask opening, Mask web, Pull-back, Silkscreen |
-| [45.5 How KESE Builds A Model](#455-how-kese-builds-a-model) | Board frame, Part, Pinch point, Prism, Role, Skin, Slice, Snap grid, Stage, Verifier |
-| [45.6 Output And Files](#456-output-and-files) | GLB, materials.json, OBJ, Preset, report.txt, Run folder, Simulation mode, STEP, STL, Visual mode, Z-fighting |
-| [45.7 Solvers](#457-solvers) | 2.5D mesh, A-V formulation, AMS, DC-free pulse, Edge element, Electrode, εeff (effective permittivity), FDTD, Filament, GMD (geometric mean distance), Lumped port, Magneto-quasi-static, Mesh level, MUR, PML, PEEC (partial element equivalent circuit), PEC, Preflight, Proximity effect, S-parameters, Self resonance, Skin depth, Thirds rule, Voxel, Z0 (characteristic impedance) |
+| [30.1 Board And Stack-Up](#301-board-and-stack-up) | Core, Dielectric, Djordjevic-Sarkar model, εr (epsilon_r), tanδ (loss tangent), Foil, Laminate, Mid-plane, Plies fused, Plies separate, Ply, Prepreg, Resin fill, Spec frequency, Stack-up, Stack-up line |
+| [30.2 Holes And Vias](#302-holes-and-vias) | Annular ring, Backdrill, Barrel, Blind / buried via, Bore, Capped via, Castellation, Counterbore, Countersink, Covered via, Filled via, IPC-4761, Microvia, NPTH, Plugged via, PTH, Tenting, Through via, Via resin |
+| [30.3 Copper](#303-copper) | Conductivity, Copper grouping, Edge plating, Etch factor, Hammerstad model, Hatched fill, Huray model, Net, Outer plating, Surface roughness, Treated face |
+| [30.4 Solder Mask, Silkscreen And Finish](#304-solder-mask-silkscreen-and-finish) | Conformal mask, Finish, LPI, Mask opening, Mask web, Pull-back, Silkscreen |
+| [30.5 How KESE Builds A Model](#305-how-kese-builds-a-model) | Board frame, Part, Pinch point, Prism, Role, Skin, Slice, Snap grid, Stage, Verifier |
+| [30.6 Output And Files](#306-output-and-files) | GLB, materials.json, OBJ, Preset, report.txt, Run folder, Simulation mode, STEP, STL, Visual mode, Z-fighting |
+| [30.7 Solvers](#307-solvers) | 2.5D mesh, A-V formulation, AMS, DC-free pulse, Edge element, Electrode, εeff (effective permittivity), FDTD, Filament, GMD (geometric mean distance), Lumped port, Magneto-quasi-static, Mesh level, MUR, PML, PEEC (partial element equivalent circuit), PEC, Preflight, Proximity effect, S-parameters, Self resonance, Skin depth, Thirds rule, Voxel, Z0 (characteristic impedance) |
 
 <a name="241-board-and-stack-up"></a>
-## 45.1 Board And Stack-Up
+## 30.1 Board And Stack-Up
 
 The layers a board is made of and the numbers that describe them.
 
@@ -39,7 +39,7 @@ The layers a board is made of and the numbers that describe them.
 | **εr (epsilon_r)** | Relative permittivity of a dielectric: how much it slows a signal and adds capacitance. From the stack-up, else a default. | [21.3](Material-Properties.md#213-the-default-numbers) |
 
 <a name="242-holes-and-vias"></a>
-## 45.2 Holes And Vias
+## 30.2 Holes And Vias
 
 Every kind of hole KESE models, including the via options KiCad 10 added.
 
@@ -66,7 +66,7 @@ Every kind of hole KESE models, including the via options KiCad 10 added.
 | **Via resin** | The resin inside a plugged or filled via; its own part with the role `via_resin`, carrying `Copper.VIA_RESIN_EPSILON_R` and `Copper.VIA_RESIN_LOSS_TANGENT`. | [21.2](Material-Properties.md#212-properties-per-role) |
 
 <a name="243-copper"></a>
-## 45.3 Copper
+## 30.3 Copper
 
 How traces, zones and plating become copper solids.
 
@@ -85,7 +85,7 @@ How traces, zones and plating become copper solids.
 | **Treated face** | The face of a copper foil that is roughened so the laminate grips it: the wider face of an etched trace, toward the dielectric the foil was bonded to. `materials.json` names it for every layer, `lower` or `upper`, with a roughness of its own. | [21.6](Material-Properties.md#216-copper-by-layer) |
 
 <a name="244-solder-mask-silkscreen-and-finish"></a>
-## 45.4 Solder Mask, Silkscreen And Finish
+## 30.4 Solder Mask, Silkscreen And Finish
 
 The layers on top of the outer copper.
 
@@ -100,7 +100,7 @@ The layers on top of the outer copper.
 | **Silkscreen** | The printed ink on top of the mask: KiCad's lines, shapes and text, drawn by KESE with KiCad's own stroke font. | [16.1](Silkscreens.md#161-what-is-drawn), [16.2](Silkscreens.md#162-text-rendering) |
 
 <a name="245-how-kese-builds-a-model"></a>
-## 45.5 How KESE Builds A Model
+## 30.5 How KESE Builds A Model
 
 The words the Working Principle and the checks use.
 
@@ -118,7 +118,7 @@ The words the Working Principle and the checks use.
 | **Verifier** | KESE's check at the end of a run (`Verifier.VERIFY`, on by default; `--no-verify` leaves it out) that every solid is closed and holds the volume of its prisms, no parts overlap, and the skin is one surface. | [20.3](Checks-Errors-And-Warnings.md#203-the-verifier) |
 
 <a name="246-output-and-files"></a>
-## 45.6 Output And Files
+## 30.6 Output And Files
 
 What a run writes and how to pick it.
 
@@ -136,27 +136,27 @@ What a run writes and how to pick it.
 | **Visual mode** | Output as the visible skin only, for viewers and renders. | [9.2](Output-Modes.md#92-visual-mode) |
 | **Z-fighting** | Flicker in a 3D viewer when two surfaces lie at almost the same depth; the reason visual mode exists. | [9.2](Output-Modes.md#92-visual-mode) |
 
-## 45.7 Solvers
+## 30.7 Solvers
 
 The words of the solver pages.
 
 | Term | Meaning | See |
 |---|---|---|
-| **2.5D mesh** | The Palace bridge's mesh: the board's plan meshed in triangles, swept through the copper and the air beside it as layers of wedges (prisms), with tetrahedra above and below out to the domain's edge. | [39.13](Palace-Walkthrough.md#3913-build-the-25d-mesh) |
-| **A-V formulation** | Elmer's time-harmonic eddy-current formulation: a magnetic vector potential A on the mesh's edges and an electric scalar potential V in the conductors, with no displacement current (`WhitneyAVHarmonicSolver`). | [24.1](Elmer-FEM-Walkthrough.md#241-what-elmer-is-used-for-here) |
-| **AMS** | hypre's auxiliary-space Maxwell solver: the preconditioner of the GMRES iteration Palace solves its system with. Below about 100 kHz it is told the operator is all but singular in the air, or the iteration diverges. | [39.15](Palace-Walkthrough.md#3915-write-palaces-input) |
-| **Edge element** | A finite element whose unknowns sit on the mesh's edges (Whitney elements); Elmer's A lives on them. First order: one unknown per edge. Elmer's A and Palace's electric field E live on them (Palace calls them Nédélec elements). | [24.1](Elmer-FEM-Walkthrough.md#241-what-elmer-is-used-for-here) |
-| **Electrode** | A face of a coil's copper where Elmer's circuit fixes the potential; the bridge opens each coil at its port and puts one electrode on each side of the gap. | [24.12](Elmer-FEM-Walkthrough.md#2412-open-each-coil-at-its-port) |
+| **2.5D mesh** | The Palace bridge's mesh: the board's plan meshed in triangles, swept through the copper and the air beside it as layers of wedges (prisms), with tetrahedra above and below out to the domain's edge. | [24.4.13](Palace-Walkthrough.md#24413-build-the-25d-mesh) |
+| **A-V formulation** | Elmer's time-harmonic eddy-current formulation: a magnetic vector potential A on the mesh's edges and an electric scalar potential V in the conductors, with no displacement current (`WhitneyAVHarmonicSolver`). | [24.1.1](Elmer-FEM-Walkthrough.md#2411-what-elmer-is-used-for-here) |
+| **AMS** | hypre's auxiliary-space Maxwell solver: the preconditioner of the GMRES iteration Palace solves its system with. Below about 100 kHz it is told the operator is all but singular in the air, or the iteration diverges. | [24.4.15](Palace-Walkthrough.md#24415-write-palaces-input) |
+| **Edge element** | A finite element whose unknowns sit on the mesh's edges (Whitney elements); Elmer's A lives on them. First order: one unknown per edge. Elmer's A and Palace's electric field E live on them (Palace calls them Nédélec elements). | [24.1.1](Elmer-FEM-Walkthrough.md#2411-what-elmer-is-used-for-here) |
+| **Electrode** | A face of a coil's copper where Elmer's circuit fixes the potential; the bridge opens each coil at its port and puts one electrode on each side of the gap. | [24.1.12](Elmer-FEM-Walkthrough.md#24112-open-each-coil-at-its-port) |
 | **FDTD** | Finite differences in the time domain: Maxwell's equations marched in time on a rectilinear grid, openEMS's method. | [23](OpenEMS-Workflow.md) |
-| **Filament** | FastHenry's unit of copper: a straight bar carrying a uniform current along its length. Each track segment is split into filaments across its width and through its thickness, so the current can crowd to the edges. | [34.10](FastHenry-Walkthrough.md#3410-build-the-filament-model) |
-| **GMD (geometric mean distance)** | The distance that stands for a conductor's cross-section in an inductance formula: 0.2235 (w + t) for a rectangle carrying uniform current. | [26.1](Elmer-FEM-Test-Boards-And-Results.md#261-e01-circular-loop) |
-| **Lumped port** | Palace's port: a rectangle across the place where a coil is opened, its two ends on the copper, with a resistance across it. | [39.14](Palace-Walkthrough.md#3914-open-each-coil-at-its-port) |
-| **Magneto-quasi-static** | Currents and magnetic fields without waves: right when the board is a tiny fraction of a wavelength across, as coils at kHz to a few MHz are. | [24.1](Elmer-FEM-Walkthrough.md#241-what-elmer-is-used-for-here) |
-| **Mesh level** | The Elmer bridge's knob for the copper's mesh: a level divides the sizes at and inside the copper by itself; the air's grading stays. | [25.3](Elmer-FEM-Simulating-Your-Own-Board.md#253-the-domain-and-the-frequencies) |
-| **PEEC (partial element equivalent circuit)** | A method that models only the conductors: each small piece of copper a resistance and a partial inductance to every other piece, with no mesh of the air and no boundary. PyPEEC and FastHenry are PEEC solvers. | [44.1](Solvers-Comparison.md#441-the-four-solvers) |
-| **Proximity effect** | Current pushed around inside a conductor by a neighbour's field; it adds loss even to a conductor that carries no net current. | [26.2](Elmer-FEM-Test-Boards-And-Results.md#262-e02-coaxial-loops) |
-| **Skin depth** | How deep an AC current reaches into a conductor, δ = √(2 / (ωμσ)): 35 µm in copper at 3.5 MHz, 0.66 mm at 10 kHz. | [26.1](Elmer-FEM-Test-Boards-And-Results.md#261-e01-circular-loop) |
-| **Voxel** | One box of a uniform 3D grid; PyPEEC draws every conductor onto such a grid and solves on the voxels the copper fills. | [29.11](PyPEEC-Walkthrough.md#2911-draw-the-copper-as-voxels) |
+| **Filament** | FastHenry's unit of copper: a straight bar carrying a uniform current along its length. Each track segment is split into filaments across its width and through its thickness, so the current can crowd to the edges. | [24.3.10](FastHenry-Walkthrough.md#24310-build-the-filament-model) |
+| **GMD (geometric mean distance)** | The distance that stands for a conductor's cross-section in an inductance formula: 0.2235 (w + t) for a rectangle carrying uniform current. | [26.1.1](Elmer-FEM-Test-Boards-And-Results.md#2611-e01-circular-loop) |
+| **Lumped port** | Palace's port: a rectangle across the place where a coil is opened, its two ends on the copper, with a resistance across it. | [24.4.14](Palace-Walkthrough.md#24414-open-each-coil-at-its-port) |
+| **Magneto-quasi-static** | Currents and magnetic fields without waves: right when the board is a tiny fraction of a wavelength across, as coils at kHz to a few MHz are. | [24.1.1](Elmer-FEM-Walkthrough.md#2411-what-elmer-is-used-for-here) |
+| **Mesh level** | The Elmer bridge's knob for the copper's mesh: a level divides the sizes at and inside the copper by itself; the air's grading stays. | [25.1.3](Elmer-FEM-Simulating-Your-Own-Board.md#2513-the-domain-and-the-frequencies) |
+| **PEEC (partial element equivalent circuit)** | A method that models only the conductors: each small piece of copper a resistance and a partial inductance to every other piece, with no mesh of the air and no boundary. PyPEEC and FastHenry are PEEC solvers. | [29.1](Solvers-Comparison.md#291-the-four-solvers) |
+| **Proximity effect** | Current pushed around inside a conductor by a neighbour's field; it adds loss even to a conductor that carries no net current. | [26.1.2](Elmer-FEM-Test-Boards-And-Results.md#2612-e02-coaxial-loops) |
+| **Skin depth** | How deep an AC current reaches into a conductor, δ = √(2 / (ωμσ)): 35 µm in copper at 3.5 MHz, 0.66 mm at 10 kHz. | [26.1.1](Elmer-FEM-Test-Boards-And-Results.md#2611-e01-circular-loop) |
+| **Voxel** | One box of a uniform 3D grid; PyPEEC draws every conductor onto such a grid and solves on the voxels the copper fills. | [24.2.11](PyPEEC-Walkthrough.md#24211-draw-the-copper-as-voxels) |
 
 | Previous | Next |
 |:---|---:|

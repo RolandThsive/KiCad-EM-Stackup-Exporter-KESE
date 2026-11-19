@@ -1,7 +1,7 @@
 > [!CAUTION]
 > The bridge lives on the [`PyPEEC_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/PyPEEC_Integration) branch.
 
-# 29. PyPEEC Walkthrough
+# 24.2 PyPEEC Walkthrough
 
 [PyPEEC](https://github.com/otvam/pypeec) is an open-source magneto-quasi-static solver by Thomas
 Guillod (Dartmouth College, MPL-2.0) that uses the PEEC method (partial element equivalent circuits) on
@@ -10,13 +10,13 @@ voxels. The **PyPEEC bridge** turns a KiCad board into a PyPEEC simulation: KESE
 it and reads the answer back. KESE itself stays what it is, a geometry exporter, and is never changed by the bridge.
 
 > [!NOTE]
-> This category uses three boards: the two proof boards E01 and E02, and one inductive encoder board,
+> The PyPEEC pages use three boards: the two proof boards E01 and E02, and one inductive encoder board,
 > `S0d2_1x_OD23_2L_tiny_TX3top_Cut`. All three have run (see
 > [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md)). The branch solves five more coil boards
 > in the same way; they are listed in its
 > [`Examples/Inductive Coils/README.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/PyPEEC_Integration/Examples/Inductive%20Coils/README.md).
 
-## 29.1 What PyPEEC Is Used For Here
+## 24.2.1 What PyPEEC Is Used For Here
 
 At the frequencies of inductive position sensors (3 to 5 MHz) a coil board is about 1/2000 of a
 wavelength across, so the physics is **magneto-quasi-static**: currents, magnetic fields and eddy
@@ -36,7 +36,7 @@ What PyPEEC does **not** give here: capacitance (PyPEEC has no charges on the su
 self-resonance; and no temperature or stress. Which solver of the project gives what is set out on
 [Solvers Comparison](Solvers-Comparison.md).
 
-## 29.2 How It Fits Together
+## 24.2.2 How It Fits Together
 
 ```mermaid
 flowchart TB
@@ -57,9 +57,9 @@ flowchart TB
 ```
 
 KESE's solver preset is named `elmer` in KESE: simulation-mode solids, one STL per solid, and a
-`materials.json`. Each step is described below, from [29.8](#298-export-the-board-with-kese) on.
+`materials.json`. Each step is described below, from [24.2.8](#2428-export-the-board-with-kese) on.
 
-## 29.3 The Pages Of This Category
+## 24.2.3 The PyPEEC Pages
 
 | Page | What it covers |
 |---|---|
@@ -69,21 +69,21 @@ KESE's solver preset is named `elmer` in KESE: simulation-mode solids, one STL p
 | [PyPEEC Accuracy](PyPEEC-Accuracy.md) | Where the errors come from and how big they are |
 | [PyPEEC Troubleshooting](PyPEEC-Troubleshooting.md) | What went wrong while building the bridge, and the fixes |
 
-## 29.4 Where The Code Is
+## 24.2.4 Where The Code Is
 
 | Folder on `PyPEEC_Integration` | What it holds |
 |---|---|
 | `bridge/` | The bridge, in Python, general to any board: `geometry.py`, `layers.py`, `voxels.py`, `ports.py`, `pypeec_case.py`, `study.py`, with `tolerance.yaml` (PyPEEC's own default tolerances) and `setup_machine.sh` |
 | `Solver_PyPEEC/` | The PyPEEC build every simulation ran with: PyPEEC 5.8.0 and all 56 packages under it as committed wheels for 64-bit Linux and Python 3.13, with `install.sh` |
 | `Examples/E01_circular_loop/`, `Examples/E02_coaxial_loops/` | The proof boards, each with its board, `make_board.py`, `simulation.py`, `README.md` and `results.md` |
-| `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/` | The coil board of this category: `Boards/`, `3D_Geometry/`, `PyPEEC Simulation/`, `Results/` (non-commercial licence, see `Examples/Inductive Coils/LICENSE.md`) |
+| `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/` | The coil board of the PyPEEC pages: `Boards/`, `3D_Geometry/`, `PyPEEC Simulation/`, `Results/` (non-commercial licence, see `Examples/Inductive Coils/LICENSE.md`) |
 | `Examples/kicad_writer.py`, `Examples/references.py` | Shared by the proof boards: a small KiCad 7 board writer, and the textbook values they are checked against |
 | `3D_Geometry/` | Empty on purpose: KESE's `Generator/` is copied here from `main`, or `KESE_PATH` points at it, only to export a board whose `3D_Geometry/` is not committed |
 
 The branch's code is GPL-3.0, as KESE; PyPEEC itself is MPL-2.0, and every wheel in `Solver_PyPEEC/`
 keeps its own licence.
 
-## 29.5 Installing On Linux (Ubuntu 24.04)
+## 24.2.5 Installing On Linux (Ubuntu 24.04)
 
 The bridge needs two things: a Python environment with PyPEEC and the bridge's packages, and, only to
 export a board whose geometry is not committed, a copy of KESE. PyPEEC is pure Python, so nothing is
@@ -137,13 +137,13 @@ cd Examples/E01_circular_loop
 ```
 
 It should print L 56.59 nH and R 65.23 mΩ at 10 kHz, and L 55.61 nH and R 81.93 mΩ at 3.5 MHz, the
-50 µm values of [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md#311-e01-circular-loop),
+50 µm values of [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md#2621-e01-circular-loop),
 in about 3 and 8 seconds. To check without KESE, solve the coil board, whose export is committed:
 `python simulation.py --angles 0 --no-away --trial check` in its `PyPEEC Simulation/` folder (about
 4 minutes and 2.4 GB at the default 1 mm air gap; `--trial` keeps the results in `case/`, away from the
 committed ones). It should give L TX 271.54 nH and M SIN −3.0957 nH.
 
-## 29.6 Installing On Windows And macOS
+## 24.2.6 Installing On Windows And macOS
 
 The committed wheels are for 64-bit Linux only. PyPEEC itself runs on Linux, Windows and macOS, so
 install the same versions from PyPI instead (Python 3.12 or 3.13: numpy 2.5 and scipy 1.18 need 3.12;
@@ -151,7 +151,7 @@ PyPEEC itself runs from 3.10):
 
 | Route | Steps | Notes |
 |---|---|---|
-| **WSL 2 (recommended on Windows)** | Install Ubuntu 24.04 from the Microsoft Store, then follow [29.5](#295-installing-on-linux-ubuntu-2404) inside it | The committed wheels then fit as on Linux. Keep the repository inside the WSL file system, not under `/mnt/c` |
+| **WSL 2 (recommended on Windows)** | Install Ubuntu 24.04 from the Microsoft Store, then follow [24.2.5](#2425-installing-on-linux-ubuntu-2404) inside it | The committed wheels then fit as on Linux. Keep the repository inside the WSL file system, not under `/mnt/c` |
 | **Native** | `py -m venv .venv`, then `.venv\Scripts\pip install -r Solver_PyPEEC/requirements-lock.txt` (macOS: `.venv/bin/pip install ...`) | The same versions, from PyPI. Not yet run on the test boards |
 
 `requirements.txt` at the branch's root lists only the packages the bridge asks for by name (PyPEEC,
@@ -159,7 +159,7 @@ scisave, numpy, scipy, shapely, trimesh, mapbox_earcut, and matplotlib and pillo
 `Solver_PyPEEC/requirements-lock.txt` lists every package of the environment, as `pip freeze` wrote
 it.
 
-## 29.7 What The Test Machine Had
+## 24.2.7 What The Test Machine Had
 
 | Item | Version |
 |---|---|
@@ -174,7 +174,7 @@ Each example writes the versions it ran with into its results files, so every nu
 machine that solved a coil board had no KESE, the results name the KESE that made the committed export
 (`kese 3.4.0 (made the export; not installed where this ran)`).
 
-## 29.8 Export The Board With KESE
+## 24.2.8 Export The Board With KESE
 
 What happens between `python simulation.py` and the numbers in the results files, step by step, in
 this and the next six sections. Every step is one module of the bridge on the `PyPEEC_Integration` branch; the file is named with each. The
@@ -196,7 +196,7 @@ places:
 Either way an unchanged board is not exported twice, and a board with a committed export runs with no
 KESE at all.
 
-## 29.9 Place The Parts
+## 24.2.9 Place The Parts
 
 `geometry.load_parts` turns each solid into a part in model coordinates: x and y as KiCad's with y up
 (KiCad's (x, y) becomes (x, −y)), and z = 0 at the top face of the top copper. A board can be flipped
@@ -204,13 +204,13 @@ copper side down, moved up by an air gap and turned about an axis: that is how t
 the stator. On the coil board the axis is KiCad's (100, 100), and the air gap is measured from the
 stator's F.Cu top face to the rotor's copper face, copper to copper.
 
-## 29.10 Section The Parts Into Slabs
+## 24.2.10 Section The Parts Into Slabs
 
 `layers.Layout` cuts the model into slabs at every height any part starts or ends, and sections each
 part in the middle of each slab. FR-4 and solder mask are left out (`insulators=False`): to a
 magneto-quasi-static solve an insulator with μr 1 is air, so they would add heights and nothing else.
 
-## 29.11 Draw The Copper As Voxels
+## 24.2.11 Draw The Copper As Voxels
 
 `voxels.build` draws every conductor onto one uniform grid:
 
@@ -230,7 +230,7 @@ no air box and no outer boundary.
 The coil board as PyPEEC solves it, drawn by its `rig_picture.py` from the very voxels
 `simulation.py` builds.
 
-## 29.12 Open Each Coil At Its Port
+## 24.2.12 Open Each Coil At Its Port
 
 A coil needs two terminals, so it must be **open**. `bridge/ports.py` opens it where the real board
 gets its leads, and the caller says where: the bridge never guesses.
@@ -240,7 +240,7 @@ gets its leads, and the caller says where: the bridge never guesses.
 | A gap between two trace ends on one layer | the gap is in the board already | E01's loop, E02's two loops (a 0.2 mm gap) |
 | A cut across a trace | the coil's voxels inside a box (0.2 mm along the trace, 0.4 mm across) are taken out of the top copper | SIN and COS of the coil board |
 | Two trace ends stacked on two layers | the gap is the board between them, inside a small disc round the ends (0.1 mm radius) | the coil board's TX |
-| A via left out | the barrel is taken out; each pad is filled over its drill hole and its terminal is the one voxel on the via's axis | not used on the boards of this category |
+| A via left out | the barrel is taken out; each pad is filled over its drill hole and its terminal is the one voxel on the via's axis | not used on the boards of the PyPEEC pages |
 
 The two terminals are the coil's voxels that share a face with the gap, one group on each side,
 grouped with their edge and corner neighbours so that there are exactly two.
@@ -265,7 +265,7 @@ as SIN and COS are.*
 The voltage across each cut is the receiver's open-circuit EMF, reported as the mutual inductance
 M = V / (jωI) with 1 A in the TX: 1 nH is 22 mV of EMF at 3.5 MHz.
 
-## 29.13 Write PyPEEC's Case
+## 24.2.13 Write PyPEEC's Case
 
 `bridge/pypeec_case.py` writes PyPEEC's two inputs, the geometry (its voxel mesher, given the voxels'
 indices directly) and the problem:
@@ -279,7 +279,7 @@ indices directly) and the problem:
 | PyPEEC's integrity checks | every coil in one piece, and no two conductors touching |
 | Tolerances | `bridge/tolerance.yaml`, PyPEEC's own defaults, unchanged: GMRES with its own preconditioner, SciPy's FFT and SuperLU |
 
-## 29.14 Solve And Read Back
+## 24.2.14 Solve And Read Back
 
 `study.solve` runs PyPEEC's mesher and solver once per frequency, in a process of its own, so that
 its peak memory is measured. Per coil it reads back:
@@ -299,4 +299,4 @@ agree with the L from the energy and the R from the losses within 1 %.
 
 | Previous | Next |
 |:---|---:|
-| [Elmer FEM Troubleshooting](Elmer-FEM-Troubleshooting.md) | [PyPEEC Simulating Your Own Board](PyPEEC-Simulating-Your-Own-Board.md) |
+| [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md) | [FastHenry Walkthrough](FastHenry-Walkthrough.md) |

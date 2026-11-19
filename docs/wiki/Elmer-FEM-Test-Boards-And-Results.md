@@ -1,4 +1,4 @@
-# 26. Elmer FEM Test Boards And Results
+# 26.1 Elmer FEM Test Boards And Results
 
 Three boards: the proof boards E01 and E02, with textbook answers, in `Examples/E01_circular_loop/`
 and `Examples/E02_coaxial_loops/`, and the coil board S0d2_1x_OD23_2L_tiny_TX3top_Cut, a whole
@@ -8,7 +8,7 @@ here is in each board's results files there; each example's `results.md` (E01, E
 boards made from the same small coil set; they are in
 [`Examples/Inductive Coils/`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Elmer_Integration/Examples/Inductive%20Coils).
 
-## 26.1 E01 Circular Loop
+## 26.1.1 E01 Circular Loop
 
 One copper loop on a 30 mm square board: a trace on F.Cu, 10 mm in radius to its centre line, 0.5 mm
 wide and 35 µm thick, opened by a 0.2 mm gap where the bridge puts its two electrodes and drives 1 A.
@@ -29,14 +29,14 @@ wide and 35 µm thick, opened by a 0.2 mm gap where the bridge puts its two elec
 L rises as the mesh is refined, as first-order edge elements should give, but levels off about 3 %
 under Grover's ring formula, because the mesh ladder refines only the copper: grading the air round
 the copper four times as finely brings L to 0.46 % under it, within the formula's own uncertainty of
-0 to +0.8 % ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#271-the-error-budget-on-e01)). R is 0.5 %
+0 to +0.8 % ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#2711-the-error-budget-on-e01)). R is 0.5 %
 high at 10 kHz, as it should be, since the reference's annular sector stops at the round ends'
 centres, and at 3.5 MHz it rises by 29 % as the current crowds to the trace's edges. The circuit's L
 and the field energy's agree within 0.05 % at every level, so the electrodes, the port sheet and
 Elmer's circuit read back the inductance the field holds. These ran on 15 and 16 November with the
 iterative solve, the bridge's setting then.
 
-## 26.2 E02 Coaxial Loops
+## 26.1.2 E02 Coaxial Loops
 
 E01's loop twice on one board, the TX on F.Cu and the RX on B.Cu right under it, 1.565 mm apart: the
 TX carries 1 A and the open RX's voltage gives the mutual inductance M.
@@ -59,7 +59,7 @@ formula. The open RX leaves the TX's L alone (54.18 against E01's 54.20 nH), as 
 in it should. At 3.5 MHz the RX still adds 1.5 mΩ to the TX's R: it carries no net current, but eddy
 currents circulate across its width and take power from the TX, the proximity effect.
 
-## 26.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
+## 26.1.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
 A small angle encoder from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator),
 23.4 mm across: a stator with a three-turn TX at 3.5 MHz and two receivers, SIN and COS, under a rotor
@@ -90,8 +90,8 @@ from 1 to 2 mm and 0.9° at 0.1 mm, where the solves alternate about the fit fro
 next. The rotor lowers the TX's L from 274.2 nH, rotor away, by about 4.2 % at 2 mm, 8.7 % at 1 mm and
 22 % at 0.1 mm, against the generator's estimate of 292 nH away and 226 nH with the rotor. Every solve read the TX's L and R a second way, from the
 field energy and the eddy power, within 0.004 %; on this coarse mesh L and M are best read as lower
-bounds ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#274-the-coil-board)).
+bounds ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#2714-the-coil-board)).
 
 | Previous | Next |
 |:---|---:|
-| [Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md) | [Elmer FEM Accuracy](Elmer-FEM-Accuracy.md) |
+| [Test Boards And Results](Test-Boards-And-Results.md) | [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md) |

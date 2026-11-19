@@ -1,4 +1,4 @@
-# 47. Real PCB Stackup
+# 32. Real PCB Stackup
 
 What a fabricated rigid board is made of, from the top legend to the bottom legend, for 2, 4, 6,
 8, 10, 12 and 16 copper layers. Each board is drawn from a stack-up that a fabricator publishes,
@@ -6,22 +6,22 @@ and every layer that is made separately is drawn separately.
 
 KiCad's stack-up lists only some of these layers, and KESE builds its solids from KiCad's
 stack-up ([Stack-Up Model](Stack-Up-Model.md)). This page shows what stands behind those numbers;
-[47.13](#4713-what-kese-builds-from-these-layers) says which of the layers a KESE model holds.
+[32.13](#3213-what-kese-builds-from-these-layers) says which of the layers a KESE model holds.
 
 | Copper layers | Stack-up drawn | Section |
 |---:|---|---|
-| 2 | OSH Park, 2 Layer Prototype Service, 1.6 mm | [47.5](#475-two-layers) |
-| 4 | JLCPCB, JLC04161H-2116C, 1.6 mm | [47.6](#476-four-layers) |
-| 6 | JLCPCB, JLC06161H-3313, 1.6 mm | [47.7](#477-six-layers) |
-| 8 | JLCPCB, JLC08161H-2116, 1.6 mm | [47.8](#478-eight-layers) |
-| 10 | JLCPCB, JLC10161H-2116, 1.6 mm | [47.9](#479-ten-layers) |
-| 12 | JLCPCB, JLC12161H-2313, 1.6 mm | [47.10](#4710-twelve-layers) |
-| 16 | JLCPCB, JLC16161H-2313, 1.6 mm | [47.11](#4711-sixteen-layers) |
+| 2 | OSH Park, 2 Layer Prototype Service, 1.6 mm | [32.5](#325-two-layers) |
+| 4 | JLCPCB, JLC04161H-2116C, 1.6 mm | [32.6](#326-four-layers) |
+| 6 | JLCPCB, JLC06161H-3313, 1.6 mm | [32.7](#327-six-layers) |
+| 8 | JLCPCB, JLC08161H-2116, 1.6 mm | [32.8](#328-eight-layers) |
+| 10 | JLCPCB, JLC10161H-2116, 1.6 mm | [32.9](#329-ten-layers) |
+| 12 | JLCPCB, JLC12161H-2313, 1.6 mm | [32.10](#3210-twelve-layers) |
+| 16 | JLCPCB, JLC16161H-2313, 1.6 mm | [32.11](#3211-sixteen-layers) |
 
 Each picture opens at full size when it is clicked.
 
 <a name="261-what-a-board-is-made-of"></a>
-## 47.1 What A Board Is Made Of
+## 32.1 What A Board Is Made Of
 
 From the outside in. The thicknesses are typical values; a fabricator's own stack-up sheet gives
 the real ones for a board.
@@ -62,7 +62,7 @@ inner copper layers its tables give both: the six-layer build below is listed wi
 0.1088 mm, both faces taken off, and also at 0.1164 mm.
 
 <a name="262-how-a-board-is-put-together"></a>
-## 47.2 How A Board Is Put Together
+## 32.2 How A Board Is Put Together
 
 A board of four layers or more:
 
@@ -83,7 +83,7 @@ A two-layer board has no cores to etch, no lay-up and no press at the fabricator
 cured laminate of the board's thickness with copper foil on both faces, and goes on at step 4.
 
 <a name="263-what-ends-up-as-one-piece"></a>
-## 47.3 What Ends Up As One Piece
+## 32.3 What Ends Up As One Piece
 
 - **All the copper of one connection is one piece of metal.** The plating grows on the outer foil
   and on the hole wall, and joins the inner copper that the hole cuts through.
@@ -95,7 +95,7 @@ cured laminate of the board's thickness with copper foil on both faces, and goes
   after the other, each only where it is wanted.
 
 <a name="264-the-seven-boards-side-by-side"></a>
-## 47.4 The Seven Boards Side By Side
+## 32.4 The Seven Boards Side By Side
 
 All seven are sold as 1.6 mm boards. The last three columns are each material's share of the
 thickness from copper to copper, taken where every layer has copper.
@@ -115,7 +115,7 @@ core. The cores of the sixteen-layer board are thinner than its prepreg plies, a
 of its thickness.
 
 <a name="265-two-layers"></a>
-## 47.5 Two Layers
+## 32.5 Two Layers
 
 The board of OSH Park's 2 Layer Prototype Service, sold as 1.6 mm (63 mil): one cured laminate of
 1.524 mm (60 mil), Kingboard KB-6167F, with copper on both faces. OSH Park gives the copper as one
@@ -134,7 +134,7 @@ Copper to copper the board is 1.595 mm thick; with 15 µm of solder mask on the 
 each side, 1.63 mm.
 
 <a name="266-four-layers"></a>
-## 47.6 Four Layers
+## 32.6 Four Layers
 
 JLCPCB's JLC04161H-2116C, one of the builds it publishes for a 1.6 mm four-layer board: one core
 of 1.065 mm, and on each side of it a 1080 ply against the inner copper and a 2116 ply under the
@@ -160,7 +160,7 @@ Copper to copper the board is 1.566 mm thick; with 15 µm of solder mask on the 
 each side, 1.60 mm.
 
 <a name="267-six-layers"></a>
-## 47.7 Six Layers
+## 32.7 Six Layers
 
 JLCPCB's JLC06161H-3313, its default build for a 1.6 mm six-layer board: two cores of 0.55 mm, one
 2116 ply between them and one 3313 ply on each side. The 2116 ply lies between two inner copper
@@ -187,11 +187,11 @@ Copper to copper the board is 1.538 mm thick; with 15 µm of solder mask on the 
 each side, 1.57 mm.
 
 <a name="268-eight-layers"></a>
-## 47.8 Eight Layers
+## 32.8 Eight Layers
 
 JLCPCB's JLC08161H-2116, its default build for a 1.6 mm eight-layer board: three cores of 0.3 mm,
 two 1080 plies between neighbouring cores, and one 2116 ply on each side.
-[47.12](#4712-how-to-read-the-pictures) says where the numbers of this board and of the three
+[32.12](#3212-how-to-read-the-pictures) says where the numbers of this board and of the three
 after it come from.
 
 [![An eight-layer board cut through, every layer drawn separately: three cores with two 1080 prepreg plies between them and one 2116 ply on each side, the resin between the inner traces, legend ink on solder mask, gold on nickel on the open pad, plated copper on copper foil, a plated via, and a strip of the same board to scale; a table names every layer with what it is and its thickness, and the steps show how the board is put together](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Real-PCB-Stackup/realstackup_4_eight_layer.webp)](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Real-PCB-Stackup/realstackup_4_eight_layer.webp)
@@ -220,7 +220,7 @@ Copper to copper the board is 1.600 mm thick; with 15 µm of solder mask on the 
 each side, 1.63 mm.
 
 <a name="269-ten-layers"></a>
-## 47.9 Ten Layers
+## 32.9 Ten Layers
 
 JLCPCB's JLC10161H-2116, its default build for a 1.6 mm ten-layer board: four cores of 0.2 mm, one
 2116 ply between neighbouring cores and one on each side. This is the first of the builds on
@@ -255,7 +255,7 @@ Copper to copper the board is 1.589 mm thick; with 15 µm of solder mask on the 
 each side, 1.62 mm.
 
 <a name="2610-twelve-layers"></a>
-## 47.10 Twelve Layers
+## 32.10 Twelve Layers
 
 JLCPCB's JLC12161H-2313, its default build for a 1.6 mm twelve-layer board: five cores of 0.15 mm,
 one 2116 ply between neighbouring cores, and one 2313 ply on each side.
@@ -292,7 +292,7 @@ Copper to copper the board is 1.642 mm thick; with 15 µm of solder mask on the 
 each side, 1.67 mm.
 
 <a name="2611-sixteen-layers"></a>
-## 47.11 Sixteen Layers
+## 32.11 Sixteen Layers
 
 JLCPCB's JLC16161H-2313, its default build for a 1.6 mm sixteen-layer board: seven cores of
 0.075 mm, one 2313 ply between neighbouring cores and one on each side. Its default for a 2.0 mm
@@ -338,7 +338,7 @@ Copper to copper the board is 1.579 mm thick; with 15 µm of solder mask on the 
 each side, 1.61 mm.
 
 <a name="2612-how-to-read-the-pictures"></a>
-## 47.12 How To Read The Pictures
+## 32.12 How To Read The Pictures
 
 - **Scale.** The big drawing has its thin layers thickened so that they can be seen. The narrow
   strip at its left is the same board to scale, cut where every layer has copper.
@@ -356,13 +356,13 @@ each side, 1.61 mm.
   which read the calculator on 9 May 2025. Three limits follow:
   - A fabricator changes its builds; the calculator may give other values today.
   - A ply between two inner copper layers is drawn with one face's 7.6 µm taken off, as that
-    project has it. JLCPCB lists such a ply both ways ([47.7](#477-six-layers)), so the inner
+    project has it. JLCPCB lists such a ply both ways ([32.7](#327-six-layers)), so the inner
     plies of the 10, 12 and 16 layer boards may be listed 7.6 µm thinner than drawn.
   - No εr is given for the cores. JLCPCB's page gives 4.6 for the cores of its four- and
     six-layer builds; for eight layers and more no table of JLCPCB's could be read.
 
 <a name="2613-what-kese-builds-from-these-layers"></a>
-## 47.13 What KESE Builds From These Layers
+## 32.13 What KESE Builds From These Layers
 
 KESE builds the laminate one of two ways, chosen with `Stackup.FUSION_BUILD` in
 `parameters/PCB_elements/Stackup.py`. The same file lists the layers of a board from the top
@@ -381,7 +381,7 @@ legend to the bottom legend, one line each, and a line set to `False` is left ou
 | Core | One solid | One solid | `board`; `cores` |
 | The glass cloth inside a ply or a core | Not built: each dielectric solid is one uniform material | Not built | |
 
-The four-layer board of [47.6](#476-four-layers), built both ways:
+The four-layer board of [32.6](#326-four-layers), built both ways:
 
 ![JLCPCB's four-layer board JLC04161H-2116C as KESE builds it with the plies fused: three laminate solids, each in its own colour. Board_dielectric 1 is one solid of the 2116 and the 1080 ply and the resin beside In1.Cu; Board_dielectric 2 is the core; Board_dielectric 3 is one solid of the 1080 and the 2116 ply and the resin beside In2.Cu](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_2_plies_fused.webp)
 
@@ -392,7 +392,7 @@ That board is in the feature tests as `featureTest/29d_stackup_real`
 describes the two builds in full.
 
 <a name="2614-sources"></a>
-## 47.14 Sources
+## 32.14 Sources
 
 Read in November 2026.
 

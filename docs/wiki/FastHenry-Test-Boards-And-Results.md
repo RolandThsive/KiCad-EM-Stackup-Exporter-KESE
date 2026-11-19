@@ -1,4 +1,4 @@
-# 36. FastHenry Test Boards And Results
+# 26.3 FastHenry Test Boards And Results
 
 The three boards the FastHenry bridge is proved on, and what FastHenry gave on each, against numbers known without
 any solver. Each is a folder under `Examples/` on the `FastHenry_Integration` branch, with its KiCad files, its
@@ -7,7 +7,7 @@ versions, the model's size, and the time and peak memory of every solve. The bra
 the same family the same way; they are listed in its
 [`Examples/Inductive Coils/README.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/FastHenry_Integration/Examples/Inductive%20Coils/README.md).
 
-## 36.1 E01 Circular Loop
+## 26.3.1 E01 Circular Loop
 
 One circular trace on F.Cu, 10 mm in radius to its centre line, 0.5 mm wide and 35 µm thick, opened by a 0.2 mm gap
 where FastHenry drives 1 A between its two ends; rendered by KESE's static renderer from the board's own export.
@@ -33,7 +33,7 @@ trace's edges and R rises to 1.23 times its DC value, which only filaments acros
 holds the current uniform and misses the rise altogether. Run on 17 November 2026 with FastHenry 3.0.1's dense direct
 solve on KESE 3.4.0's stack-up.
 
-## 36.2 E02 Coaxial Loops
+## 26.3.2 E02 Coaxial Loops
 
 E01's loop twice, TX on F.Cu and RX on B.Cu right under it, 1.565 mm apart, with 1 A in the TX and the RX open so that
 the voltage across its gap gives the mutual inductance M; rendered by KESE from its own export.
@@ -58,13 +58,13 @@ the last digit at every rung and both frequencies, as the direct solve of a symm
 the TX's L as E01's at 10 kHz; at 3.5 MHz eddy currents across the RX's trace take a little power from the TX, so its
 R rises 0.01 to 0.06 % over E01's and M falls 0.15 % from its 10 kHz value.
 
-## 36.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
+## 26.3.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
 An angle-encoder coil set from the [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator)
 (non-commercial licence): a 23.4 mm stator with a TX of three turns on the top layer and SIN and COS of two
 electrical periods per turn, each opened by a 0.2 mm cut across a top trace, under a rotor of two quarter-ring copper
 sectors, with 1 A at 3.5 MHz in the TX; drawn by the generator, the stator beside the rotor. How each coil is opened
-is on [FastHenry Walkthrough](FastHenry-Walkthrough.md#3411-open-each-coil-at-its-port).
+is on [FastHenry Walkthrough](FastHenry-Walkthrough.md#24311-open-each-coil-at-its-port).
 
 ![The coil generator's drawing of the stator beside the rotor. Stator, 2 to 11.7 mm in radius: the TX's three turns in red on the top layer round the outside, its lead running out to the right, and inside them the two RX coils, each two lobed loops woven between the top layer in red and the bottom in blue, joined by vias shown as black dots. Rotor: two red quarter-ring copper sectors, opposite each other](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/FastHenry-Test-Boards/S0d2_1x_OD23_2L_tiny_TX3top_Cut/S0d2_1x_OD23_2L_tiny_TX3top_Cut_stator_and_rotor.webp)
 
@@ -91,4 +91,4 @@ R TX from 413.2 to 475 mΩ. Each model has 9,264 filaments, and each solve took 
 
 | Previous | Next |
 |:---|---:|
-| [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md) | [FastHenry Accuracy](FastHenry-Accuracy.md) |
+| [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md) | [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md) |

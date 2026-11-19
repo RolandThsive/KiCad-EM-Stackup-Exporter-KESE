@@ -1,10 +1,10 @@
-# 40. Palace Simulating Your Own Board
+# 25.4 Palace Simulating Your Own Board
 
 Every example on the `Palace_Integration` branch is one folder with its board and a `simulation.py` whose settings
 are all in one dictionary, `SETTINGS`, at the top of the file. A coil board from the Sinusoidal Coil Generator is set
 up by one command, and its scripts read every board fact from a `test_spec.json`. This page lists every setting.
 
-## 40.1 Start From An Example
+## 25.4.1 Start From An Example
 
 | Your board has | Start from |
 |---|---|
@@ -21,10 +21,10 @@ cp ~/my_board.kicad_pcb .                     # and set SETTINGS['board'] to its
 ```
 
 The first run writes KESE's export into `3D_Geometry/` (KESE is needed for that run; see
-[Palace Walkthrough](Palace-Walkthrough.md#396-linux-ubuntu-2404)); later runs reuse it while the board file is unchanged. The runs' working
+[Palace Walkthrough](Palace-Walkthrough.md#2446-linux-ubuntu-2404)); later runs reuse it while the board file is unchanged. The runs' working
 files (the mesh, `config.json`, Palace's log and output) go under `case/`, which git ignores.
 
-## 40.2 The Proof Boards' Settings
+## 25.4.2 The Proof Boards' Settings
 
 | Setting | E01 | What it is |
 |---|---|---|
@@ -48,7 +48,7 @@ E01's command line: `--levels`, `--freqs`, `--ranks`, `--solver`, `--mesh-only` 
 and half height), `--results FILE` and `--out DIR`. E02 has the same but `--domain-mm`, and `--restart N`
 (GMRES restarts every N iterations instead of 300, with fewer vectors and less memory).
 
-## 40.3 The Coil Board's Settings
+## 25.4.3 The Coil Board's Settings
 
 The coil board's `SETTINGS` take every board fact from `test_spec.json` beside the script; for
 `S0d2_1x_OD23_2L_tiny_TX3top_Cut`:
@@ -84,7 +84,7 @@ What `simulation.py` adds itself:
 `python angle_setup.py` draws the rotor over the stator at every angle of the sweep, as above, to check the
 placement and the ports before solving.
 
-## 40.4 The Mesh
+## 25.4.4 The Mesh
 
 These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 
@@ -103,7 +103,7 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 | `tet_max` | `8.0` | Largest tetrahedron, mm |
 | `tet_grade` | `0.7` | How fast the tetrahedra grow with height, mm per mm |
 
-## 40.5 A New Coil Board
+## 25.4.5 A New Coil Board
 
 Any single coil set from the generator's Single Coil Set Generator is set up the same way:
 
@@ -128,7 +128,7 @@ Any single coil set from the generator's Single Coil Set Generator is set up the
 
 Single coil sets only: a `DualCoil_` board has two sets.
 
-## 40.6 The Coil Board's Command Line
+## 25.4.6 The Coil Board's Command Line
 
 | Option | What it does |
 |---|---|
@@ -153,4 +153,4 @@ the rotor at each angle.
 
 | Previous | Next |
 |:---|---:|
-| [Palace Walkthrough](Palace-Walkthrough.md) | [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md) |
+| [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md) | [Test Boards And Results](Test-Boards-And-Results.md) |

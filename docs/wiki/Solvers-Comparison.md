@@ -1,4 +1,4 @@
-# 44. Solvers Comparison
+# 29. Solvers Comparison
 
 Four free, open-source electromagnetic solvers were run on the same KESE exports: the same boards, the same air gaps, the same rotor angles and the same frequency (3.5 MHz, copper at 58 MS/m). Each has its own category in this wiki and its own branch, and none of the branches knows of the others; the [`Solvers_Comparison`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Solvers_Comparison) branch reads their results unchanged and sets them side by side, with values worked out by hand where a formula exists. This page shows three of the boards: the coil board `S0d2_1x_OD23_2L_tiny_TX3top_Cut` and the two proof boards, `E01_circular_loop` and `E02_coaxial_loops`.
 
@@ -6,19 +6,19 @@ Four free, open-source electromagnetic solvers were run on the same KESE exports
 > Every number here comes from the `Solvers_Comparison` branch's `data/` folder. Its README and its
 > `Comparisons/` folder compare all six coil boards the branches solved; this page keeps to one.
 
-## 44.1 The Four Solvers
+## 29.1 The Four Solvers
 
-| Solver | Method | What it models | Branch | Category |
+| Solver | Method | What it models | Branch | Walkthrough |
 |---|---|---|---|---|
 | Elmer | FEM (finite elements, the A-V eddy-current formulation) | the copper, the board and the air around them, in finite elements; the field from the A-V eddy-current formulation | `Elmer_Integration` | [Elmer FEM](Elmer-FEM-Walkthrough.md) |
 | PyPEEC | PEEC (partial elements on voxels, FFT-accelerated) | only the copper, as a grid of voxels; the air from the free-space formulas | `PyPEEC_Integration` | [PyPEEC](PyPEEC-Walkthrough.md) |
 | FastHenry | PEEC (partial elements on filaments, direct solve) | only the copper, as straight filaments along each track's centre line; the air from the free-space formulas | `FastHenry_Integration` | [FastHenry](FastHenry-Walkthrough.md) |
 | Palace | FEM (finite elements, the frequency-domain Maxwell solver) | the copper, the board and the air around them, in finite elements; the field from Maxwell's equations in the frequency domain | `Palace_Integration` | [Palace](Palace-Walkthrough.md) |
-| Theory | hand formulas | the TX copper alone: Neumann's integral and the DC resistance | `Solvers_Comparison` | [below](#449-the-hand-values) |
+| Theory | hand formulas | the TX copper alone: Neumann's integral and the DC resistance | `Solvers_Comparison` | [below](#299-the-hand-values) |
 
 The two finite-element (FEM) solvers mesh the air and close it at an outer boundary. The two partial-element (PEEC) solvers model only the copper, with no mesh of the air and no boundary. That difference explains most of what follows.
 
-## 44.2 The Boards
+## 29.2 The Boards
 
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Solvers-Comparison/S0d2_1x_OD23_2L_tiny_TX3top_Cut/solvers_1_board.webp" width="560" alt="S0d2_1x_OD23_2L_tiny_TX3top_Cut: the stator beside the rotor, drawn by the coil generator">
 
@@ -35,7 +35,7 @@ Each solver sets up `S0d2_1x_OD23_2L_tiny_TX3top_Cut` its own way, from the same
 <tr><td align="center">FastHenry</td><td align="center">Palace</td></tr>
 </table>
 
-## 44.3 E01 And E02: Against The Formula
+## 29.3 E01 And E02: Against The Formula
 
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Solvers-Comparison/E01_E02/solvers_6_proof_boards.webp" width="760" alt="E01 and E02: each solver's value against the reference">
 
@@ -56,7 +56,7 @@ The percentages are against the references the branches share: Neumann's double 
 - **Elmer is 2.4 % low at its default mesh** and within 0.3 % once the air is graded finely: the FEM solvers' error is in the air mesh.
 - **Palace is above the open arcs once its air is graded as on the coil boards**: E01 +0.48 % and E02 +1.17 %, against −2.5 % and −2.2 % on its default mesh. Its lumped port is a sheet across each gap that carries the TX's current across it and takes the RX's EMF across it, so its loops are closed, and its L and M should end above the open arcs and near the closed rings (56.622 and 24.400 nH). Its graded E02 is solved at 100 kHz: at 10 kHz GMRES does not converge on that mesh within 15 GB, and on the default mesh the two frequencies agree to 0.002 %.
 
-## 44.4 S0d2_1x_OD23_2L_tiny_TX3top_Cut: The Signal Over The Air Gap
+## 29.4 S0d2_1x_OD23_2L_tiny_TX3top_Cut: The Signal Over The Air Gap
 
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Solvers-Comparison/S0d2_1x_OD23_2L_tiny_TX3top_Cut/solvers_7_air_gap.webp" width="760" alt="SIN's amplitude, L TX and the angle error against the air gap, one line per solver">
 
@@ -78,15 +78,15 @@ All four agree on the shape: the signal falls from about 9.4 to 9.8 nH at 0.1 mm
 - **PyPEEC** (PEEC): 2.2 % under FastHenry's on average (−2.8 to −1.4 % over the five gaps).
 - **Palace** (FEM): 1.4 % under FastHenry's on average (−1.7 to −0.6 % over the five gaps).
 
-The two FEM solvers read low because a coarse air mesh stores too little magnetic energy; PyPEEC reads low because its voxels turn every arc into a staircase (see [Why They Differ](#448-why-they-differ)). There is no hand formula for the amplitude: it depends on the eddy currents in the rotor's copper, which only a field solve gives.
+The two FEM solvers read low because a coarse air mesh stores too little magnetic energy; PyPEEC reads low because its voxels turn every arc into a staircase (see [Why They Differ](#298-why-they-differ)). There is no hand formula for the amplitude: it depends on the eddy currents in the rotor's copper, which only a field solve gives.
 
 <img src="https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Solvers-Comparison/S0d2_1x_OD23_2L_tiny_TX3top_Cut/solvers_8_curves_1mm.webp" width="760" alt="SIN and COS against the rotor angle at 1 mm, one line per solver">
 
 *SIN and COS against the rotor angle at 1 mm. Where a receiver's plus terminal sits on the other side in one branch, its curve is turned back to match FastHenry's; the amplitude and the angle error are the same either way.*
 
-## 44.5 S0d2_1x_OD23_2L_tiny_TX3top_Cut: The TX Coil Against The Hand Values
+## 29.5 S0d2_1x_OD23_2L_tiny_TX3top_Cut: The TX Coil Against The Hand Values
 
-The TX coil's inductance with the rotor away has a hand value: Neumann's integral over its copper ([44.9](#449-the-hand-values)). At DC it is 295.6 nH, the most L TX can be at any frequency and air gap; with all the current at the copper's surface it is about 289.2 nH. At 3.5 MHz, with the rotor away, L TX lies between the two. Its resistance can be no less than the DC resistance, 379.4 mΩ.
+The TX coil's inductance with the rotor away has a hand value: Neumann's integral over its copper ([29.9](#299-the-hand-values)). At DC it is 295.6 nH, the most L TX can be at any frequency and air gap; with all the current at the copper's surface it is about 289.2 nH. At 3.5 MHz, with the rotor away, L TX lies between the two. Its resistance can be no less than the DC resistance, 379.4 mΩ.
 
 | | L TX, rotor away (nH) | Against the hand values | L TX at 1 mm (nH) | R TX, rotor away (mΩ) | Over the DC resistance |
 |---|---|---|---|---|---|
@@ -101,7 +101,7 @@ The TX coil's inductance with the rotor away has a hand value: Neumann's integra
 - **Palace and Elmer are under the high-frequency limit**, which no correct answer can be: their air meshes store too little energy. Palace's mesh study on another board shows L TX rising towards FastHenry's as the air is refined.
 - **Every solver's R TX is above the DC resistance**, as it has to be; at 3.5 MHz it depends on how finely each resolves the current inside the 35 µm copper, and is the least settled number here.
 
-## 44.6 S0d2_1x_OD23_2L_tiny_TX3top_Cut: The Angle Error
+## 29.6 S0d2_1x_OD23_2L_tiny_TX3top_Cut: The Angle Error
 
 The angle error is how far the angle read from SIN and COS is from the rotor's true angle, in electrical degrees (two electrical periods per turn here, so 1° electrical is 0.5° of the shaft). An ideal sensor's is zero.
 
@@ -115,7 +115,7 @@ The angle error is how far the angle read from SIN and COS is from the rotor's t
 
 The four agree within 0.08° rms at every gap: the angle error is a property of the board, which every solver sees alike, even where their amplitudes differ by a few percent. It is largest at 0.1 mm, where the rotor is close enough for the coupling's harmonics to show.
 
-## 44.7 Time And Memory
+## 29.7 Time And Memory
 
 Each branch records the wall time and the peak memory of every solve, on machines of the same size (4 cores, 15 GB), each with its own process layout; read these as rough.
 
@@ -129,15 +129,15 @@ Each branch records the wall time and the peak memory of every solve, on machine
 
 The PEEC solvers need far less memory, since they mesh no air; Elmer's direct solve (MUMPS) needs the most. Palace solved this board's five air gaps on five machines at once.
 
-## 44.8 Why They Differ
+## 29.8 Why They Differ
 
-**FEM against PEEC.** A FEM solver meshes the air and closes it at an outer boundary. On a coarse air mesh it stores too little magnetic energy, so L and M come out low and rise as the mesh is refined; the boundary lowers them a little more. With the rotor away, Palace's L TX is 4.6 % under FastHenry's and Elmer's 6.9 %, both under the high-frequency limit ([44.5](#445-s0d2_1x_od23_2l_tiny_tx3top_cut-the-tx-coil-against-the-hand-values)). Palace grades its air four times as finely as Elmer (a grade of 0.125 against 0.5) and stacks its wedge layers half as thick, and it lands closer. E01 shows where the error lies: Elmer is −2.4 % on its default mesh and +0.25 % once the air is graded finely, Palace −2.5 % and +0.48 %.
+**FEM against PEEC.** A FEM solver meshes the air and closes it at an outer boundary. On a coarse air mesh it stores too little magnetic energy, so L and M come out low and rise as the mesh is refined; the boundary lowers them a little more. With the rotor away, Palace's L TX is 4.6 % under FastHenry's and Elmer's 6.9 %, both under the high-frequency limit ([29.5](#295-s0d2_1x_od23_2l_tiny_tx3top_cut-the-tx-coil-against-the-hand-values)). Palace grades its air four times as finely as Elmer (a grade of 0.125 against 0.5) and stacks its wedge layers half as thick, and it lands closer. E01 shows where the error lies: Elmer is −2.4 % on its default mesh and +0.25 % once the air is graded finely, Palace −2.5 % and +0.48 %.
 
 **PyPEEC against FastHenry.** Both model only the copper, so the difference is how they cut it up. PyPEEC draws the tracks onto a grid of 50 µm voxels, which turns every arc into a staircase; FastHenry follows each track's centre line with straight filaments, three across the width and one through the thickness. On this board PyPEEC's signal is 2.2 % under FastHenry's and its L TX 0.6 % over; on E01 at 10 kHz PyPEEC is 0.9 % high and FastHenry 0.02 % low.
 
 **R TX is the least settled number.** At 3.5 MHz the skin depth is the copper's own thickness, so R depends on how finely a solver resolves the current inside each track: FastHenry has one filament through the thickness, PyPEEC one voxel layer, the FEM meshes two element layers. With the rotor away FastHenry's R TX is the lowest, 413 mΩ; Elmer's 6 % higher, Palace's 8 % higher, PyPEEC's 15 % higher. R does not enter M or the angle error.
 
-## 44.9 The Hand Values
+## 29.9 The Hand Values
 
 Worked out from the TX copper in the board's `Stator.kicad_pcb` and KESE's stack-up by `scripts/theory.py` on the `Solvers_Comparison` branch.
 
@@ -165,7 +165,7 @@ R = \frac{\ell}{\sigma w t} = \frac{154.0\ \mathrm{mm}}{58\ \mathrm{MS/m} \times
 
 **The angle error's 0** is the design's target: the receivers are drawn so that SIN and COS follow the sine and cosine of the angle exactly. **The amplitudes** have no hand value.
 
-## 44.10 Running It Again
+## 29.10 Running It Again
 
 On the [`Solvers_Comparison`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Solvers_Comparison) branch:
 

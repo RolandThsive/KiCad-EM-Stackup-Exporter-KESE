@@ -1,4 +1,4 @@
-# 31. PyPEEC Test Boards And Results
+# 26.2 PyPEEC Test Boards And Results
 
 Three boards: the proof boards E01 and E02 in `Examples/`, whose answers are known without any solver,
 and the inductive encoder board S0d2_1x_OD23_2L_tiny_TX3top_Cut in `Examples/Inductive Coils/`, all on
@@ -7,7 +7,7 @@ versions, the grid, the time, the memory and PyPEEC's own checks of every solve.
 more coil boards in the same way, listed in
 [`Examples/Inductive Coils/README.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/PyPEEC_Integration/Examples/Inductive%20Coils/README.md).
 
-## 31.1 E01 Circular Loop
+## 26.2.1 E01 Circular Loop
 
 One circular trace on F.Cu, 10 mm in radius to its centre line, 0.5 mm wide and 35 µm thick, opened by
 a 0.2 mm gap where the bridge puts its two terminals, on a 30 mm square board; PyPEEC drives 1 A
@@ -39,7 +39,7 @@ from the stored energy and the losses agree to the last digit at every size, so 
 read-back measure what the field holds. At 3.5 MHz R rises by 28 % as the current crowds to the trace's
 edges, and every solve took one GMRES iteration and passed PyPEEC's own checks.
 
-## 31.2 E02 Coaxial Loops
+## 26.2.2 E02 Coaxial Loops
 
 E01's loop twice on the same 30 mm board, TX on F.Cu and RX on B.Cu directly under it, 1.565 mm apart;
 TX carries 1 A and RX is open (0 A), so the voltage across RX's gap gives the mutual inductance M.
@@ -66,7 +66,7 @@ RX leaves the TX's L and R as E01's to 0.01 % at 10 kHz, as a loop with no curre
 3.5 MHz the RX's eddy currents, circulating across its trace, add 0.8 % to the TX's R and show as a real
 part of the mutual impedance, 3.2 mΩ at 50 µm: the proximity effect.
 
-## 31.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
+## 26.2.3 S0d2_1x_OD23_2L_tiny_TX3top_Cut
 
 An inductive angle encoder from the
 [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator),
@@ -104,4 +104,4 @@ of the drop. Every solve, with its M, L, R, iterations, residual, memory and tim
 
 | Previous | Next |
 |:---|---:|
-| [PyPEEC Simulating Your Own Board](PyPEEC-Simulating-Your-Own-Board.md) | [PyPEEC Accuracy](PyPEEC-Accuracy.md) |
+| [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) | [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md) |

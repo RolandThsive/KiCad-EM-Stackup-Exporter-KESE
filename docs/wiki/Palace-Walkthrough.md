@@ -1,7 +1,7 @@
 > [!CAUTION]
 > The bridge lives on the [`Palace_Integration`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/tree/Palace_Integration) branch.
 
-# 39. Palace Walkthrough
+# 24.4 Palace Walkthrough
 
 [Palace](https://github.com/awslabs/palace) is an open-source finite element solver for electromagnetics from AWS
 Labs, built on [MFEM](https://mfem.org) and [hypre](https://github.com/hypre-space/hypre) and released under the
@@ -10,13 +10,13 @@ geometry, the bridge meshes it, writes Palace's input, runs Palace and reads the
 by the bridge.
 
 > [!NOTE]
-> This category describes work in progress. The coil board `S0d2_1x_OD23_2L_tiny_TX3top_Cut` is solved at every air
+> The Palace pages describe work in progress. The coil board `S0d2_1x_OD23_2L_tiny_TX3top_Cut` is solved at every air
 > gap (81 solves, every one converged and passing its checks; see
 > [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md)), and the two proof boards E01 and E02 are solved on a
 > mesh ladder and with the coil board's air grading: E01's L lands 0.48 % above the open-arc formula and E02's M
 > 1.17 % above it, both under the closed rings, as they should.
 
-## 39.1 What Palace Is Used For Here
+## 24.4.1 What Palace Is Used For Here
 
 Palace solves Maxwell's equations in full, in the frequency domain (its *driven* solve), for the electric field, with
 Nédélec edge elements: the copper is a conducting region, the air round it is meshed out to a boundary, and each coil
@@ -36,7 +36,7 @@ fields are magneto-quasi-static, and the full-wave solve gives the same answer a
 The bridge reads no capacitance or self-resonance from Palace at present: each solve is one frequency, and the examples
 read L, R and M only.
 
-## 39.2 How It Fits Together
+## 24.4.2 How It Fits Together
 
 ```mermaid
 flowchart TB
@@ -56,13 +56,13 @@ flowchart TB
     S2 -->|bridge/palace_case.py| S3
 ```
 
-Each step is described from [39.11](#3911-export-the-board-with-kese) on.
+Each step is described from [24.4.11](#24411-export-the-board-with-kese) on.
 
-## 39.3 The Pages Of This Category
+## 24.4.3 The Palace Pages
 
 | Page | What it covers |
 |---|---|
-| Palace Walkthrough (this page) | What Palace does here, installing it ([39.5](#395-the-committed-build) on), and every step from the board file to the numbers ([39.11](#3911-export-the-board-with-kese) on) |
+| Palace Walkthrough (this page) | What Palace does here, installing it ([24.4.5](#2445-the-committed-build) on), and every step from the board file to the numbers ([24.4.11](#24411-export-the-board-with-kese) on) |
 | [Palace Simulating Your Own Board](Palace-Simulating-Your-Own-Board.md) | Every setting of the examples' `simulation.py`, and how to set up a new coil board |
 | [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md) | The boards the bridge is proved on, and what came out on each |
 | [Palace Accuracy](Palace-Accuracy.md) | Where the errors come from and how big they are |
@@ -70,7 +70,7 @@ Each step is described from [39.11](#3911-export-the-board-with-kese) on.
 
 How Palace compares with the project's other solvers is on [Solvers Comparison](Solvers-Comparison.md).
 
-## 39.4 Where The Code Is
+## 24.4.4 Where The Code Is
 
 | Folder on `Palace_Integration` | What it holds |
 |---|---|
@@ -81,7 +81,7 @@ How Palace compares with the project's other solvers is on [Solvers Comparison](
 | `Examples/kicad_writer.py`, `Examples/references.py` | Shared by the proof boards: a small KiCad board writer, and the textbook values they are checked against |
 | `3D_Geometry/` | Empty on purpose: KESE's `Generator/` is copied here from `main`, or `KESE_PATH` points at it, only to export a board whose export is not committed |
 
-## 39.5 The Committed Build
+## 24.4.5 The Committed Build
 
 The bridge needs three things: Palace, a Python environment with the bridge's packages, and, only to export a board
 whose export is not committed, a copy of KESE. Unlike the other solvers' branches, `Palace_Integration` carries Palace
@@ -90,7 +90,7 @@ runs without building anything, and every machine solves with the same program.
 
 | Item | Value |
 |---|---|
-| Program | Palace 0.19.0, AWS Labs' release (tag `v0.19.0`, commit `ca9a6a2`); it prints `v0.19.0-dirty` because a patch is applied to the release's source (see [39.8](#398-why-it-is-built-without-parmetis)) |
+| Program | Palace 0.19.0, AWS Labs' release (tag `v0.19.0`, commit `ca9a6a2`); it prints `v0.19.0-dirty` because a patch is applied to the release's source (see [24.4.8](#2448-why-it-is-built-without-parmetis)) |
 | Build | Palace's own CMake superbuild, which builds MFEM 4.10, hypre 3.2.0, libCEED 1.0.1, METIS 5.1.0, ARPACK-NG, GSLIB and the rest at the versions Palace 0.19.0 pins; GCC 13.3 and Open MPI 4.1.6 on Ubuntu 24.04, release build, double precision, no OpenMP and no GPU |
 | Solvers in it | hypre's AMS (the auxiliary-space Maxwell preconditioner) under GMRES. No sparse direct solver |
 | Files | `install/bin/palace` (the launcher script, which starts the program under `mpirun`), `install/bin/palace-x86_64.bin` (the program, 36.5 MB, statically linked but for the system libraries below) and `install/lib/libceed.so` |
@@ -106,7 +106,7 @@ Solver_Palace/install/bin/palace --version
 The bridge finds Palace by itself: `$PALACE` if it is set, else `Solver_Palace/install/bin/palace`, else `palace` on
 the `PATH` (`palace_exe` in `bridge/palace_case.py`).
 
-## 39.6 Linux (Ubuntu 24.04)
+## 24.4.6 Linux (Ubuntu 24.04)
 
 One script sets up a fresh machine, from the branch's root:
 
@@ -131,7 +131,7 @@ again.
 `Generator/` into `3D_Geometry/`, or set `KESE_PATH` to `run_KESE.py` or its folder. KESE's own packages
 (`Generator/requirements.txt` on `main`) go into the same `.venv`.
 
-## 39.7 Building Palace From Source
+## 24.4.7 Building Palace From Source
 
 About an hour on four cores and 3 GB of disk while it builds:
 
@@ -154,7 +154,7 @@ folder is.
 
 The script refuses to install a program in which any ParMETIS symbol is found.
 
-## 39.8 Why It Is Built Without ParMETIS
+## 24.4.8 Why It Is Built Without ParMETIS
 
 Palace's release build links ParMETIS for the orderings of its direct solvers. ParMETIS is not open source: its
 licence limits use to non-profit research and education and forbids redistribution without the University of
@@ -169,12 +169,12 @@ makes it optional:
 MFEM still partitions the mesh between the MPI ranks with METIS. The price is that the build has no direct solver,
 so every solve is checked instead ([Palace Accuracy](Palace-Accuracy.md)).
 
-## 39.9 Windows
+## 24.4.9 Windows
 
 The committed program and the build script are for 64-bit Linux, and every solve on the branch ran on Linux.
 Windows has not been tried.
 
-## 39.10 What The Test Machine Had
+## 24.4.10 What The Test Machine Had
 
 | Item | Version |
 |---|---|
@@ -188,7 +188,7 @@ Windows has not been tried.
 Every results file on the branch records the versions it ran with, so each number on
 [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md) names the software that made it.
 
-## 39.11 Export The Board With KESE
+## 24.4.11 Export The Board With KESE
 
 What happens between `python simulation.py` and the numbers in the results file, step by step. Every step is one
 function of the bridge on the `Palace_Integration` branch; the file is named with each. The bridge is general: nothing
@@ -215,7 +215,7 @@ the export in one of two ways, and either way an unchanged board is not exported
 
 Because every example's `3D_Geometry/` is committed, the examples run without KESE installed.
 
-## 39.12 Place The Parts
+## 24.4.12 Place The Parts
 
 `geometry.load_parts` turns each solid into a part in model coordinates: x and y as KESE's (y up, so
 y_model = −y_KiCad), z shifted so that the top face of the top copper is z = 0. A part's body is its net for copper,
@@ -223,7 +223,7 @@ y_model = −y_KiCad), z shifted so that the top face of the top copper is z = 0
 down without mirroring its pattern, lifted by an air gap and turned about an axis the caller gives: that is how a rotor
 is placed over a stator, at KiCad's point (100, 100).
 
-## 39.13 Build The 2.5D Mesh
+## 24.4.13 Build The 2.5D Mesh
 
 `bridge/mesh25d.py` builds a **2.5D mesh**, the shape a printed board has:
 
@@ -238,7 +238,7 @@ No 3D Booleans: the wedges follow the layers exactly, so 35 µm copper on a 0.8 
 nodes. `write_gmsh` writes the mesh in Gmsh's format 2.2, in millimetres, each body a physical volume and each boundary
 a physical surface.
 
-## 39.14 Open Each Coil At Its Port
+## 24.4.14 Open Each Coil At Its Port
 
 A lumped port in Palace must be a rectangle with its two ends on conductors, its direction along one of its sides.
 `bridge/ports.py` and `mesh25d.vertical_faces` build it from a straight line drawn into the triangle mesh: the port is
@@ -256,7 +256,7 @@ open conductor.
 
 ![How S0d2_1x_OD23_2L_tiny_TX3top_Cut is set up in Palace, drawn by rig_picture.py from the geometry the mesh is built from. Left, seen from above: the TX's three turns in dark grey on F.Cu round SIN in blue and COS in orange, the rotor's two copper sectors in grey 1 mm above, the SIN and COS ports ringed at their 0.2 mm cuts across a top trace and the TX port ringed at its two stacked ends at x = 111 mm. Top right, a section through the stack with heights stretched: the rotor copper 1 mm over the stator's top copper, FR-4 and mask drawn as air. Bottom right, the SIN port as a hatched sheet across the cut, through the 35 µm copper, along the trace, and the TX port as a hatched sheet standing between its two ends, direction +z, driven through 50 Ω at 3.5 MHz](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Palace-Workflow/S0d2_1x_OD23_2L_tiny_TX3top_Cut/S0d2_1x_OD23_2L_tiny_TX3top_Cut_palace_setup.webp)
 
-## 39.15 Write Palace's Input
+## 24.4.15 Write Palace's Input
 
 `bridge/palace_case.py` (`config`) writes one `config.json` per solve:
 
@@ -271,7 +271,7 @@ open conductor.
 The domain is a cylinder: 60 mm in radius and half height round E01 and E02, and three board radii (35.1 mm) round
 `S0d2_1x_OD23_2L_tiny_TX3top_Cut`, reaching as far above the rotor and below the stator.
 
-## 39.16 Solve And Read Back
+## 24.4.16 Solve And Read Back
 
 `palace_case.run` runs `palace -np N config.json` on N MPI ranks, writing `palace.log` as it goes, and reads back
 the CSV files Palace writes:
@@ -292,4 +292,4 @@ a `.csv`, a chart and `SINCOS_Results.md`).
 
 | Previous | Next |
 |:---|---:|
-| [FastHenry Troubleshooting](FastHenry-Troubleshooting.md) | [Palace Simulating Your Own Board](Palace-Simulating-Your-Own-Board.md) |
+| [FastHenry Walkthrough](FastHenry-Walkthrough.md) | [Simulating Your Own Board](Simulating-Your-Own-Board.md) |

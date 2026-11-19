@@ -39,39 +39,35 @@ All pages of this wiki, in reading order.
 - [KiCad And Solver Compatibility](Compatibility.md)
 - [openEMS Workflow](OpenEMS-Workflow.md)
 
-## 2.6 Elmer FEM Implementation
+## 2.6 FEM Solvers' Integration
 
-- [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md)
-- [Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md)
-- [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md)
-- [Elmer FEM Accuracy](Elmer-FEM-Accuracy.md)
-- [Elmer FEM Troubleshooting](Elmer-FEM-Troubleshooting.md)
+- [Walkthrough](Walkthrough.md)
+  - [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md)
+  - [PyPEEC Walkthrough](PyPEEC-Walkthrough.md)
+  - [FastHenry Walkthrough](FastHenry-Walkthrough.md)
+  - [Palace Walkthrough](Palace-Walkthrough.md)
+- [Simulating Your Own Board](Simulating-Your-Own-Board.md)
+  - [Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md)
+  - [PyPEEC Simulating Your Own Board](PyPEEC-Simulating-Your-Own-Board.md)
+  - [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md)
+  - [Palace Simulating Your Own Board](Palace-Simulating-Your-Own-Board.md)
+- [Test Boards And Results](Test-Boards-And-Results.md)
+  - [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md)
+  - [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md)
+  - [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md)
+  - [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md)
+- [Accuracy](Accuracy.md)
+  - [Elmer FEM Accuracy](Elmer-FEM-Accuracy.md)
+  - [PyPEEC Accuracy](PyPEEC-Accuracy.md)
+  - [FastHenry Accuracy](FastHenry-Accuracy.md)
+  - [Palace Accuracy](Palace-Accuracy.md)
+- [Troubleshooting](Troubleshooting.md)
+  - [Elmer FEM Troubleshooting](Elmer-FEM-Troubleshooting.md)
+  - [PyPEEC Troubleshooting](PyPEEC-Troubleshooting.md)
+  - [FastHenry Troubleshooting](FastHenry-Troubleshooting.md)
+  - [Palace Troubleshooting](Palace-Troubleshooting.md)
 
-## 2.7 PyPEEC Implementation
-
-- [PyPEEC Walkthrough](PyPEEC-Walkthrough.md)
-- [PyPEEC Simulating Your Own Board](PyPEEC-Simulating-Your-Own-Board.md)
-- [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md)
-- [PyPEEC Accuracy](PyPEEC-Accuracy.md)
-- [PyPEEC Troubleshooting](PyPEEC-Troubleshooting.md)
-
-## 2.8 FastHenry Implementation
-
-- [FastHenry Walkthrough](FastHenry-Walkthrough.md)
-- [FastHenry Simulating Your Own Board](FastHenry-Simulating-Your-Own-Board.md)
-- [FastHenry Test Boards And Results](FastHenry-Test-Boards-And-Results.md)
-- [FastHenry Accuracy](FastHenry-Accuracy.md)
-- [FastHenry Troubleshooting](FastHenry-Troubleshooting.md)
-
-## 2.9 Palace Implementation
-
-- [Palace Walkthrough](Palace-Walkthrough.md)
-- [Palace Simulating Your Own Board](Palace-Simulating-Your-Own-Board.md)
-- [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md)
-- [Palace Accuracy](Palace-Accuracy.md)
-- [Palace Troubleshooting](Palace-Troubleshooting.md)
-
-## 2.10 Research And Community
+## 2.7 Research And Community
 
 - [Solvers Comparison](Solvers-Comparison.md)
 - [Glossary](Glossary.md)
