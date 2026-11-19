@@ -1,16 +1,16 @@
-# 64. Palace Simulating Your Own Board
+# 40. Palace Simulating Your Own Board
 
 Every example on the `Palace_Integration` branch is one folder with its board and a `simulation.py` whose settings
 are all in one dictionary, `SETTINGS`, at the top of the file. A coil board from the Sinusoidal Coil Generator is set
 up by one command, and its scripts read every board fact from a `test_spec.json`. This page lists every setting.
 
-## 64.1 Start From An Example
+## 40.1 Start From An Example
 
 | Your board has | Start from |
 |---|---|
 | One coil, opened by a gap between two trace ends | `Examples/E01_circular_loop/` |
 | Two coils, both driven in turn (the whole impedance matrix, M both ways) | `Examples/E02_coaxial_loops/` |
-| A generator coil set: a stator with TX, SIN and COS and a rotor at several angles and air gaps | `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/`, or a new folder made by `new_coil.py` (64.5) |
+| A generator coil set: a stator with TX, SIN and COS and a rotor at several angles and air gaps | `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/`, or a new folder made by `new_coil.py` (40.5) |
 
 ```bash
 cp -r Examples/E01_circular_loop Examples/MY_BOARD
@@ -21,10 +21,10 @@ cp ~/my_board.kicad_pcb .                     # and set SETTINGS['board'] to its
 ```
 
 The first run writes KESE's export into `3D_Geometry/` (KESE is needed for that run; see
-[Palace Installation](Palace-Installation.md)); later runs reuse it while the board file is unchanged. The runs' working
+[Palace Walkthrough](Palace-Walkthrough.md#396-linux-ubuntu-2404)); later runs reuse it while the board file is unchanged. The runs' working
 files (the mesh, `config.json`, Palace's log and output) go under `case/`, which git ignores.
 
-## 64.2 The Proof Boards' Settings
+## 40.2 The Proof Boards' Settings
 
 | Setting | E01 | What it is |
 |---|---|---|
@@ -39,7 +39,7 @@ files (the mesh, `config.json`, Palace's log and output) go under `case/`, which
 | `freqs_hz` | `[1e4, 3.5e6]` | One solve per frequency: uniform current (10 kHz, skin depth 0.66 mm) and the coil boards' frequency |
 | `order` | `1` | Nédélec element order |
 | `levels` | `[0.25, 0.5, 0.75, 1.0]` | The mesh ladder: each level divides `h_edge`, `h_in` and `dz_copper` by itself |
-| `mesh` | `h_edge=0.09, h_in=0.18, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4, tet_max=8.0, tet_grade=0.7` | The mesh (64.4) |
+| `mesh` | `h_edge=0.09, h_in=0.18, h_max=6.0, grade=0.5, dz_copper=0.018, dz_max=0.4, tet_max=8.0, tet_grade=0.7` | The mesh (40.4) |
 | `ranks` | `4` | MPI ranks |
 | `solvers['ams']` | `Type='AMS', KSPType='GMRES', Tol=1e-10, MaxIts=3000, MaxSize=300, AMSSingularOperator=True` | The linear solver. `AMSSingularOperator` is needed at 10 kHz ([Palace Troubleshooting](Palace-Troubleshooting.md)) |
 
@@ -48,7 +48,7 @@ E01's command line: `--levels`, `--freqs`, `--ranks`, `--solver`, `--mesh-only` 
 and half height), `--results FILE` and `--out DIR`. E02 has the same but `--domain-mm`, and `--restart N`
 (GMRES restarts every N iterations instead of 300, with fewer vectors and less memory).
 
-## 64.3 The Coil Board's Settings
+## 40.3 The Coil Board's Settings
 
 The coil board's `SETTINGS` take every board fact from `test_spec.json` beside the script; for
 `S0d2_1x_OD23_2L_tiny_TX3top_Cut`:
@@ -84,7 +84,7 @@ What `simulation.py` adds itself:
 `python angle_setup.py` draws the rotor over the stator at every angle of the sweep, as above, to check the
 placement and the ports before solving.
 
-## 64.4 The Mesh
+## 40.4 The Mesh
 
 These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 
@@ -103,7 +103,7 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 | `tet_max` | `8.0` | Largest tetrahedron, mm |
 | `tet_grade` | `0.7` | How fast the tetrahedra grow with height, mm per mm |
 
-## 64.5 A New Coil Board
+## 40.5 A New Coil Board
 
 Any single coil set from the generator's Single Coil Set Generator is set up the same way:
 
@@ -119,7 +119,8 @@ Any single coil set from the generator's Single Coil Set Generator is set up the
    builds the mesh at one angle and prints its size and the memory a solve needs. `--angles N` sets the angles over
    one rotor period (default 8), `--level` the mesh level, `--no-estimate` skips the mesh, `--force` writes into a
    folder that exists.
-3. **Check it**: the memory ([Palace Hardware](Palace-Hardware.md)) and the terminals in the new README against the
+3. **Check it**: the memory (a solve needs about 33 kB per mesh node with the TX driven alone and 44 kB where the
+   three coils are driven in turn, on 2 MPI ranks or 4 alike) and the terminals in the new README against the
    picture. `new_coil.py` opens the TX at its stacked ends and each RX at a layer-change via; to open them by a cut, as
    `S0d2_1x_OD23_2L_tiny_TX3top_Cut` is, set `"rx_port": "cut"` and give each receiver a `cut` in `test_spec.json`.
 4. **Run it**: `python simulation.py` in `Palace Simulation/`.
@@ -127,7 +128,7 @@ Any single coil set from the generator's Single Coil Set Generator is set up the
 
 Single coil sets only: a `DualCoil_` board has two sets.
 
-## 64.6 The Coil Board's Command Line
+## 40.6 The Coil Board's Command Line
 
 | Option | What it does |
 |---|---|
@@ -152,4 +153,4 @@ the rotor at each angle.
 
 | Previous | Next |
 |:---|---:|
-| [Palace Workflow](Palace-Workflow.md) | [Palace Test Boards](Palace-Test-Boards.md) |
+| [Palace Walkthrough](Palace-Walkthrough.md) | [Palace Test Boards And Results](Palace-Test-Boards-And-Results.md) |
