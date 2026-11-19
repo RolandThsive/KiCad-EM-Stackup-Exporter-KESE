@@ -175,4 +175,4 @@ charts, the angle error, the set-up picture and the rotor at each angle.
 
 | Previous | Next |
 |:---|---:|
-| [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md#248-export-the-board-with-kese) | [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) |
+| [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md) | [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) |

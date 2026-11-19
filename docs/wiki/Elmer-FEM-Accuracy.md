@@ -122,4 +122,4 @@ next check these numbers need ([Future Upgrades And Planning](Future-Upgrades-An
 
 | Previous | Next |
 |:---|---:|
-| [Elmer FEM Test Boards And Results And Results](Elmer-FEM-Test-Boards-And-Results.md) | [Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md#257-before-a-large-board) |
+| [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) | [Elmer FEM Troubleshooting](Elmer-FEM-Troubleshooting.md) |

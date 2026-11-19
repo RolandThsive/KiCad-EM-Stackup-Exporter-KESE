@@ -176,7 +176,7 @@ cd Examples/E01_circular_loop
 
 The committed results give L 52.93 nH and R 80.19 mOhm for this solve (3 minutes on the 4-core test
 machine), the level 0.75 values of
-[Elmer FEM Test Boards And Results And Results](Elmer-FEM-Test-Boards-And-Results.md#261-e01-circular-loop); its own
+[Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#261-e01-circular-loop); its own
 `--results` file keeps the committed `results.json` as it is. Those results were made with the
 bridge of 15 and 16 November ([Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#261-e01-circular-loop)), so today's bridge may differ in the last digits.
 
@@ -214,7 +214,7 @@ install it into `Solver_Elmer/install`.
 | numpy, scipy, shapely, trimesh | 2.5.3, 1.18.1, 2.2.0, 5.2.1 |
 
 Each example writes the versions it ran with into its results files, so every number on
-[Elmer FEM Test Boards And Results And Results](Elmer-FEM-Test-Boards-And-Results.md) names the software that made it.
+[Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) names the software that made it.
 
 ## 24.8 Export The Board With KESE
 
@@ -370,7 +370,7 @@ it, lifts its copper face to the air gap above z = 0, and turns it about the axi
 (100, 100)) by the rotor angle. Every angle gets its own mesh, with the rotor's copper at that angle
 drawn into it, and one solve; a run with the rotor's copper made air gives the TX with the rotor
 away. The receivers' M at each angle is fitted with a sine, and the angle read back as
-atan2(SIN, COS) gives the angle error ([Elmer FEM Test Boards And Results And Results](Elmer-FEM-Test-Boards-And-Results.md#263-s0d2_1x_od23_2l_tiny_tx3top_cut)).
+atan2(SIN, COS) gives the angle error ([Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md#263-s0d2_1x_od23_2l_tiny_tx3top_cut)).
 
 | Previous | Next |
 |:---|---:|
