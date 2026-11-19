@@ -1,4 +1,4 @@
-# 24. Glossary
+# 30. Glossary
 
 The words this wiki uses, grouped by subject, each with the section that explains it in full.
 Terms from KiCad and PCB manufacturing keep their usual meaning; names in `code` are KESE's own
@@ -6,22 +6,24 @@ parameters, roles and files.
 
 | Subject | Terms |
 |---|---|
-| [24.1 Board And Stack-Up](#241-board-and-stack-up) | Core, Dielectric, Djordjevic-Sarkar model, εr (epsilon_r), tanδ (loss tangent), Foil, Laminate, Mid-plane, Plies fused, Plies separate, Ply, Prepreg, Resin fill, Spec frequency, Stack-up, Stack-up line |
-| [24.2 Holes And Vias](#242-holes-and-vias) | Annular ring, Backdrill, Barrel, Blind / buried via, Bore, Capped via, Castellation, Counterbore, Countersink, Covered via, Filled via, IPC-4761, Microvia, NPTH, Plugged via, PTH, Tenting, Through via, Via resin |
-| [24.3 Copper](#243-copper) | Conductivity, Copper grouping, Edge plating, Etch factor, Hammerstad model, Hatched fill, Huray model, Net, Outer plating, Surface roughness, Treated face |
-| [24.4 Solder Mask, Silkscreen And Finish](#244-solder-mask-silkscreen-and-finish) | Conformal mask, Finish, LPI, Mask opening, Mask web, Pull-back, Silkscreen |
-| [24.5 How KESE Builds A Model](#245-how-kese-builds-a-model) | Board frame, Part, Pinch point, Prism, Role, Skin, Slice, Snap grid, Stage, Verifier |
-| [24.6 Output And Files](#246-output-and-files) | GLB, materials.json, OBJ, Preset, report.txt, Run folder, Simulation mode, STEP, STL, Visual mode, Z-fighting |
+| [30.1 Board And Stack-Up](#301-board-and-stack-up) | Core, Dielectric, Djordjevic-Sarkar model, εr (epsilon_r), tanδ (loss tangent), Foil, Laminate, Mid-plane, Plies fused, Plies separate, Ply, Prepreg, Resin fill, Spec frequency, Stack-up, Stack-up line |
+| [30.2 Holes And Vias](#302-holes-and-vias) | Annular ring, Backdrill, Barrel, Blind / buried via, Bore, Capped via, Castellation, Counterbore, Countersink, Covered via, Filled via, IPC-4761, Microvia, NPTH, Plugged via, PTH, Tenting, Through via, Via resin |
+| [30.3 Copper](#303-copper) | Conductivity, Copper grouping, Edge plating, Etch factor, Hammerstad model, Hatched fill, Huray model, Net, Outer plating, Surface roughness, Treated face |
+| [30.4 Solder Mask, Silkscreen And Finish](#304-solder-mask-silkscreen-and-finish) | Conformal mask, Finish, LPI, Mask opening, Mask web, Pull-back, Silkscreen |
+| [30.5 How KESE Builds A Model](#305-how-kese-builds-a-model) | Board frame, Part, Pinch point, Prism, Role, Skin, Slice, Snap grid, Stage, Verifier |
+| [30.6 Output And Files](#306-output-and-files) | GLB, materials.json, OBJ, Preset, report.txt, Run folder, Simulation mode, STEP, STL, Visual mode, Z-fighting |
+| [30.7 Solvers](#307-solvers) | 2.5D mesh, A-V formulation, AMS, DC-free pulse, Edge element, Electrode, εeff (effective permittivity), FDTD, Filament, GMD (geometric mean distance), Lumped port, Magneto-quasi-static, Mesh level, MUR, PML, PEEC (partial element equivalent circuit), PEC, Preflight, Proximity effect, S-parameters, Self resonance, Skin depth, Thirds rule, Voxel, Z0 (characteristic impedance) |
 
-## 24.1 Board And Stack-Up
+<a name="241-board-and-stack-up"></a>
+## 30.1 Board And Stack-Up
 
 The layers a board is made of and the numbers that describe them.
 
 | Term | Meaning | See |
 |---|---|---|
 | **Core** | A dielectric sheet that comes with copper already bonded to it; stiff, fixed thickness. | [8.1.4](Stack-Up-Model.md#814-dielectrics) |
-| **Dielectric** | A non-conducting layer of the laminate: a core or a prepreg, with εr and tanδ. With the plies fused KESE makes one solid for each gap between two copper layers; with the plies separate, one for each ply. | [12.1](Board.md#121-dielectric-solids), [21.2](Material-Properties.md#212-properties-per-role) |
-| **Djordjevic-Sarkar model** | A wideband model of how a laminate's εr and tanδ change with frequency, fitted to one εr and tanδ at one frequency. `materials.json` carries its parameters with `Board.DIELECTRIC_MODEL = "djordjevic_sarkar"` (the default), or when the board file names the model. | [21.4](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency) |
+| **Dielectric** | A non-conducting layer of the laminate: a core or a prepreg, with εr and tanδ. With the plies fused KESE makes one solid for each gap between two copper layers; with the plies separate, one for each ply. | [12.1](Board.md#121-dielectric-solids), [26.2](Material-Properties.md#262-properties-per-role) |
+| **Djordjevic-Sarkar model** | A wideband model of how a laminate's εr and tanδ change with frequency, fitted to one εr and tanδ at one frequency. `materials.json` carries its parameters with `Board.DIELECTRIC_MODEL = "djordjevic_sarkar"` (the default), or when the board file names the model. | [26.4](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency) |
 | **Foil** | The base copper thickness of a layer, before plating (1 oz = 35 µm). | [13.4](Copper-And-Traces.md#134-copper-thickness-and-plating) |
 | **Laminate** | The stack of dielectrics and inner copper between the two outer copper layers. | [8.1.1](Stack-Up-Model.md#811-laminate-and-faces) |
 | **Mid-plane** | The height half-way through the laminate; z = 0 in KESE. | [8.1.1](Stack-Up-Model.md#811-laminate-and-faces) |
@@ -30,13 +32,14 @@ The layers a board is made of and the numbers that describe them.
 | **Ply** | One sheet of prepreg, or one core, in the gap between two copper layers. A gap pressed from two or three sheets has two or three plies; KiCad stores them as the sub-layers of a dielectric. | [8.3](Stack-Up-Model.md#83-the-plies-of-a-gap-fused-or-separate) |
 | **Prepreg** | A resin-impregnated glass sheet that bonds cores together under heat; its resin flows into the gaps between inner traces, which KESE models as resin fill. | [12.2](Board.md#122-resin-between-the-traces-of-the-inner-copper) |
 | **Resin fill** | The prepreg's resin between the traces of an inner copper layer. With the plies fused it is a part of the dielectric solid beside it; with the plies separate it is a solid of its own, `Board_resin <layer>`, with the resin's own εr and tanδ. | [12.2](Board.md#122-resin-between-the-traces-of-the-inner-copper) |
-| **Spec frequency** | The frequency a dielectric's εr and tanδ are given at: `spec_frequency_hz` in `materials.json`, from the board file, else `Board.DEFAULT_SPEC_FREQUENCY_HZ` (1 GHz). | [21.4](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency) |
+| **Spec frequency** | The frequency a dielectric's εr and tanδ are given at: `spec_frequency_hz` in `materials.json`, from the board file, else `Board.DEFAULT_SPEC_FREQUENCY_HZ` (1 GHz). | [26.4](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency) |
 | **Stack-up** | The ordered list of copper and dielectric layers with their thicknesses and materials; KiCad stores it in Board Setup. Without one KESE uses its defaults and says so. | [8.2](Stack-Up-Model.md#82-where-the-numbers-come-from) |
 | **Stack-up line** | One line of `parameters/PCB_elements/Stackup.py`: one layer of the board, or one kind of layer, from the top silkscreen down to the bottom silkscreen. `True` builds it; `False` leaves it out of every file. | [8.4](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy) |
-| **tanδ (loss tangent)** | Dielectric loss of a material: the share of a signal's energy it turns into heat each cycle. | [21.3](Material-Properties.md#213-the-default-numbers) |
-| **εr (epsilon_r)** | Relative permittivity of a dielectric: how much it slows a signal and adds capacitance. From the stack-up, else a default. | [21.3](Material-Properties.md#213-the-default-numbers) |
+| **tanδ (loss tangent)** | Dielectric loss of a material: the share of a signal's energy it turns into heat each cycle. | [26.3](Material-Properties.md#263-the-default-numbers) |
+| **εr (epsilon_r)** | Relative permittivity of a dielectric: how much it slows a signal and adds capacitance. From the stack-up, else a default. | [26.3](Material-Properties.md#263-the-default-numbers) |
 
-## 24.2 Holes And Vias
+<a name="242-holes-and-vias"></a>
+## 30.2 Holes And Vias
 
 Every kind of hole KESE models, including the via options KiCad 10 added.
 
@@ -60,9 +63,10 @@ Every kind of hole KESE models, including the via options KiCad 10 added.
 | **PTH** | Plated through hole. | [13.3](Copper-And-Traces.md#133-vias-and-plated-holes) |
 | **Tenting** | Covering a via with solder mask instead of leaving it open. | [13.3.2](Copper-And-Traces.md#1332-via-tenting) |
 | **Through via** | A via from `F.Cu` to `B.Cu`. | [13.3](Copper-And-Traces.md#133-vias-and-plated-holes) |
-| **Via resin** | The resin inside a plugged or filled via; its own part with the role `via_resin`, carrying `Copper.VIA_RESIN_EPSILON_R` and `Copper.VIA_RESIN_LOSS_TANGENT`. | [21.2](Material-Properties.md#212-properties-per-role) |
+| **Via resin** | The resin inside a plugged or filled via; its own part with the role `via_resin`, carrying `Copper.VIA_RESIN_EPSILON_R` and `Copper.VIA_RESIN_LOSS_TANGENT`. | [26.2](Material-Properties.md#262-properties-per-role) |
 
-## 24.3 Copper
+<a name="243-copper"></a>
+## 30.3 Copper
 
 How traces, zones and plating become copper solids.
 
@@ -72,15 +76,16 @@ How traces, zones and plating become copper solids.
 | **Copper grouping** | How copper is split into parts (`Copper.COPPER_GROUPING`): one solid per net (the default), one per layer with the plating apart, or all in one. | [13.2](Copper-And-Traces.md#132-grouping-and-part-names) |
 | **Edge plating** | Copper on the routed edge of the board. | [13.7](Copper-And-Traces.md#137-edge-plating) |
 | **Etch factor** | How much a trace's side walls lean in because etching undercuts the resist; a trapezoid instead of a rectangle. One setting each for the top, the inner and the bottom copper. | [13.5](Copper-And-Traces.md#135-etch-factor) |
-| **Hammerstad model** | A roughness model for copper loss from one number per face, the RMS height of the roughness; `materials.json` carries it with `Copper.COPPER_ROUGHNESS_MODEL = "hammerstad"`. | [21.6](Material-Properties.md#216-copper-by-layer) |
+| **Hammerstad model** | A roughness model for copper loss from one number per face, the RMS height of the roughness; `materials.json` carries it with `Copper.COPPER_ROUGHNESS_MODEL = "hammerstad"`. | [26.6](Material-Properties.md#266-copper-by-layer) |
 | **Hatched fill** | A shape filled with lines at 45 degrees, or a cross hatch of square holes, instead of solid (KiCad 10). | [13.1.2](Copper-And-Traces.md#1312-hatched-fills) |
-| **Huray model** | A roughness model for copper loss that counts the copper nodules on a face as small spheres: their radius and how much surface they add (`Copper.COPPER_ROUGHNESS_MODEL = "huray"`). | [21.6](Material-Properties.md#216-copper-by-layer) |
+| **Huray model** | A roughness model for copper loss that counts the copper nodules on a face as small spheres: their radius and how much surface they add (`Copper.COPPER_ROUGHNESS_MODEL = "huray"`). | [26.6](Material-Properties.md#266-copper-by-layer) |
 | **Net** | A set of electrically connected copper items; with the default `Copper.COPPER_GROUPING = "net"`, KESE makes one solid per net. | [13.1.1](Copper-And-Traces.md#1311-nets) |
 | **Outer plating** | The copper electroplating adds to the outer layers while it plates the holes (`Copper.TOP_PLATING_ADDED_MM` and `Copper.BOTTOM_PLATING_ADDED_MM`, typically 20 µm on real boards, 0 by default so the geometry matches KiCad). | [13.4](Copper-And-Traces.md#134-copper-thickness-and-plating) |
 | **Surface roughness** | The roughness of the copper's faces, which raises its loss at high frequency; written to `materials.json` for the solver with the model to use, Huray (the default) or Hammerstad (`Copper.COPPER_ROUGHNESS_MODEL`). | [13.8](Copper-And-Traces.md#138-electrical-properties) |
-| **Treated face** | The face of a copper foil that is roughened so the laminate grips it: the wider face of an etched trace, toward the dielectric the foil was bonded to. `materials.json` names it for every layer, `lower` or `upper`, with a roughness of its own. | [21.6](Material-Properties.md#216-copper-by-layer) |
+| **Treated face** | The face of a copper foil that is roughened so the laminate grips it: the wider face of an etched trace, toward the dielectric the foil was bonded to. `materials.json` names it for every layer, `lower` or `upper`, with a roughness of its own. | [26.6](Material-Properties.md#266-copper-by-layer) |
 
-## 24.4 Solder Mask, Silkscreen And Finish
+<a name="244-solder-mask-silkscreen-and-finish"></a>
+## 30.4 Solder Mask, Silkscreen And Finish
 
 The layers on top of the outer copper.
 
@@ -94,7 +99,8 @@ The layers on top of the outer copper.
 | **Pull-back** | The distance the mask and silk stop short of the board edge. | [17.3](Solder-Masks.md#173-edge-pull-back) |
 | **Silkscreen** | The printed ink on top of the mask: KiCad's lines, shapes and text, drawn by KESE with KiCad's own stroke font. | [16.1](Silkscreens.md#161-what-is-drawn), [16.2](Silkscreens.md#162-text-rendering) |
 
-## 24.5 How KESE Builds A Model
+<a name="245-how-kese-builds-a-model"></a>
+## 30.5 How KESE Builds A Model
 
 The words the Working Principle and the checks use.
 
@@ -104,30 +110,54 @@ The words the Working Principle and the checks use.
 | **Part** | One named solid (or skin piece) in the output: `Copper_GND`, `Board_dielectric 1`, `Top Solder Mask`. | [11.3](Project-Output-Organization.md#113-part-names) |
 | **Pinch point** | A place where a shape's outline touches itself at a single point. It cannot be meshed as it is, so KESE opens it by a tiny cut (`Geometry.PINCH_POINT_OPENING_MM`, 0.1 µm) and `report.txt` notes it. | [7.2](Working-Principle.md#72-how-a-part-becomes-a-closed-solid) |
 | **Prism** | A flat 2D region between two heights: the building block of every KESE part. | [7.2](Working-Principle.md#72-how-a-part-becomes-a-closed-solid) |
-| **Role** | The kind of a part: `board`, `copper`, `plating`, `via_resin`, `finish`, `mask`, `mask_over_copper`, `silk`. | [21.2](Material-Properties.md#212-properties-per-role) |
+| **Role** | The kind of a part: `board`, `copper`, `plating`, `via_resin`, `finish`, `mask`, `mask_over_copper`, `silk`. | [26.2](Material-Properties.md#262-properties-per-role) |
 | **Skin** | The visible outer surface of the board; what visual mode writes. | [9.2](Output-Modes.md#92-visual-mode) |
 | **Slice** | The material of one part between two neighbouring heights where its prisms start or end; stage 6 builds a part's surface from its slices. | [7.2](Working-Principle.md#72-how-a-part-becomes-a-closed-solid) |
-| **Snap grid** | The 0.1 µm grid every 2D shape is rounded to, so neighbouring layers share exact vertices (`Geometry.SNAP_GRID_MM`). | [19.8](Parameter-Reference.md#198-geometry-parametersrun_kesegeometrypy) |
+| **Snap grid** | The 0.1 µm grid every 2D shape is rounded to, so neighbouring layers share exact vertices (`Geometry.SNAP_GRID_MM`). | [24.8](Parameter-Reference.md#248-geometry-parametersrun_kesegeometrypy) |
 | **Stage** | One of the nine steps of KESE's pipeline, from reading the file (1) to writing the report (9); each is a folder in `kese/`. | [7](Working-Principle.md) |
-| **Verifier** | KESE's check at the end of a run (`Verifier.VERIFY`, on by default; `--no-verify` leaves it out) that every solid is closed and holds the volume of its prisms, no parts overlap, and the skin is one surface. | [20.3](Checks-Errors-And-Warnings.md#203-the-verifier) |
+| **Verifier** | KESE's check at the end of a run (`Verifier.VERIFY`, on by default; `--no-verify` leaves it out) that every solid is closed and holds the volume of its prisms, no parts overlap, and the skin is one surface. | [25.3](Checks-Errors-And-Warnings.md#253-the-verifier) |
 
-## 24.6 Output And Files
+<a name="246-output-and-files"></a>
+## 30.6 Output And Files
 
 What a run writes and how to pick it.
 
 | Term | Meaning | See |
 |---|---|---|
-| **GLB** | Binary glTF 2.0, the web and real-time 3D format. | [22.2](Compatibility.md#222-output-formats) |
-| **materials.json** | The file beside the outputs that carries what geometry cannot: each part's role, layer, net, heights, εr, tanδ and how they change with frequency, the plies of a gap, conductivity, roughness and colour. | [21.1](Material-Properties.md#211-the-file) |
-| **OBJ** | Wavefront OBJ with its `.mtl`: one object per part, with normals and colours. | [22.2](Compatibility.md#222-output-formats) |
+| **GLB** | Binary glTF 2.0, the web and real-time 3D format. | [27.2](Compatibility.md#272-output-formats) |
+| **materials.json** | The file beside the outputs that carries what geometry cannot: each part's role, layer, net, heights, εr, tanδ and how they change with frequency, the plies of a gap, conductivity, roughness and colour. | [26.1](Material-Properties.md#261-the-file) |
+| **OBJ** | Wavefront OBJ with its `.mtl`: one object per part, with normals and colours. | [27.2](Compatibility.md#272-output-formats) |
 | **Preset** | A named set of parameter overrides applied with `--for` (`freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj`), from `parameters/Run_KESE/Presets.py`. | [10.2](Choosing-An-Export.md#102-the-presets) |
 | **report.txt** | The run's report: what was read and skipped, the warnings, the time of each stage and the Verifier's result. | [11.2.2](Project-Output-Organization.md#1122-reporttxt) |
 | **Run folder** | The new folder each run writes to, `<OUTPUT_DIR>/<board>/<mode>_<FORMATS>/`; no run overwrites another. | [11.2](Project-Output-Organization.md#112-run-folders) |
 | **Simulation mode** | Output as closed solids, for solvers and CAD. | [9.1](Output-Modes.md#91-simulation-mode) |
-| **STEP** | The CAD exchange format (ISO 10303); KESE writes AP214, every part as closed solids, with round outlines as true arcs and cylinders (`Step.STEP_EXACT_ARCS`) and planar faces elsewhere. | [22.2](Compatibility.md#222-output-formats) |
-| **STL** | Binary STL, one file per part: triangles only, no colour or units. | [22.2](Compatibility.md#222-output-formats) |
+| **STEP** | The CAD exchange format (ISO 10303); KESE writes AP214, every part as closed solids, with round outlines as true arcs and cylinders (`Step.STEP_EXACT_ARCS`) and planar faces elsewhere. | [27.2](Compatibility.md#272-output-formats) |
+| **STL** | Binary STL, one file per part: triangles only, no colour or units. | [27.2](Compatibility.md#272-output-formats) |
 | **Visual mode** | Output as the visible skin only, for viewers and renders. | [9.2](Output-Modes.md#92-visual-mode) |
 | **Z-fighting** | Flicker in a 3D viewer when two surfaces lie at almost the same depth; the reason visual mode exists. | [9.2](Output-Modes.md#92-visual-mode) |
+
+## 30.7 Solvers
+
+The words of the solver pages.
+
+| Term | Meaning | See |
+|---|---|---|
+| **2.5D mesh** | The Palace bridge's mesh: the board's plan meshed in triangles, swept through the copper and the air beside it as layers of wedges (prisms), with tetrahedra above and below out to the domain's edge. | [19.4.13](Palace-Walkthrough.md#19413-build-the-25d-mesh) |
+| **A-V formulation** | Elmer's time-harmonic eddy-current formulation: a magnetic vector potential A on the mesh's edges and an electric scalar potential V in the conductors, with no displacement current (`WhitneyAVHarmonicSolver`). | [19.1.1](Elmer-FEM-Walkthrough.md#1911-what-elmer-is-used-for-here) |
+| **AMS** | hypre's auxiliary-space Maxwell solver: the preconditioner of the GMRES iteration Palace solves its system with. Below about 100 kHz it is told the operator is all but singular in the air, or the iteration diverges. | [19.4.15](Palace-Walkthrough.md#19415-write-palaces-input) |
+| **Edge element** | A finite element whose unknowns sit on the mesh's edges (Whitney elements); Elmer's A lives on them. First order: one unknown per edge. Elmer's A and Palace's electric field E live on them (Palace calls them Nédélec elements). | [19.1.1](Elmer-FEM-Walkthrough.md#1911-what-elmer-is-used-for-here) |
+| **Electrode** | A face of a coil's copper where Elmer's circuit fixes the potential; the bridge opens each coil at its port and puts one electrode on each side of the gap. | [19.1.12](Elmer-FEM-Walkthrough.md#19112-open-each-coil-at-its-port) |
+| **FDTD** | Finite differences in the time domain: Maxwell's equations marched in time on a rectilinear grid, openEMS's method. | [28](OpenEMS-Workflow.md) |
+| **Filament** | FastHenry's unit of copper: a straight bar carrying a uniform current along its length. Each track segment is split into filaments across its width and through its thickness, so the current can crowd to the edges. | [19.3.10](FastHenry-Walkthrough.md#19310-build-the-filament-model) |
+| **GMD (geometric mean distance)** | The distance that stands for a conductor's cross-section in an inductance formula: 0.2235 (w + t) for a rectangle carrying uniform current. | [21.1.1](Elmer-FEM-Test-Boards-And-Results.md#2111-e01-circular-loop) |
+| **Lumped port** | Palace's port: a rectangle across the place where a coil is opened, its two ends on the copper, with a resistance across it. | [19.4.14](Palace-Walkthrough.md#19414-open-each-coil-at-its-port) |
+| **Magneto-quasi-static** | Currents and magnetic fields without waves: right when the board is a tiny fraction of a wavelength across, as coils at kHz to a few MHz are. | [19.1.1](Elmer-FEM-Walkthrough.md#1911-what-elmer-is-used-for-here) |
+| **Mesh level** | The Elmer bridge's knob for the copper's mesh: a level divides the sizes at and inside the copper by itself; the air's grading stays. | [20.1.3](Elmer-FEM-Simulating-Your-Own-Board.md#2013-the-domain-and-the-frequencies) |
+| **PEEC (partial element equivalent circuit)** | A method that models only the conductors: each small piece of copper a resistance and a partial inductance to every other piece, with no mesh of the air and no boundary. PyPEEC and FastHenry are PEEC solvers. | [29.1](Solvers-Comparison.md#291-the-four-solvers) |
+| **Proximity effect** | Current pushed around inside a conductor by a neighbour's field; it adds loss even to a conductor that carries no net current. | [21.1.2](Elmer-FEM-Test-Boards-And-Results.md#2112-e02-coaxial-loops) |
+| **Skin depth** | How deep an AC current reaches into a conductor, δ = √(2 / (ωμσ)): 35 µm in copper at 3.5 MHz, 0.66 mm at 10 kHz. | [21.1.1](Elmer-FEM-Test-Boards-And-Results.md#2111-e01-circular-loop) |
+| **Voxel** | One box of a uniform 3D grid; PyPEEC draws every conductor onto such a grid and solves on the voxels the copper fills. | [19.2.11](PyPEEC-Walkthrough.md#19211-draw-the-copper-as-voxels) |
+
 | Previous | Next |
 |:---|---:|
-| [openEMS Workflow](OpenEMS-Workflow.md) | [Future Upgrades And Planning](Future-Upgrades-And-Planning.md) |
+| [Solvers Comparison](Solvers-Comparison.md) | [Future Upgrades And Planning](Future-Upgrades-And-Planning.md) |

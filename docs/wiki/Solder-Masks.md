@@ -191,7 +191,7 @@ the copper a counterbore or countersink knocks out is a hole like any other.
 
 The mask is a dielectric a field solver can count in: a microstrip under mask has a lower
 impedance than a bare one. `materials.json` gives each mask part what a solver needs
-([Material Properties](Material-Properties.md#212-properties-per-role)):
+([Material Properties](Material-Properties.md#262-properties-per-role)):
 
 ```json
 "Top Solder Mask": {

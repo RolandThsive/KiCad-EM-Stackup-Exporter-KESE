@@ -1,31 +1,34 @@
-# 25. Future Upgrades And Planning
+# 31. Future Upgrades And Planning
 
 The project will be upgraded substantially with new features as they are identified along the
 way.
 
 The work is in three groups, in this order: how exact the model is, how fast and how large the
 exports are, and the tools around the generator. Two parts of the first group are built: every
-ply as its own solid ([25.2.1](#2521-every-ply-as-its-own-solid)) and material data that depends
-on frequency ([25.2.3](#2523-material-data-that-depends-on-frequency)). They stay on this page,
+ply as its own solid ([31.2.1](#3121-every-ply-as-its-own-solid)) and material data that depends
+on frequency ([31.2.3](#3123-material-data-that-depends-on-frequency)). They stay on this page,
 struck through. The rest is not built yet. An EM solver of KESE's own is not planned: the geometry
 and the materials have to be shown correct first.
 
-## 25.1 Where The Project Stands
+<a name="251-where-the-project-stands"></a>
+## 31.1 Where The Project Stands
 
 | What is checked | Today | How |
 |---|---|---|
 | Reading the board file | tested | The [Feature Test Collection](Feature-Test-Collection.md), KiCad 4 to 10 ([Compatibility](Compatibility.md)), and the open hardware boards of [Corpus Testing](Corpus-Testing.md) |
 | The solids | tested | The Verifier on every run: closed, wound one way, no two parts overlapping, volumes agreeing ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)) |
 | The EM result a solver gets from the model | **not yet checked** | No model has been compared with a measured board or with a reference solver result |
-| The material numbers | typical values, with their frequency and a model of how they change with it | The stack-up's or the defaults of [Material Properties](Material-Properties.md#213-the-default-numbers); they are not measured values, and the copper roughness is a solver's starting values, not a foil's |
+| The material numbers | typical values, with their frequency and a model of how they change with it | The stack-up's or the defaults of [Material Properties](Material-Properties.md#263-the-default-numbers); they are not measured values, and the copper roughness is a solver's starting values, not a foil's |
 
 So a model from KESE is known to be the geometry the board file describes, as closed solids. It is
-not yet known how close a simulation of it comes to the fabricated board. [25.2](#252-model-accuracy)
+not yet known how close a simulation of it comes to the fabricated board. [31.2](#312-model-accuracy)
 is the work that closes this gap.
 
-## 25.2 Model Accuracy
+<a name="252-model-accuracy"></a>
+## 31.2 Model Accuracy
 
-### ~~25.2.1 Every Ply As Its Own Solid~~
+<a name="2521-every-ply-as-its-own-solid"></a>
+### ~~31.2.1 Every Ply As Its Own Solid~~
 
 **Built in version 3.4.0**, and struck through for that reason.
 
@@ -53,10 +56,12 @@ stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-
   Verifier passes it, and the plies' thicknesses add up to their gap (`tests/test_plies.py`,
   `tests/test_plies_built.py`).~~
 
-### 25.2.2 Comparison With Measured Boards And Reference Solvers
+<a name="2522-comparison-with-measured-boards-and-reference-solvers"></a>
+### 31.2.2 Comparison With Measured Boards And Reference Solvers
 
-- **Today:** not done. The routes into openEMS, and into Elmer and CalculiX through FreeCAD, are
-  also still to be confirmed on each tool ([openEMS Workflow](OpenEMS-Workflow.md)).
+- **Today:** against reference formulas only. The Elmer FEM, PyPEEC, FastHenry and Palace bridges
+  have run the same two proof boards against Neumann's inductance integral, and set their results side
+  by side ([Solvers Comparison](Solvers-Comparison.md)). No measured board yet, and the route into CalculiX through FreeCAD is still to be confirmed.
 - **Planned:** a small set of test structures, designed in KiCad, exported by KESE, simulated, and
   compared with two things: the same structure in an independent reference solver, and the
   fabricated board measured with a vector network analyser (S-parameters) and, for impedance, a
@@ -73,7 +78,8 @@ stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-
   the repository, and each disagreement beyond the uncertainty is either corrected in KESE or
   written down as a known limit.
 
-### ~~25.2.3 Material Data That Depends On Frequency~~
+<a name="2523-material-data-that-depends-on-frequency"></a>
+### ~~31.2.3 Material Data That Depends On Frequency~~
 
 **Built in version 3.4.0**, and struck through for that reason. The last point is still open.
 
@@ -92,11 +98,12 @@ stack-ups ([Stack-Up Model](Stack-Up-Model.md), [Board](Board.md#121-dielectric-
   (`SilkScreen.SILK_EPSILON_R`, `SILK_LOSS_TANGENT`) and for the resin beside inner copper.~~
 - **Still open:** the numbers are typical values or best guesses. The resin's, the ink's and the
   roughness parameters have no maker's data sheet behind them yet, and nothing is measured:
-  the values measured in [25.2.2](#2522-comparison-with-measured-boards-and-reference-solvers)
+  the values measured in [31.2.2](#3122-comparison-with-measured-boards-and-reference-solvers)
   are to be entered here once they exist. One table serves every dielectric of a board; a table
   per material is not built.
 
-## 25.3 Speed And Output Size
+<a name="253-speed-and-output-size"></a>
+## 31.3 Speed And Output Size
 
 The corpus runs give the sizes and times of real boards on a 4-core machine
 ([Corpus Testing](Corpus-Testing.md)). In simulation mode, about:
@@ -134,15 +141,21 @@ stage 6 (assemble) take most of the time, and STEP and OBJ are the slow formats 
 - **Done when:** each change is measured on the same corpus boards, with size, time and peak
   memory before and after on this page, and all boards still pass the Verifier.
 
-## 25.4 Planned Directions
+<a name="254-planned-directions"></a>
+## 31.4 Planned Directions
 
 In no fixed order:
 
 - **A web application.**
 - **A desktop application.**
 - **Maybe a KiCad add-on.**
-- **Integration with openEMS** ([openEMS Workflow](OpenEMS-Workflow.md) describes today's manual
-  route) **or other solvers.** One way: an openEMS model whose overlapping primitives are settled
+- **Integration with openEMS** ([openEMS Workflow](OpenEMS-Workflow.md) describes the manual
+  route) **or other solvers.** Begun: the Elmer FEM, PyPEEC, FastHenry and Palace bridges run KESE
+  as it is and live on their own branches ([Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md),
+  [PyPEEC Walkthrough](PyPEEC-Walkthrough.md), [FastHenry Walkthrough](FastHenry-Walkthrough.md),
+  [Palace Walkthrough](Palace-Walkthrough.md)). The Elmer bridge's mesh ladder should refine the air round the copper as well as
+  the copper, which its first runs showed holds most of its error
+  ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#2211-the-error-budget-on-e01)). Another way, still open: an openEMS model whose overlapping primitives are settled
   by CSXCAD's priorities, with no booleans, which would skip stages 3, 4 and 6 for openEMS users. It
   is a new output with its own physics checks, and the finish shells and the conformal mask do not
   map onto priorities.

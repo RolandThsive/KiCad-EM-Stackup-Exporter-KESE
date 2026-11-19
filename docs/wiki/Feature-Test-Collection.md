@@ -16,7 +16,7 @@ run goes:
   size is that of the `stl/` folder, one file a part, and the OBJ size includes its `.mtl`. MB is a
   million bytes.
 - Boards 29 to 29d came with the stack-up changes of
-  [25.2](Future-Upgrades-And-Planning.md#252-model-accuracy) and were timed after them; the other
+  [31.2](Future-Upgrades-And-Planning.md#312-model-accuracy) and were timed after them; the other
   boards were timed before. A rerun of those 40 boards in simulation GLB and visual GLB, before and
   after the changes one right after the other, gave the same model files byte for byte and the same
   times: the sum of the medians went from 144.0 s to 143.5 s.
@@ -2553,4 +2553,4 @@ Seconds, the median of three runs for each stage, unless marked ms; the total is
 
 | Previous | Next |
 |:---|---:|
-| [Solder Masks](Solder-Masks.md) | [Parameter Reference](Parameter-Reference.md) |
+| [Solder Masks](Solder-Masks.md) | [Walkthrough](Walkthrough.md) |

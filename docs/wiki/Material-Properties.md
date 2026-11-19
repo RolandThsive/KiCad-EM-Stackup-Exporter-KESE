@@ -1,11 +1,12 @@
-# 21. Material Properties
+# 26. Material Properties
 
 Geometry files carry shapes, not physics. Everything a solver needs that the geometry cannot
 carry goes into `materials.json`, written next to the outputs (`Run.WRITE_MATERIALS_JSON`, on by
 default). This page says what the numbers are and where each one comes from. None of them changes
 the geometry: they are section 4, Material, of each element's parameter file.
 
-## 21.1 The File
+<a name="211-the-file"></a>
+## 26.1 The File
 
 Two of the parts of board `featureTest/29_stackup_plies`, from a run with the default settings: the
 first prepreg ply of the gap under `F.Cu`, and the copper of one net.
@@ -72,7 +73,8 @@ Per part:
 `Stackup.py` leaves out is not in the file: `materials.json` lists exactly the parts that were
 written ([Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy)).
 
-## 21.2 Properties Per Role
+<a name="212-properties-per-role"></a>
+## 26.2 Properties Per Role
 
 | Role | Properties | Source |
 |---|---|---|
@@ -92,7 +94,8 @@ layer's; `layers` has every layer the part lies on (section 21.6). With
 `Board.DIELECTRIC_GROUPING = "merged"`, the single `Board` part carries the values of its first
 solid only: the first gap's with the plies fused, the first ply's with the plies separate.
 
-## 21.3 The Default Numbers
+<a name="213-the-default-numbers"></a>
+## 26.3 The Default Numbers
 
 | Value | Default | What it is |
 |---|---|---|
@@ -117,7 +120,8 @@ solid only: the first gap's with the plies fused, the first ply's with the plies
 > pressed from several plies is one solid or one solid per ply, as `Stackup.FUSION_BUILD` says
 > ([Board](Board.md#121-dielectric-solids)); either way every ply's own values are in the file.
 
-## 21.4 How εr And tan δ Change With Frequency
+<a name="214-how-εr-and-tan-δ-change-with-frequency"></a>
+## 26.4 How εr And tan δ Change With Frequency
 
 A dielectric's εr and tan δ are true at one frequency, the **spec frequency**. KiCad's
 development version (file format 20260511 on) writes it for each dielectric as
@@ -141,7 +145,7 @@ The Djordjevic-Sarkar model (Djordjevic, Biljic, Likar-Smiljanic and Sarkar, IEE
 Electromagnetic Compatibility 43(4), 2001) is one complex permittivity, causal over the whole band:
 
 ```math
-\varepsilon(f) = \varepsilon_{\infty} + \frac{\Delta\varepsilon}{\ln\left( f_{\mathrm{high}} / f_{\mathrm{low}} \right)} \, \ln\frac{f_{\mathrm{high}} + j f}{f_{\mathrm{low}} + j f}, \qquad \varepsilon_r(f) = \mathrm{Re}\, \varepsilon(f), \qquad \tan\delta(f) = -\frac{\mathrm{Im}\, \varepsilon(f)}{\mathrm{Re}\, \varepsilon(f)} \qquad (21.1)
+\varepsilon(f) = \varepsilon_{\infty} + \frac{\Delta\varepsilon}{\ln\left( f_{\mathrm{high}} / f_{\mathrm{low}} \right)} \, \ln\frac{f_{\mathrm{high}} + j f}{f_{\mathrm{low}} + j f}, \qquad \varepsilon_r(f) = \mathrm{Re}\, \varepsilon(f), \qquad \tan\delta(f) = -\frac{\mathrm{Im}\, \varepsilon(f)}{\mathrm{Re}\, \varepsilon(f)} \qquad (26.1)
 ```
 
 KESE fits its two parameters so that the model has the given εr and tan δ at the spec frequency,
@@ -149,7 +153,7 @@ as KiCad's own transmission line calculator fits it
 (`common/transline_calculations/dielectric_djordjevic_sarkar.cpp`):
 
 ```math
-K = \ln\frac{f_{\mathrm{high}} + j f_s}{f_{\mathrm{low}} + j f_s}, \qquad \Delta\varepsilon = -\frac{\varepsilon_r \tan\delta}{\mathrm{Im}\, K} \, \ln\frac{f_{\mathrm{high}}}{f_{\mathrm{low}}}, \qquad \varepsilon_{\infty} = \varepsilon_r \left( 1 + \tan\delta \, \frac{\mathrm{Re}\, K}{\mathrm{Im}\, K} \right) \qquad (21.2)
+K = \ln\frac{f_{\mathrm{high}} + j f_s}{f_{\mathrm{low}} + j f_s}, \qquad \Delta\varepsilon = -\frac{\varepsilon_r \tan\delta}{\mathrm{Im}\, K} \, \ln\frac{f_{\mathrm{high}}}{f_{\mathrm{low}}}, \qquad \varepsilon_{\infty} = \varepsilon_r \left( 1 + \tan\delta \, \frac{\mathrm{Re}\, K}{\mathrm{Im}\, K} \right) \qquad (26.2)
 ```
 
 | Symbol | Meaning | Parameter |
@@ -159,7 +163,7 @@ K = \ln\frac{f_{\mathrm{high}} + j f_s}{f_{\mathrm{low}} + j f_s}, \qquad \Delta
 | $`f_{\mathrm{low}}`$, $`f_{\mathrm{high}}`$ | the corner frequencies of the model | `Board.DS_LOW_FREQUENCY_HZ` (1 kHz), `Board.DS_HIGH_FREQUENCY_HZ` (1 THz) |
 | $`\varepsilon_{\infty}`$, $`\Delta\varepsilon`$ | the model's two parameters, written as `epsilon_inf` and `delta_epsilon` | |
 
-A solver that has the model takes the four numbers; one that has not can evaluate equation (21.1)
+A solver that has the model takes the four numbers; one that has not can evaluate equation (26.1)
 at its own frequencies. A dielectric with tan δ 0 is written with $`\Delta\varepsilon = 0`$. When
 the spec frequency is not between the two corners the model cannot be fitted: that ply is written
 with constant values and `report.txt` warns. `report.txt` names the model and the frequency
@@ -179,7 +183,8 @@ With the plies separate each ply has its own model, and the resin between the tr
 spec frequency and the model of the ply it flowed from, fitted to the resin's own εr and tan δ (a
 resin that flowed from a ply with the table model is written constant: the table is the ply's).
 
-## 21.5 A Gap Whose Plies Differ
+<a name="215-a-gap-whose-plies-differ"></a>
+## 26.5 A Gap Whose Plies Differ
 
 With the plies fused, a gap pressed from plies of different glass styles is one solid, and
 `Board.FUSED_PROPERTIES` says which values it has:
@@ -190,7 +195,7 @@ With the plies fused, a gap pressed from plies of different glass styles is one 
   field between a trace and the plane under it):
 
 ```math
-\frac{h}{\varepsilon_r} = \sum_{p} \frac{h_p}{\varepsilon_{r,p}}, \qquad \tan\delta = \frac{\varepsilon_r}{h} \sum_{p} \frac{h_p \tan\delta_p}{\varepsilon_{r,p}} \qquad (21.3)
+\frac{h}{\varepsilon_r} = \sum_{p} \frac{h_p}{\varepsilon_{r,p}}, \qquad \tan\delta = \frac{\varepsilon_r}{h} \sum_{p} \frac{h_p \tan\delta_p}{\varepsilon_{r,p}} \qquad (26.3)
 ```
 
 | Symbol | Meaning |
@@ -205,7 +210,8 @@ written as `2116 + 1080`, and the spec frequency and the model stay the first pl
 `plies` lists every ply with its own values, so a script can apply another rule. To keep the
 plies as solids of their own, build with `Stackup.FUSION_BUILD = "PLIES_SEPARATE"`.
 
-## 21.6 Copper By Layer
+<a name="216-copper-by-layer"></a>
+## 26.6 Copper By Layer
 
 A net's copper is one part across its layers, and the layers differ: the top and bottom copper
 are foil plus plating, the inner copper is foil alone, and each may have its own etch factor. So
@@ -220,7 +226,7 @@ laminated on, and the other face; `treated_face` says whether the treated one is
 the models stand for, with the skin depth $`\delta`$:
 
 ```math
-\delta = \frac{1}{\sqrt{\pi f \mu_0 \sigma}}, \qquad K_{\mathrm{Hammerstad}} = 1 + \frac{2}{\pi} \arctan\left( 1.4 \left( \frac{R_q}{\delta} \right)^{2} \right), \qquad K_{\mathrm{Huray}} = 1 + \frac{3}{2} \cdot \frac{s}{1 + \dfrac{\delta}{a} + \dfrac{\delta^{2}}{2 a^{2}}} \qquad (21.4)
+\delta = \frac{1}{\sqrt{\pi f \mu_0 \sigma}}, \qquad K_{\mathrm{Hammerstad}} = 1 + \frac{2}{\pi} \arctan\left( 1.4 \left( \frac{R_q}{\delta} \right)^{2} \right), \qquad K_{\mathrm{Huray}} = 1 + \frac{3}{2} \cdot \frac{s}{1 + \dfrac{\delta}{a} + \dfrac{\delta^{2}}{2 a^{2}}} \qquad (26.4)
 ```
 
 | Symbol | Meaning | Written as | Parameter |
@@ -247,7 +253,8 @@ Hammerstad factor stops rising at 2, so above a few GHz on standard foil the Hur
 one that keeps following the measured loss. `surface_roughness_um`, the one number KESE wrote
 before 25.2, is still there: it is the treated face's RMS height.
 
-## 21.7 Using The File
+<a name="217-using-the-file"></a>
+## 26.7 Using The File
 
 - **openEMS**: read `parts`, create one material per part from `properties`, and import the file
   named in `file_names.stl`. See [openEMS Workflow](OpenEMS-Workflow.md).
@@ -257,7 +264,7 @@ before 25.2, is still there: it is the treated face's RMS height.
   same part; the OBJ object and material names are the STL name without `.stl`.
 - **A model with frequency**: read `dielectric_model` of each laminate part. `constant` needs
   `epsilon_r` and `loss_tangent` alone; `djordjevic_sarkar` gives the four numbers of equation
-  (21.1); `table` gives the rows.
+  (26.1); `table` gives the rows.
 
 | Previous | Next |
 |:---|---:|

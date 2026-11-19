@@ -1,4 +1,4 @@
-# 19. Parameter Reference
+# 24. Parameter Reference
 
 ![A four-layer board cut through from the top silkscreen to the bottom silkscreen, every part numbered 1 to 19, beside a table that gives for each part its line in Stackup.py and the parameter file that sets its thickness and shape, its material and its colour: SilkScreen.py for the two silkscreens, SolderMask.py for the two masks and the mask over a via, Finish.py for the finish on both faces and inside the plated holes, Copper.py for the top, inner and bottom copper, the plated walls and the via resin, Board.py for the prepreg plies, the cores, the resin between the inner traces, the outline and the holes; below it the three folders of parameters/: PCB_elements with Stackup.py and the five element files, Run_KESE with Run.py, Geometry.py, Parallel.py, Verifier.py and Presets.py, and Fileformats with Step.py and Mesh.py](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Parameter-Reference/params_1_files_by_part.webp)
 
@@ -37,21 +37,23 @@ every value as it stood for the run, file by file: `--for`, `--set`, `--mode`, `
 > value: `True` or `False` where the file has one of them, a number where it has a number, text, a
 > list or a dict likewise (a setting that is `None` in its file takes `None` or a value of its kind).
 > It also stops when a parameter file still holds a setting under an old name, or a parameter file
-> of before 25.2 still lies in `parameters/` itself ([19.14](#1914-names-of-before-252)). It stops
+> of before 25.2 still lies in `parameters/` itself ([24.14](#2414-names-of-before-252)). It stops
 > with an error that names the setting.
 > `DIELECTRIC_SPLIT` is checked where it is used (a warning), `FINISH_TYPE` and `PLIES_BY_HAND`
 > when the board's stack-up is read (an error), and `FONT_FILE` gives a note in `report.txt`.
 > For the rest, a value outside the range below produces a wrong model or a plain Python error, not
 > a named check.
 
-## 19.1 Stackup (`parameters/PCB_elements/Stackup.py`)
+<a name="191-stackup-parameterspcb_elementsstackuppy"></a>
+## 24.1 Stackup (`parameters/PCB_elements/Stackup.py`)
 
 What KESE builds: the stack-up, laid out as a real board is, from the top silkscreen down to the
 bottom silkscreen. This file is the list of what goes into the files KESE writes, in every mode and
 format. It holds no thickness, material or colour: those are in each element's own file. Details in
 [Stack-Up Model](Stack-Up-Model.md#84-what-is-built-the-lines-of-stackuppy).
 
-### 19.1.1 The Two Stack-Ups
+<a name="1911-the-two-stack-ups"></a>
+### 24.1.1 The Two Stack-Ups
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -59,7 +61,8 @@ format. It holds no thickness, material or colour: those are in each element's o
 | `PLIES_FUSED` | 14 lines | `{line: True / False}` | The laminate as KESE built it up to version 3.3: one solid for each gap between two copper layers. The prepreg plies of a gap are fused into that solid, and so is the resin between the traces of the inner copper beside it |
 | `PLIES_SEPARATE` | 15 lines | `{line: True / False}` | The laminate as a fabricator builds it: every prepreg ply, every core and the resin between the traces of each inner copper layer is its own solid, with its own thickness and material ([Board](Board.md#121-dielectric-solids)) |
 
-### 19.1.2 The Lines
+<a name="1912-the-lines"></a>
+### 24.1.2 The Lines
 
 Each line of a stack-up is one layer of the board, or one kind of layer where a board has several.
 `True` builds it and writes it to every output file; `False` leaves it out. The lines run as the
@@ -70,11 +73,11 @@ file, and the lines of the inside stand for every inner layer the board has.
 
 | Line | In | Default | What it builds | Set in |
 |---|---|---|---|---|
-| `top_silkscreen` | both | `False` | `Top Silkscreen`: the legend ink on the top solder mask | [SilkScreen](#196-silkscreen-parameterspcb_elementssilkscreenpy) |
-| `top_solder_mask` | both | `False` | `Top Solder Mask`, and in visual mode `Top Mask over Copper` | [SolderMask](#195-solder-mask-parameterspcb_elementssoldermaskpy) |
-| `top_finish` | both | `True` | `Top Finish <metal>`: ENIG, HASL and the others on the top copper the mask leaves bare, its tops and its side walls | [Finish](#194-finish-parameterspcb_elementsfinishpy) |
-| `top_copper` | both | `True` | `F.Cu`: the foil and the copper plated on it | [Copper](#193-copper-parameterspcb_elementscopperpy), section 2 |
-| `board` | fused | `True` | The laminate: one solid for each gap, its plies fused (`Board_dielectric 1`) | [Board](#192-board-parameterspcb_elementsboardpy) |
+| `top_silkscreen` | both | `False` | `Top Silkscreen`: the legend ink on the top solder mask | [SilkScreen](#246-silkscreen-parameterspcb_elementssilkscreenpy) |
+| `top_solder_mask` | both | `False` | `Top Solder Mask`, and in visual mode `Top Mask over Copper` | [SolderMask](#245-solder-mask-parameterspcb_elementssoldermaskpy) |
+| `top_finish` | both | `True` | `Top Finish <metal>`: ENIG, HASL and the others on the top copper the mask leaves bare, its tops and its side walls | [Finish](#244-finish-parameterspcb_elementsfinishpy) |
+| `top_copper` | both | `True` | `F.Cu`: the foil and the copper plated on it | [Copper](#243-copper-parameterspcb_elementscopperpy), section 2 |
+| `board` | fused | `True` | The laminate: one solid for each gap, its plies fused (`Board_dielectric 1`) | [Board](#242-board-parameterspcb_elementsboardpy) |
 | `prepreg_plies` | separate | `True` | Each prepreg ply its own solid (`Board_dielectric 1 ply 1`) | Board |
 | `resin_between_traces` | both | `True` | The resin between the traces of the inner copper. Fused: the board solids also fill that space, so the line needs `board`. Separate: a solid of its own for each inner copper layer (`Board_resin In1.Cu`). `False` leaves the space empty, and `report.txt` notes it | Board |
 | `inner_copper` | both | `True` | `In1.Cu`, `In2.Cu` and every other inner copper layer | Copper, section 3 |
@@ -100,7 +103,8 @@ offered), or a value that is not `True` or `False`. Not built in either stack-up
 under the plated copper (it lies inside the copper solid) and the glass cloth inside a ply (a ply
 is one uniform solid).
 
-### 19.1.3 Short Names
+<a name="1913-short-names"></a>
+### 24.1.3 Short Names
 
 `--set Stackup.<line>=...` sets that line in both stack-ups, so the same command works whichever is
 built. Four short names set several lines at once, on the command line and in a preset:
@@ -118,22 +122,25 @@ python run_KESE.py board.kicad_pcb --set Stackup.solder_mask=True --set Stackup.
 python run_KESE.py board.kicad_pcb --set Stackup.bottom_copper=False
 ```
 
-## 19.2 Board (`parameters/PCB_elements/Board.py`)
+<a name="192-board-parameterspcb_elementsboardpy"></a>
+## 24.2 Board (`parameters/PCB_elements/Board.py`)
 
 The laminate (the dielectric between the copper layers), the outline, and the holes and machining
 that cut through every layer. The board file is read first; the values here fill in what the file
 leaves out, or replace it where a `USE_STACKUP_*` switch is `False` or `PLIES_BY_HAND` lists a gap.
 Whether the laminate is built, and whether its plies are fused or separate, is in
-[Stackup](#191-stackup-parameterspcb_elementsstackuppy). Details in [Board](Board.md).
+[Stackup](#241-stackup-parameterspcb_elementsstackuppy). Details in [Board](Board.md).
 
-### 19.2.1 Parts
+<a name="1921-parts"></a>
+### 24.2.1 Parts
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `JOIN_EQUAL_PLIES` | `False` | bool | Plies separate: neighbouring plies of one gap with the same type, material, εr, tan δ, spec frequency and model become one solid. It is named after the plies it holds (`Board_dielectric 3` for every ply of that dielectric, `Board_dielectric 1 ply 2-3` for some of them), and `materials.json` lists them under `joined_plies` |
 | `DIELECTRIC_GROUPING` | `"layer"` | `"layer"` / `"merged"` | The solids of the stack-up being built, or the whole laminate as one solid (`Board`), whichever stack-up is built |
 
-### 19.2.2 Thickness
+<a name="1922-thickness"></a>
+### 24.2.2 Thickness
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -143,7 +150,8 @@ Whether the laminate is built, and whether its plies are fused or separate, is i
 | `PLY_MIN_THICKNESS_MM` | `0.001` | mm ≥ 0 | Plies separate: a ply thinner than this is joined to its thicker neighbour, with a warning (a bond film of half a micrometre is no solid a mesher wants); 0 keeps every ply |
 | `PLIES_BY_HAND` | `{}` | `{board name: {(copper above, copper below): [plies]}}` | Plies written by hand for one board, named by its file name without `.kicad_pcb`. A gap listed here takes these plies, top to bottom, in place of the file's; gaps not listed still come from the file, and other boards are not touched. Each ply is a dict with `"type"` (`"core"` / `"prepreg"`), `"thickness_mm"`, `"material"`, `"epsilon_r"` and `"loss_tangent"`, and may give `"frequency_hz"` and `"model"`. The list is checked when the stack-up is read: the two copper layers must be neighbours on that board, the upper one first, and every ply whole ([Board](Board.md#1214-plies-written-by-hand)) |
 
-### 19.2.3 Shape
+<a name="1923-shape"></a>
+### 24.2.3 Shape
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -157,7 +165,8 @@ Whether the laminate is built, and whether its plies are fused or separate, is i
 | `POST_MACHINING` | `True` | bool | KiCad 10's counterbores and countersinks are cut from the board's face ([Board](Board.md#1241-counterbores-and-countersinks)) |
 | `COUNTERSINK_STEP_TOLERANCE_MM` | `0.025` | mm > 0 | A countersink's cone is built as steps that stray from it by at most this |
 
-### 19.2.4 Material
+<a name="1924-material"></a>
+### 24.2.4 Material
 
 Written to `materials.json` for the solver ([Material Properties](Material-Properties.md)); none of
 these changes a solid.
@@ -169,15 +178,16 @@ these changes a solid.
 | `DEFAULT_SPEC_FREQUENCY_HZ` | `1e9` | Hz > 0 | The frequency εr and tan δ are given at, when the file gives none (KiCad's default) |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT` | `True`, `True` | bool | Stack-up values win over the defaults when present |
 | `USE_STACKUP_SPEC_FREQUENCY` | `True` | bool | A ply's `(spec_frequency ...)` in the file wins over the default (KiCad's development version writes it, file format 20260511 on) |
-| `DIELECTRIC_MODEL` | `"djordjevic_sarkar"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency, written to `materials.json` as `dielectric_model`: the same at every frequency (KiCad's default, and KESE's up to version 3.3); the wideband Djordjevic-Sarkar model, fitted to εr and tan δ at the spec frequency, with its fitted parameters beside εr and tan δ; or `DIELECTRIC_TABLE`, written as given ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
+| `DIELECTRIC_MODEL` | `"djordjevic_sarkar"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency, written to `materials.json` as `dielectric_model`: the same at every frequency (KiCad's default, and KESE's up to version 3.3); the wideband Djordjevic-Sarkar model, fitted to εr and tan δ at the spec frequency, with its fitted parameters beside εr and tan δ; or `DIELECTRIC_TABLE`, written as given ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)) |
 | `USE_STACKUP_DIELECTRIC_MODEL` | `True` | bool | A ply's `(dielectric_model constant)` or `(dielectric_model djordjevic_sarkar)` in the file wins over `DIELECTRIC_MODEL` |
 | `DS_LOW_FREQUENCY_HZ`, `DS_HIGH_FREQUENCY_HZ` | `1e3`, `1e12` | Hz > 0, the low one below the high one | The Djordjevic-Sarkar model's lower and upper corner frequencies. A ply whose spec frequency is not between them cannot be fitted: it is written with constant values, with a warning, as KiCad falls back |
 | `DIELECTRIC_TABLE` | `()` | `((frequency Hz, εr, tan δ), ...)` by rising frequency | The rows of the `"table"` model, for example `((1e8, 4.6, 0.016), (1e9, 4.5, 0.02), (1e10, 4.4, 0.022))`; empty with `DIELECTRIC_MODEL = "table"` stops the run |
-| `FUSED_PROPERTIES` | `"first"` | `"first"` / `"series"` | Plies fused, a gap whose plies differ: the first ply's material, εr and tan δ (top to bottom), or the plies in series, as a field straight across the gap sees them (equation (21.3) in [Material Properties](Material-Properties.md#215-a-gap-whose-plies-differ)). Either way `materials.json` lists every ply of the gap under `plies` |
+| `FUSED_PROPERTIES` | `"first"` | `"first"` / `"series"` | Plies fused, a gap whose plies differ: the first ply's material, εr and tan δ (top to bottom), or the plies in series, as a field straight across the gap sees them (equation (26.3) in [Material Properties](Material-Properties.md#265-a-gap-whose-plies-differ)). Either way `materials.json` lists every ply of the gap under `plies` |
 | `RESIN_MATERIAL` | `"resin"` | text | Plies separate: the material name of the resin solids (`Board_resin In1.Cu`) |
 | `RESIN_EPSILON_R`, `RESIN_LOSS_TANGENT` | `3.5`, `0.02` | None, or ≥ 1 and ≥ 0 | Plies separate: εr and tan δ of the resin between the traces of the inner copper, the prepreg's resin without its glass; `None` takes that value from the prepreg ply the resin flowed from. A best guess for FR-4 epoxy (published figures give εr 3.0 to 3.57 and tan δ 0.021), not a resin maker's figure. With the plies fused the resin is part of the board solid beside it and has that solid's values; these three are not used |
 
-### 19.2.5 Color
+<a name="1925-color"></a>
+### 24.2.5 Color
 
 Each is `{color hex, alpha 0-1, metallic 0-1, roughness 0-1}`: the look of the part in GLB and OBJ,
 its colour in STEP and the `look` field of `materials.json`; alpha < 1 writes a glTF BLEND material.
@@ -190,14 +200,16 @@ Details in [Colorizing](Colorizing.md).
 | `RESIN_COLOR` | `#B8AC78` | Plies separate: the resin between the traces of the inner copper |
 | `BOARD_COLOR` | `#968A58` | The whole laminate as one solid (`DIELECTRIC_GROUPING = "merged"`), and a ply of no type |
 
-## 19.3 Copper (`parameters/PCB_elements/Copper.py`)
+<a name="193-copper-parameterspcb_elementscopperpy"></a>
+## 24.3 Copper (`parameters/PCB_elements/Copper.py`)
 
 The top, inner and bottom copper layers, the plated holes, the vias and the plated board edge.
-Whether the copper is built is in [Stackup](#191-stackup-parameterspcb_elementsstackuppy): the lines
+Whether the copper is built is in [Stackup](#241-stackup-parameterspcb_elementsstackuppy): the lines
 `top_copper`, `inner_copper` and `bottom_copper`, `plated_holes` and `via_resin`. Details in
 [Copper And Traces](Copper-And-Traces.md).
 
-### 19.3.1 All Copper
+<a name="1931-all-copper"></a>
+### 24.3.1 All Copper
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -209,7 +221,8 @@ Whether the copper is built is in [Stackup](#191-stackup-parameterspcb_elementss
 | `HAIRLINE_HOLE_MM` | `1e-3` | mm ≥ 0 | A hole in one net's copper narrower than this on average (2 × area / perimeter) is filled: the hair-wide gap KiCad leaves between a zone fill and a pad of its own net |
 | `HONOUR_REMOVE_UNUSED_LAYERS` | `True` | bool | Drop via and through-hole pad annular rings on layers nothing connects to, as KiCad's option does |
 
-### 19.3.2 Top Copper (`F.Cu`)
+<a name="1932-top-copper-fcu"></a>
+### 24.3.2 Top Copper (`F.Cu`)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -217,14 +230,16 @@ Whether the copper is built is in [Stackup](#191-stackup-parameterspcb_elementss
 | `TOP_PLATING_ADDED_MM` | `0.0` | mm ≥ 0 | Electroplated copper added to the top copper during hole plating: finished copper = foil + this. Typical 0.020; 0 = foil only, as KiCad models |
 | `TOP_ETCH_FACTOR` | `0.0` | ≥ 0 | Each side wall leans in by this × copper thickness over the copper height, the foot on the laminate; 0 = rectangular, as KiCad ([Copper And Traces](Copper-And-Traces.md#135-etch-factor)) |
 
-### 19.3.3 Inner Copper (`In1.Cu`, `In2.Cu`, ...)
+<a name="1933-inner-copper-in1cu-in2cu-"></a>
+### 24.3.3 Inner Copper (`In1.Cu`, `In2.Cu`, ...)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `DEFAULT_INNER_FOIL_MM` | `0.035` | mm > 0 | Foil when the stack-up gives none. Inner copper gets no plating |
 | `INNER_ETCH_FACTOR` | `0.0` | ≥ 0 | Etch factor of the inner copper. It is etched on its core: its foot is on the side toward the board's centre |
 
-### 19.3.4 Bottom Copper (`B.Cu`)
+<a name="1934-bottom-copper-bcu"></a>
+### 24.3.4 Bottom Copper (`B.Cu`)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -232,7 +247,8 @@ Whether the copper is built is in [Stackup](#191-stackup-parameterspcb_elementss
 | `BOTTOM_PLATING_ADDED_MM` | `0.0` | mm ≥ 0 | Finished bottom copper = foil + this, as for the top copper |
 | `BOTTOM_ETCH_FACTOR` | `0.0` | ≥ 0 | Etch factor of the bottom copper, the foot on the laminate |
 
-### 19.3.5 Plated Holes, Vias And The Board Edge
+<a name="1935-plated-holes-vias-and-the-board-edge"></a>
+### 24.3.5 Plated Holes, Vias And The Board Edge
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -247,9 +263,10 @@ Whether the copper is built is in [Stackup](#191-stackup-parameterspcb_elementss
 | `VIA_FILL` | `"copper"` | `"copper"` / `"resin"` | What a filled via is filled with: copper of the via's net, or the via resin |
 | `VIA_PLUG_DEPTH_FRACTION` | `0.5` | > 0, ≤ 1 | How far a plug reaches into the hole from its face, as a share of the hole's length |
 
-Whether the mask covers a via is `SolderMask.VIA_TENTING` ([19.5.3](#1953-shape)).
+Whether the mask covers a via is `SolderMask.VIA_TENTING` ([24.5.3](#2453-shape)).
 
-### 19.3.6 Material
+<a name="1936-material"></a>
+### 24.3.6 Material
 
 Written to `materials.json` for the solver; none of these changes a solid.
 
@@ -257,14 +274,15 @@ Written to `materials.json` for the solver; none of these changes a solid.
 |---|---|---|---|
 | `COPPER_MATERIAL` | `"copper"` | text | The material name of every copper part: foils, plating, barrels, castellations and edge plating |
 | `COPPER_CONDUCTIVITY_S_PER_M` | `5.8e7` | S/m | Written for every copper part (annealed copper at 20 °C) |
-| `COPPER_ROUGHNESS_MODEL` | `"huray"` | `"none"` / `"hammerstad"` / `"huray"` | The surface roughness model for the solver's conductor loss, written as `roughness`: smooth (KESE up to version 3.3); one RMS height per face; or the "snowball" model, a nodule radius and a surface ratio per face. Each copper layer has two faces: the treated face, pressed into the dielectric the foil was laminated on, and the other; a copper part says which is which, layer by layer, in `treated_face` ([Material Properties](Material-Properties.md#216-copper-by-layer)) |
+| `COPPER_ROUGHNESS_MODEL` | `"huray"` | `"none"` / `"hammerstad"` / `"huray"` | The surface roughness model for the solver's conductor loss, written as `roughness`: smooth (KESE up to version 3.3); one RMS height per face; or the "snowball" model, a nodule radius and a surface ratio per face. Each copper layer has two faces: the treated face, pressed into the dielectric the foil was laminated on, and the other; a copper part says which is which, layer by layer, in `treated_face` ([Material Properties](Material-Properties.md#266-copper-by-layer)) |
 | `COPPER_ROUGHNESS_RMS_TREATED_UM`, `COPPER_ROUGHNESS_RMS_OTHER_UM` | `0.0`, `0.0` | µm ≥ 0 | `"hammerstad"`: the RMS height of the treated face and of the other. Foil makers quote Rz (peak to valley), which is larger: standard foil 3 to 6 µm, RTF 1 to 1.5, VLP and HVLP 0.3 to 1 |
 | `COPPER_HURAY_RADIUS_TREATED_UM`, `COPPER_HURAY_RADIUS_OTHER_UM` | `0.5`, `0.5` | µm ≥ 0 | `"huray"`: the nodule radius on each face. The defaults of the radius and of the surface ratio are the values Ansys's tools start with on every face (the layer defaults of PyEDB); they describe no particular foil |
 | `COPPER_HURAY_SURFACE_RATIO_TREATED`, `COPPER_HURAY_SURFACE_RATIO_OTHER` | `2.9`, `2.9` | ≥ 0 | `"huray"`: the nodules' surface over the flat surface, on each face |
 | `VIA_RESIN_MATERIAL` | `"via resin"` | text | The material name of the `Via Resin` part |
 | `VIA_RESIN_EPSILON_R`, `VIA_RESIN_LOSS_TANGENT` | `4.4`, `0.02` | ≥ 1, ≥ 0 | The plug and fill resin (San-Ei Kagaku PHP-900 IR-6P at 1 GHz) |
 
-### 19.3.7 Color
+<a name="1937-color"></a>
+### 24.3.7 Color
 
 | Name | Default | Meaning |
 |---|---|---|
@@ -273,13 +291,15 @@ Written to `materials.json` for the solver; none of these changes a solid.
 | `EXPOSED_COPPER_COLOR` | `#DEBA60`, metallic 1.0 | Visual mode: all the copper that shows |
 | `VIA_RESIN_COLOR` | `#D8CFA0` | The `Via Resin` part |
 
-## 19.4 Finish (`parameters/PCB_elements/Finish.py`)
+<a name="194-finish-parameterspcb_elementsfinishpy"></a>
+## 24.4 Finish (`parameters/PCB_elements/Finish.py`)
 
 The surface finish on copper left bare by the solder mask. Whether it is built is in
-[Stackup](#191-stackup-parameterspcb_elementsstackuppy): the lines `top_finish`, `bottom_finish`
+[Stackup](#241-stackup-parameterspcb_elementsstackuppy): the lines `top_finish`, `bottom_finish`
 and `hole_finish`. Details in [Finish](Finish.md).
 
-### 19.4.1 Parts
+<a name="1941-parts"></a>
+### 24.4.1 Parts
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -287,43 +307,50 @@ and `hole_finish`. Details in [Finish](Finish.md).
 | `FINISH_NAME_ALIASES` | 6 KiCad names (`HAL SnPb` → `HASL`, `HAL lead-free` → `HASL_LF`, `Hard gold`, `Immersion tin`, `Immersion silver`, `HT_OSP` → `OSP`) | `{KiCad name: key of FINISH_TYPES}` | KiCad finish names that differ from a key; matching ignores case, spaces, `-` and `_` |
 | `FINISH_GROUPING` | `"metal"` | `"metal"` / `"net"` | One part per side and metal, or per side, metal and net |
 
-### 19.4.2 Thickness
+<a name="1942-thickness"></a>
+### 24.4.2 Thickness
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `FINISH_TYPES` | ENIG, ENEPIG, HASL, HASL_LF, OSP, ImmersionSilver, ImmersionTin, HardGold | `{key: [(metal, mm), ...]}` bottom to top | Layers of each finish; each becomes its own solid on the bare copper |
 
-### 19.4.3 Shape
+<a name="1943-shape"></a>
+### 24.4.3 Shape
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `FINISH_BEFORE_SOLDER_MASK` | `False` | bool | The finish goes on before the mask: on all the outer copper, with the mask and silkscreen on top of it; `False` puts it only in the mask openings |
 | `FINISH_MITRE_LIMIT` | `2.0` | ≥ 1 | How the finish follows the copper's sharp corners: the outer side of each finish layer (and of the copper the mask wraps, with `FINISH_BEFORE_SOLDER_MASK`) keeps a corner's point out to this many times the finish's thickness from the copper's corner, and is cut straight across there. At `2.0` a corner of 60° or more keeps its point (a square pad's corners stay square) and a sharper tip is cut; `1.0` cuts every corner at the finish's thickness; below 1 the finish would be thinner at a corner than its thickness, so the run stops |
 
-### 19.4.4 Material
+<a name="1944-material"></a>
+### 24.4.4 Material
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `FINISH_CONDUCTIVITY_S_PER_M` | Nickel `1.4e7`, Gold `4.1e7`, Palladium `9.5e6`, Tin `9.1e6`, Silver `6.3e7`, OSP `0.0` | `{metal: S/m}` | Written to `materials.json` |
 
-### 19.4.5 Color
+<a name="1945-color"></a>
+### 24.4.5 Color
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `FINISH_COLORS` | Nickel `#B8B8B0`, Gold `#E6C15A`, Tin `#C9C9C9`, Silver `#E4E4E0`, Palladium `#DFDAD4`, OSP `#D9955A` | `{metal: {color hex, alpha 0-1, metallic 0-1, roughness 0-1}}` | The look of each finish metal |
 
-## 19.5 Solder Mask (`parameters/PCB_elements/SolderMask.py`)
+<a name="195-solder-mask-parameterspcb_elementssoldermaskpy"></a>
+## 24.5 Solder Mask (`parameters/PCB_elements/SolderMask.py`)
 
 Short name `SolderMask`. Whether the mask is built is in
-[Stackup](#191-stackup-parameterspcb_elementsstackuppy): the lines `top_solder_mask` and
+[Stackup](#241-stackup-parameterspcb_elementsstackuppy): the lines `top_solder_mask` and
 `bottom_solder_mask`, both `False` by default. Details in [Solder Masks](Solder-Masks.md).
 
-### 19.5.1 Parts
+<a name="1951-parts"></a>
+### 24.5.1 Parts
 
 `Top Solder Mask` and `Bottom Solder Mask`, and in visual mode `Top Mask over Copper` and
 `Bottom Mask over Copper`. There is no setting here: `Stackup.py` says whether they are built.
 
-### 19.5.2 Thickness
+<a name="1952-thickness"></a>
+### 24.5.2 Thickness
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -331,7 +358,8 @@ Short name `SolderMask`. Whether the mask is built is in
 | `MASK_OVER_COPPER_MM` | `0.010` | mm > 0 | Mask thickness on top of copper (typical 0.010 to 0.015) |
 | `USE_STACKUP_MASK_THICKNESS` | `True` | bool | The first mask thickness found in the stack-up (normally `F.Mask`'s) is used for both values on both faces |
 
-### 19.5.3 Shape
+<a name="1953-shape"></a>
+### 24.5.3 Shape
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -344,7 +372,8 @@ Short name `SolderMask`. Whether the mask is built is in
 | `MASK_OPENING_HAIRLINE_MM` | `1e-3` | mm ≥ 0 | A mask opening narrower than twice this everywhere is left out, the mask kept over it: the opening of a pad a micrometre across, which no fab makes ([Solder Masks](Solder-Masks.md#172-conformal-mask)); 0 keeps every one |
 | `MASK_WALL_QUAD_SEGS` | `4` | int ≥ 1 | Segments per quarter circle on the walls where the mask climbs a trace |
 
-### 19.5.4 Material
+<a name="1954-material"></a>
+### 24.5.4 Material
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -352,7 +381,8 @@ Short name `SolderMask`. Whether the mask is built is in
 | `MASK_EPSILON_R`, `MASK_LOSS_TANGENT` | `3.8`, `0.03` | ≥ 1, ≥ 0 | Generic LPI mask (JLCPCB gives εr 3.8, OSH Park 3.9; Taiyo PSR-4000BN tan δ 0.029 at 1 MHz, OSH Park 0.033), used when the file gives none |
 | `USE_STACKUP_MASK_MATERIAL` | `True` | bool | Each mask layer's own `(material ...)`, `(epsilon_r ...)` and `(loss_tangent ...)` in the stack-up win, side by side: the top and the bottom mask can differ |
 
-### 19.5.5 Color
+<a name="1955-color"></a>
+### 24.5.5 Color
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -364,26 +394,30 @@ Short name `SolderMask`. Whether the mask is built is in
 | `STACKUP_MASK_OVER_COPPER_COLORS` | 11 names | `{name: hex}` | Visual-mode colour of the mask over copper per stack-up colour; a name left out keeps `TOP_` / `BOTTOM_MASK_OVER_COPPER_COLOR` |
 | `USER_MASK_OVER_COPPER_LIGHTEN` | `0.15` | 0-1 | With a user-defined (`#RRGGBBAA`) mask colour in the stack-up, how far the visual-mode mask over copper is mixed toward white |
 
-## 19.6 Silkscreen (`parameters/PCB_elements/SilkScreen.py`)
+<a name="196-silkscreen-parameterspcb_elementssilkscreenpy"></a>
+## 24.6 Silkscreen (`parameters/PCB_elements/SilkScreen.py`)
 
 Short name `SilkScreen`. Whether the silkscreen is built is in
-[Stackup](#191-stackup-parameterspcb_elementsstackuppy): the lines `top_silkscreen` and
+[Stackup](#241-stackup-parameterspcb_elementsstackuppy): the lines `top_silkscreen` and
 `bottom_silkscreen`, both `False` by default. Details in [Silkscreens](Silkscreens.md).
 
-### 19.6.1 Parts
+<a name="1961-parts"></a>
+### 24.6.1 Parts
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SILK_LAYERS` | `["F.SilkS", "B.SilkS"]` | list of `F.*` / `B.*` layer names | Layers whose graphics are drawn as silkscreen, on the side their first letter names (any other name stops the run with a `KeyError` when the board has graphics on that layer); graphics on other non-physical layers are counted as skipped. Text is drawn only on `F.SilkS` / `B.SilkS`; text on other non-physical layers is ignored without a count |
 | `DRAW_HIDDEN_TEXT` | `False` | bool | Draw text marked `(hide yes)` |
 
-### 19.6.2 Thickness
+<a name="1962-thickness"></a>
+### 24.6.2 Thickness
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SILK_THICKNESS_MM` | `0.010` | mm > 0 | Ink thickness (typical 0.010 to 0.020) |
 
-### 19.6.3 Shape
+<a name="1963-shape"></a>
+### 24.6.3 Shape
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -397,7 +431,8 @@ Short name `SilkScreen`. Whether the silkscreen is built is in
 | `MAX_PEN_RATIO` | `0.25` | > 0 | A stroke is at most this × the smaller of the text's width and height, whatever the file says (KiCad's `ClampTextPenSize`) |
 | `TEXT_STROKE_QUAD_SEGS` | `4` | int ≥ 1 | Roundness of stroke ends |
 
-### 19.6.4 Material
+<a name="1964-material"></a>
+### 24.6.4 Material
 
 The board file gives no material for silkscreen (KiCad's own default εr is 1.0, as if it were air).
 
@@ -406,7 +441,8 @@ The board file gives no material for silkscreen (KiCad's own default εr is 1.0,
 | `SILK_MATERIAL` | `"epoxy ink"` | text | The material name of the silkscreen parts |
 | `SILK_EPSILON_R`, `SILK_LOSS_TANGENT` | `5.0`, `0.03` | ≥ 1, ≥ 0 | Best guesses for white legend ink: its pigment lifts εr above the mask's 3.8, and tan δ is the mask's. Neither is a maker's figure |
 
-### 19.6.5 Color
+<a name="1965-color"></a>
+### 24.6.5 Color
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -414,11 +450,13 @@ The board file gives no material for silkscreen (KiCad's own default εr is 1.0,
 | `USE_STACKUP_SILK_COLOR` | `True` | bool | Honour the silkscreen colour in the board's stack-up, named or user-defined (`#RRGGBBAA`) |
 | `STACKUP_SILK_COLORS` | white, black, yellow, green, red, blue, purple | `{name: hex}` | Silkscreen colour names |
 
-## 19.7 Run (`parameters/Run_KESE/Run.py`)
+<a name="197-run-parametersrun_keserunpy"></a>
+## 24.7 Run (`parameters/Run_KESE/Run.py`)
 
 What to make, where, and in which formats.
 
-### 19.7.1 Mode, Folders And Formats
+<a name="1971-mode-folders-and-formats"></a>
+### 24.7.1 Mode, Folders And Formats
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -429,27 +467,30 @@ What to make, where, and in which formats.
 | `ORIGIN` | `"kicad"` | `"center"` / `"kicad"` | KiCad's page origin kept, so that coordinates match the layout and the Gerbers, or the outline's centre at (0, 0) |
 | `ORIENTATION` | `"upright"` | `"upright"` / `"flat"` | Board in XY with `F.Cu` toward +Z, or in XZ with `F.Cu` toward +Y |
 
-### 19.7.2 Run Behaviour
+<a name="1972-run-behaviour"></a>
+### 24.7.2 Run Behaviour
 
-How many threads and processes work at once is set in [19.9 Parallel](#199-parallel-parametersrun_keseparallelpy),
-the Verifier's settings in [19.10 Verifier](#1910-verifier-parametersrun_keseverifierpy), the presets in
-[19.11 Presets](#1911-presets-parametersrun_kesepresetspy), the STEP files' own settings in
-[19.12 Step](#1912-step-parametersfileformatssteppy) and those of the GLB, STL and OBJ files in
-[19.13 Mesh](#1913-mesh-parametersfileformatsmeshpy).
+How many threads and processes work at once is set in [24.9 Parallel](#249-parallel-parametersrun_keseparallelpy),
+the Verifier's settings in [24.10 Verifier](#2410-verifier-parametersrun_keseverifierpy), the presets in
+[24.11 Presets](#2411-presets-parametersrun_kesepresetspy), the STEP files' own settings in
+[24.12 Step](#2412-step-parametersfileformatssteppy) and those of the GLB, STL and OBJ files in
+[24.13 Mesh](#2413-mesh-parametersfileformatsmeshpy).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `SHOW_PROGRESS` | `True` | bool | Live `running <stage> ... 1m 23s` line on a terminal |
 | `WRITE_MATERIALS_JSON` | `True` | bool | Write `materials.json` next to the outputs |
 
-### 19.7.3 KiCad Versions
+<a name="1973-kicad-versions"></a>
+### 24.7.3 KiCad Versions
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
-| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#221-kicad-files)) |
+| `KICAD_VERSION_MIN`, `KICAD_VERSION_MAX` | `3`, `20260206` | KiCad file format numbers | Tested range, from the 2013 builds before KiCad 4 (format 3) to KiCad 10 (KiCad 4 files say `(version 4)`, KiCad 5 files `20171130`); a file outside it is read with a warning ([Compatibility](Compatibility.md#271-kicad-files)) |
 | `TESTED_COPPER_LAYERS` | `8` | int > 0 | Stage 1 warns above this many copper layers (the most among the test boards); they are still modelled |
 
-## 19.8 Geometry (`parameters/Run_KESE/Geometry.py`)
+<a name="198-geometry-parametersrun_kesegeometrypy"></a>
+## 24.8 Geometry (`parameters/Run_KESE/Geometry.py`)
 
 Numerical quality: how finely curves are faceted and how neighbouring layers share exact edges.
 These do not change dimensions.
@@ -487,30 +528,31 @@ These do not change dimensions.
 The last four rows say how the work is cut up: other values make the same model, but where an edge
 crossing rounds onto the grid another way, a sliver thinner than a grid step.
 
-### 19.8.1 How The Curve Settings Are Used
+<a name="1981-how-the-curve-settings-are-used"></a>
+### 24.8.1 How The Curve Settings Are Used
 
 A circle of radius $`r`$ (a via, a round pad) is flattened to $`4q`$ straight
 segments, with $`q`$ segments per quarter circle chosen so that no chord strays more than
 $`\varepsilon_c`$ from the true circle:
 
 ```math
-n_c = \frac{\pi}{\arccos\left( 1 - \min\left( \frac{\varepsilon_c}{r},\ 1 \right) \right)} \qquad (19.1)
+n_c = \frac{\pi}{\arccos\left( 1 - \min\left( \frac{\varepsilon_c}{r},\ 1 \right) \right)} \qquad (24.1)
 ```
 
 ```math
-q = \min\left( q_{\max},\ \max\left( q_{\min},\ \left\lceil \frac{n_c}{4} \right\rceil \right) \right) \qquad (19.2)
+q = \min\left( q_{\max},\ \max\left( q_{\min},\ \left\lceil \frac{n_c}{4} \right\rceil \right) \right) \qquad (24.2)
 ```
 
 An arc (an arc track, an arc on a drawing layer) of sweep $`\varphi`$ is cut into
 
 ```math
-n_a = \max\left( 2,\ \left\lceil \frac{|\varphi|}{\Delta\varphi} \right\rceil \right) \qquad (19.3)
+n_a = \max\left( 2,\ \left\lceil \frac{|\varphi|}{\Delta\varphi} \right\rceil \right) \qquad (24.3)
 ```
 
 segments, and the round ends of a track of width $`w`$ use
 
 ```math
-q_{\mathrm{end}} = \max\left( q_{\mathrm{track}},\ \left\lfloor \frac{q(w/2)}{2} \right\rfloor \right) \qquad (19.4)
+q_{\mathrm{end}} = \max\left( q_{\mathrm{track}},\ \left\lfloor \frac{q(w/2)}{2} \right\rfloor \right) \qquad (24.4)
 ```
 
 segments per quarter circle.
@@ -522,13 +564,14 @@ segments per quarter circle.
 | $`q`$, $`q_{\min}`$, $`q_{\max}`$ | segments per quarter circle and its bounds (8, 128) | `CIRCLE_MIN_QUAD_SEGS`, `CIRCLE_MAX_QUAD_SEGS` |
 | $`\varphi`$, $`\Delta\varphi`$ | arc sweep and maximum step (3°) | `ARC_STEP_DEG` |
 | $`q_{\mathrm{track}}`$ | minimum roundness of track ends (4) | `TRACK_END_MIN_QUAD_SEGS` |
-| $`q(w/2)`$ | equation (19.2) for radius $`w/2`$ | |
+| $`q(w/2)`$ | equation (24.2) for radius $`w/2`$ | |
 
 Example: a 0.3 mm via ($`r = 0.15`$ mm) gives $`n_c = 12.1`$, so $`q = \max(8, \lceil 3.03 \rceil) = 8`$, 32
 segments around the via; the floor $`q_{\min}`$ decides for every circle below about 1 mm radius. A 3.2 mm
 mounting hole ($`r = 1.6`$ mm) gives $`n_c = 39.7`$ and $`q = 10`$, 40 segments around it.
 
-## 19.9 Parallel (`parameters/Run_KESE/Parallel.py`)
+<a name="199-parallel-parametersrun_keseparallelpy"></a>
+## 24.9 Parallel (`parameters/Run_KESE/Parallel.py`)
 
 How many processor cores work at once, and how much the work holds in memory at once
 ([Working Principle](Working-Principle.md#74-work-done-in-parallel)). None of these changes the
@@ -537,7 +580,7 @@ model: the files are the same, byte for byte, however the work is shared out.
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `WORKERS` | `0` | int ≥ 0 | Threads or processes that work at once. Threads where the 2D geometry library does the work (it runs outside Python's lock): the copper layers and the solder mask's minimum web width, group by group, in stage 3; both sides of the solder mask and the silkscreen, and the finish's copper layers and groups of bores, in stage 4; the faces of the visual-mode skin and the test for its hidden triangles, in stage 6; the Verifier's overlap check in stage 8. Processes of their own, each started afresh, where much of the work is Python's: in stage 3 the copper layers of a board of `PROCESS_MIN_NETS` nets or more (1,000), in stage 6 the parts built at once in simulation mode and the parts sliced for the visual skin, in stage 7 the parts of a STEP file (`PROCESS_WORKERS` and `PROCESS_MIN_COORDINATES` below). `0` = one per processor thread the run may use (all of the machine's, unless a job scheduler, `taskset` or a container limits it); `1` = everything in turn, in one process. |
-| `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stages 3, 6 and 7; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.80 GB in all with 4 workers and 4.37 GB with 32 in simulation mode, and at 3.65 GB with 4 when it writes the STEP file too, whose parts the processes also work on. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` starts no process: stages 6 and 7 build their parts in the main process, stage 3 joins the copper layers in threads, and the threads are kept. If one is stopped or runs out of memory, the parts left go to half as many processes, and to the main process once that would be one; if the processes cannot start, the main process builds them; each time with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2013-notes-worth-knowing)). Windows holds at most 61 processes at once. |
+| `PROCESS_WORKERS` | `0` | int ≥ 0 | At most this many worker processes at once, in stages 3, 6 and 7; `0` = as many as `WORKERS` (a higher value is the same as `WORKERS`). Each process holds its own Python, numpy and shapely (about 36 MB) and the part it builds: NE_Delta, one of the biggest boards tried, peaks at 2.80 GB in all with 4 workers and 4.37 GB with 32 in simulation mode, and at 3.65 GB with 4 when it writes the STEP file too, whose parts the processes also work on. A thread costs little memory, so a machine with many threads and little memory can keep `WORKERS` and lower this; `1` starts no process: stages 6 and 7 build their parts in the main process, stage 3 joins the copper layers in threads, and the threads are kept. If one is stopped or runs out of memory, the parts left go to half as many processes, and to the main process once that would be one; if the processes cannot start, the main process builds them; each time with a note ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2513-notes-worth-knowing)). Windows holds at most 61 processes at once. |
 | `PROCESS_MIN_COORDINATES` | `20000` | int ≥ 0 | Stage 6 starts worker processes only when the parts hold this many coordinates or more in all their prisms, the STEP writer only when their faces do, and stage 3 only when the copper items do, on a board of `PROCESS_MIN_NETS` nets or more ([Working Principle](Working-Principle.md#74-work-done-in-parallel)); smaller boards are built part after part in the main process, which is faster than starting the processes (about 0.3 s for 4): one of the test boards takes 0.10 s that way, and 0.35 s in processes. `0` = processes for every board of more than one part (in stage 3, of `PROCESS_MIN_NETS` nets or more). |
 | `GIVE_BACK_MEMORY` | `True` | bool | Hand the memory that threads freed back to the system after each step done in threads, and in each worker process after each part (glibc's `malloc_trim`, on Linux; elsewhere nothing is done). glibc keeps a pool for each thread and holds on to what is freed in it: NE_Delta in visual mode peaks at 2.65 GB with 4 workers and 3.57 GB with 32 with this, and 3.45 GB and 4.76 GB without. Tens of milliseconds per run. |
 | `SKIN_PROBES_AT_A_TIME` | `2000000` | int ≥ 1 | Visual skin, the test for hidden triangles: triangles probed at once. Their probe points and normals take about a quarter of a gigabyte; fewer take less memory and a little more time |
@@ -549,9 +592,10 @@ model: the files are the same, byte for byte, however the work is shared out.
 | `VERIFY_GROUPS_PER_WORKER` | `4` | int ≥ 1 | and up to this many groups per worker, so that a slow group is made up for by the others |
 | `WORKER_STOP_WAIT_S` | `10` | s ≥ 0 | When a run stops its worker processes (an error, Ctrl+C), how long it waits at most for them to be gone, so that none writes a file after |
 
-## 19.10 Verifier (`parameters/Run_KESE/Verifier.py`)
+<a name="1910-verifier-parametersrun_keseverifierpy"></a>
+## 24.10 Verifier (`parameters/Run_KESE/Verifier.py`)
 
-Whether the Verifier runs, and what it lets pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#203-the-verifier)).
+Whether the Verifier runs, and what it lets pass ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#253-the-verifier)).
 How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME`.
 
 | Name | Default | Range | Meaning |
@@ -564,13 +608,15 @@ How many triangles its rays test at once is `Parallel.VERIFY_TRIANGLES_AT_A_TIME
 | `VERIFY_GONE_AREA_MM2` | `1e-4` | mm² ≥ 0 | A piece this small may be gone in the piece-by-piece comparison (prisms with no slice left on them: a speck of finish that a pinch point's cut takes whole); a bigger piece gone fails the part |
 | `VERIFY_MERGE_EXTRA_DIGITS` | `2` | int ≥ 0 | The closed-mesh check merges a mesh's vertices this many decimal digits finer than the snapping grid (1e-6 mm), whatever `Run.UNITS` |
 
-## 19.11 Presets (`parameters/Run_KESE/Presets.py`)
+<a name="1911-presets-parametersrun_kesepresetspy"></a>
+## 24.11 Presets (`parameters/Run_KESE/Presets.py`)
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
 | `PRESETS` | `freecad`, `elmer`, `calculix`, `openems`, `viewer`, `blender_glb`, `blender_obj` | `{name: {"Module.NAME": value}}` | Sets of overrides applied with `--for <name>`, before any `--set`. An entry is `Module.NAME: value`, `Stackup.<line>: True / False` for a line of `Stackup.py` (in both stack-ups), or one of its short names (`Stackup.finish`); each name is checked as a `--set` is, and a new entry is a new preset. A preset leaves `Stackup.FUSION_BUILD` as `Stackup.py` has it ([Choosing An Export](Choosing-An-Export.md#102-the-presets)) |
 
-## 19.12 Step (`parameters/Fileformats/Step.py`)
+<a name="1912-step-parametersfileformatssteppy"></a>
+## 24.12 Step (`parameters/Fileformats/Step.py`)
 
 The STEP files: true arcs and cylinders, and what counts as an arc. The file's units are `Run.UNITS`;
 how many rows the writer turns into text at once is `Parallel.STEP_ROWS_AT_A_TIME`.
@@ -587,7 +633,7 @@ how many rows the writer turns into text at once is `Parallel.STEP_ROWS_AT_A_TIM
 | `STEP_ARC_MAX_SWEEP_DEG` | `181.0` | degrees > 0 | A longer arc is cut into the fewest pieces that keep each about this long, at vertices spread evenly (a piece can run up to one chord over). A whole circle is two arcs on one `CIRCLE`; below 180 it is cut into more, each on a circle of its own |
 
 Every format holds the same parts: the ones whose line in
-[Stackup](#191-stackup-parameterspcb_elementsstackuppy) is `True` (the solder mask and the silkscreen
+[Stackup](#241-stackup-parameterspcb_elementsstackuppy) is `True` (the solder mask and the silkscreen
 are `False` by default). A STEP file with the mask and silkscreen is 1.4 to 1.9 times as big
 (the PCIe card in `Input/`, in mm: 151 MB and 1,024 solids written in 2.9 s, against 81 MB and 788 solids
 in 1.9 s without them, measured with `Geometry.CIRCLE_CHORD_TOLERANCE_MM = 0.002`).
@@ -608,10 +654,11 @@ An arc is written only where nothing can cross it, since its bulge is up to
 | `STEP_STRIP_MAX_TURN_DEG` | `45.0` | degrees > 0 | The strip kept clear around an arc is drawn with corners at most this far apart about its centre (closer where its margin needs) |
 | `STEP_TANGENT_MM` | `5e-8` | mm ≥ 0 | An edge that leaves an arc's end and cuts into its circle by less than this only touches the arc, as a line along its tangent does (OpenCascade takes two curves within about 2e-7 of the file's unit for touching: in mm, the stricter unit, 2e-7 mm) |
 
-## 19.13 Mesh (`parameters/Fileformats/Mesh.py`)
+<a name="1913-mesh-parametersfileformatsmeshpy"></a>
+## 24.13 Mesh (`parameters/Fileformats/Mesh.py`)
 
 The mesh files GLB, STL and OBJ: normals and shading. The files' units are `Run.UNITS`; how finely a
-curve is cut into flat faces is in [19.8 Geometry](#198-geometry-parametersrun_kesegeometrypy), and
+curve is cut into flat faces is in [24.8 Geometry](#248-geometry-parametersrun_kesegeometrypy), and
 every colour is in its element's file.
 
 | Name | Default | Range | Meaning |
@@ -620,7 +667,8 @@ every colour is in its element's file.
 | `EXPORT_SET_BUFFERVIEW_TARGETS` | `True` | bool | Set glTF bufferView targets, which keeps the Khronos validator report free of hints |
 | `SMOOTH_SHADE_ANGLE_DEG` | `25.0` | degrees | Edges sharper than this stay crisp; flatter ones (cylinders) shade smooth |
 
-## 19.14 Names Of Before 25.2
+<a name="1914-names-of-before-252"></a>
+## 24.14 Names Of Before 25.2
 
 Version 25.2 put the parameter files into the three folders above, made every part's switch a line
 of `Stackup.py`, gave each element's file its own colours and split the copper's settings by top,
@@ -666,4 +714,4 @@ in `Verifier`, and `Run.PRESETS` is `Presets.PRESETS`.
 
 | Previous | Next |
 |:---|---:|
-| [Feature Test Collection](Feature-Test-Collection.md) | [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |
+| [Palace Troubleshooting](Palace-Troubleshooting.md) | [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md) |

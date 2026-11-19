@@ -127,7 +127,7 @@ three example boards have one, `featureTest/15_stackup_none` has none). KESE rea
 |---|---|---|
 | `(thickness ...)` of each `*.Cu` layer | the foil thickness of that layer | `Copper.USE_STACKUP_COPPER_THICKNESS` |
 | `(thickness ...)`, `(type "core" / "prepreg")`, `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of each `dielectric N` layer, sub-layer by sub-layer | the plies of the gap between two copper layers: each sub-layer of a dielectric is one ply, with its own thickness and material | `Board.USE_STACKUP_EPSILON_R`, `Board.USE_STACKUP_LOSS_TANGENT` |
-| `(spec_frequency ...)` and `(dielectric_model ...)` of each sub-layer (KiCad's development version, file format 20260511 on) | the frequency a ply's εr and tan δ are given at, and how they change with frequency ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) | `Board.USE_STACKUP_SPEC_FREQUENCY`, `Board.USE_STACKUP_DIELECTRIC_MODEL` |
+| `(spec_frequency ...)` and `(dielectric_model ...)` of each sub-layer (KiCad's development version, file format 20260511 on) | the frequency a ply's εr and tan δ are given at, and how they change with frequency ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)) | `Board.USE_STACKUP_SPEC_FREQUENCY`, `Board.USE_STACKUP_DIELECTRIC_MODEL` |
 | `(thickness ...)` of the first `*.Mask` layer that has one | the mask thickness, over laminate and over copper | `SolderMask.USE_STACKUP_MASK_THICKNESS` |
 | `(material ...)`, `(epsilon_r ...)`, `(loss_tangent ...)` of `F.Mask` and of `B.Mask` | the material of the top and of the bottom mask in `materials.json`, each side its own | `SolderMask.USE_STACKUP_MASK_MATERIAL` |
 | `(color ...)` of `F.Mask`, `B.Mask`, `F.SilkS`, `B.SilkS` | the colours in GLB, OBJ and the `look` of `materials.json`, and in STEP | `SolderMask.USE_STACKUP_MASK_COLOR`, `SilkScreen.USE_STACKUP_SILK_COLOR` |
@@ -253,7 +253,7 @@ above, where both or neither are prepreg).
 
 The solid takes its **first** ply's type, material, εr and tan δ, top to bottom
 (`Board.FUSED_PROPERTIES = "first"`), or its plies' values in series
-(`"series"`, [Material Properties](Material-Properties.md#215-a-gap-whose-plies-differ)). Either way
+(`"series"`, [Material Properties](Material-Properties.md#265-a-gap-whose-plies-differ)). Either way
 `materials.json` lists every ply of the gap under `plies`, so nothing the file says is lost. Plies
 written as sub-layers of one stack-up dielectric keep that dielectric's name (`dielectric 3` in
 `six_layer`); separate stack-up dielectrics in one gap give a joined name
@@ -351,7 +351,7 @@ PLIES_FUSED = {
 
 `PLIES_SEPARATE` has the same lines, with `prepreg_plies` and `cores` in place of `board`. The file
 holds no thickness, material or colour: those are in each element's own file beside it
-([Parameter Reference](Parameter-Reference.md#191-stackup-parameterspcb_elementsstackuppy) has
+([Parameter Reference](Parameter-Reference.md#241-stackup-parameterspcb_elementsstackuppy) has
 every line and what it builds).
 
 ![A four-layer board cut through six times at the same place, thin layers drawn thicker: with every line of Stackup.py True, both silkscreens, both masks, the finish, the copper, the laminate and the plated walls are all there; with the file's defaults the masks and the silkscreens are left out and the finish is still only on the pads; with Stackup.finish False copper and laminate are left; with the four lines of the bottom side False the top side and the inside are unchanged; with resin_between_traces False the space beside the inner copper is empty; and with only board and resin_between_traces True the laminate stands alone, with its holes and the pockets of the inner copper](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Stack-Up-Model/stackup_4_lines.webp)
@@ -369,7 +369,7 @@ Three rules hold for every line:
   other, and `board` (or `prepreg_plies` and `cores`) every gap.
 - **Something must be built.** A stack-up with every line `False`, a line missing or a line
   misspelt stops the run before the board is read, with the closest name offered
-  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). A
+  ([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2511-errors)). A
   board that has no part on any line that is `True` (only `top_silkscreen` on a board with no
   silkscreen) is written empty, with a warning.
 

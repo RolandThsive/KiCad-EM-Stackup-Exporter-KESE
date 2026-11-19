@@ -1,6 +1,7 @@
-# 22. KiCad And Solver Compatibility
+# 27. KiCad And Solver Compatibility
 
-## 22.1 KiCad Files
+<a name="221-kicad-files"></a>
+## 27.1 KiCad Files
 
 | KiCad | File format number of the release | Status |
 |---|---|---|
@@ -59,7 +60,8 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 | Edge connector flag of Board Setup (`(edge_connector yes)` or `bevelled`) | not read: the fingers are the pads they are, and a bevelled edge stays square |
 | Rigid-flex, multiple stack-up regions | not modelled |
 
-## 22.2 Output Formats
+<a name="222-output-formats"></a>
+## 27.2 Output Formats
 
 | Format | What is in it | Units | Written by |
 |---|---|---|---|
@@ -70,24 +72,30 @@ KiCad itself is not needed, only the `.kicad_pcb` file. Footprints are read from
 
 Visual mode writes GLB and OBJ only.
 
-## 22.3 Tools
+<a name="223-tools"></a>
+## 27.3 Tools
 
-None of these imports has been tried with KESE output yet: the routes follow each tool's
+Apart from the solver bridges, which run KESE's export themselves, none of these imports has been tried with KESE
+output yet: the routes follow each tool's
 documented import formats and the presets in `parameters/Run_KESE/Presets.py`, and are to be confirmed.
 Research underway.
 
 | Tool | Route | Notes |
 |---|---|---|
-| openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md) |
+| openEMS / CSXCAD | STL per part, mm (`--for openems`) with `materials.json` | [openEMS Workflow](OpenEMS-Workflow.md), by hand |
 | FreeCAD | STEP, mm, KiCad origin (`--for freecad`) | one solid per net and dielectric, each under its own name, to assign materials; holes and round edges as true circles and cylinders. Its FEM workbench meshes the solids and runs Elmer or CalculiX |
-| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#102-the-presets)) |
+| Elmer (ElmerFEM) | STEP, mm, KiCad origin, no finish (`--for elmer`), meshed by gmsh | neither ElmerGrid nor ElmerSolver reads STEP or STL: gmsh meshes the solids (`BooleanFragments` for shared faces), `ElmerGrid 14 2` converts the mesh, and `Coordinate Scaling = 0.001` makes mm SI ([Choosing An Export](Choosing-An-Export.md#102-the-presets)); the Elmer bridge builds its own mesh from the preset's STL files instead ([Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md)) |
+| PyPEEC | STL per part, mm, with `materials.json` (`--for elmer`) | the PyPEEC bridge draws the copper onto PyPEEC's uniform voxel grid ([PyPEEC Walkthrough](PyPEEC-Walkthrough.md)) |
+| FastHenry | STL per part, mm, with `materials.json` (`--for elmer`), and the `.kicad_pcb` | the FastHenry bridge takes the stack-up and the copper's heights from the export and the copper itself from the board file: every track a segment along its centre line, every via a vertical bar ([FastHenry Walkthrough](FastHenry-Walkthrough.md)) |
+| Palace | STL per part, mm, with `materials.json` (`--for elmer`), meshed by gmsh | the Palace bridge builds a 2.5D mesh from the solids with gmsh ([Palace Walkthrough](Palace-Walkthrough.md)) |
 | CalculiX | STEP, mm, KiCad origin, no finish, copper per layer (`--for calculix`) | heat and stress, no electromagnetics; gmsh meshes the solids into an Abaqus `.inp`, or cgx imports the STEP file |
 | gmsh | STEP, mm | meshes the solids for a solver |
 | Blender | GLB (`--for blender_glb`) or OBJ with its `.mtl` (`--for blender_obj`): visual mode, metres, centred, `flat`, solder mask and silkscreen on | the importers turn Y-up into Z-up, so the board lies with `F.Cu` up |
 | `<model-viewer>`, three.js | GLB, m, centred (`--for viewer`) | the visual-mode skin is made to avoid z-fighting ([Output Modes](Output-Modes.md)) |
 | Other thermal / FEA tools reading STL | STL per part, mm | closed solids per part (a part can hold several separate bodies); mesh them with the tool's own mesher |
 
-## 22.4 Python And Packages
+<a name="224-python-and-packages"></a>
+## 27.4 Python And Packages
 
 | | Version |
 |---|---|

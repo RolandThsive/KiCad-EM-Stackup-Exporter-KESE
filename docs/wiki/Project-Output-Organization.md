@@ -95,7 +95,7 @@ cannot be written), the file being written is removed, an OBJ with its MTL, and 
 when nothing in it was written whole (and the board's folder, when it holds no other run). The
 error that comes out is the one that stopped the write, even when a file or folder cannot be
 removed after it (that one is left)
-([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2011-errors)). While a big board's
+([Checks, Errors And Warnings](Checks-Errors-And-Warnings.md#2511-errors)). While a big board's
 STEP file is written in worker processes, its parts are first written into a hidden folder beside
 it, `.<board>.step.parts` (`<board>.step` cut to its first 40 characters), which is removed once
 the file is done or the write fails

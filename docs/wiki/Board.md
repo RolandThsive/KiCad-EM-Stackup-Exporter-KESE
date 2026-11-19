@@ -57,11 +57,11 @@ copper layers.
 | `Board.FUSED_PROPERTIES` | Material, εr and tan δ of the solid |
 |---|---|
 | `"first"` (the default) | those of the gap's first ply, counted from the top |
-| `"series"` | the plies in series, as a field straight across the gap sees them ([Material Properties](Material-Properties.md#215-a-gap-whose-plies-differ)); the material is written as `1080 + 2116` |
+| `"series"` | the plies in series, as a field straight across the gap sees them ([Material Properties](Material-Properties.md#265-a-gap-whose-plies-differ)); the material is written as `1080 + 2116` |
 
 In `materials.json` every such solid has `kind` (core / prepreg), `material`, `thickness_mm`,
 `epsilon_r`, `loss_tangent`, `fused_properties`, `spec_frequency_hz` and `dielectric_model`
-([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)),
+([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)),
 `between` (the two copper layers it separates) and `plies`: the plies it was fused from, top to
 bottom, each with its own name, kind, material, thickness and values. Nothing the board file says
 about a ply is lost by fusing. `report.txt` prints the same, a row `fused from` for each ply:
@@ -218,7 +218,7 @@ stack-ups; what changes is the solid it belongs to and the values it has:
 With the plies separate, the ply the resin flowed from is the one that touches the copper layer:
 the last ply of the gap above, or the first ply of the gap below. The default εr 3.5 and tan δ
 0.02 are a best guess for FR-4 epoxy without glass
-([Material Properties](Material-Properties.md#213-the-default-numbers)); a resin-rich region has
+([Material Properties](Material-Properties.md#263-the-default-numbers)); a resin-rich region has
 a lower εr than the glass-and-resin ply beside it, which is why a solver that resolves the inner
 traces may want it apart.
 
@@ -352,7 +352,7 @@ All in `parameters/PCB_elements/Board.py`, in the file's five sections. Whether 
 built is not here: it is the lines `board`, `prepreg_plies`, `cores` and `resin_between_traces`
 of `Stackup.py`. The names of before 25.2 (`BOARD_ENABLED`, `RESIN_FILL_BETWEEN_INNER_COPPER`)
 still work with `--set`; see
-[Parameter Reference](Parameter-Reference.md#1914-names-of-before-252).
+[Parameter Reference](Parameter-Reference.md#2414-names-of-before-252).
 
 | Name | Default | Range | Meaning |
 |---|---|---|---|
@@ -380,7 +380,7 @@ still work with `--set`; see
 | `DEFAULT_EPSILON_R`, `DEFAULT_LOSS_TANGENT` | `4.5`, `0.02` | ≥ 1; ≥ 0 | Typical FR4 at 1 GHz, used when the stack-up gives none |
 | `DEFAULT_SPEC_FREQUENCY_HZ` | `1e9` | Hz > 0 | The frequency εr and tan δ are given at, when the stack-up gives none |
 | `USE_STACKUP_EPSILON_R`, `USE_STACKUP_LOSS_TANGENT`, `USE_STACKUP_SPEC_FREQUENCY` | `True` | bool | Stack-up values win over the defaults when present |
-| `DIELECTRIC_MODEL` | `"djordjevic_sarkar"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
+| `DIELECTRIC_MODEL` | `"djordjevic_sarkar"` | `"constant"` / `"djordjevic_sarkar"` / `"table"` | How εr and tan δ change with frequency ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)) |
 | `USE_STACKUP_DIELECTRIC_MODEL` | `True` | bool | The file's `(dielectric_model ...)` wins when present |
 | `DS_LOW_FREQUENCY_HZ`, `DS_HIGH_FREQUENCY_HZ` | `1e3`, `1e12` | Hz > 0, the low one below the high one | Corner frequencies of the Djordjevic-Sarkar model |
 | `DIELECTRIC_TABLE` | `()` | rows of (Hz, εr, tan δ) | The table of `DIELECTRIC_MODEL = "table"` |

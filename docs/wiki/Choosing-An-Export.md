@@ -56,7 +56,9 @@ FDTD cell of openEMS, and would force the volume mesh of Elmer or CalculiX down 
   `BooleanFragments` make the touching solids share their faces, export the mesh in gmsh's format, and
   convert it with `ElmerGrid 14 2 board.msh -autoclean`. Elmer takes coordinates as they come, so with a
   mesh in mm set `Coordinate Scaling = 0.001` (Model > Setup in ElmerGUI) for SI units. gmsh reads STEP
-  in mm unless `Geometry.OCCTargetUnit` says otherwise.
+  in mm unless `Geometry.OCCTargetUnit` says otherwise. The Elmer bridge on the `Elmer_Integration`
+  branch takes another way: it asks the `elmer` preset for STL files as well and builds a 2.5D mesh
+  of its own from them ([Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md)).
 - **CalculiX**: gmsh meshes the STEP file and saves an Abaqus `.inp` (`Mesh.Format = 39`), which `ccx`
   runs; or CalculiX's own pre-processor cgx imports the STEP file. CalculiX does heat and stress, not
   electromagnetics; its units are the ones you keep consistent (the mesh is in mm).
@@ -112,8 +114,8 @@ with no option (`python run_KESE.py board.kicad_pcb`) gives it:
 | `Stackup.FUSION_BUILD` | `PLIES_SEPARATE`: every ply, every core and the resin between the traces a solid of its own |
 | The solder mask and the silkscreen | left out (`Stackup.solder_mask`, `Stackup.silkscreen`) |
 | `Finish.FINISH_TYPE` | `file`: the finish the board file names; a board that names none stops the run until a finish is named or the finish is left out ([Finish](Finish.md#153-finish-types)) |
-| `Board.DIELECTRIC_MODEL` | `djordjevic_sarkar`: the wideband model's parameters beside each εr and tan δ ([Material Properties](Material-Properties.md#214-how-εr-and-tan-δ-change-with-frequency)) |
-| `Copper.COPPER_ROUGHNESS_MODEL` | `huray`, with the values Ansys's tools start with ([Material Properties](Material-Properties.md#216-copper-by-layer)) |
+| `Board.DIELECTRIC_MODEL` | `djordjevic_sarkar`: the wideband model's parameters beside each εr and tan δ ([Material Properties](Material-Properties.md#264-how-εr-and-tan-δ-change-with-frequency)) |
+| `Copper.COPPER_ROUGHNESS_MODEL` | `huray`, with the values Ansys's tools start with ([Material Properties](Material-Properties.md#266-copper-by-layer)) |
 | `Verifier.VERIFY` | `True`: every model is checked before it goes to a solver (`--no-verify` leaves the checks out) |
 
 The material values are generic ones. Set the fabricator's values in

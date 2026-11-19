@@ -25,6 +25,13 @@
 - [Feature Test Collection](Feature-Test-Collection.md)
 - [Corpus Testing](Corpus-Testing.md)
 
+**FEM Solvers' Integration**
+- [Walkthrough](Walkthrough.md)
+- [Simulating Your Own Board](Simulating-Your-Own-Board.md)
+- [Test Boards And Results](Test-Boards-And-Results.md)
+- [Accuracy](Accuracy.md)
+- [Troubleshooting](Troubleshooting.md)
+
 **References And Compatibilities**
 - [Parameter Reference](Parameter-Reference.md)
 - [Checks, Errors And Warnings](Checks-Errors-And-Warnings.md)
@@ -33,6 +40,7 @@
 - [openEMS Workflow](OpenEMS-Workflow.md)
 
 **Research And Community**
+- [Solvers Comparison](Solvers-Comparison.md)
 - [Glossary](Glossary.md)
 - [Future Upgrades And Planning](Future-Upgrades-And-Planning.md)
 - [Real PCB Stackup](Real-PCB-Stackup.md)
