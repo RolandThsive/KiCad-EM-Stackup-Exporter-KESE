@@ -39,13 +39,21 @@ self-resonance; and no temperature or stress. Which solver of the project gives 
 ## 29.2 How It Fits Together
 
 ```mermaid
-flowchart LR
-    A[KiCad board<br>.kicad_pcb] -->|bridge/geometry.py<br>run_KESE.py --for elmer| B[STL per solid<br>+ materials.json]
-    B -->|bridge/layers.py| C[slabs and<br>sections]
-    C -->|bridge/voxels.py| D[copper on one<br>uniform voxel grid]
-    D -->|bridge/ports.py| E[two terminals<br>per coil]
-    E -->|bridge/pypeec_case.py| F[PyPEEC mesher<br>and solver]
-    F -->|bridge/study.py| G[L, R, M<br>results .json]
+flowchart TB
+    subgraph S1["KESE exports the board"]
+        direction LR
+        A[KiCad board<br>.kicad_pcb] -->|bridge/geometry.py<br>run_KESE.py --for elmer| B[STL per solid<br>+ materials.json]
+    end
+    subgraph S2["The bridge builds the PyPEEC case"]
+        direction LR
+        C[slabs and<br>sections] -->|bridge/voxels.py| D[copper on one<br>uniform voxel grid] -->|bridge/ports.py| E[two terminals<br>per coil]
+    end
+    subgraph S3["PyPEEC solves, the bridge reads out"]
+        direction LR
+        F[PyPEEC mesher<br>and solver] -->|bridge/study.py| G[L, R, M<br>results .json]
+    end
+    S1 -->|bridge/layers.py| S2
+    S2 -->|bridge/pypeec_case.py| S3
 ```
 
 KESE's solver preset is named `elmer` in KESE: simulation-mode solids, one STL per solid, and a

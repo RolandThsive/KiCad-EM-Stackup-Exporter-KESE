@@ -39,14 +39,21 @@ read L, R and M only.
 ## 39.2 How It Fits Together
 
 ```mermaid
-flowchart LR
-    A[KiCad board<br>.kicad_pcb] -->|run_KESE.py --for elmer| B[STL per solid<br>+ materials.json]
-    B -->|bridge/geometry.py| C[parts in model<br>coordinates]
-    C -->|bridge/mesh25d.py| D[2.5D mesh<br>wedges + tetrahedra]
-    D -->|bridge/ports.py| E[lumped port sheets<br>where each coil is opened]
-    E -->|bridge/palace_case.py| F[config.json<br>+ Gmsh mesh]
-    F -->|palace -np N| G[port-V.csv<br>domain-E.csv]
-    G -->|bridge/palace_case.py| H[Z, R, L, M<br>results json]
+flowchart TB
+    subgraph S1["KESE exports the board"]
+        direction LR
+        A[KiCad board<br>.kicad_pcb] -->|run_KESE.py --for elmer| B[STL per solid<br>+ materials.json]
+    end
+    subgraph S2["The bridge meshes the board and places the ports"]
+        direction LR
+        C[parts in model<br>coordinates] -->|bridge/mesh25d.py| D[2.5D mesh<br>wedges + tetrahedra] -->|bridge/ports.py| E[lumped port sheets<br>where each coil is opened]
+    end
+    subgraph S3["Palace solves, the bridge reads out"]
+        direction LR
+        F[config.json<br>+ Gmsh mesh] -->|palace -np N| G[port-V.csv<br>domain-E.csv] -->|bridge/palace_case.py| H[Z, R, L, M<br>results json]
+    end
+    S1 -->|bridge/geometry.py| S2
+    S2 -->|bridge/palace_case.py| S3
 ```
 
 Each step is described from [39.11](#3911-export-the-board-with-kese) on.

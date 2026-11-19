@@ -43,13 +43,21 @@ divide the work is on [Solvers Comparison](Solvers-Comparison.md).
 ## 24.2 How It Fits Together
 
 ```mermaid
-flowchart LR
-    A[KiCad board<br>.kicad_pcb] -->|run_KESE.py --for elmer| B[STL per net<br>+ materials.json]
-    B -->|bridge/mesh25d.py| C[2.5D mesh<br>wedges + tetrahedra]
-    C -->|bridge/ports.py| D[coil electrodes<br>and port sheets]
-    D -->|bridge/elmer_case.py| E[Elmer case<br>.sif + circuits]
-    E -->|ElmerSolver| F[V and I of every coil]
-    F -->|bridge/study.py| G[L, R, M<br>results.json]
+flowchart TB
+    subgraph S1["KESE exports the board"]
+        direction LR
+        A[KiCad board<br>.kicad_pcb] -->|run_KESE.py --for elmer| B[STL per net<br>+ materials.json]
+    end
+    subgraph S2["The bridge builds the Elmer case"]
+        direction LR
+        C[2.5D mesh<br>wedges + tetrahedra] -->|bridge/ports.py| D[coil electrodes<br>and port sheets] -->|bridge/elmer_case.py| E[Elmer case<br>.sif + circuits]
+    end
+    subgraph S3["Elmer solves, the bridge reads out"]
+        direction LR
+        F[V and I of every coil] -->|bridge/study.py| G[L, R, M<br>results.json]
+    end
+    S1 -->|bridge/mesh25d.py| S2
+    S2 -->|ElmerSolver| S3
 ```
 
 Each step is described below, from [24.8](#248-export-the-board-with-kese) on.

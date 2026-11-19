@@ -39,14 +39,19 @@ displacement current.
 ## 34.2 How It Fits Together
 
 ```mermaid
-flowchart LR
-    A[KiCad board<br>.kicad_pcb] -->|run_KESE.py --for elmer| B[materials.json<br>the copper layers' heights]
-    A -->|bridge/kicad.py| C[tracks, arcs, vias,<br>copper polygons by net]
-    B -->|bridge/stackup.py| D[filament model<br>segments + bars]
-    C -->|bridge/fasthenry_case.py| D
-    D -->|ports: stacked ends,<br>left-out via, cut| E[model.inp]
-    E -->|fasthenry -s ludecomp -m direct -a off| F[Zc.mat<br>the impedance matrix]
-    F -->|coil_rows| G[L, R, M<br>results .json]
+flowchart TB
+    subgraph S1["KESE and the bridge build the filament model"]
+        direction LR
+        A[KiCad board<br>.kicad_pcb] -->|run_KESE.py --for elmer| B[materials.json<br>the copper layers' heights]
+        A -->|bridge/kicad.py| C[tracks, arcs, vias,<br>copper polygons by net]
+        B -->|bridge/stackup.py| D[filament model<br>segments + bars]
+        C -->|bridge/fasthenry_case.py| D
+    end
+    subgraph S2["FastHenry solves, the bridge reads out"]
+        direction LR
+        E[model.inp] -->|fasthenry -s ludecomp -m direct -a off| F[Zc.mat<br>the impedance matrix] -->|coil_rows| G[L, R, M<br>results .json]
+    end
+    S1 -->|ports: stacked ends,<br>left-out via, cut| S2
 ```
 
 Each step is described in [34.8](#348-export-the-stack-up-with-kese) to [34.14](#3414-sin-cos-and-the-angle-error) below.
