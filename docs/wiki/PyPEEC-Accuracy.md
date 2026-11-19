@@ -1,11 +1,11 @@
-# 49. PyPEEC Accuracy
+# 32. PyPEEC Accuracy
 
 Where the PyPEEC bridge's errors come from, how big each one measured on E01, E02 and the coil board,
 and what the bridge leaves out of the physics. Every number here is from the runs on the
 `PyPEEC_Integration` branch (`Examples/E01_circular_loop/results*.json`,
 `Examples/E02_coaxial_loops/results.json`, and the coil board's `Results/`).
 
-## 49.1 The Error Budget On E01
+## 32.1 The Error Budget On E01
 
 Each line changes one thing and keeps the rest.
 
@@ -26,7 +26,7 @@ nothing on a lone trace: it is the same above and below its middle, so its two h
 current whatever the frequency, and the current's drift towards the surfaces would take three layers
 or more to show.
 
-## 49.2 E02: The Mutual Inductance
+## 32.2 E02: The Mutual Inductance
 
 | Quantity | 100 µm | 50 µm | Reference |
 |---|---|---|---|
@@ -39,7 +39,7 @@ cannot tell PyPEEC's M from it more finely than that. The open RX leaves the TX'
 10 kHz to 0.01 %, as an open loop must. At 3.5 MHz the RX's eddy currents add 0.8 % to the TX's R:
 the proximity effect, which the voxels across the RX's trace resolve.
 
-## 49.3 The Coil Board
+## 32.3 The Coil Board
 
 S0d2_1x_OD23_2L_tiny_TX3top_Cut has no exact reference, so its accuracy is read from its own checks
 and symmetries:
@@ -50,6 +50,7 @@ and symmetries:
 | The second half turn against the first | the rotor's two sectors, turned by 180°, fall on the very same voxels | the same M, to the last digit, at every angle |
 | SIN against COS | equal swings a quarter period apart, as the board is drawn | within 0.4 % in amplitude, 89.9° to 90.1° apart |
 | The voxel size | the branch's voxel study on a coil board of the same size ([`Examples/Inductive Coils/README.md`](https://github.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/blob/PyPEEC_Integration/Examples/Inductive%20Coils/README.md)) | 50 µm reads M and L TX to about half a percent; R TX reads at least 5 % high, still falling at 25 µm |
+| The angle error | how it is read: each channel's best sine, M = offset + amplitude × sin(θ + phase), is taken out and scaled to ±1, as a decoder chip's offset and gain calibration does; the angle is atan2(SIN, COS), less the true angle and the average error (`angle_error.py`) | the fit uses the same points as the error, so it measures how far the solves are from a perfect sine and cosine pair |
 | The generator's estimate | the TX's L with the rotor away, by a separate method | 296.4 nH against 292 nH, +1.5 % |
 | The iterative solve | GMRES on each solve | 2 to 4 iterations, residuals 4e-8 to 3e-7, PyPEEC's own checks passed |
 
@@ -58,7 +59,7 @@ where the stator is. The rotor's edges then fall on the voxels a little differen
 which shows as small noise on the curves; each gap's best sine fit says how much (at 1 mm, 0.025 nH rms
 left on SIN, 0.018 nH on COS, against swings of 4.6 nH).
 
-## 49.4 What The Bridge Leaves Out
+## 32.4 What The Bridge Leaves Out
 
 | What | In the bridge | What it does to the numbers |
 |---|---|---|
@@ -70,7 +71,7 @@ left on SIN, 0.018 nH on COS, against swings of 4.6 nH).
 | The board's shape | layered, flat at a few heights | a board over another works (the rotor over the stator); a part tilted out of the board's plane does not |
 | The terminals | the coil's voxels on the two faces of its gap, held as one potential each | the gap's own short piece of current path is not counted; E01's reference accounts for it with the open-loop share |
 
-## 49.5 What To Trust
+## 32.5 What To Trust
 
 | Quantity | On boards like these |
 |---|---|
@@ -83,4 +84,4 @@ left on SIN, 0.018 nH on COS, against swings of 4.6 nH).
 
 | Previous | Next |
 |:---|---:|
-| [PyPEEC Test Board Results](PyPEEC-Test-Board-Results.md) | [PyPEEC Hardware](PyPEEC-Hardware.md) |
+| [PyPEEC Test Boards And Results](PyPEEC-Test-Boards-And-Results.md) | [PyPEEC Troubleshooting](PyPEEC-Troubleshooting.md) |
