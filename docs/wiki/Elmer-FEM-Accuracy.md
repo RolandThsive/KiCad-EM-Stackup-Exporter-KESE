@@ -1,4 +1,4 @@
-# 30. Elmer FEM Accuracy
+# 27. Elmer FEM Accuracy
 
 Where the Elmer bridge's errors come from, how big each one measured on E01 and E02, what that means
 for the coil board, and what the bridge leaves out of the physics. Every number here is from the runs
@@ -6,7 +6,7 @@ on the `Elmer_Integration` branch (`Examples/E01_circular_loop/results*.json`,
 `Examples/E02_coaxial_loops/results*.json` and the coil board's
 `Examples/Inductive Coils/S0d2_1x_OD23_2L_tiny_TX3top_Cut/Results/`).
 
-## 30.1 The Error Budget On E01
+## 27.1 The Error Budget On E01
 
 Each line changes one thing and keeps the rest; all are L at 10 kHz.
 
@@ -19,7 +19,9 @@ Each line changes one thing and keeps the rest; all are L at 10 kHz.
 | The reference's open-loop share | with the sheet across the gap, the coil's voltage is the flux through the whole circle, so L is the closed ring's L times the share of the circle the current runs in; the reference ends that share at the round ends' centres, but the current runs on into the half-discs | the reference is a lower bound: up to 0.8 % higher (56.44 nH) with the current taken on to the gap's faces |
 | **Elmer against the reference** | Grover's ring formula with the trace's GMD | **−3.1 % at level 1.3; −0.46 % at level 0.75 with the air four times as fine** |
 
-The ladder in the first line refines only the copper's mesh: a level divides `h_edge`, `h_in` and
+![E01's L and E02's M at 10 kHz, as a percentage off their references, against the mesh's nodes in thousands: E01 rises from −3.7 % at 60,000 nodes to −3.2 % at 86,000 and −3.1 % at 125,000; E02 rises from −3.3 % at 92,000 nodes to −3.1 % at 120,000; E01 with the air graded twice and four times as finely rises from −1.55 % at 89,000 nodes to −0.46 % at 166,000, and E02's M with the air graded twice as finely sits at −1.1 % with 135,000 nodes; E01 in an air domain twice as big sits at −3.5 % with 87,000 nodes; a grey band from 0 to +0.8 % shows the reference's own uncertainty](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/elmerresults_1_against_reference.webp)
+
+E01's L and E02's M against the mesh's size, from the runs in the table. The ladder in the first line refines only the copper's mesh: a level divides `h_edge`, `h_in` and
 `dz_copper` and leaves the air's grading as it is. Its small last step made the answer look
 converged, but it measured the copper alone. Grading the air twice as finely, at the coarsest copper
 mesh, moved L three and a half times as far as the whole ladder did, with about as many nodes as
@@ -30,7 +32,7 @@ grow from 0.12 mm at the copper's edge to 0.62 mm a millimetre away (the size is
 not move, since it depends on the copper's mesh alone, and the circuit's L and the field energy's
 still agreed. The board under the copper is not meshed apart from the air: a board or mask part that
 lies wholly outside the copper's heights is merged into it
-([Elmer FEM Workflow](Elmer-FEM-Workflow.md#262-section-the-parts-into-slabs)), so the air's grading
+([Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md#249-section-the-parts-into-slabs)), so the air's grading
 covers it too.
 
 ![E01's mesh at level 0.75, cut through the loop's axis, 4 mm by 4 mm round one crossing of the trace. Left, the examples' grading (grade 0.5, tet_grade 0.7; 59,782 nodes, L 3.7 % low): the tetrahedra above and below the thin band of wedges grow to about a millimetre within a millimetre of the copper. Right, twice as fine (grade 0.25, tet_grade 0.35; 88,760 nodes, L 1.55 % low): the elements stay smaller round the trace](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Accuracy/E01_circular_loop/elmeraccuracy_1_air_mesh.webp)
@@ -44,13 +46,17 @@ domain holds L down by about 0.3 % more. Against that stands the reference's own
 with the copper is the fix this points to; it is not yet in the bridge
 ([Future Upgrades And Planning](Future-Upgrades-And-Planning.md)).
 
-## 30.2 The Iterative Solve
+## 27.2 The Iterative Solve
 
 At 10 kHz the BiCGStab(l) solve reaches a relative residual of about 1e-6 within 1500 iterations and
 stalls there: the conduction term jωσ is too small, next to the curl-curl term, to steady the system
 without a gauge. At 3.5 MHz the same case converges to 1e-7 in under 1200 iterations. The bridge
 caps the iterations (`max_iter`) and lets the run go on (`Linear System Abort Not Converged =
 False`), so a 10 kHz answer carries an iteration error:
+
+![The linear solver's relative residual against its iterations, on a log scale: at 10 kHz all three levels fall to between 5e-7 and 3e-6 within about 1500 iterations and stall there until the cap of 3000; at 3.5 MHz level 1 falls below the 1e-7 tolerance at 864 iterations](https://raw.githubusercontent.com/RolandThsive/KiCad-EM-Stackup-Exporter-KESE/main/docs/images/Elmer-FEM-Test-Board-Results/E01_circular_loop/elmerresults_2_residual.webp)
+
+The linear solver's residual on E01, 15 and 16 November.
 
 | E01, level 1, 10 kHz | 1500 iterations | 3000 iterations | Change |
 |---|---|---|---|
@@ -70,7 +76,7 @@ iterations; E01's committed results are still those of the older solve above. On
 3.5 MHz the iterative solve no longer stalls but converges too slowly to read M, so the coil board
 uses the direct solve, which has no iteration error at all.
 
-## 30.3 What The Bridge Leaves Out
+## 27.3 What The Bridge Leaves Out
 
 | What | In the bridge | What it does to the numbers |
 |---|---|---|
@@ -80,7 +86,7 @@ uses the direct solve, which has no iteration error at all.
 | The copper's shape | KESE's solids, extruded straight through the board: a 2.5D mesh | the etched trapezoid and the copper's roughness are not in the mesh |
 | The terminals | two electrodes on the gap's faces and a sheet across the gap | the gap's own short piece of current path is not counted; E01's reference accounts for it with the open-loop share. On the coil board each receiver's 0.2 mm cut is made in the model only: the real board's leads to the IC are not in it |
 
-## 30.4 The Coil Board
+## 27.4 The Coil Board
 
 S0d2_1x_OD23_2L_tiny_TX3top_Cut has no textbook answer, so its accuracy rests on what E01 and E02
 measured and on checks inside its own runs:
@@ -94,7 +100,7 @@ measured and on checks inside its own runs:
 | A mesh per angle | every angle gets its own mesh, so the stator's mesh differs a little from angle to angle | the second half turn repeats the first: at six of eight angles M is the same to the last digit, at 225° and 315° within 0.03 nH, against a 4.51 nH amplitude at 1 mm |
 | The angle error | SIN and COS each fitted with a sine, offset and gain calibrated out | an error that scales SIN and COS alike leaves it as it is; mesh noise between angles adds to it |
 
-## 30.5 What To Trust
+## 27.5 What To Trust
 
 | Quantity | On boards like E01 and E02 |
 |---|---|
@@ -116,4 +122,4 @@ next check these numbers need ([Future Upgrades And Planning](Future-Upgrades-An
 
 | Previous | Next |
 |:---|---:|
-| [Elmer FEM Test Board Results](Elmer-FEM-Test-Board-Results.md) | [Elmer FEM Hardware](Elmer-FEM-Hardware.md) |
+| [Elmer FEM Test Boards And Results And Results](Elmer-FEM-Test-Boards-And-Results.md) | [Elmer FEM Simulating Your Own Board](Elmer-FEM-Simulating-Your-Own-Board.md#257-before-a-large-board) |

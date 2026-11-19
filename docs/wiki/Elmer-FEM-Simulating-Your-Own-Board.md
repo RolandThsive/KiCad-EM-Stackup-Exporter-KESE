@@ -1,16 +1,16 @@
-# 27. Elmer FEM Simulating Your Own Board
+# 25. Elmer FEM Simulating Your Own Board
 
 Every example on the `Elmer_Integration` branch is one folder with its board and a `simulation.py`
 whose settings are all in one dictionary, `SETTINGS`, at the top of the file. To simulate a board of
 your own, copy the example closest to it and change those settings; this page lists every one.
 
-## 27.1 Start From An Example
+## 25.1 Start From An Example
 
 | Your board has | Start from |
 |---|---|
 | One coil, opened by a gap between two trace ends | `Examples/E01_circular_loop/` |
 | Two coils, one driven and one sensing (mutual inductance) | `Examples/E02_coaxial_loops/` |
-| A coil set from the Sinusoidal Coil Generator: a stator with a TX, SIN and COS, and a rotor turned to a series of angles | `Examples/Inductive Coils/new_coil.py`, which sets the board up as a folder like `S0d2_1x_OD23_2L_tiny_TX3top_Cut/` ([27.8](#278-a-coil-set-from-the-generator)) |
+| A coil set from the Sinusoidal Coil Generator: a stator with a TX, SIN and COS, and a rotor turned to a series of angles | `Examples/Inductive Coils/new_coil.py`, which sets the board up as a folder like `S0d2_1x_OD23_2L_tiny_TX3top_Cut/` ([27.8](#258-a-coil-set-from-the-generator)) |
 
 ```bash
 cp -r Examples/E01_circular_loop Examples/MY_BOARD
@@ -22,7 +22,7 @@ cp ~/my_board.kicad_pcb .          # and set SETTINGS['board'] to its name
 Every run writes `results.json` beside the script and its working files under `case/` (the KESE
 export, the mesh, the `.sif` files, Elmer's logs), which is not committed.
 
-## 27.2 The Board And Its Coils
+## 25.2 The Board And Its Coils
 
 | Setting | Example (E01) | What it is |
 |---|---|---|
@@ -43,7 +43,7 @@ driven coil or 0.0 for a sensing one. The electrodes and the sheet are found in 
 | Two ends stacked on two layers (the coil board's TX) | `P.electrodes` with the dielectric's height and a small disc round the ends as the gap | `P.sheet_vertical(m, line, z0, z1)` along a line drawn into the mesh (`extra_lines`) |
 | A cut across a top trace (the coil board's SIN and COS) | a `void` part (air of priority 4) that takes the copper inside the cut's box out of the top copper; then `P.electrodes` on the box with the top copper's height | `P.sheet_at_level(m, box, z)` at the copper's lower face, with the box's outline drawn into the mesh |
 
-## 27.3 The Domain And The Frequencies
+## 25.3 The Domain And The Frequencies
 
 | Setting | Example | What it is |
 |---|---|---|
@@ -53,7 +53,7 @@ driven coil or 0.0 for a sensing one. The electrodes and the sheet are found in 
 | `order` | `1` | Edge element order. `--order 2` uses second-order (quadratic) elements, with several times the unknowns and the memory |
 | `levels` | `[0.75, 1.0, 1.3]` | The mesh ladder: each level divides `h_edge`, `h_in` and `dz_copper` by itself; the air's sizes and grading stay as they are. A run of two or three levels shows how far the answer still moves with the copper's mesh, not with the air's: check the air with `grade` and `tet_grade` halved as well |
 
-## 27.4 The Mesh
+## 25.4 The Mesh
 
 These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 
@@ -62,7 +62,7 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 | `h_edge` | `0.09` | Element size at copper edges, mm. At least three elements across the narrowest trace is a good start |
 | `h_in` | `0.18` | Largest element inside copper, mm |
 | `h_max` | `6.0` | Largest triangle anywhere, mm (the far field) |
-| `grade` | `0.5` | How fast the size grows away from copper, mm per mm. Halved to 0.25 (with `tet_grade` 0.35), E01's L rose 2.3 % with half again the nodes; quartered, another 1.1 % with 2.8 times the nodes ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#301-the-error-budget-on-e01)) |
+| `grade` | `0.5` | How fast the size grows away from copper, mm per mm. Halved to 0.25 (with `tet_grade` 0.35), E01's L rose 2.3 % with half again the nodes; quartered, another 1.1 % with 2.8 times the nodes ([Elmer FEM Accuracy](Elmer-FEM-Accuracy.md#271-the-error-budget-on-e01)) |
 | `dz_copper` | `0.018` | Thickest wedge layer in a copper foil, mm. Half the skin depth or less at the highest frequency (copper: 35 µm at 3.5 MHz) |
 | `dz_max` | `0.4` | Thickest wedge layer elsewhere (through the board, in an air gap), mm |
 | `tet_max` | `8.0` | Largest tetrahedron in the air above and below, mm |
@@ -70,11 +70,11 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 | `foil_max` (default) | `0.15` | The thickest slab still treated as a copper foil; thicker slabs with copper (via barrels) get `dz_max` |
 | `pads` (default) | `(0.03, 0.08)` | The two air layers of wedges just above and below the boards, mm |
 
-## 27.5 The Linear Solver
+## 25.5 The Linear Solver
 
 | Setting | E01 | Coil board | What it is |
 |---|---|---|---|
-| `solver` | `'iterative'` (the default) | `'mumps'` | The A-V solve: iterative, or a direct solve with serial MUMPS. MUMPS is exact, but needs far more memory ([Elmer FEM Hardware](Elmer-FEM-Hardware.md)) |
+| `solver` | `'iterative'` (the default) | `'mumps'` | The A-V solve: iterative, or a direct solve with serial MUMPS. MUMPS is exact, but needs far more memory ([Elmer FEM Simulating Your Own Board](#257-before-a-large-board)) |
 | `method` | BiCGStab(l) | `'GCR'` | The Krylov method of an iterative solve. The coil board's script notes that GCR(50) falls slowly but steadily there while BiCGStab(l) wanders |
 | `ilu_order`, `ilu_factor` | none | `1`, `0.1` | An ILU of the field's block under the circuit preconditioner, the matrix factored with its diagonal times 1.1: the air's curl-curl block is singular, and an unshifted ILU of it breaks down on tiny pivots |
 | `threads` | `4` | `4` | OpenMP threads for ElmerSolver |
@@ -83,7 +83,7 @@ These go to `mesh25d.Settings` (in `SETTINGS['mesh']`):
 
 The last four matter only to an iterative solve; a direct solve ignores them.
 
-## 27.6 The Command Line
+## 25.6 The Command Line
 
 | Option | What it does |
 |---|---|
@@ -107,14 +107,26 @@ you need them:
 A rerun of the same level adds to `results.json`: a solve at a frequency already there is replaced,
 the others are kept.
 
-## 27.7 Before A Large Board
+## 25.7 Before A Large Board
 
-Check the memory first ([Elmer FEM Hardware](Elmer-FEM-Hardware.md)): build the mesh alone
-(`--mesh-only` in the E01 script and the coil board's), read its node count from the log, and
-multiply by the memory per node measured for the solver you will use. A run that does not fit is
-better held for a larger machine than run on a coarser mesh whose error is unknown.
+Check the memory first: build the mesh alone (`--mesh-only` in the E01 script and the coil board's),
+read its node count from the log, and multiply by the memory per node measured for the solver you
+will use. A run that does not fit is better held for a larger machine than run on a coarser mesh whose
+error is unknown.
 
-## 27.8 A Coil Set From The Generator
+| Solve | Measured | Memory |
+|---|---|---|
+| Iterative, BiCGStab(l) (E01 and E02, 4 cores, 15 GB) | nine meshes from 59,782 to 166,471 nodes, at both frequencies | 59 to 61 kB per node (E01 at level 1: 4.86 GB), whatever the frequency or the iterations |
+| Iterative, GCR (the coil board) | | about 57 kB per node, but too slow on the coil board at 3.5 MHz to read M |
+| Direct, MUMPS (the coil board at level 0.25, 16 GB machines) | 118,416 to 161,126 nodes | more than 13 GB a solve: each held 13.3 GB in memory and put the rest in swap; 8 GB of swap was enough at a 0.1 mm gap, from 0.5 mm on about 24 GB, 40 GB of memory and swap together. `new_coil.py` estimates roughly 200 kB a node |
+
+On Linux a swap file makes up the difference
+([Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md#245-linux-ubuntu-2404)). Meshing takes seconds;
+an iterative solve on E01 took about 4 µs per node and iteration with the machine to itself, and a
+direct solve on the coil board 3 to 15 minutes. Every coil board angle is one solve, so a gap of 16
+angles took one to two and a half hours.
+
+## 25.8 A Coil Set From The Generator
 
 `Examples/Inductive Coils/new_coil.py` turns one output folder of the
 [Sinusoidal Coil Generator](https://github.com/RolandThsive/Sinusoidal-Inductive-Encoders-Coil-Generator)
@@ -163,4 +175,4 @@ charts, the angle error, the set-up picture and the rotor at each angle.
 
 | Previous | Next |
 |:---|---:|
-| [Elmer FEM Workflow](Elmer-FEM-Workflow.md) | [Elmer FEM Test Boards](Elmer-FEM-Test-Boards.md) |
+| [Elmer FEM Walkthrough](Elmer-FEM-Walkthrough.md#248-export-the-board-with-kese) | [Elmer FEM Test Boards And Results](Elmer-FEM-Test-Boards-And-Results.md) |
